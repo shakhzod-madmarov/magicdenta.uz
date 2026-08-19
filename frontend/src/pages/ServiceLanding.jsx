@@ -103,7 +103,7 @@ const SERVICES_DATA = {
       { title: "Atravmatik Jarrohlik", desc: "Suyak va milk to'qimasiga shikast yetkazmasdan faqat kerakli qismni ajratish." },
       { title: "Mutlaqo Og'riqsiz Anesteziya", desc: "Kuchli zamonaviy anesteziya ostida xotirjam va tezkor jarayon." },
       { title: "Tezkor Tuzalish Kafolati", desc: "Maxsus tiklanish protokollari evaziga operatsiyadan so'ng shish va noqulaylik bo'lmaydi." },
-      { title: "100% Melag Sterillik", desc: "Jarrohlik xonasi Melag avtoklav sterilizatsiyasi bilan to'liq ta'minlangan." }
+      { title: "100% To‘liq Sterillik", desc: "Barcha asboblar va xona maxsus avtoklavda to‘liq sterilizatsiya qilinadi." }
     ],
     faqs: [
       { q: "Jarrohlik muolajasi qancha vaqt oladi?", a: "Tishning holati, ildizlar tuzilishi va joylashuviga qarab 10 daqiqadan 30+ daqiqagacha davom etishi mumkin." },

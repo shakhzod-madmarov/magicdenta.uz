@@ -89,7 +89,7 @@ const servicesDetails = [
       ru: "Атравматичное удаление зубов мудрости без боли. Длительность от 10 минут до 30+ минут в зависимости от сложности и типа зуба.",
       en: "Atraumatic wisdom tooth extractions taking from 10 mins to 30+ mins based on tooth complexity."
     },
-    highlights: ["Atravmatik Jarrohlik", "100% Og‘riqsiz Anesteziya", "Tezkor Shishsiz Bitish", "100% Melag Sterillik"],
+    highlights: ["Atravmatik Jarrohlik", "100% Og‘riqsiz Anesteziya", "Tezkor Shishsiz Bitish", "100% Toza va Steril"],
     duration: "10 daqiqadan 30+ daqiqagacha (tish turiga qarab)",
     doctorType: "Jarroh Stomatolog",
   }
