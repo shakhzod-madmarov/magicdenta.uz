@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { useNavigate, Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import eyesClosed from "../assets/login/eyes-closed.png";
 import eyesOpened from "../assets/login/eyes-opened.png";
 import { AdminContext } from "../context/AdminContext.jsx";
@@ -9,7 +9,7 @@ import axios from "axios";
 import { toast } from "react-toastify";
 
 const AdminDentistLogin = () => {
-  const [role, setRole] = useState("Admin"); // "Admin" | "Stomatolog"
+  const [role, setRole] = useState("Stomatolog"); // Default to "Stomatolog"
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
@@ -28,22 +28,6 @@ const AdminDentistLogin = () => {
 
     setSubmitting(true);
     try {
-      if (role === "Admin") {
-        const { data } = await axios.post(`${backendUrl}/api/admin/login`, {
-          email: email.trim(),
-          password,
-        });
-
-        if (data.success) {
-          localStorage.setItem("aToken", data.token);
-          setAToken(data.token);
-          toast.success("Admin boshqaruv tizimiga xush kelibsiz!");
-          navigate("/admin-dashboard");
-        } else {
-          toast.error(data.message || "Kirishda xatolik yuz berdi");
-        }
-      }
-
       if (role === "Stomatolog") {
         const { data } = await axios.post(`${backendUrl}/api/dentist/login`, {
           email: email.trim(),
@@ -55,6 +39,22 @@ const AdminDentistLogin = () => {
           setDToken(data.token);
           toast.success("Shifokor kabinetiga xush kelibsiz!");
           navigate("/dentist-dashboard");
+        } else {
+          toast.error(data.message || "Kirishda xatolik yuz berdi");
+        }
+      }
+
+      if (role === "Admin") {
+        const { data } = await axios.post(`${backendUrl}/api/admin/login`, {
+          email: email.trim(),
+          password,
+        });
+
+        if (data.success) {
+          localStorage.setItem("aToken", data.token);
+          setAToken(data.token);
+          toast.success("Admin boshqaruv tizimiga xush kelibsiz!");
+          navigate("/admin-dashboard");
         } else {
           toast.error(data.message || "Kirishda xatolik yuz berdi");
         }
@@ -79,12 +79,12 @@ const AdminDentistLogin = () => {
         {/* Main Card */}
         <div className="bg-white rounded-[36px] shadow-2xl border border-white/20 p-8 sm:p-10 text-center">
           
-          {/* Clinic Logo */}
+          {/* Clinic Logo (Side-by-side horizontal) */}
           <div className="flex justify-center mb-6">
             <img
               src={assets.logo}
               alt="Magic Denta"
-              className="h-11 sm:h-12 w-auto object-contain"
+              className="h-11 sm:h-12 w-auto max-w-[240px] object-contain"
             />
           </div>
 
@@ -96,23 +96,8 @@ const AdminDentistLogin = () => {
             Magic Denta klinikasi xodimlari uchun maxsus portal
           </p>
 
-          {/* Role Switcher Pill Bar */}
+          {/* Role Switcher Pill Bar (Stomatolog first by default) */}
           <div className="flex bg-slate-100 p-1.5 rounded-full mb-6 border border-slate-200/80 shadow-xs">
-            <button
-              type="button"
-              onClick={() => {
-                setRole("Admin");
-                setEmail("");
-                setPassword("");
-              }}
-              className={`flex-1 py-2.5 rounded-full text-xs font-black transition-all duration-200 cursor-pointer ${
-                role === "Admin"
-                  ? "bg-gradient-to-r from-[#403D88] to-[#321E48] text-white shadow-sm"
-                  : "text-slate-600 hover:text-slate-900"
-              }`}
-            >
-              Klinika Admini
-            </button>
             <button
               type="button"
               onClick={() => {
@@ -127,6 +112,21 @@ const AdminDentistLogin = () => {
               }`}
             >
               Stomatolog
+            </button>
+            <button
+              type="button"
+              onClick={() => {
+                setRole("Admin");
+                setEmail("");
+                setPassword("");
+              }}
+              className={`flex-1 py-2.5 rounded-full text-xs font-black transition-all duration-200 cursor-pointer ${
+                role === "Admin"
+                  ? "bg-gradient-to-r from-[#403D88] to-[#321E48] text-white shadow-sm"
+                  : "text-slate-600 hover:text-slate-900"
+              }`}
+            >
+              Klinika Admini
             </button>
           </div>
 
@@ -143,7 +143,7 @@ const AdminDentistLogin = () => {
                 id="email"
                 name="email"
                 type="email"
-                placeholder={role === "Admin" ? "admin@magicdenta.uz" : "shifokor@magicdenta.uz"}
+                placeholder={role === "Stomatolog" ? "shifokor@magicdenta.uz" : "admin@magicdenta.uz"}
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
@@ -192,17 +192,6 @@ const AdminDentistLogin = () => {
               {submitting ? "Tekshirilmoqda..." : `${role} sifatida kirish`}
             </button>
           </form>
-
-          {/* Footer Back Link */}
-          <div className="mt-6 pt-5 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500 font-semibold">
-            <span>© {new Date().getFullYear()} Magic Denta</span>
-            <a
-              href="https://magicdenta.uz"
-              className="text-[#403D88] hover:text-[#92003A] transition"
-            >
-              Asosiy saytga o‘tish →
-            </a>
-          </div>
         </div>
       </div>
     </main>
