@@ -13,11 +13,15 @@ import { formatUzPhone, handleUzPhonePaste, isUzPhoneComplete, PHONE_PLACEHOLDER
 import TelegramPatientConnectModal from "../../components/TelegramPatientConnectModal.jsx";
 
 const specialityOptions = [
-  "Ortodontiya",
   "Terapevtik stomatologiya",
+  "Ortodontiya",
   "Ortopedik stomatologiya",
-  "Estetik stomatologiya",
   "Stomatologiya Jarrohligi",
+  "Parodontologiya",
+  "Bolalar stomatologiyasi",
+  "Implantologiya",
+  "Estetik stomatologiya",
+  "Rentgenologiya",
 ];
 
 const nameRegex = /^[A-Za-zÀ-ÖØ-öø-ÿ\u0400-\u04FF\s'-]+$/u;

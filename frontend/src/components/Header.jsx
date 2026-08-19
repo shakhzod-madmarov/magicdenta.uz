@@ -13,7 +13,7 @@ const Header = () => {
       book: "Qabulga yozilish",
       services: "Xizmatlarimiz",
       tag1: "100% Og‘riqsiz",
-      tag2: "3D Tashxis",
+      tag2: "Oliy Toifali Shifokor",
       tag3: "08:00 – 20:00 (Dush – Shan)",
     },
     ru: {
@@ -23,7 +23,7 @@ const Header = () => {
       book: "Записаться на прием",
       services: "Наши услуги",
       tag1: "100% Без боли",
-      tag2: "3D Диагностика",
+      tag2: "Высшая категория",
       tag3: "08:00 – 20:00 (Пн – Сб)",
     },
     en: {
@@ -33,7 +33,7 @@ const Header = () => {
       book: "Book Appointment",
       services: "Our Specialties",
       tag1: "Pain-Free Care",
-      tag2: "3D Scanning",
+      tag2: "Master Specialist",
       tag3: "08:00 – 20:00 (Mon – Sat)",
     },
   }[lang] || {
@@ -43,7 +43,7 @@ const Header = () => {
     book: "Qabulga yozilish",
     services: "Xizmatlarimiz",
     tag1: "100% Og‘riqsiz",
-    tag2: "3D Tashxis",
+    tag2: "Oliy Toifali Shifokor",
     tag3: "08:00 – 20:00 (Dush – Shan)",
   };
 
