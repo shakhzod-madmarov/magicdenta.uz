@@ -101,15 +101,15 @@ const Footer = () => {
           </h3>
           <div className="w-full h-36 rounded-2xl overflow-hidden shadow-sm border border-slate-200 relative">
             <div style={{ position: "relative", overflow: "hidden" }} className="w-full h-full">
-              <a href="https://yandex.uz/maps/org/mega_dental_house_mchj/60243631862/?utm_medium=mapframe&utm_source=maps" style={{ color: "#eee", fontSize: "12px", position: "absolute", top: "0px" }}>Magic Denta Мчж</a>
+              <a href="https://yandex.uz/maps/org/stomatologiya/216461525511/?utm_medium=mapframe&utm_source=maps" style={{ color: "#eee", fontSize: "12px", position: "absolute", top: "0px" }}>Magic Denta Stomatologiya</a>
               <iframe
-                src="https://yandex.uz/map-widget/v1/?ll=72.370247%2C40.752538&mode=search&oid=60243631862&ol=biz&z=16.63"
+                src="https://yandex.uz/map-widget/v1/?display-text=Stomatologiya%20klinikasi&ll=72.360238%2C40.749405&mode=search&oid=216461525511&ol=biz&z=17"
                 width="100%"
                 height="100%"
                 frameBorder="0"
                 allowFullScreen={true}
                 style={{ position: "relative" }}
-                title="Magic Denta Yandex Map Footer"
+                title="Magic Denta Xarita"
               ></iframe>
             </div>
           </div>

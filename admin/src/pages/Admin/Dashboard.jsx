@@ -280,7 +280,7 @@ const exportDentistsExcel = ({
 
   const cleanRange = String(rangeLabel || "Hisobot").replace(/[^a-zA-Z0-9_\u0400-\u04FF]/g, "_");
   const dateTag = new Date().toISOString().slice(0, 10);
-  const fileName = `Mega_Dental_House_${cleanRange}_${dateTag}.xlsx`;
+  const fileName = `Magic_Denta_${cleanRange}_${dateTag}.xlsx`;
 
   XLSX.writeFile(wb, fileName);
 };
