@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+
+Disallow: /login
+Disallow: /myappointments
+Disallow: /myprofile
+Disallow: /my-treatments
+Disallow: /queue-display
+
+Sitemap: https://magicdenta.uz/sitemap.xml

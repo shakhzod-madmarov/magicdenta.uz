@@ -1,0 +1,26 @@
+# dependencies
+**/node_modules
+
+# build output
+front-denta/dist
+admin/dist
+
+# environment files
+backend-denta/.env
+front-denta/.env
+admin/.env
+
+# uploads / generated files
+backend-denta/uploads
+
+# logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# system/editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
