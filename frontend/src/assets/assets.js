@@ -3,7 +3,7 @@ import header_doctor from "./header_doctor.jpg";
 import about_img from "./about_img.jpg";
 import upload_img from "./upload_area.svg";
 import logo from "./logo-horizontal.svg";
-import logoVertical from "./logo.svg";
+import logoVertical from "./logo-vertical.svg";
 import logoWhite from "./logo-white.svg";
 import favicon from "./favicon.svg";
 
@@ -20,6 +20,8 @@ export const assets = {
   logo,
   logoVertical,
   logoWhite,
+  logo_white: logoWhite,
+  logo_horizontal: logo,
   favicon,
   upload_img,
 };
@@ -35,7 +37,7 @@ export const specialityData = [
     speciality: "Terapevtik stomatologiya",
     image: Therapeutic_dentistry,
     displayName: { uz: "Terapevtik stomatologiya", ru: "Терапевтическая стоматология", en: "Therapeutic Dentistry" },
-    badge: { uz: "ASOSIY DAVOLASH", ru: "ОСНОВНОЕ ЛЕЧЕНИЕ", en: "PRIMARY TREATMENT" }
+    badge: { uz: "ASOSIY DAVOLASH", ru: "ОСНОВНОЕ ЛEЧЕНИЕ", en: "PRIMARY TREATMENT" }
   },
   {
     speciality: "Ortopedik stomatologiya",

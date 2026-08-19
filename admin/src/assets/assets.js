@@ -1,11 +1,13 @@
 import logo from "./logo-horizontal.svg";
-import logoVertical from "./logo.svg";
+import logoVertical from "./logo-vertical.svg";
 import logoWhite from "./logo-white.svg";
-import upload_area from "./upload_area.svg";
+import favicon from "./favicon.svg";
 
 export const assets = {
   logo,
   logoVertical,
   logoWhite,
-  upload_area,
+  logo_white: logoWhite,
+  logo_horizontal: logo,
+  favicon,
 };
