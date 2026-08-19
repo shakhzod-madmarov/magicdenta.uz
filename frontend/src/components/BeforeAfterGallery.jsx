@@ -1,6 +1,17 @@
 import { useState, useRef, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 
+import ortodontiyaBefore from "../assets/cases/ortodontiya_before.jpg";
+import ortodontiyaAfter from "../assets/cases/ortodontiya_after.jpg";
+import ortopediyaBefore from "../assets/cases/ortopediya_before.jpg";
+import ortopediyaAfter from "../assets/cases/ortopediya_after.jpg";
+import estetikaBefore from "../assets/cases/estetika_before.jpg";
+import estetikaAfter from "../assets/cases/estetika_after.jpg";
+import terapiyaBefore from "../assets/cases/terapiya_before.jpg";
+import terapiyaAfter from "../assets/cases/terapiya_after.jpg";
+import jarrohlikBefore from "../assets/cases/jarrohlik_before.jpg";
+import jarrohlikAfter from "../assets/cases/jarrohlik_after.jpg";
+
 const casesData = [
   {
     id: "ortodontiya",
@@ -12,8 +23,8 @@ const casesData = [
     doctor: "Ortodont Mutaxassis",
     beforeLabel: "Davolanishdan oldin",
     afterLabel: "Davolanishdan keyin",
-    beforeImg: "https://images.unsplash.com/photo-1598256989800-fe5f95da9787?auto=format&fit=crop&w=900&q=80",
-    afterImg: "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=900&q=80",
+    beforeImg: ortodontiyaBefore,
+    afterImg: ortodontiyaAfter,
   },
   {
     id: "ortopediya",
@@ -25,8 +36,8 @@ const casesData = [
     doctor: "Ortoped Mutaxassis",
     beforeLabel: "Oldin",
     afterLabel: "Natija",
-    beforeImg: "https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=900&q=80",
-    afterImg: "https://images.unsplash.com/photo-1571772996211-2f02c9727629?auto=format&fit=crop&w=900&q=80",
+    beforeImg: ortopediyaBefore,
+    afterImg: ortopediyaAfter,
   },
   {
     id: "estetik",
@@ -38,8 +49,8 @@ const casesData = [
     doctor: "Estet-Stomatolog",
     beforeLabel: "Oldin",
     afterLabel: "Gollivud Tabassumi",
-    beforeImg: "https://images.unsplash.com/photo-1598256989800-fe5f95da9787?auto=format&fit=crop&w=900&q=80",
-    afterImg: "https://images.unsplash.com/photo-1571772996211-2f02c9727629?auto=format&fit=crop&w=900&q=80",
+    beforeImg: estetikaBefore,
+    afterImg: estetikaAfter,
   },
   {
     id: "terapevtik",
@@ -50,9 +61,9 @@ const casesData = [
     duration: "5 kundan 2-3 haftagacha",
     doctor: "Terapevt Stomatolog",
     beforeLabel: "Zararlangan tish",
-    afterLabel: "Tikланган tish",
-    beforeImg: "https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=900&q=80",
-    afterImg: "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=900&q=80",
+    afterLabel: "Tiklangan tish",
+    beforeImg: terapiyaBefore,
+    afterImg: terapiyaAfter,
   },
   {
     id: "jarrohlik",
@@ -64,8 +75,8 @@ const casesData = [
     doctor: "Jarroh Stomatolog",
     beforeLabel: "Muolajadan oldin",
     afterLabel: "Sog'lom tuzalish",
-    beforeImg: "https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=900&q=80",
-    afterImg: "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=900&q=80",
+    beforeImg: jarrohlikBefore,
+    afterImg: jarrohlikAfter,
   }
 ];
 
@@ -143,7 +154,7 @@ const BeforeAfterGallery = () => {
             onMouseMove={handleMouseMove}
             onTouchMove={handleTouchMove}
             onClick={(e) => handleMove(e.clientX)}
-            className="relative w-full aspect-[4/3] sm:aspect-[16/10] rounded-[28px] overflow-hidden select-none cursor-ew-resize border border-slate-200 shadow-inner group"
+            className="relative w-full aspect-[4/3] sm:aspect-[16/10] rounded-[28px] overflow-hidden select-none cursor-ew-resize border border-slate-200 shadow-inner group bg-slate-900"
           >
             {/* After Image (Background) */}
             <img
@@ -151,7 +162,7 @@ const BeforeAfterGallery = () => {
               alt="Natija (Keyin)"
               className="absolute inset-0 w-full h-full object-cover pointer-events-none"
             />
-            <span className="absolute top-4 right-4 z-10 px-3.5 py-1.5 rounded-full text-[11px] font-black tracking-wider uppercase bg-[#0F3040]/80 backdrop-blur-md text-white border border-white/20 shadow-md">
+            <span className="absolute top-4 right-4 z-10 px-3.5 py-1.5 rounded-full text-[11px] font-black tracking-wider uppercase bg-[#0F3040]/85 backdrop-blur-md text-white border border-white/20 shadow-md">
               {currentCase.afterLabel} ✨
             </span>
 
@@ -170,7 +181,7 @@ const BeforeAfterGallery = () => {
                     : "100%",
                 }}
               />
-              <span className="absolute top-4 left-4 z-10 px-3.5 py-1.5 rounded-full text-[11px] font-black tracking-wider uppercase bg-black/70 backdrop-blur-md text-white border border-white/20 shadow-md">
+              <span className="absolute top-4 left-4 z-10 px-3.5 py-1.5 rounded-full text-[11px] font-black tracking-wider uppercase bg-black/75 backdrop-blur-md text-white border border-white/20 shadow-md">
                 {currentCase.beforeLabel}
               </span>
             </div>
@@ -225,9 +236,7 @@ const BeforeAfterGallery = () => {
           <div className="flex flex-col sm:flex-row gap-3 pt-2">
             <button
               type="button"
-              onClick={() => {
-                navigate("/appointment");
-              }}
+              onClick={() => navigate("/appointment")}
               className="flex-1 py-4 px-6 rounded-2xl bg-gradient-to-r from-[#92003A] to-[#91008D] hover:shadow-glow-wine text-white font-black text-xs uppercase tracking-wider text-center transition-all shadow-md active:scale-95 cursor-pointer"
             >
               Shifokorga yozilish
