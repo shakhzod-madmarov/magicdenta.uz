@@ -12,8 +12,8 @@ const casesData = [
     doctor: "Ortodont Mutaxassis",
     beforeLabel: "Davolanishdan oldin",
     afterLabel: "Davolanishdan keyin",
-    beforeImg: "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=800&q=80",
-    afterImg: "https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=800&q=80",
+    beforeImg: "https://images.unsplash.com/photo-1598256989800-fe5f95da9787?auto=format&fit=crop&w=900&q=80",
+    afterImg: "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=900&q=80",
   },
   {
     id: "ortopediya",
@@ -25,8 +25,8 @@ const casesData = [
     doctor: "Ortoped Mutaxassis",
     beforeLabel: "Oldin",
     afterLabel: "Natija",
-    beforeImg: "https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=800&q=80",
-    afterImg: "https://images.unsplash.com/photo-1598256989800-fe5f95da9787?auto=format&fit=crop&w=800&q=80",
+    beforeImg: "https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=900&q=80",
+    afterImg: "https://images.unsplash.com/photo-1571772996211-2f02c9727629?auto=format&fit=crop&w=900&q=80",
   },
   {
     id: "estetik",
@@ -38,8 +38,8 @@ const casesData = [
     doctor: "Estet-Stomatolog",
     beforeLabel: "Oldin",
     afterLabel: "Gollivud Tabassumi",
-    beforeImg: "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=800&q=80",
-    afterImg: "https://images.unsplash.com/photo-1571772996211-2f02c9727629?auto=format&fit=crop&w=800&q=80",
+    beforeImg: "https://images.unsplash.com/photo-1598256989800-fe5f95da9787?auto=format&fit=crop&w=900&q=80",
+    afterImg: "https://images.unsplash.com/photo-1571772996211-2f02c9727629?auto=format&fit=crop&w=900&q=80",
   },
   {
     id: "terapevtik",
@@ -51,8 +51,8 @@ const casesData = [
     doctor: "Terapevt Stomatolog",
     beforeLabel: "Zararlangan tish",
     afterLabel: "Tikланган tish",
-    beforeImg: "https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=800&q=80",
-    afterImg: "https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=800&q=80",
+    beforeImg: "https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=900&q=80",
+    afterImg: "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=900&q=80",
   },
   {
     id: "jarrohlik",
@@ -64,8 +64,8 @@ const casesData = [
     doctor: "Jarroh Stomatolog",
     beforeLabel: "Muolajadan oldin",
     afterLabel: "Sog'lom tuzalish",
-    beforeImg: "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=800&q=80",
-    afterImg: "https://images.unsplash.com/photo-1598256989800-fe5f95da9787?auto=format&fit=crop&w=800&q=80",
+    beforeImg: "https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=900&q=80",
+    afterImg: "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=900&q=80",
   }
 ];
 

@@ -2,7 +2,6 @@ import Header from "../components/Header";
 import Specialities from "../components/Specialities";
 import BeforeAfterGallery from "../components/BeforeAfterGallery";
 import SmileQuiz from "../components/SmileQuiz";
-import ClinicalTech from "../components/ClinicalTech";
 import TechFeatures from "../components/TechFeatures";
 import TopDentists from "../components/TopDentists";
 import ReviewsTrust from "../components/ReviewsTrust";
@@ -56,7 +55,6 @@ const Home = () => {
         <Specialities />
         <BeforeAfterGallery />
         <SmileQuiz />
-        <ClinicalTech />
         <TechFeatures />
         <TopDentists />
         <ReviewsTrust />

@@ -8,16 +8,28 @@ import profilePic from "../assets/profile_pic.png";
 const Nav = () => {
   const { token, setToken, userData } = useContext(AppContext);
   const [showMenu, setShowMenu] = useState(false);
-  const [profileOpen, setProfileOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
+  const [profileOpen, setProfileOpen] = useState(false);
   const profileRef = useRef(null);
   const servicesRef = useRef(null);
+  const timeoutRef = useRef(null);
   const navigate = useNavigate();
   const lang = localStorage.getItem("language") || "uz";
 
   const logout = () => {
     setToken(false);
     localStorage.removeItem("token");
+  };
+
+  const handleServicesEnter = () => {
+    if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    setServicesOpen(true);
+  };
+
+  const handleServicesLeave = () => {
+    timeoutRef.current = setTimeout(() => {
+      setServicesOpen(false);
+    }, 250);
   };
 
   useEffect(() => {
@@ -30,7 +42,10 @@ const Nav = () => {
       }
     };
     document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+      if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    };
   }, []);
 
   const t = {
@@ -47,8 +62,6 @@ const Nav = () => {
       myAppointments: "Uchrashuvlarim",
       myTreatments: "Davolash tarixi",
       allServices: "Barcha 5 ta yo‘nalish",
-      openNow: "Bugun ochiq: 08:00 – 20:00",
-      closedNow: "Yakshanba • Dam olish kuni",
     },
     ru: {
       home: "Главная",
@@ -63,8 +76,6 @@ const Nav = () => {
       myAppointments: "Мои записи",
       myTreatments: "История лечения",
       allServices: "Все 5 направлений",
-      openNow: "Открыто: 08:00 – 20:00",
-      closedNow: "Воскресенье • Выходной",
     },
     en: {
       home: "Home",
@@ -79,8 +90,6 @@ const Nav = () => {
       myAppointments: "My Appointments",
       myTreatments: "Treatment History",
       allServices: "All 5 Specialties",
-      openNow: "Open Today: 08:00 – 20:00",
-      closedNow: "Sunday • Closed",
     },
   }[lang] || {
     home: "Bosh sahifa",
@@ -95,11 +104,7 @@ const Nav = () => {
     myAppointments: "Uchrashuvlarim",
     myTreatments: "Davolash tarixi",
     allServices: "Barcha 5 ta yo‘nalish",
-    openNow: "Bugun ochiq: 08:00 – 20:00",
-    closedNow: "Yakshanba • Dam olish kuni",
   };
-
-  const isSunday = new Date().getDay() === 0;
 
   useEffect(() => {
     if (showMenu) {
@@ -114,7 +119,6 @@ const Nav = () => {
 
   return (
     <>
-
       <nav className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200/80 shadow-xs">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex items-center justify-between py-3 sm:py-3.5">
           {/* Brand Logo */}
@@ -143,12 +147,12 @@ const Nav = () => {
               </NavLink>
             </li>
 
-            {/* Specialties Dropdown */}
+            {/* Specialties Dropdown with Seamless Bridge */}
             <li
               ref={servicesRef}
               className="relative"
-              onMouseEnter={() => setServicesOpen(true)}
-              onMouseLeave={() => setServicesOpen(false)}
+              onMouseEnter={handleServicesEnter}
+              onMouseLeave={handleServicesLeave}
             >
               <button
                 type="button"
@@ -160,37 +164,51 @@ const Nav = () => {
                 }`}
               >
                 <span>{t.services}</span>
-                <svg className={`w-3.5 h-3.5 transition-transform ${servicesOpen ? "rotate-180" : ""}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg
+                  className={`w-3.5 h-3.5 transition-transform duration-200 ${
+                    servicesOpen ? "rotate-180" : ""
+                  }`}
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" />
                 </svg>
               </button>
 
+              {/* Contiguous dropdown container with pt-2 to bridge the hover gap */}
               {servicesOpen && (
-                <div className="absolute top-full left-0 mt-2 w-80 bg-white rounded-3xl border border-slate-200/90 shadow-2xl p-3 z-50 text-left animate-fadeIn">
-                  <span className="text-[10px] font-black text-[#403D88] uppercase tracking-wider px-3 py-1.5 block">
-                    {t.allServices}
-                  </span>
-                  <div className="space-y-1 mt-1">
-                    {specialityData.map((item, index) => (
-                      <Link
-                        key={index}
-                        to={`/dentists/${encodeURIComponent(item.speciality)}`}
-                        onClick={() => setServicesOpen(false)}
-                        className="flex items-center gap-3 p-2.5 rounded-2xl hover:bg-slate-50 transition group"
-                      >
-                        <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-[#0F3040] to-[#321E48] flex items-center justify-center shrink-0 overflow-hidden shadow-xs">
-                          <img src={item.image} alt="" className="w-full h-full object-cover" />
-                        </div>
-                        <div>
-                          <span className="text-xs font-bold text-[#0F3040] group-hover:text-[#92003A] transition-colors block">
-                            {item.displayName?.[lang] || item.speciality}
-                          </span>
-                          <span className="text-[10px] text-slate-600 block">
-                            {item.badge?.[lang] || "MUTAXASSISLIK"}
-                          </span>
-                        </div>
-                      </Link>
-                    ))}
+                <div
+                  onMouseEnter={handleServicesEnter}
+                  onMouseLeave={handleServicesLeave}
+                  className="absolute top-full left-0 pt-2 w-80 z-50 animate-fadeIn"
+                >
+                  <div className="bg-white rounded-3xl border border-slate-200/90 shadow-2xl p-3 text-left">
+                    <span className="text-[10px] font-black text-[#403D88] uppercase tracking-wider px-3 py-1.5 block">
+                      {t.allServices}
+                    </span>
+                    <div className="space-y-1 mt-1">
+                      {specialityData.map((item, index) => (
+                        <Link
+                          key={index}
+                          to={`/dentists/${encodeURIComponent(item.speciality)}`}
+                          onClick={() => setServicesOpen(false)}
+                          className="flex items-center gap-3 p-2.5 rounded-2xl hover:bg-slate-50 transition group"
+                        >
+                          <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-[#0F3040] to-[#321E48] flex items-center justify-center shrink-0 overflow-hidden shadow-xs">
+                            <img src={item.image} alt="" className="w-full h-full object-cover" />
+                          </div>
+                          <div>
+                            <span className="text-xs font-bold text-[#0F3040] group-hover:text-[#92003A] transition-colors block">
+                              {item.displayName?.[lang] || item.speciality}
+                            </span>
+                            <span className="text-[10px] text-slate-600 block">
+                              {item.badge?.[lang] || "MUTAXASSISLIK"}
+                            </span>
+                          </div>
+                        </Link>
+                      ))}
+                    </div>
                   </div>
                 </div>
               )}
@@ -382,7 +400,7 @@ const Nav = () => {
             <div className="w-[85%] max-w-sm bg-white h-full p-6 flex flex-col justify-between overflow-y-auto">
               <div>
                 <div className="flex items-center justify-between pb-4 border-b border-slate-100">
-                  <img src={assets.logo} alt="Magic Denta" className="h-11 sm:h-12 w-auto" />
+                  <img src={assets.logo} alt="Magic Denta" className="h-10 w-auto" />
                   <button
                     type="button"
                     onClick={() => setShowMenu(false)}
