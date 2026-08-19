@@ -11,13 +11,13 @@ const About = () => {
 
   const t = {
     uz: {
-      seoTitle: "Biz haqimizda | Magic Denta",
+      seoTitle: "Biz haqimizda | Magic Denta Stomatologiya Markazi",
       seoDesc: "Magic Denta — Zamonaviy stomatologiya klinikasi. Sifatli davolash, og‘riqsiz muolajalar va samimiy g‘amxo‘rlik.",
       badge: "MAGIC DENTA STOMATOLOGIYA KLINIKASI",
       heroTitle: "Tabassumingiz — bizning eng oliy san’atimiz",
       heroDesc: "Biz stomatologiyani shunchaki davolash emas, balki sifatli ashyolar, mutlaq og‘riqsizlik va samimiy insoniy g‘amxo‘rlikning mukammal uyg‘unligi sifatida quramiz.",
       btnBook: "Qabulga yozilish",
-      btnDoctors: "Shifokorlarimiz bilan tanishish",
+      btnServices: "Xizmatlarimiz bilan tanishish",
       
       stat1Val: "15+",
       stat1Lbl: "Yillik professional tajriba",
@@ -25,7 +25,7 @@ const About = () => {
       stat2Lbl: "Mamnun va sog‘lom bemorlar",
       stat3Val: "100%",
       stat3Lbl: "Og‘riqsiz va xavfsiz muolaja",
-      stat4Val: "08:00-20:00",
+      stat4Val: "08:00 – 20:00",
       stat4Lbl: "Dush – Shanba (Yakshanba dam)",
 
       clinicAddress: "Bobur shoh koʻchasi, 1B",
@@ -40,11 +40,11 @@ const About = () => {
       p2Title: "Mutlaqo Og‘riqsiz Muolaja",
       p2Desc: "Innovatsion anestetik vositalar va muloyim shifokor yondashuvi evaziga muolajalar butunlay qo‘rquvsiz o‘tadi.",
       
-      p3Title: "5 Bosqichli Sterillik",
-      p3Desc: "Xalqaro avtoklav sterilizatsiyasi va qat’iy nazorat — har bir bemorimiz salomatligi va xavfsizligi kafolati.",
+      p3Title: "100% Sterillik va Xavfsizlik",
+      p3Desc: "Ko‘p bosqichli avtoklav sterilizatsiyasi va qat’iy gigiyenik nazorat — har bir bemor salomatligi kafolati.",
       
       p4Title: "Shaffof va Halol Xizmat",
-      p4Desc: "Hech qanday kutilmagan to‘lovlarsiz. Davolash rejasi, barcha narxlar va muddatlar muolajadan oldin ochiq kelishiladi.",
+      p4Desc: "Hech qanday yashirin to‘lovlarsiz. Davolash rejasi, barcha narxlar va muddatlar muolajadan oldin ochiq kelishiladi.",
 
       journeyTag: "DAVOLANISH BOSQICHLARI",
       journeyTitle: "Sizning sog‘lom tabassum sari 4 qadamingiz",
@@ -66,33 +66,33 @@ const About = () => {
       step4Title: "Doimiy g‘amxo‘rlik va kafolat",
       step4Desc: "Muolajadan so‘ng natija mustahkamlanadi, profilaktik tavsiyalar beriladi va shifokor nazorati davom etadi.",
 
-      techTag: "ZAMONAVIY USKUNALAR",
-      techTitle: "Klinikamizning qulayliklari va jihozlari",
-      techDesc: "Biz faqat sinovdan o‘tgan sifatli stomatologik materiallar va qulay uskunalardan foydalanamiz.",
-      t1: "Sifatli Sirkoniy va Vinirlar",
+      techTag: "ZAMONAVIY QULAYLIKLAR",
+      techTitle: "Klinikamizning qulayliklari va standartlari",
+      techDesc: "Biz faqat sinovdan o‘tgan sifatli stomatologik materiallar va zamonaviy uskunalardan foydalanamiz.",
+      t1: "Sifatli Sirkoniy va Estetik Vinirlar",
       t2: "Zamonaviy Anesteziya va Og‘riqsiz Tizim",
-      t3: "Estetik vinirlar va tabassum dizayni",
+      t3: "Ortodontik Breketlar va Shaffof Elaynerlar",
       t4: "Avtomatlashtirilgan shaxsiy bemor kabineti",
 
-      specsTag: "MUTAXASSISLIKLAR",
+      specsTag: "ASOSIY YO‘NALISHLAR",
       specsTitle: "Klinikamizning asosiy xizmatlari",
-      specsDesc: "Terapevtik stomatologiyadan tortib, implantatsiya va tabassum estetikasigacha.",
-      viewAll: "Barchasini ko‘rish",
+      specsDesc: "Terapevtik stomatologiyadan tortib, ortodontiya va ortopedik sirkoniy qoplamalargacha.",
+      viewAll: "Barcha xizmatlar",
 
       bannerTag: "QABULGA YOZILISH",
       bannerTitle: "Bugunoq yangi, nurli tabassum sari qadam tashlang",
       bannerDesc: "Magic Denta shifokorlari sizni qabul qilishga doim tayyor. Hoziroq qulay vaqtni tanlang.",
-      bannerBtn1: "Bog‘lanish",
-      bannerBtn2: "Shifokorlarni ko‘rish",
+      bannerBtn1: "Qabulga yozilish →",
+      bannerBtn2: "Biz bilan bog‘lanish",
     },
     ru: {
-      seoTitle: "О нас | Magic Denta",
+      seoTitle: "О нас | Стоматологический центр Magic Denta",
       seoDesc: "Magic Denta — современная стоматологическая клиника в Андижане. Качественное лечение, забота и процедуры без боли.",
       badge: "СТОМАТОЛОГИЧЕСКИЙ ЦЕНТР MAGIC DENTA",
       heroTitle: "Ваша улыбка — наше главное искусство",
       heroDesc: "Мы создаем стоматологию не просто как лечение, а как гармонию качественных материалов, абсолютной безболезненности и искренней заботы о каждом человеке.",
       btnBook: "Записаться на прием",
-      btnDoctors: "Познакомиться с врачами",
+      btnServices: "Познакомиться с услугами",
       
       stat1Val: "15+",
       stat1Lbl: "Лет профессионального опыта",
@@ -100,10 +100,10 @@ const About = () => {
       stat2Lbl: "Счастливых и здоровых улыбок",
       stat3Val: "100%",
       stat3Lbl: "Безболезненное лечение",
-      stat4Val: "24/7",
-      stat4Lbl: "Онлайн-запись и консультации",
+      stat4Val: "08:00 – 20:00",
+      stat4Lbl: "Пн – Сб (Вс выходной)",
 
-      clinicAddress: "г. Андижан, ул. Эргаша Ашурова, д. 58 (Ориентир: Семашко, Ташкент-стрит)",
+      clinicAddress: "г. Андижан, проспект Бабура, 1B",
 
       pillarsTag: "НАША ФИЛОСОФИЯ",
       pillarsTitle: "За каждой улыбкой стоят доверие и качество",
@@ -115,7 +115,7 @@ const About = () => {
       p2Title: "Абсолютно без боли",
       p2Desc: "Инновационная анестезия и бережные методики гарантируют спокойствие и комфорт во время приема.",
       
-      p3Title: "5-ступенчатая стерилизация",
+      p3Title: "100% Стерильность и безопасность",
       p3Desc: "Автоклавная обработка инструментов и строгий контроль — залог вашей абсолютной безопасности.",
       
       p4Title: "Прозрачность и честность",
@@ -142,32 +142,32 @@ const About = () => {
       step4Desc: "Персональные рекомендации по уходу и долгосрочное наблюдение за здоровьем улыбки.",
 
       techTag: "ОСНАЩЕНИЕ",
-      techTitle: "Удобство и оснащение клиники",
+      techTitle: "Удобство и стандарты клиники",
       techDesc: "Мы используем только качественные стоматологические материалы и проверенное оборудование.",
       t1: "Премиальный диоксид циркония и виниры",
       t2: "Современная безболезненная анестезия",
-      t3: "Лазерная стоматология и бережное отбеливание",
+      t3: "Брекеты и прозрачные элайнеры",
       t4: "Автоматизированный личный кабинет пациента",
 
       specsTag: "НАПРАВЛЕНИЯ",
       specsTitle: "Наши основные услуги",
-      specsDesc: "От бережного лечения кариеса до надежной имплантации и дизайна улыбки.",
-      viewAll: "Посмотреть все",
+      specsDesc: "От бережного лечения кариеса до надежной ортодонтии и циркониевых коронок.",
+      viewAll: "Все услуги",
 
       bannerTag: "ЗАПИСЬ НА ПРИЕМ",
       bannerTitle: "Сделайте шаг к здоровой улыбке уже сегодня",
       bannerDesc: "Врачи Magic Denta готовы помочь вам в любое удобное время. Запишитесь на прием прямо сейчас.",
-      bannerBtn1: "Связаться с нами",
-      bannerBtn2: "Наши врачи",
+      bannerBtn1: "Записаться на прием →",
+      bannerBtn2: "Связаться с нами",
     },
     en: {
-      seoTitle: "About Us | Magic Denta",
+      seoTitle: "About Us | Magic Denta Specialized Clinic",
       seoDesc: "Magic Denta is a modern dental clinic specializing in Dental Orthopedics offering gentle pain-free care and trusted clinical treatments.",
       badge: "MAGIC DENTA CLINICAL CENTER",
       heroTitle: "Your Smile Is Our Greatest Masterpiece",
       heroDesc: "We build modern dentistry as a seamless harmony of quality materials, painless clinical precision, and genuine human warmth.",
       btnBook: "Book Appointment",
-      btnDoctors: "Meet Our Dentists",
+      btnServices: "Explore Services",
       
       stat1Val: "15+",
       stat1Lbl: "Years Clinical Experience",
@@ -175,10 +175,10 @@ const About = () => {
       stat2Lbl: "Delighted & Healthy Patients",
       stat3Val: "100%",
       stat3Lbl: "Pain-Free Gentle Care",
-      stat4Val: "24/7",
-      stat4Lbl: "Online Booking & Support",
+      stat4Val: "08:00 – 20:00",
+      stat4Lbl: "Mon – Sat (Sun Closed)",
 
-      clinicAddress: "Bobur shoh koʻchasi, 1B",
+      clinicAddress: "1B Babur Avenue, Andijan",
 
       pillarsTag: "OUR PHILOSOPHY",
       pillarsTitle: "Behind Every Smile Lies Trust and Excellence",
@@ -190,7 +190,7 @@ const About = () => {
       p2Title: "100% Pain-Free Care",
       p2Desc: "Advanced anesthesia and gentle techniques ensure a completely relaxed, fear-free appointment.",
       
-      p3Title: "5-Stage Sterility",
+      p3Title: "100% Sterile & Safe",
       p3Desc: "Hospital-grade autoclave sterilization and strict hygienic protocols for your complete safety.",
       
       p4Title: "Transparent & Honest Care",
@@ -217,23 +217,23 @@ const About = () => {
       step4Desc: "Personalized hygiene guidance and dedicated follow-up care to keep your smile glowing.",
 
       techTag: "INFRASTRUCTURE",
-      techTitle: "Modern Clinic Equipment",
+      techTitle: "Modern Clinic Standards",
       techDesc: "We utilize proven dental materials and modern clinical instruments.",
       t1: "Premium Zirconia & Aesthetic Veneers",
       t2: "Advanced Pain-Free Anesthesia Systems",
-      t3: "Laser Dentistry & Gentle Power Whitening",
-      t4: "Automated Patient Portal & Telegram Notifications",
+      t3: "Orthodontic Brackets & Clear Aligners",
+      t4: "Automated Patient Portal & Notifications",
 
       specsTag: "SPECIALTIES",
       specsTitle: "Core Clinical Specialties",
-      specsDesc: "From therapeutic restorations to dental implants and complete cosmetic smile transformations.",
-      viewAll: "View All",
+      specsDesc: "From therapeutic restorations to orthodontics and high-durability Zirconia crowns.",
+      viewAll: "All Services",
 
       bannerTag: "APPOINTMENT",
       bannerTitle: "Take the first step toward a radiant smile today",
       bannerDesc: "Magic Denta specialists are ready to welcome you. Book your visit or contact us directly.",
-      bannerBtn1: "Contact Us",
-      bannerBtn2: "View Dentists",
+      bannerBtn1: "Book Appointment →",
+      bannerBtn2: "Contact Us",
     },
   }[lang] || {
     seoTitle: "Biz haqimizda | Magic Denta",
@@ -242,15 +242,15 @@ const About = () => {
     heroTitle: "Tabassumingiz — bizning eng oliy san’atimiz",
     heroDesc: "Biz stomatologiyani sifatli ashyolar, mutlaq og‘riqsizlik va samimiy g‘amxo‘rlik uyg‘unligi sifatida quramiz.",
     btnBook: "Qabulga yozilish",
-    btnDoctors: "Shifokorlarimiz bilan tanishish",
+    btnServices: "Xizmatlarimiz bilan tanishish",
     stat1Val: "15+",
     stat1Lbl: "Yillik tajriba",
     stat2Val: "10,000+",
     stat2Lbl: "Mamnun bemorlar",
     stat3Val: "100%",
     stat3Lbl: "Og‘riqsiz muolaja",
-    stat4Val: "24/7",
-    stat4Lbl: "Onlayn yordam",
+    stat4Val: "08:00 – 20:00",
+    stat4Lbl: "Dush – Shanba",
     clinicAddress: "Bobur shoh koʻchasi, 1B",
     pillarsTag: "BIZNING FALSAFAMIZ",
     pillarsTitle: "Har bir tabassum ortida ishonch va sifat yotadi",
@@ -259,7 +259,7 @@ const About = () => {
     p1Desc: "Har bir muolaja chuqur ko‘rik asosida xatosiz rejalashtiriladi.",
     p2Title: "Mutlaqo Og‘riqsiz Muolaja",
     p2Desc: "Innovatsion anestetik vositalar bilan muolajalar qulay o‘tadi.",
-    p3Title: "5 Bosqichli Sterillik",
+    p3Title: "100% Sterillik va Xavfsizlik",
     p3Desc: "Xalqaro avtoklav sterilizatsiyasi va qat’iy nazorat.",
     p4Title: "Shaffof va Halol Xizmat",
     p4Desc: "Barcha narxlar va muddatlar muolajadan oldin ochiq kelishiladi.",
@@ -278,12 +278,12 @@ const About = () => {
     step4Num: "04",
     step4Title: "Doimiy g‘amxo‘rlik va kafolat",
     step4Desc: "Profilaktik tavsiyalar va shifokor nazorati.",
-    techTag: "ZAMONAVIY USKUNALAR",
+    techTag: "ZAMONAVIY QULAYLIKLAR",
     techTitle: "Klinikamizning qulayliklari va jihozlari",
     techDesc: "Biz faqat sifatli stomatologik materiallardan foydalanamiz.",
     t1: "Sifatli Sirkoniy va Vinirlar",
     t2: "Zamonaviy Anesteziya va Og‘riqsiz Tizim",
-    t3: "Lazerli tish davolash",
+    t3: "Breketlar va elaynerlar",
     t4: "Avtomatlashtirilgan bemor kabineti",
     specsTag: "MUTAXASSISLIKLAR",
     specsTitle: "Klinikamizning asosiy xizmatlari",
@@ -292,16 +292,17 @@ const About = () => {
     bannerTag: "QABULGA YOZILISH",
     bannerTitle: "Bugunoq yangi, nurli tabassum sari qadam tashlang",
     bannerDesc: "Magic Denta shifokorlari sizni qabul qilishga tayyor.",
-    bannerBtn1: "Bog‘lanish",
-    bannerBtn2: "Shifokorlarni ko‘rish",
+    bannerBtn1: "Qabulga yozilish →",
+    bannerBtn2: "Bog‘lanish",
   };
 
   const pillars = [
     {
       title: t.p1Title,
       desc: t.p1Desc,
+      iconBg: "from-[#0F3040] to-[#403D88]",
       icon: (
-        <svg className="w-6 h-6 text-slate-900" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
         </svg>
       ),
@@ -309,8 +310,9 @@ const About = () => {
     {
       title: t.p2Title,
       desc: t.p2Desc,
+      iconBg: "from-[#92003A] to-[#91008D]",
       icon: (
-        <svg className="w-6 h-6 text-slate-900" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
         </svg>
       ),
@@ -318,8 +320,9 @@ const About = () => {
     {
       title: t.p3Title,
       desc: t.p3Desc,
+      iconBg: "from-emerald-700 to-teal-800",
       icon: (
-        <svg className="w-6 h-6 text-slate-900" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
         </svg>
       ),
@@ -327,8 +330,9 @@ const About = () => {
     {
       title: t.p4Title,
       desc: t.p4Desc,
+      iconBg: "from-[#403D88] to-[#1E1733]",
       icon: (
-        <svg className="w-6 h-6 text-slate-900" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
         </svg>
       ),
@@ -348,7 +352,7 @@ const About = () => {
     const el = carouselRef.current;
     if (!el) return undefined;
 
-    const speed = 0.5;
+    const speed = 0.6;
     let rafId;
     let running = true;
 
@@ -387,13 +391,13 @@ const About = () => {
     };
   }, [paused]);
 
-  const handleNavigate = (speciality) => {
+  const handleNavigate = (slug) => {
     window.scrollTo({ top: 0, behavior: "smooth" });
-    navigate(`/dentists/${encodeURIComponent(speciality)}`);
+    navigate(`/services/${slug}`);
   };
 
   return (
-    <>
+    <div className="bg-[#F8F9FD] min-h-screen text-[#0F3040] py-4">
       <Seo
         title={t.seoTitle}
         description={t.seoDesc}
@@ -401,7 +405,7 @@ const About = () => {
         jsonLd={{
           "@context": "https://schema.org",
           "@type": ["Dentist", "MedicalBusiness", "LocalBusiness"],
-          name: "Magic Denta \"МЧЖ\"",
+          name: "Magic Denta",
           url: "https://magicdenta.uz/about",
           logo: "https://magicdenta.uz/logo.png",
           image: "https://magicdenta.uz/logo.png",
@@ -412,8 +416,8 @@ const About = () => {
           address: {
             "@type": "PostalAddress",
             streetAddress: "Bobur shoh koʻchasi, 1B",
-            addressLocality: "Toshkent",
-            addressRegion: "Toshkent",
+            addressLocality: "Andijon",
+            addressRegion: "Andijon",
             postalCode: "170126",
             addressCountry: "UZ"
           },
@@ -422,108 +426,98 @@ const About = () => {
             latitude: 40.749296,
             longitude: 72.360242
           },
-          hasMap: "https://yandex.uz/maps/-/CTgrvSoY",
-          aggregateRating: {
-            "@type": "AggregateRating",
-            ratingValue: "4.9",
-            reviewCount: "43",
-            bestRating: "5",
-            worstRating: "1"
-          },
+          hasMap: "https://yandex.uz/maps/-/CTsybHos",
           sameAs: [
-            "https://yandex.uz/maps/-/CTgrvSoY",
+            "https://yandex.uz/maps/-/CTsybHos",
             "https://www.instagram.com/magic.denta/",
-            "https://www.instagram.com/nodirbek8884/",
-            "https://t.me/magicdenta",
-            "https://api.whatsapp.com/send/?phone=998979908884",
-            "https://viber.click/998979908884"
+            "https://t.me/+998912891514"
           ]
         }}
       />
 
-      <main className="text-left py-4">
+      <main className="text-left">
         {/* ═══════════════════════════════════════════
             SECTION 1: HERO HEADER & CLINIC PORTRAIT
         ═══════════════════════════════════════════ */}
-        <section className="pt-8 pb-16">
+        <section className="pt-6 pb-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid gap-12 lg:grid-cols-12 lg:items-center">
               {/* Left Column: Creative Narrative */}
               <div className="lg:col-span-7 space-y-6">
-                <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-100 border border-slate-200 shadow-sm">
-                  <span className="w-2 h-2 rounded-full bg-slate-900"></span>
-                  <span className="text-[11px] font-extrabold tracking-wider text-slate-700 uppercase">
+                <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-[#403D88]/20 shadow-xs">
+                  <span className="w-2 h-2 rounded-full bg-[#91008D] animate-pulse"></span>
+                  <span className="text-[11px] font-black tracking-wider text-[#403D88] uppercase">
                     {t.badge}
                   </span>
                 </div>
 
-                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black leading-[1.12] tracking-tight text-slate-900">
+                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black leading-[1.12] tracking-tight text-[#0F3040]">
                   {t.heroTitle}
                 </h1>
 
-                <p className="text-base sm:text-lg leading-relaxed text-slate-600 max-w-2xl">
+                <p className="text-base sm:text-lg leading-relaxed text-slate-600 max-w-2xl font-normal">
                   {t.heroDesc}
                 </p>
 
                 <div className="flex flex-wrap items-center gap-3.5 pt-2">
                   <button
                     onClick={() => navigate("/appointment")}
-                    className="px-8 py-3.5 bg-slate-900 hover:bg-black text-white font-bold text-sm rounded-full transition-all shadow-md active:scale-95 flex items-center gap-2"
+                    className="px-8 py-4 bg-gradient-to-r from-[#92003A] to-[#91008D] hover:shadow-glow-wine text-white font-black text-xs uppercase tracking-wider rounded-full transition-all shadow-md active:scale-95 flex items-center gap-2 cursor-pointer"
                   >
-                    <span>{t.btnDoctors}</span>
+                    <span>{t.btnBook}</span>
                     <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                     </svg>
                   </button>
-                  <a
-                    href="#contact-section"
-                    className="px-8 py-3.5 bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold text-sm rounded-full transition-all border border-slate-200 active:scale-95"
+                  <button
+                    onClick={() => navigate("/services")}
+                    className="px-8 py-4 bg-white hover:bg-slate-50 text-[#0F3040] font-bold text-xs uppercase tracking-wider rounded-full transition-all border border-slate-200 shadow-xs active:scale-95 cursor-pointer"
                   >
-                    {t.btnBook}
-                  </a>
+                    {t.btnServices}
+                  </button>
                 </div>
 
                 {/* 4 Quick Stat Pills */}
-                <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-6 border-t border-slate-100">
-                  <div className="p-3 rounded-2xl bg-slate-50 border border-slate-100">
-                    <p className="text-2xl font-black text-slate-900">{t.stat1Val}</p>
-                    <p className="text-xs font-semibold text-slate-500 mt-0.5 leading-tight">{t.stat1Lbl}</p>
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-6 border-t border-slate-200/80">
+                  <div className="p-4 rounded-2xl bg-white border border-slate-200/90 shadow-card-clean hover:-translate-y-1 transition-transform">
+                    <p className="text-2xl font-black text-[#0F3040]">{t.stat1Val}</p>
+                    <p className="text-xs font-bold text-slate-500 mt-1 leading-tight">{t.stat1Lbl}</p>
                   </div>
-                  <div className="p-3 rounded-2xl bg-slate-50 border border-slate-100">
-                    <p className="text-2xl font-black text-slate-900">{t.stat2Val}</p>
-                    <p className="text-xs font-semibold text-slate-500 mt-0.5 leading-tight">{t.stat2Lbl}</p>
+                  <div className="p-4 rounded-2xl bg-white border border-slate-200/90 shadow-card-clean hover:-translate-y-1 transition-transform">
+                    <p className="text-2xl font-black text-[#92003A]">{t.stat2Val}</p>
+                    <p className="text-xs font-bold text-slate-500 mt-1 leading-tight">{t.stat2Lbl}</p>
                   </div>
-                  <div className="p-3 rounded-2xl bg-slate-50 border border-slate-100">
-                    <p className="text-2xl font-black text-slate-900">{t.stat3Val}</p>
-                    <p className="text-xs font-semibold text-slate-500 mt-0.5 leading-tight">{t.stat3Lbl}</p>
+                  <div className="p-4 rounded-2xl bg-white border border-slate-200/90 shadow-card-clean hover:-translate-y-1 transition-transform">
+                    <p className="text-2xl font-black text-emerald-600">{t.stat3Val}</p>
+                    <p className="text-xs font-bold text-slate-500 mt-1 leading-tight">{t.stat3Lbl}</p>
                   </div>
-                  <div className="p-3 rounded-2xl bg-slate-50 border border-slate-100">
-                    <p className="text-2xl font-black text-slate-900">{t.stat4Val}</p>
-                    <p className="text-xs font-semibold text-slate-500 mt-0.5 leading-tight">{t.stat4Lbl}</p>
+                  <div className="p-4 rounded-2xl bg-white border border-slate-200/90 shadow-card-clean hover:-translate-y-1 transition-transform">
+                    <p className="text-2xl font-black text-[#403D88]">{t.stat4Val}</p>
+                    <p className="text-xs font-bold text-slate-500 mt-1 leading-tight">{t.stat4Lbl}</p>
                   </div>
                 </div>
               </div>
 
-              {/* Right Column: Framed Authentic Building Photo */}
+              {/* Right Column: Framed 3D Building Photo */}
               <div className="lg:col-span-5">
-                <div className="rounded-[36px] bg-white p-3.5 border border-slate-100 shadow-2xl relative group">
-                  <div className="relative h-[360px] sm:h-[430px] w-full rounded-[28px] overflow-hidden bg-slate-100 shadow-inner">
+                <div className="rounded-[36px] bg-gradient-to-br from-[#0F3040] via-[#1E1733] to-[#321E48] p-3 border border-[#403D88]/30 shadow-2xl relative group hover:-translate-y-2 transition-all duration-500">
+                  <div className="relative h-[380px] sm:h-[450px] w-full rounded-[28px] overflow-hidden bg-slate-900 shadow-inner">
                     <img
                       src={assets.about_img}
-                      alt="Magic Denta binosi"
+                      alt="Magic Denta klinikasi"
                       className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                     />
 
                     {/* Bottom floating badge */}
-                    <div className="absolute bottom-4 left-4 right-4 bg-slate-900/90 backdrop-blur-md rounded-2xl p-4 text-white flex items-center gap-3.5 border border-white/10 shadow-xl">
-                      <div className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center shrink-0">
-                        <svg className="w-5 h-5 text-amber-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <div className="absolute bottom-4 left-4 right-4 bg-[#0F3040]/90 backdrop-blur-md rounded-2xl p-4 text-white flex items-center gap-3.5 border border-white/20 shadow-xl">
+                      <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#92003A] to-[#91008D] flex items-center justify-center shrink-0 shadow-md">
+                        <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                         </svg>
                       </div>
                       <div className="truncate">
-                        <p className="text-[10px] font-extrabold uppercase tracking-wider text-slate-400">Magic Denta</p>
+                        <p className="text-[10px] font-black uppercase tracking-wider text-slate-300">Magic Denta Markazi</p>
                         <p className="text-xs font-bold text-white truncate">{t.clinicAddress}</p>
                       </div>
                     </div>
@@ -537,16 +531,16 @@ const About = () => {
         {/* ═══════════════════════════════════════════
             SECTION 2: 4 CLINICAL PILLARS
         ═══════════════════════════════════════════ */}
-        <section className="py-16 bg-slate-50/70 border-y border-slate-100">
+        <section className="py-20 bg-white border-y border-slate-200/80">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-3xl mx-auto mb-14">
-              <span className="text-xs font-extrabold text-slate-400 uppercase tracking-widest block mb-2">
+              <span className="text-xs font-black text-[#403D88] uppercase tracking-widest block mb-2">
                 {t.pillarsTag}
               </span>
-              <h2 className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight leading-tight">
+              <h2 className="text-3xl sm:text-4xl font-black text-[#0F3040] tracking-tight leading-tight">
                 {t.pillarsTitle}
               </h2>
-              <p className="mt-3 text-sm sm:text-base leading-relaxed text-slate-500">
+              <p className="mt-3 text-sm sm:text-base leading-relaxed text-slate-600 font-normal">
                 {t.pillarsDesc}
               </p>
             </div>
@@ -555,16 +549,16 @@ const About = () => {
               {pillars.map((item, idx) => (
                 <div
                   key={idx}
-                  className="rounded-[30px] bg-white p-7 border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between"
+                  className="rounded-[30px] bg-[#F8F9FD] p-7 border border-slate-200/80 shadow-card-clean hover:shadow-2xl hover:-translate-y-2 hover:border-[#403D88]/40 transition-all duration-300 flex flex-col justify-between group"
                 >
                   <div>
-                    <div className="w-12 h-12 rounded-2xl bg-slate-100 flex items-center justify-center mb-6 shadow-sm">
+                    <div className={`w-12 h-12 rounded-2xl bg-gradient-to-br ${item.iconBg} flex items-center justify-center mb-6 shadow-md border border-white/20 group-hover:scale-110 transition-transform`}>
                       {item.icon}
                     </div>
-                    <h3 className="text-lg font-black tracking-tight text-slate-900 mb-2.5">
+                    <h3 className="text-lg font-black tracking-tight text-[#0F3040] mb-2.5">
                       {item.title}
                     </h3>
-                    <p className="text-xs sm:text-sm leading-relaxed text-slate-500">
+                    <p className="text-xs sm:text-sm leading-relaxed text-slate-600 font-normal">
                       {item.desc}
                     </p>
                   </div>
@@ -577,17 +571,17 @@ const About = () => {
         {/* ═══════════════════════════════════════════
             SECTION 3: 4-STEP PATIENT JOURNEY
         ═══════════════════════════════════════════ */}
-        <section className="py-16">
+        <section className="py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="rounded-[36px] bg-white border border-slate-100 p-8 sm:p-12 shadow-sm">
+            <div className="rounded-[40px] bg-white border border-slate-200/90 p-8 sm:p-14 shadow-card-clean">
               <div className="text-left max-w-2xl mb-12">
-                <span className="text-xs font-extrabold text-slate-400 uppercase tracking-widest block mb-2">
+                <span className="text-xs font-black text-[#403D88] uppercase tracking-widest block mb-2">
                   {t.journeyTag}
                 </span>
-                <h2 className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight leading-tight">
+                <h2 className="text-3xl sm:text-4xl font-black text-[#0F3040] tracking-tight leading-tight">
                   {t.journeyTitle}
                 </h2>
-                <p className="mt-3 text-sm sm:text-base leading-relaxed text-slate-500">
+                <p className="mt-3 text-sm sm:text-base leading-relaxed text-slate-600 font-normal">
                   {t.journeyDesc}
                 </p>
               </div>
@@ -596,16 +590,16 @@ const About = () => {
                 {steps.map((step, idx) => (
                   <div
                     key={idx}
-                    className="p-6 rounded-[26px] bg-slate-50/70 border border-slate-100 hover:bg-slate-100/80 transition-all duration-300 flex flex-col justify-between"
+                    className="p-6 sm:p-7 rounded-[28px] bg-slate-50 border border-slate-200/80 hover:bg-white hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group"
                   >
                     <div>
-                      <span className="text-2xl font-black text-slate-300 block mb-4">
+                      <span className="text-3xl font-black text-slate-300 group-hover:text-[#92003A] transition-colors block mb-4">
                         {step.num}
                       </span>
-                      <h3 className="text-base font-black text-slate-900 mb-2">
+                      <h3 className="text-base font-black text-[#0F3040] mb-2">
                         {step.title}
                       </h3>
-                      <p className="text-xs sm:text-sm leading-relaxed text-slate-500">
+                      <p className="text-xs sm:text-sm leading-relaxed text-slate-600 font-normal">
                         {step.desc}
                       </p>
                     </div>
@@ -617,38 +611,38 @@ const About = () => {
         </section>
 
         {/* ═══════════════════════════════════════════
-            SECTION 4: 3D SPECIALTIES CAROUSEL
+            SECTION 4: 3D SPECIALTIES MARQUEE
         ═══════════════════════════════════════════ */}
-        <section className="py-16 bg-slate-50/70 border-y border-slate-100">
+        <section className="py-20 bg-white border-y border-slate-200/80">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-8">
               <div className="max-w-2xl text-left">
-                <span className="text-xs font-extrabold text-slate-400 uppercase tracking-widest block mb-2">
+                <span className="text-xs font-black text-[#403D88] uppercase tracking-widest block mb-2">
                   {t.specsTag}
                 </span>
-                <h2 className="text-3xl sm:text-4xl font-black tracking-tight text-slate-900">
+                <h2 className="text-3xl sm:text-4xl font-black tracking-tight text-[#0F3040]">
                   {t.specsTitle}
                 </h2>
-                <p className="mt-3 text-sm sm:text-base leading-relaxed text-slate-500">
+                <p className="mt-3 text-sm sm:text-base leading-relaxed text-slate-600 font-normal">
                   {t.specsDesc}
                 </p>
               </div>
 
               <Link
-                to="/appointment"
-                className="px-6 py-2.5 bg-white border border-slate-200 text-slate-800 font-bold rounded-full hover:bg-slate-50 transition text-sm shadow-sm self-start sm:self-auto"
+                to="/services"
+                className="px-6 py-3 bg-[#0F3040] hover:bg-[#321E48] text-white text-xs font-black uppercase tracking-wider rounded-full transition shadow-sm self-start sm:self-auto cursor-pointer"
               >
                 {t.viewAll}
               </Link>
             </div>
 
-            <div className="overflow-hidden relative mt-6">
-              <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-12 bg-gradient-to-r from-slate-50 to-transparent" />
-              <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-12 bg-gradient-to-l from-slate-50 to-transparent" />
+            <div className="overflow-hidden relative mt-8">
+              <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-16 bg-gradient-to-r from-white to-transparent" />
+              <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 bg-gradient-to-l from-white to-transparent" />
 
               <ul
                 ref={carouselRef}
-                className="flex gap-5 overflow-x-auto px-1 py-3 cursor-grab active:cursor-grabbing scrollbar-none"
+                className="flex gap-5 overflow-x-auto px-1 py-4 cursor-grab active:cursor-grabbing scrollbar-none"
                 style={{
                   msOverflowStyle: "none",
                   scrollbarWidth: "none",
@@ -658,29 +652,29 @@ const About = () => {
                   const displayTitle = item.displayName?.[lang] || item.speciality;
                   return (
                     <li
-                      key={`${item.speciality}-${index}`}
-                      className="w-[15rem] shrink-0"
+                      key={`${item.slug}-${index}`}
+                      className="w-[16rem] shrink-0"
                     >
                       <button
                         type="button"
-                        onClick={() => handleNavigate(item.speciality)}
-                        className="group flex min-h-[220px] w-full flex-col items-center justify-between rounded-[28px] border border-slate-100 bg-white p-5 text-center shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-md"
+                        onClick={() => handleNavigate(item.slug)}
+                        className="group flex min-h-[240px] w-full flex-col items-center justify-between rounded-[30px] border border-slate-200/90 bg-[#F8F9FD] p-6 text-center shadow-card-clean transition duration-300 hover:-translate-y-2 hover:shadow-2xl hover:bg-white hover:border-[#403D88]/40 cursor-pointer"
                       >
-                        <div className="w-20 h-20 rounded-[22px] bg-[#0D1117] flex items-center justify-center shadow-md overflow-hidden group-hover:scale-105 transition-transform duration-300">
+                        <div className="w-20 h-20 rounded-[22px] bg-gradient-to-br from-[#0F3040] to-[#321E48] p-1 flex items-center justify-center shadow-md overflow-hidden group-hover:scale-110 transition-transform duration-300">
                           <img
                             src={item.image}
                             alt={displayTitle}
-                            className="w-full h-full object-cover"
+                            className="w-full h-full object-cover rounded-[18px]"
                           />
                         </div>
 
-                        <h3 className="mt-4 text-sm font-bold leading-tight text-slate-800 group-hover:text-black transition-colors">
+                        <h3 className="mt-4 text-sm font-black leading-tight text-[#0F3040] group-hover:text-[#92003A] transition-colors">
                           {displayTitle}
                         </h3>
 
-                        <span className="text-[11px] font-bold text-slate-400 group-hover:text-slate-900 mt-2 flex items-center gap-1 transition-colors">
-                          <span>{t.viewAll}</span>
-                          <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <span className="text-[11px] font-black uppercase tracking-wider text-[#403D88] group-hover:text-[#91008D] mt-2 flex items-center gap-1 transition-colors">
+                          <span>Batafsil ko‘rish</span>
+                          <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
                           </svg>
                         </span>
@@ -696,18 +690,21 @@ const About = () => {
         {/* ═══════════════════════════════════════════
             SECTION 5: MODERN EQUIPMENT & COMFORT
         ═══════════════════════════════════════════ */}
-        <section className="py-16">
+        <section className="py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="rounded-[36px] bg-slate-900 text-white p-8 sm:p-12 shadow-2xl relative overflow-hidden">
-              <div className="grid gap-10 lg:grid-cols-12 items-center">
+            <div className="rounded-[40px] bg-gradient-to-br from-[#0F3040] via-[#1E1733] to-[#321E48] text-white p-8 sm:p-14 shadow-2xl relative overflow-hidden border border-[#403D88]/40">
+              <div className="absolute top-0 right-0 w-96 h-96 rounded-full bg-[#92003A]/20 blur-3xl pointer-events-none" />
+              <div className="absolute bottom-0 left-0 w-96 h-96 rounded-full bg-[#403D88]/25 blur-3xl pointer-events-none" />
+
+              <div className="relative z-10 grid gap-10 lg:grid-cols-12 items-center">
                 <div className="lg:col-span-6 space-y-4 text-left">
-                  <span className="text-xs font-bold uppercase tracking-widest text-amber-300">
+                  <span className="text-xs font-black uppercase tracking-widest text-[#E8D5F5]">
                     {t.techTag}
                   </span>
                   <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black tracking-tight text-white leading-tight">
                     {t.techTitle}
                   </h2>
-                  <p className="text-sm sm:text-base text-slate-300 leading-relaxed">
+                  <p className="text-sm sm:text-base text-slate-300 leading-relaxed font-normal">
                     {t.techDesc}
                   </p>
                 </div>
@@ -716,14 +713,14 @@ const About = () => {
                   {[t.t1, t.t2, t.t3, t.t4].map((tech, i) => (
                     <div
                       key={i}
-                      className="p-4 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm flex items-start gap-3"
+                      className="p-5 rounded-2xl bg-white/[0.07] border border-white/15 backdrop-blur-sm flex items-start gap-3 hover:bg-white/[0.12] transition-all"
                     >
-                      <div className="w-6 h-6 rounded-full bg-white/10 text-amber-300 flex items-center justify-center shrink-0 mt-0.5">
+                      <div className="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-300 flex items-center justify-center shrink-0 mt-0.5">
                         <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
                         </svg>
                       </div>
-                      <span className="text-xs sm:text-sm font-semibold text-slate-200 text-left leading-snug">
+                      <span className="text-xs sm:text-sm font-bold text-slate-200 text-left leading-snug">
                         {tech}
                       </span>
                     </div>
@@ -736,33 +733,33 @@ const About = () => {
 
         {/* ═══════════════════════════════════════════
             SECTION 6: CALL TO ACTION BANNER
-        ══════════════════════════════════════════ */}
-        <section id="contact-section" className="pb-16 pt-2">
+        ═══════════════════════════════════════════ */}
+        <section id="contact-section" className="pb-20 pt-2">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="overflow-hidden rounded-[36px] bg-gradient-to-r from-[#0f1011] via-[#141517] to-[#1a1b1e] px-8 py-10 text-white shadow-xl sm:px-12 sm:py-14 border border-white/10">
-              <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
-                <div className="max-w-2xl text-left">
-                  <span className="text-xs font-bold uppercase tracking-widest text-amber-200/90">
+            <div className="overflow-hidden rounded-[40px] bg-gradient-to-r from-[#92003A] via-[#5C1A4A] to-[#321E48] px-8 py-12 text-white shadow-glow-wine sm:px-14 sm:py-16 border border-white/20">
+              <div className="flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
+                <div className="max-w-2xl text-left space-y-3">
+                  <span className="text-xs font-black uppercase tracking-widest text-[#E8D5F5]">
                     {t.bannerTag}
                   </span>
-                  <h2 className="mt-3 text-2xl font-black tracking-tight sm:text-3xl lg:text-4xl leading-tight text-white">
+                  <h2 className="text-2xl font-black tracking-tight sm:text-3xl lg:text-4xl leading-tight text-white">
                     {t.bannerTitle}
                   </h2>
-                  <p className="mt-3 text-sm leading-relaxed text-slate-300 sm:text-base">
+                  <p className="text-sm leading-relaxed text-slate-200 sm:text-base font-normal">
                     {t.bannerDesc}
                   </p>
                 </div>
 
-                <div className="flex flex-col gap-3 sm:flex-row">
+                <div className="flex flex-col gap-3 sm:flex-row shrink-0">
                   <Link
                     to="/appointment"
-                    className="inline-flex items-center justify-center rounded-full bg-white px-8 py-3.5 text-sm font-bold text-slate-900 transition hover:bg-slate-100 shadow-md active:scale-95"
+                    className="inline-flex items-center justify-center rounded-full bg-white px-8 py-4 text-xs sm:text-sm font-black uppercase tracking-wider text-[#0F3040] transition hover:bg-slate-100 shadow-md active:scale-95 cursor-pointer"
                   >
                     {t.bannerBtn1}
                   </Link>
                   <Link
-                    to="/appointment"
-                    className="inline-flex items-center justify-center rounded-full border border-white/20 bg-white/10 px-8 py-3.5 text-sm font-bold text-white backdrop-blur-sm transition hover:bg-white/20 active:scale-95"
+                    to="/contact"
+                    className="inline-flex items-center justify-center rounded-full border border-white/30 bg-white/10 px-8 py-4 text-xs sm:text-sm font-black uppercase tracking-wider text-white backdrop-blur-sm transition hover:bg-white/20 active:scale-95 cursor-pointer"
                   >
                     {t.bannerBtn2}
                   </Link>
@@ -772,7 +769,7 @@ const About = () => {
           </div>
         </section>
       </main>
-    </>
+    </div>
   );
 };
 
