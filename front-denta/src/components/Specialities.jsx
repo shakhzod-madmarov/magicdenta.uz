@@ -32,50 +32,35 @@ const Specialities = () => {
   };
 
   const descriptions = {
-    "Ayol stomatolog": {
-      uz: "Ayollar va qizlar uchun qulay hamda alohida xotirjam qabul.",
-      ru: "Деликатный и комфортный прием для женщин и девушек.",
-      en: "Comfortable and personalized consultations for female patients.",
+    "Ortodontiya": {
+      uz: "Tishlar qatorini zamonaviy breketlar va elaynerlar bilan tekislash.",
+      ru: "Выравнивание зубов современными брекетами и элайнерами.",
+      en: "Teeth straightening with modern braces and aligners.",
     },
     "Terapevtik stomatologiya": {
-      uz: "Kariesni og‘riqsiz davolash va sifatli plombalash.",
-      ru: "Безболезненное лечение кариеса и пломбирование.",
-      en: "Pain-free caries treatment and durable fillings.",
-    },
-    "Terapevtik stomatologiy": {
-      uz: "Kariesni og‘riqsiz davolash va sifatli plombalash.",
-      ru: "Безболезненное лечение кариеса и пломбирование.",
-      en: "Pain-free caries treatment and durable fillings.",
-    },
-    "Ortodontiya": {
-      uz: "Tishlar qatorini zamonaviy breketlar bilan tekislash.",
-      ru: "Выравнивание зубов современными брекетами.",
-      en: "Teeth straightening with modern braces.",
+      uz: "Kariesni og‘riqsiz davolash va sifatli estetik plombalash.",
+      ru: "Безболезненное лечение кариеса и эстетическое пломбирование.",
+      en: "Pain-free caries treatment and durable aesthetic fillings.",
     },
     "Ortopedik stomatologiya": {
-      uz: "Sirkoniy qoplamalar, vinirlar va sifatli protezlar.",
-      ru: "Циркониевые коронки, виниры и протезирование.",
-      en: "Zirconia crowns, veneers, and prosthetics.",
-    },
-    "Stomatologiya Jarrohligi": {
-      uz: "Aql tishlarini og‘riqsiz olish va jarrohlik amaliyoti.",
-      ru: "Безболезненное удаление зубов и хирургия.",
-      en: "Gentle tooth extractions and oral surgery.",
-    },
-    "Bolalar stomatologiyasi": {
-      uz: "Kichkintoylar uchun qo‘rquvsiz va og‘riqsiz tish davolash.",
-      ru: "Лечение зубов для детей без страха и боли.",
-      en: "Fear-free and friendly dental care for children.",
-    },
-    "Implantologiya": {
-      uz: "Yo‘qotilgan tishlarni mustahkam implant bilan tiklash.",
-      ru: "Надежная имплантация и восстановление зубов.",
-      en: "Permanent restoration with premium implants.",
+      uz: "Sirkoniy qoplamalar, vinirlar va zamonaviy protezlash.",
+      ru: "Циркониевые коронки, виниры и современное протезирование.",
+      en: "Zirconia crowns, veneers, and advanced prosthetics.",
     },
     "Estetik stomatologiya": {
-      uz: "Tabassum dizayni va tishlarni xavfsiz oqartirish.",
-      ru: "Дизайн улыбки и безопасное отбеливание.",
-      en: "Smile design and professional whitening.",
+      uz: "Mukammal tabassum dizayni va tishlarni xavfsiz oqartirish.",
+      ru: "Дизайн улыбки и безопасное профессиональное отбеливание.",
+      en: "Smile design and professional tooth whitening.",
+    },
+    "Stomatologiya Jarrohligi": {
+      uz: "Aql tishlarini og‘riqsiz olish va muloyim jarrohlik amaliyotlari.",
+      ru: "Безболезненное удаление зубов и бережная хирургия.",
+      en: "Gentle tooth extractions and oral surgery.",
+    },
+    "Jarrohlik stomatologiyasi": {
+      uz: "Aql tishlarini og‘riqsiz olish va muloyim jarrohlik amaliyotlari.",
+      ru: "Безболезненное удаление зубов и бережная хирургия.",
+      en: "Gentle tooth extractions and oral surgery.",
     },
   };
 

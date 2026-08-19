@@ -35,13 +35,11 @@ const AddDentist = () => {
   const { backendUrl, aToken } = useContext(AdminContext);
 
   const specialityOptions = [
-    "Terapevtik stomatologiya",
     "Ortodontiya",
+    "Terapevtik stomatologiya",
     "Ortopedik stomatologiya",
-    "Stomatologiya Jarrohligi",
-    "Bolalar stomatologiyasi",
-    "Implantologiya",
     "Estetik stomatologiya",
+    "Stomatologiya Jarrohligi",
   ];
 
   const nameRegex = /^[A-Za-zÀ-ÖØ-öø-ÿ\u0400-\u04FF\s'-]+$/u;

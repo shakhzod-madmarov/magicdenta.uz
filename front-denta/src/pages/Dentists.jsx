@@ -4,14 +4,11 @@ import { AppContext } from "../context/AppContext";
 import Seo from "../components/Seo";
 
 const specialityList = [
-  "Ayol stomatolog",
-  "Terapevtik stomatologiya",
   "Ortodontiya",
+  "Terapevtik stomatologiya",
   "Ortopedik stomatologiya",
-  "Stomatologiya Jarrohligi",
-  "Bolalar stomatologiyasi",
-  "Implantologiya",
   "Estetik stomatologiya",
+  "Stomatologiya Jarrohligi",
 ];
 
 const normalize = (s = "") => s.toString().trim().toLowerCase();
@@ -80,26 +77,20 @@ const Dentists = () => {
     setSelectedSpeciality(param);
 
     if (param) {
-      if (normalize(param) === normalize("Ayol stomatolog")) {
-        setFilteredDentists(
-          (dentists || []).filter((d) => d.gender === "female"),
-        );
-      } else {
-        setFilteredDentists(
-          (dentists || []).filter((d) => {
-            if (!d.speciality) return false;
-            const specs = Array.isArray(d.speciality)
-              ? d.speciality
-              : [d.speciality];
-            const paramNorm = normalize(param);
-            return specs.some(
-              (spec) =>
-                normalize(spec).includes(paramNorm) ||
-                paramNorm.includes(normalize(spec)),
-            );
-          }),
-        );
-      }
+      setFilteredDentists(
+        (dentists || []).filter((d) => {
+          if (!d.speciality) return false;
+          const specs = Array.isArray(d.speciality)
+            ? d.speciality
+            : [d.speciality];
+          const paramNorm = normalize(param);
+          return specs.some(
+            (spec) =>
+              normalize(spec).includes(paramNorm) ||
+              paramNorm.includes(normalize(spec)),
+          );
+        }),
+      );
     } else {
       setFilteredDentists(dentists || []);
     }
