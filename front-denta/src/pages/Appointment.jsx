@@ -206,7 +206,7 @@ const Appointment = () => {
           "telephone": ["+998912891514", "+998905429303"],
           "address": {
             "@type": "PostalAddress",
-            "streetAddress": "Magic Denta Klinikasi",
+            "streetAddress": "Bobur shoh koʻchasi, 1B",
             "addressLocality": "Toshkent",
             "addressRegion": "Toshkent",
             "postalCode": "170126",
@@ -214,8 +214,8 @@ const Appointment = () => {
           },
           "geo": {
             "@type": "GeoCoordinates",
-            "latitude": 40.752584,
-            "longitude": 72.370230
+            "latitude": 40.749296,
+            "longitude": 72.360242
           }
         }
       }

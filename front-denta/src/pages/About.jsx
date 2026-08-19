@@ -28,7 +28,7 @@ const About = () => {
       stat4Val: "24/7",
       stat4Lbl: "Onlayn yordam va konsultatsiya",
 
-      clinicAddress: "Magic Denta Klinikasi",
+      clinicAddress: "Bobur shoh koʻchasi, 1B",
 
       pillarsTag: "BIZNING FALSAFAMIZ",
       pillarsTitle: "Har bir tabassum ortida ishonch va sifat yotadi",
@@ -178,7 +178,7 @@ const About = () => {
       stat4Val: "24/7",
       stat4Lbl: "Online Booking & Support",
 
-      clinicAddress: "Magic Denta Klinikasi",
+      clinicAddress: "Bobur shoh koʻchasi, 1B",
 
       pillarsTag: "OUR PHILOSOPHY",
       pillarsTitle: "Behind Every Smile Lies Trust and Excellence",
@@ -251,7 +251,7 @@ const About = () => {
     stat3Lbl: "Og‘riqsiz muolaja",
     stat4Val: "24/7",
     stat4Lbl: "Onlayn yordam",
-    clinicAddress: "Magic Denta Klinikasi",
+    clinicAddress: "Bobur shoh koʻchasi, 1B",
     pillarsTag: "BIZNING FALSAFAMIZ",
     pillarsTitle: "Har bir tabassum ortida ishonch va sifat yotadi",
     pillarsDesc: "Magic Denta har bir bemorga o‘z oila a’zosidek e’tibor qaratadi.",
@@ -411,7 +411,7 @@ const About = () => {
           openingHours: "Mo-Su 00:00-23:59",
           address: {
             "@type": "PostalAddress",
-            streetAddress: "Magic Denta Klinikasi",
+            streetAddress: "Bobur shoh koʻchasi, 1B",
             addressLocality: "Toshkent",
             addressRegion: "Toshkent",
             postalCode: "170126",
@@ -419,8 +419,8 @@ const About = () => {
           },
           geo: {
             "@type": "GeoCoordinates",
-            latitude: 40.752584,
-            longitude: 72.370230
+            latitude: 40.749296,
+            longitude: 72.360242
           },
           hasMap: "https://yandex.uz/maps/-/CTgrvSoY",
           aggregateRating: {

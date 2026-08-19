@@ -110,7 +110,7 @@ const ServiceLanding = () => {
       "telephone": "+998979908884",
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "Magic Denta Klinikasi",
+        "streetAddress": "Bobur shoh koʻchasi, 1B",
         "addressLocality": "Toshkent",
         "addressRegion": "Toshkent",
         "postalCode": "170126",
@@ -118,8 +118,8 @@ const ServiceLanding = () => {
       },
       "geo": {
         "@type": "GeoCoordinates",
-        "latitude": 40.752584,
-        "longitude": 72.370230
+        "latitude": 40.749296,
+        "longitude": 72.360242
       }
     }
   };
@@ -242,7 +242,7 @@ const ServiceLanding = () => {
               Sog'lom va go'zal tabassumingizni mutaxassislarga ishonib topshiring
             </h3>
             <p className="text-sm text-slate-600">
-              Manzil: Magic Denta Klinikasi (Mo'ljal: Semashka, Toshkent-strit)
+              Manzil: Bobur shoh koʻchasi, 1B (Mo'ljal: Semashka, Toshkent-strit)
             </p>
           </div>
           <button

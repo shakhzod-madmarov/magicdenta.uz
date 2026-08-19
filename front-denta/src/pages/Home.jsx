@@ -19,7 +19,7 @@ const Home = () => {
     openingHours: "Mo-Su 00:00-23:59",
     address: {
       "@type": "PostalAddress",
-      streetAddress: "Magic Denta Klinikasi",
+      streetAddress: "Bobur shoh koʻchasi, 1B",
       addressLocality: "Toshkent",
       addressRegion: "Toshkent",
       postalCode: "170126",
@@ -27,8 +27,8 @@ const Home = () => {
     },
     geo: {
       "@type": "GeoCoordinates",
-      latitude: 40.752584,
-      longitude: 72.370230
+      latitude: 40.749296,
+      longitude: 72.360242
     },
     hasMap: "https://yandex.uz/maps/-/CTgrvSoY",
     aggregateRating: {
@@ -61,7 +61,7 @@ const Home = () => {
     <>
       <Seo
         title="Magic Denta | Zamonaviy stomatologiya klinikasi"
-        description="Magic Denta — tajribali stomatologlar, sifatli tish davolash, zamonaviy uskunalar va qulay onlayn xizmatlar. Manzil: Magic Denta Klinikasi."
+        description="Magic Denta — tajribali stomatologlar, sifatli tish davolash, zamonaviy uskunalar va qulay onlayn xizmatlar. Manzil: Bobur shoh koʻchasi, 1B."
         canonicalPath="/"
         jsonLd={jsonLd}
       />

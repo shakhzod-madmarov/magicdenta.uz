@@ -31,13 +31,13 @@ const Footer = () => {
           </h3>
           <div className="flex flex-col gap-2.5 text-slate-600 text-sm">
             <a
-              href="https://magicdenta.uz"
+              href="https://yandex.uz/maps/-/CTsybHos"
               target="_blank"
               rel="noopener noreferrer"
               className="text-xs text-slate-500 hover:text-slate-900 transition leading-relaxed flex items-center gap-1.5"
-              title="Yandex Xaritada ko‘rish (40.752584, 72.370230)"
+              title="Yandex Xaritada ko‘rish (40.749296, 72.360242)"
             >
-              <span>Magic Denta Klinikasi</span>
+              <span>Bobur shoh koʻchasi, 1B</span>
             </a>
             <a
               href="tel:+998912891514"

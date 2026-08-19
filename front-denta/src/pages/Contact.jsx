@@ -117,7 +117,7 @@ const Contact = () => {
           openingHours: "Mo-Su 00:00-23:59",
           address: {
             "@type": "PostalAddress",
-            streetAddress: "Magic Denta Klinikasi",
+            streetAddress: "Bobur shoh koʻchasi, 1B",
             addressLocality: "Toshkent",
             addressRegion: "Toshkent",
             postalCode: "170126",
@@ -178,7 +178,7 @@ const Contact = () => {
               <div className="flex flex-col">
                 <span className="text-[10px] text-neutral-400 font-bold uppercase tracking-wider">Manzil</span>
                 <span className="font-semibold text-neutral-900">
-                  Magic Denta Klinikasi
+                  Bobur shoh koʻchasi, 1B
                 </span>
               </div>
             </div>
@@ -307,18 +307,18 @@ const Contact = () => {
           </div>
 
           {/* Embedded Yandex Map Widget */}
-          <div className="mt-6 rounded-2xl overflow-hidden border border-[#EAE4D5] shadow-sm relative h-[260px]">
+          <div className="mt-6 rounded-2xl overflow-hidden border border-[#EAE4D5] shadow-sm relative h-[300px]">
             <div style={{ position: "relative", overflow: "hidden" }} className="w-full h-full">
-              <a href="https://yandex.uz/maps/org/mega_dental_house_mchj/60243631862/?utm_medium=mapframe&utm_source=maps" style={{ color: "#eee", fontSize: "12px", position: "absolute", top: "0px" }}>Magic Denta Мчж</a>
-              <a href="https://magicdenta.uz" style={{ color: "#eee", fontSize: "12px", position: "absolute", top: "14px" }}>Magic Denta Stomatologiya Klinikasi</a>
+              <a href="https://yandex.uz/maps/org/stomatologiya/216461525511/?utm_medium=mapframe&utm_source=maps" style={{ color: "#eee", fontSize: "12px", position: "absolute", top: "0px" }}>Magic Denta Stomatologiya</a>
+              <a href="https://yandex.uz/maps/10329/andijan/category/dental_clinic/184106132/?utm_medium=mapframe&utm_source=maps" style={{ color: "#eee", fontSize: "12px", position: "absolute", top: "14px" }}>Magic Denta Stomatologiya Klinikasi</a>
               <iframe
-                src="https://yandex.uz/map-widget/v1/?ll=72.370247%2C40.752538&mode=search&oid=60243631862&ol=biz&z=16.63"
+                src="https://yandex.uz/map-widget/v1/?display-text=Stomatologiya%20klinikasi&ll=72.360238%2C40.749405&mode=search&oid=216461525511&ol=biz&sctx=ZAAAAAgBEAAaKAoSCWtlwi%2F1FlJAEXo57L5jYERAEhIJ0NA%2FwcWKWj8RVvFG5pE%2FSD8iBgABAgMEBSgKOABA2VBIAWI6cmVhcnI9c2NoZW1lX0xvY2FsL0dlb3VwcGVyL0FkdmVydHMvQ3VzdG9tTWF4YWR2L0VuYWJsZWQ9MWI6cmVhcnI9c2NoZW1lX0xvY2FsL0dlb3VwcGVyL0FkdmVydHMvQ3VzdG9tTWF4YWR2L01heGFkdj0xNWJEcmVhcnI9c2NoZW1lX0xvY2FsL0dlb3VwcGVyL0FkdmVydHMvQ3VzdG9tTWF4YWR2L1JlZ2lvbklkcz1bMSwxMDE3NF1iQHJlYXJyPXNjaGVtZV9Mb2NhbC9HZW91cHBlci9BZHZlcnRzL01heGFkdlRvcE1peC9NYXhhZHZGb3JNaXg9MTBqAnV6nQHNzMw9oAEAqAEAvQHwfftYwgEGh4TzsKYGggIbKChjYXRlZ29yeV9pZDooMTg0MTA2MTMyKSkpigIJMTg0MTA2MTMykgIAmgIMZGVza3RvcC1tYXBz&sll=72.360238%2C40.749405&sspn=0.001632%2C0.000745&text=%7B%22text%22%3A%22Stomatologiya%20klinikasi%22%2C%22what%22%3A%5B%7B%22attr_name%22%3A%22category_id%22%2C%22attr_values%22%3A%5B%22184106132%22%5D%7D%5D%7D&z=19.74"
                 width="100%"
                 height="100%"
                 frameBorder="0"
                 allowFullScreen={true}
                 style={{ position: "relative" }}
-                title="Magic Denta Yandex Map"
+                title="Magic Denta Yandex Xarita"
               ></iframe>
             </div>
           </div>
