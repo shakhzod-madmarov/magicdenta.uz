@@ -55,7 +55,7 @@ const Home = () => {
         {/* <BeforeAfterGallery /> */}
         <SmileQuiz />
         <TechFeatures />
-        <ReviewsTrust />
+        {/* <ReviewsTrust /> */}
         <Banner />
       </main>
     </>
