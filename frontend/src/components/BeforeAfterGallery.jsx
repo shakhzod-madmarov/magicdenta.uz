@@ -226,7 +226,7 @@ const BeforeAfterGallery = () => {
             <button
               type="button"
               onClick={() => {
-                navigate(`/dentists/${encodeURIComponent(currentCase.speciality)}`);
+                navigate("/appointment");
               }}
               className="flex-1 py-4 px-6 rounded-2xl bg-gradient-to-r from-[#92003A] to-[#91008D] hover:shadow-glow-wine text-white font-black text-xs uppercase tracking-wider text-center transition-all shadow-md active:scale-95 cursor-pointer"
             >

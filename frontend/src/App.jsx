@@ -69,6 +69,7 @@ const App = () => {
           <Route path="/xizmatlar/:serviceSlug" element={<ServiceLanding />} />
           <Route path="/login" element={<Login />} />
           <Route path="/myprofile" element={<MyProfile />} />
+          <Route path="/appointment" element={<Appointment />} />
           <Route path="/appointment/:dentistId" element={<Appointment />} />
           <Route path="/my-treatments" element={<MyTreatments />} />
         </Routes>

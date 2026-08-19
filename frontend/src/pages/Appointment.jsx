@@ -70,9 +70,16 @@ const Appointment = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const found = Array.isArray(dentists)
-      ? dentists.find((d) => d._id === dentistId)
-      : null;
+    let found = null;
+    if (Array.isArray(dentists) && dentists.length > 0) {
+      if (dentistId) {
+        found = dentists.find((d) => d._id === dentistId);
+      }
+      // If no dentistId or not found, default to first doctor (dentists[0])
+      if (!found) {
+        found = dentists[0];
+      }
+    }
 
     setSelectedDentist(found || null);
 
@@ -95,10 +102,11 @@ const Appointment = () => {
       setSelectedTime("");
 
       try {
+        const activeDentistId = selectedDentist._id || dentistId;
         const { data } = await axios.get(
           `${backendUrl}/api/user/availability`,
           {
-            params: { dentistID: dentistId, days: 10 },
+            params: { dentistID: activeDentistId, days: 10 },
           },
         );
 
@@ -145,10 +153,11 @@ const Appointment = () => {
     }
 
     try {
+      const activeDentistId = selectedDentist?._id || dentistId;
       const { data } = await axios.post(
         `${backendUrl}/api/user/book-appointment`,
         {
-          dentistID: dentistId,
+          dentistID: activeDentistId,
           slotDate: selectedDay.slotDate,
           slotTime: selectedTime,
         },

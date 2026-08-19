@@ -79,4 +79,22 @@
     <xhtml:link rel="alternate" hreflang="ru" href="https://magicdenta.uz/services/estetik-stomatologiya" />
     <xhtml:link rel="alternate" hreflang="en" href="https://magicdenta.uz/services/estetik-stomatologiya" />
   </url>
+  <url>
+    <loc>https://magicdenta.uz/appointment/6a8600527737dd8aea8b8ead</loc>
+    <lastmod>2026-08-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://magicdenta.uz/appointment/6a8600927737dd8aea8b8ec9</loc>
+    <lastmod>2026-08-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://magicdenta.uz/appointment/6a8600c67737dd8aea8b8edb</loc>
+    <lastmod>2026-08-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
 </urlset>

@@ -217,7 +217,7 @@ const Services = () => {
                     {t.learnMore}
                   </Link>
                   <Link
-                    to="/contact"
+                    to="/appointment"
                     className="px-6 py-3.5 rounded-2xl bg-gradient-to-r from-[#92003A] to-[#91008D] hover:shadow-glow-wine text-white text-xs font-black uppercase tracking-wider transition-all shadow-md active:scale-95 cursor-pointer"
                   >
                     {t.bookDoc}

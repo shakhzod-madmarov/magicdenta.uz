@@ -186,7 +186,7 @@ const ServiceLanding = () => {
             <div className="flex flex-wrap items-center gap-4 pt-4">
               <button
                 type="button"
-                onClick={() => navigate("/contact")}
+                onClick={() => navigate("/appointment")}
                 className="px-8 py-4 rounded-full bg-gradient-to-r from-[#92003A] to-[#91008D] hover:shadow-glow-wine text-white text-xs sm:text-sm font-black uppercase tracking-wider transition-all shadow-md active:scale-95 cursor-pointer"
               >
                 Qabulga yozilish →

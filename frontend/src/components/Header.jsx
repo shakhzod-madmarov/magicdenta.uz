@@ -221,7 +221,7 @@ const Header = () => {
             <div className="flex flex-wrap items-center gap-3.5 pt-2">
               <button
                 type="button"
-                onClick={() => navigate("/contact")}
+                onClick={() => navigate("/appointment")}
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-gradient-to-r from-[#92003A] to-[#91008D] hover:shadow-glow-wine text-white text-sm font-extrabold shadow-md hover:scale-[1.02] active:scale-95 transition-all duration-200 cursor-pointer"
               >
                 <span>{t.book}</span>

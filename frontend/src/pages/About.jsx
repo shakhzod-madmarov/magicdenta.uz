@@ -467,7 +467,7 @@ const About = () => {
 
                 <div className="flex flex-wrap items-center gap-3.5 pt-2">
                   <button
-                    onClick={() => navigate("/dentists")}
+                    onClick={() => navigate("/appointment")}
                     className="px-8 py-3.5 bg-slate-900 hover:bg-black text-white font-bold text-sm rounded-full transition-all shadow-md active:scale-95 flex items-center gap-2"
                   >
                     <span>{t.btnDoctors}</span>
@@ -635,7 +635,7 @@ const About = () => {
               </div>
 
               <Link
-                to="/dentists"
+                to="/appointment"
                 className="px-6 py-2.5 bg-white border border-slate-200 text-slate-800 font-bold rounded-full hover:bg-slate-50 transition text-sm shadow-sm self-start sm:self-auto"
               >
                 {t.viewAll}
@@ -755,13 +755,13 @@ const About = () => {
 
                 <div className="flex flex-col gap-3 sm:flex-row">
                   <Link
-                    to="/contact"
+                    to="/appointment"
                     className="inline-flex items-center justify-center rounded-full bg-white px-8 py-3.5 text-sm font-bold text-slate-900 transition hover:bg-slate-100 shadow-md active:scale-95"
                   >
                     {t.bannerBtn1}
                   </Link>
                   <Link
-                    to="/dentists"
+                    to="/appointment"
                     className="inline-flex items-center justify-center rounded-full border border-white/20 bg-white/10 px-8 py-3.5 text-sm font-bold text-white backdrop-blur-sm transition hover:bg-white/20 active:scale-95"
                   >
                     {t.bannerBtn2}
