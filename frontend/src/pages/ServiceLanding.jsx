@@ -3,90 +3,110 @@ import Seo from "../components/Seo";
 import { assets } from "../assets/assets";
 
 const SERVICES_DATA = {
-  "breket-davolash": {
-    slug: "breket-davolash",
-    title: "Breket Qo'yish va Tishlarni Tekislash | Magic Denta",
-    metaTitle: "Zamonaviy Breket Qo'yish Narxlari & Ortodontiya | Magic Denta",
-    metaDesc: "Eng zamonaviy metall va keramik breketlar hamda shaffof elaynerlar. Oliy toifali ortodont shifokorlar, qulay to'lovlar va 100% kafolatli natija.",
-    keywords: "breket, breket narxi, tish tekislash, ortodont, keramik breket, elayner, брекеты, ортодонт",
+  "ortodontiya": {
+    slug: "ortodontiya",
+    title: "Ortodontiya: Breketlar va Shaffof Elaynerlar | Magic Denta",
+    metaTitle: "Ortodontiya: Zamonaviy Breketlar & Elaynerlar | Magic Denta",
+    metaDesc: "Tishlar qatorini metall va keramik breketlar hamda ko'rinmas elaynerlar orqali tekislash. 100% individual 3D rejalashtirish.",
+    keywords: "ortodontiya, breket, elayner, tish tekislash, ortodont andijon, ортодонтия, брекеты",
     badge: "ORTODONTIYA & TISHLARNI TEKISLASH",
-    heading: "Zamonaviy Mukammal va To'g'ri Tabassum: Zamonaviy Breket Tizimlari",
-    description: "Magic Denta klinikasida tish qatoridagi barcha qiyshiqliklar va tishlash (prikus) nuqsonlari eng so'nggi avlod breket tizimlari orqali mutlaqo og'riqsiz va qisqa muddatda to'g'rilanadi.",
+    heading: "Mukammal va Tekis Tabassum: Eng So‘nggi Avlod Ortodontiyasi",
+    description: "Magic Denta klinikasida tish qatoridagi barcha qiyshiqliklar, tishlash (prikus) nuqsonlari va jag' assimetriyalari ilg'or 3D skanerlash va zamonaviy breket tizimlari orqali tekislanadi.",
     specialityFilter: "Ortodontiya",
     features: [
-      { title: "Metall & Keramik Breketlar", desc: "Mustahkam va estetik ko'rinishdagi xalqaro standartdagi breketlar." },
-      { title: "Shaffof Elaynerlar (Kappalar)", desc: "Sezilar-sezilmas, qulay yechiladigan innovatsion ortodontik vositalar." },
-      { title: "Individual 3D Davolash Rejasi", desc: "Raqamli skanerlash orqali davolash natijasini oldindan ko'rish imkoniyati." },
+      { title: "Metall & Keramik Breketlar", desc: "Mustahkam, estetik va ishonchli xalqaro standartdagi breket tizimlari." },
+      { title: "Ko'rinmas Shaffof Elaynerlar (Kappalar)", desc: "Sezilar-sezilmas, ovqatlanishda qulay yechiladigan innovatsion ortodontik vositalar." },
+      { title: "Individual 3D Davolash Rejasi", desc: "Raqamli skanerlash orqali davolash natijasini oldindan kompyuterda ko'rish." },
       { title: "Moslashuvchan Bo'lib To'lash", desc: "Muolaja to'lovlarini bosqichma-bosqich, qulay shartlarda to'lash imkoniyati." }
     ],
     faqs: [
-      { q: "Breket qo'yish narxi qancha?", a: "Breket narxi tanlangan tizim turiga (metall, keramik yoki elayner) va tishlarning holatiga bog'liq. Bepul konsultatsiyada shifokorimiz aniq hisob-kitob qilib beradi." },
+      { q: "Breket qo'yish narxi qanday belgilanadi?", a: "Breket narxi tanlangan tizim turiga (metall, keramik yoki elayner) va tishlarning holatiga bog'liq. Bepul konsultatsiyada shifokorimiz aniq hisob-kitob qilib beradi." },
       { q: "Breket taqish qancha vaqt davom etadi?", a: "Odatda holatning murakkabligiga qarab 6 oydan 18 oygacha vaqt talab etiladi." },
       { q: "Breket qo'yish og'riqlimi?", a: "O'rnatish jarayoni mutlaqo og'riqsiz o'tadi. Dastlabki bir necha kunlik ko'nikish davrida yengil bosim sezilishi tabiiy." }
     ]
   },
-  "tish-implantatsiyasi": {
-    slug: "tish-implantatsiyasi",
-    title: "Tish Implantatsiyasi va Zirkon Qoplamalar | Magic Denta",
-    metaTitle: "Zamonaviy Tish Implant Narxi & Implantatsiya | Magic Denta",
-    metaDesc: "Zamonaviy yo'qolgan tishlarni 100% og'riqsiz tiklash. Shveytsariya va Janubiy Koreya implantlari, zirkon qoplamalar va umrlik kafolat.",
-    keywords: "tish implant, tish implantatsiya, implant narxi, zirkon tish, tish qo'yish, имплантация зубов, цирконий",
-    badge: "IMPLANTOLOGIYA VA PROTEZLASH",
-    heading: "Yo'qolgan Tishlarni Butunlay Tiklash: Premium Implantatsiya",
-    description: "Magic Denta — xalqaro sertifikatlangan Shveytsariya va Janubiy Koreya implantlari orqali tabiiy tishingizdek mustahkam va ko'rkam tishlarni tiklab beradi.",
-    specialityFilter: "Implantologiya",
+  "terapevtik-stomatologiya": {
+    slug: "terapevtik-stomatologiya",
+    title: "Terapevtik Stomatologiya va Mikroskopik Davolash | Magic Denta",
+    metaTitle: "Terapevtik Stomatologiya: Karies & Ildiz Davolash | Magic Denta",
+    metaDesc: "Karies va asoratlarni Carl Zeiss mikroskopi ostida mutlaqo og'riqsiz davolash, tishlarni saqlab qolish va estetik plombalash.",
+    keywords: "terapevtik stomatologiya, karies davolash, tish davolash, mikroskop stomatologiya, plomba, терапевтическая стоматология",
+    badge: "TERAPEVTIK STOMATOLOGIYA",
+    heading: "Mikroskop Ostida Aniq va Mutlaqo Og‘riqsiz Tish Davolash",
+    description: "Tish to'qimalarini maksimal darajada asrab qolgan holda chuqur karies, pulpit va periodontitni nemis Carl Zeiss mikroskopi yordamida kafolatli davolaymiz.",
+    specialityFilter: "Terapevtik stomatologiya",
     features: [
-      { title: "99.8% O'rnashish Kafolati", desc: "Yuqori biosmoslashuvchan titan va zirkoniy materiallar." },
-      { title: "3D Kompyuter Tomografiyasi", desc: "Implantni mikron aniqlikda o'rnatish uchun raqamli navigatsion rejalashtirish." },
-      { title: "Bir Kunlik Implantatsiya", desc: "Ko'plab holatlarda implant o'rnatilgan kuniyoq vaqtinchalik tish qo'yish imkoniyati." },
-      { title: "Mutlaqo Og'riqsiz Jarrohlik", desc: "Zamonaviy nozik anesteziya ostida xotirjam va tezkor muolaja." }
+      { title: "25x Mikroskopik Aniqlik", desc: "Eng mayda yoriqlar va yashirin kanallarni xatosiz ko'rish va tozalash." },
+      { title: "Kompyuterli Nozik Anesteziya", desc: "Ukol ignasi og'rig'isiz tezkor va to'liq uyushtirish kafolati." },
+      { title: "Badiiy Nanokompozit Restavratsiya", desc: "Tishning tabiiy anatomik shakli va yaltiroqligini mukammal tiklash." },
+      { title: "Tishni Saqlab Qolish Falsafasi", desc: "Eng murakkab zararlangan tishlarni ham olishga shoshilmasdan davolaymiz." }
     ],
     faqs: [
-      { q: "Implant tish qancha vaqt xizmat qiladi?", a: "Sifatli implantlar to'g'ri gigiyenaga amal qilinganda butun umr davomida xizmat qiladi." },
-      { q: "Implantatsiya og'riqlimi?", a: "Yo'q, zamonaviy anesteziya yordamida muolaja oddiy plomba qo'yishdan ham osonroq va og'riqsiz o'tadi." },
-      { q: "Qanday implant brendlaridan foydalanasiz?", a: "Janubiy Koreya (Osstem, Dentium) va Shveytsariya (Straumann) premium implant tizimlari qo'llaniladi." }
+      { q: "Plomba necha yil turadi?", a: "Yuqori sifatli nanokompozit materiallarimiz va to'g'ri gigiyena bilan 7-10 yildan ortiq mustahkam xizmat qiladi." },
+      { q: "Ildiz kanallarini davolash og'riqlimi?", a: "Zamonaviy innovatsion anesteziya evaziga muolaja davomida bemor hech qanday og'riq sezmaydi." }
     ]
   },
-  "bolalar-stomatologiyasi": {
-    slug: "bolalar-stomatologiyasi",
-    title: "Bolalar Stomatologiyasi: Qo'rquvsiz va Og'riqsiz | Magic Denta",
-    metaTitle: "Zamonaviy Bolalar Tish Shifokori & Klinika | Magic Denta",
-    metaDesc: "Zamonaviy bolajonlar tishini mutlaqo qo'rquvsiz, samimiy va og'riqsiz davolash. Sut tishlari kariesi, profilaktika va bolalar ortodontiyasi.",
-    keywords: "bolalar stomatologi, bolalar tish shifokori, bolalar tish klinikasi, sut tishi davolash, детская стоматология",
-    badge: "BOLALAR STOMATOLOGIYASI",
-    heading: "Bolajonlar Uchun Do'stona, Qo'rquvsiz va Og'riqsiz Tish Davolash",
-    description: "Magic Denta bolalar shifokorlari maxsus psixologik yondashuv va yumshoq uslublar orqali bolalarda tish davolashga nisbatan qo'rquvni yo'qotadi.",
-    specialityFilter: "Pediatrik stomatologiya",
+  "ortopedik-stomatologiya": {
+    slug: "ortopedik-stomatologiya",
+    title: "Ortopedik Stomatologiya: Sirkoniy Qoplamalar va Protezlash | Magic Denta",
+    metaTitle: "Ortopedik Stomatologiya & Sirkoniy Tishlar | Magic Denta",
+    metaDesc: "Sirkoniy qoplamalar, E-max vinirlar va zamonaviy raqamli protezlash. Yuqori mustahkamlik va anatomik mukammallik.",
+    keywords: "ortopediya stomatologiya, sirkoniy tish, tish qoplama, koronka, protez, ортопедическая стоматология, коронки",
+    badge: "DENTAL ORTHOPEDICS & PROTEZLASH",
+    heading: "Sirkoniy Qoplamalar va Yuqori Aniqlikdagi Raqamli Protezlash",
+    description: "Magic Denta — Dental Orthopedics markazi sifatida tishlarni sirkoniy, presslangan keramika va anatomik protezlar orqali to'liq tiklab beradi.",
+    specialityFilter: "Ortopedik stomatologiya",
     features: [
-      { title: "Do'stona & O'yinli Muhit", desc: "Bolajonlar o'zini qulay va xotirjam his qilishi uchun moslashgan klinika." },
-      { title: "Sut Tishlarini Asrab Qolish", desc: "Doimiy tishlarning to'g'ri chiqishi uchun sut tishlarini erta yo'qotmaslik." },
-      { title: "Og'riqsiz Gel Anesteziyasi", desc: "Ukoldan oldin yoqimli ta'mli maxsus gel bilan milkni butunlay uxlatish." },
-      { title: "Tish Karies Profilaktikasi", desc: "Ftorlash va fissuralarni germetizatsiya qilish orqali tishlarni chirishdan asrash." }
+      { title: "Yuqori Mustahkam Sirkoniy", desc: "Metallsiz, mutlaqo biologik xavfsiz va yemirilishga chidamli material." },
+      { title: "CAD/CAM Raqamli Frezerlash", desc: "Mikron darajadagi aniqlik bilan tayyorlanadigan qoplamalar." },
+      { title: "Tabiiy Emal Shaffofligi", desc: "Tabiiy tishdan ajratib bo'lmaydigan estetik va anatomik ko'rinish." },
+      { title: "Uzoq Muddatli Kafolat", desc: "Har bir o'rnatilgan ortopedik konstruksiyaga rasmiy klinik kafolat." }
     ],
     faqs: [
-      { q: "Bolani birinchi marta qachon stomatologga olib borish kerak?", a: "Birinchi sut tishlari chiqqandan so'ng yoki 1 yoshda profilaktik ko'rikdan o'tish tavsiya etiladi." },
-      { q: "Sut tishlarini davolash shartmi?", a: "Albatta, sut tishi ostidagi doimiy tish murtagini zararlanishdan asrash va to'g'ri jag' rivojlanishi uchun sut tishlari davolanishi shart." }
+      { q: "Sirkoniy qoplama metalldan nimasi bilan yaxshi?", a: "Sirkoniy milkni qoraytirmaydi, allergiya chaqirmaydi, tabiiy shaffoflikka ega va metaldan ancha yengil hamda mustahkam." },
+      { q: "Tayyorlanish muddati qancha?", a: "Raqamli laboratoriyamiz tufayli odatda 5-7 ish kunida to'liq tayyor bo'ladi." }
     ]
   },
   "estetik-stomatologiya": {
     slug: "estetik-stomatologiya",
-    title: "Estetik Stomatologiya, Vinirlar va Oqartirish | Magic Denta",
-    metaTitle: "Zamonaviy Vinirlar & Tish Oqartirish | Magic Denta",
+    title: "Estetik Stomatologiya: E-max Vinirlar va Oqartirish | Magic Denta",
+    metaTitle: "Estetik Stomatologiya & Gollivud Tabassumi | Magic Denta",
     metaDesc: "Gollivud tabassumi Magic Denta'da. Ultra-yupqa keramik vinirlar, professional tish oqartirish va estetik restavratsiya.",
-    keywords: "vinir, tish oqartirish, estetik stomatologiya, gollivud tabassumi, vinirlar narxi, виниры, отбеливание зубов",
-    badge: "ESTETIK STOMATOLOGIYA & GOLLIVUD TABASSUMI",
-    heading: "Gollivud Tabassumi: Keramik Vinirlar va Professional Tish Oqartirish",
-    description: "Tishlaringiz rangi, shakli yoki oraliq masofasini ideal holatga keltirib, o'zingizga bo'lgan ishonchni yangi bosqichga olib chiqing.",
+    keywords: "estetik stomatologiya, vinir, vinirlar narxi, tish oqartirish, gollivud tabassumi, виниры, отбеливание",
+    badge: "ESTETIK STOMATOLOGIYA & SMILE DESIGN",
+    heading: "Gollivud Tabassumi: E-max Vinirlar va Lazerli Oqartirish",
+    description: "Tishlaringiz rangi, shakli yoki oraliq masofasini ideal holatga keltirib, o'zingizga bo'lgan ishonchni yangi cho'qqiga olib chiqing.",
     specialityFilter: "Estetik stomatologiya",
     features: [
-      { title: "E-max Keramik Vinirlar", desc: "Tish to'qimasini minimal yo'nish orqali tabiiy va yaltiroq ko'rinish berish." },
-      { title: "Laser Professional Oqartirish", desc: "Bir seansda tishlarni 4-8 tongacha emalga zarar yetkazmasdan oqartirish." },
-      { title: "Badiiy Tish Restavratsiyasi", desc: "Tish sinishi, darzlari yoki rang o'zgarishlarini nanokompozitlar bilan tiklash." },
-      { title: "Digital Smile Design (DSD)", desc: "Yuz tuzilishingizga mos tabassumni avvaldan kompyuterda loyihalash." }
+      { title: "E-max Ultra-Yupqa Vinirlar", desc: "Tish to'qimasini minimal yo'nish orqali tabiiy va yaltiroq ko'rinish berish." },
+      { title: "Lazerli Xavfsiz Oqartirish", desc: "Bir seansda tishlarni 4-8 tongacha emalga zarar yetkazmasdan oqartirish." },
+      { title: "Digital Smile Design (DSD)", desc: "Yuz tuzilishingizga mos tabassumni avvaldan kompyuterda loyihalash." },
+      { title: "Emal Himoyasi & Remineralizatsiya", desc: "Muolajadan so'ng tish emalini maxsus mustahkamlovchi minerallar bilan to'yintirish." }
     ],
     faqs: [
       { q: "Vinirlar necha yil xizmat qiladi?", a: "Sifatli E-max keramik vinirlar 15-20 yil va undan ko'proq benuqson xizmat qiladi." },
-      { q: "Tish oqartirish emalga zarar bermaydimi?", a: "Klinikamizda qo'llaniladigan professional oqartirish texnologiyasi emalga zarar bermasdan faqat pigmentlarni tozalaydi." }
+      { q: "Tish oqartirish emalga zarar bermaydimi?", a: "Klinikamizda qo'llaniladigan professional oqartirish texnologiyasi emalga zarar bermasdan faqat chuqur pigmentlarni tozalaydi." }
+    ]
+  },
+  "jarrohlik-stomatologiyasi": {
+    slug: "jarrohlik-stomatologiyasi",
+    title: "Jarrohlik Stomatologiyasi va Aql Tishini Olish | Magic Denta",
+    metaTitle: "Jarrohlik Stomatologiyasi: Og'riqsiz Operatsiyalar | Magic Denta",
+    metaDesc: "Aql tishlarini (8-tish) nozik va og'riqsiz olish, milk plastikasi va og'iz bo'shlig'i jarrohligi.",
+    keywords: "jarrohlik stomatologiya, aql tishi olish, tish oldirish, milk operatsiyasi, хирургическая стоматология",
+    badge: "STOMATOLOGIYA JARROHLIGI",
+    heading: "Atravmatik, Nozik va Xavfsiz Jarrohlik Muolajalari",
+    description: "Magic Denta tajribali jarrohlari piezo-jarrohlik apparati yordamida eng murakkab aql tishlarini ham hech qanday asoratsiz va shishlarsiz olib tashlaydi.",
+    specialityFilter: "Stomatologiya Jarrohligi",
+    features: [
+      { title: "Piezo-Ultrasonic Jarrohlik", desc: "Suyak va milk to'qimasiga shikast yetkazmasdan faqat kerakli qismni ajratish." },
+      { title: "Mutlaqo Og'riqsiz Muolaja", desc: "Kuchli zamonaviy anesteziya ostida xotirjam va tezkor jarayon." },
+      { title: "Tezkor Tuzalish Kafolati", desc: "Maxsus tiklanish protokollari evaziga operatsiyadan so'ng shish va noqulaylik bo'lmaydi." },
+      { title: "100% Steril Sharoit", desc: "Jarrohlik xonasi Melag Class-B avtoklav sterilizatsiyasi bilan to'liq ta'minlangan." }
+    ],
+    faqs: [
+      { q: "Aql tishini olish shartmi?", a: "Agar aql tishi noto'g'ri o'sayotgan bo'lsa, yonidagi tishlarni qisayotgan yoki karies chaqirayotgan bo'lsa, uni olish tavsiya etiladi." },
+      { q: "Muolajadan keyin qachon ovqatlanish mumkin?", a: "Operatsiyadan 2 soat o'tgach iliq va yumshoq ovqatlar tanovul qilish mumkin." }
     ]
   }
 };
@@ -95,166 +115,173 @@ const ServiceLanding = () => {
   const { serviceSlug } = useParams();
   const navigate = useNavigate();
 
-  const service = SERVICES_DATA[serviceSlug] || SERVICES_DATA["breket-davolash"];
+  const service = SERVICES_DATA[serviceSlug] || SERVICES_DATA["ortodontiya"];
 
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "MedicalProcedure",
     "name": service.title,
     "description": service.metaDesc,
-    "procedureType": "NonSurgicalProcedure",
     "provider": {
-      "@type": ["Dentist", "MedicalBusiness", "LocalBusiness"],
+      "@type": "Dentist",
       "name": "Magic Denta",
-      "url": "https://magicdenta.uz/",
-      "telephone": "+998979908884",
+      "telephone": ["+998912891514", "+998905429303"],
+      "email": "magicdenta.uz@gmail.com",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "Bobur shoh koʻchasi, 1B",
-        "addressLocality": "Toshkent",
-        "addressRegion": "Toshkent",
-        "postalCode": "170126",
+        "addressLocality": "Andijon",
         "addressCountry": "UZ"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": 40.749296,
-        "longitude": 72.360242
       }
     }
   };
 
-  const faqJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": service.faqs.map(f => ({
-      "@type": "Question",
-      "name": f.q,
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": f.a
-      }
-    }))
-  };
-
   return (
-    <>
+    <div className="bg-[#F8F9FD] min-h-screen text-[#0F3040] py-8">
       <Seo
         title={service.metaTitle}
         description={service.metaDesc}
+        keywords={service.keywords}
         canonicalPath={`/services/${service.slug}`}
-        jsonLd={[jsonLd, faqJsonLd]}
+        jsonLd={jsonLd}
       />
 
-      <article className="max-w-6xl mx-auto py-8 sm:py-12 px-4 sm:px-6 text-left">
-        {/* Breadcrumb Navigation */}
-        <nav aria-label="Breadcrumb" className="mb-6">
-          <ol className="flex items-center gap-2 text-xs text-slate-500 font-semibold">
-            <li>
-              <Link to="/" className="hover:text-slate-900 transition">Bosh sahifa</Link>
-            </li>
-            <li>/</li>
-            <li>
-              <Link to="/dentists" className="hover:text-slate-900 transition">Xizmatlar</Link>
-            </li>
-            <li>/</li>
-            <li className="text-slate-900 font-bold truncate max-w-xs">{service.badge}</li>
-          </ol>
-        </nav>
+      {/* Hero Section */}
+      <header className="relative bg-gradient-to-br from-[#0F3040] via-[#1E1730] to-[#321E48] text-white py-16 sm:py-20 px-4 sm:px-6 lg:px-8 rounded-[36px] overflow-hidden my-6 border border-[#403D88]/40 shadow-2xl">
+        <div className="absolute top-0 right-0 w-96 h-96 rounded-full bg-[#92003A]/20 blur-3xl pointer-events-none" />
+        <div className="absolute bottom-0 left-0 w-96 h-96 rounded-full bg-[#403D88]/25 blur-3xl pointer-events-none" />
 
-        {/* Hero Section */}
-        <header className="bg-slate-900 text-white rounded-[32px] p-8 sm:p-12 relative overflow-hidden shadow-xl mb-12">
-          <div className="relative z-10 max-w-3xl space-y-6">
-            <span className="inline-block px-3.5 py-1.5 rounded-full bg-white/10 text-amber-300 text-[11px] font-extrabold tracking-wider uppercase border border-white/10">
-              {service.badge}
-            </span>
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-black leading-tight tracking-tight">
-              {service.heading}
-            </h1>
-            <p className="text-slate-300 text-base sm:text-lg leading-relaxed">
-              {service.description}
-            </p>
-            <div className="flex flex-wrap gap-4 pt-2">
-              <button
-                type="button"
-                onClick={() => navigate(`/dentists/${encodeURIComponent(service.specialityFilter)}`)}
-                className="px-8 py-3.5 bg-white text-slate-900 font-bold rounded-2xl hover:bg-slate-100 transition shadow-md active:scale-95 text-sm sm:text-base"
-              >
-                Shifokor tanlash & Qabulga yozilish
-              </button>
-              <a
-                href="tel:+998979908884"
-                className="px-8 py-3.5 bg-white/10 border border-white/20 text-white font-bold rounded-2xl hover:bg-white/20 transition active:scale-95 text-sm sm:text-base"
-              >
-                Qo'ng'iroq qilish: +998 (97) 990-88-84
-              </a>
-            </div>
+        <div className="relative z-10 max-w-4xl mx-auto text-left space-y-6">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/[0.08] text-slate-200 border border-white/15 text-xs font-black tracking-widest uppercase">
+            <span className="w-2 h-2 rounded-full bg-[#91008D] animate-pulse" />
+            {service.badge}
           </div>
-        </header>
 
-        {/* Features & Advantages Grid */}
-        <section className="mb-14">
-          <h2 className="text-2xl sm:text-3xl font-black text-slate-900 mb-8">
-            Nega Magic Denta da davolanish afzal?
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-white leading-tight tracking-tight">
+            {service.heading}
+          </h1>
+
+          <p className="text-slate-300 text-sm sm:text-base md:text-lg leading-relaxed max-w-3xl font-normal">
+            {service.description}
+          </p>
+
+          <div className="flex flex-wrap gap-4 pt-4">
+            <button
+              type="button"
+              onClick={() => navigate(`/dentists/${encodeURIComponent(service.specialityFilter)}`)}
+              className="px-8 py-4 bg-gradient-to-r from-[#92003A] to-[#91008D] hover:shadow-glow-wine text-white font-extrabold rounded-full shadow-lg transition-all active:scale-95 text-sm cursor-pointer"
+            >
+              Ushbu yo‘nalish shifokorlari →
+            </button>
+            <button
+              type="button"
+              onClick={() => navigate("/contact")}
+              className="px-8 py-4 bg-white/10 hover:bg-white/20 border border-white/20 text-white font-bold rounded-full transition-all text-sm cursor-pointer"
+            >
+              Bepul konsultatsiya
+            </button>
+          </div>
+        </div>
+      </header>
+
+      {/* Features Grid */}
+      <section className="my-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center max-w-2xl mx-auto mb-12">
+          <span className="text-xs font-black text-[#403D88] uppercase tracking-widest block mb-2">
+            KLINIK AFZALLIKLAR
+          </span>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-[#0F3040]">
+            Nega aynan Magic Denta’da davolanish kerak?
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {service.features.map((feat, idx) => (
-              <div key={idx} className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition">
-                <div className="w-10 h-10 rounded-xl bg-slate-100 flex items-center justify-center font-black text-slate-900 mb-4">
-                  0{idx + 1}
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {service.features.map((f, i) => (
+            <div
+              key={i}
+              className="bg-white rounded-[30px] p-6 border border-slate-200/80 shadow-card-clean hover:shadow-card-hover hover:border-[#403D88]/40 transition-all text-left flex flex-col justify-between"
+            >
+              <div>
+                <div className="w-10 h-10 rounded-2xl bg-gradient-to-br from-[#0F3040] to-[#321E48] text-white flex items-center justify-center font-black text-sm mb-4 shadow-xs">
+                  0{i + 1}
                 </div>
-                <h3 className="text-lg font-bold text-slate-900 mb-2">{feat.title}</h3>
-                <p className="text-sm text-slate-600 leading-relaxed">{feat.desc}</p>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* FAQs Accordion Section */}
-        <section className="mb-14 bg-slate-50 border border-slate-200 rounded-[32px] p-6 sm:p-10">
-          <h2 className="text-2xl sm:text-3xl font-black text-slate-900 mb-6">
-            Tez-tez beriladigan savollar (FAQ)
-          </h2>
-          <div className="space-y-4">
-            {service.faqs.map((faq, idx) => (
-              <details key={idx} className="group bg-white rounded-2xl p-5 border border-slate-200 cursor-pointer shadow-sm">
-                <summary className="font-bold text-slate-900 flex items-center justify-between list-none select-none">
-                  <span>{faq.q}</span>
-                  <span className="transform group-open:rotate-180 transition-transform duration-200 text-slate-400">
-                    ▼
-                  </span>
-                </summary>
-                <p className="mt-3 text-sm text-slate-600 leading-relaxed pt-2 border-t border-slate-100">
-                  {faq.a}
+                <h3 className="text-base font-black text-[#0F3040] mb-2 leading-snug">
+                  {f.title}
+                </h3>
+                <p className="text-slate-600 text-xs sm:text-sm leading-relaxed font-normal">
+                  {f.desc}
                 </p>
-              </details>
-            ))}
-          </div>
-        </section>
+              </div>
+              <div className="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-slate-400 text-xs font-bold">
+                <span>Magic Denta Standarti</span>
+                <span className="text-emerald-500 font-black">✓</span>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
 
-        {/* Location & Booking CTA Banner */}
-        <section className="bg-white border border-[#EAE4D5] rounded-[32px] p-8 sm:p-10 shadow-sm flex flex-col md:flex-row items-center justify-between gap-6">
-          <div className="space-y-2 max-w-xl">
-            <span className="text-xs font-extrabold text-slate-400 uppercase tracking-wider block">
+      {/* FAQs */}
+      <section className="my-20 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-left">
+        <div className="text-center mb-10">
+          <span className="text-xs font-black text-[#403D88] uppercase tracking-widest block mb-2">
+            KO‘P SO‘RALADIGAN SAVOLLAR
+          </span>
+          <h2 className="text-2xl sm:text-3xl font-black text-[#0F3040]">
+            Savollaringizga javoblar
+          </h2>
+        </div>
+
+        <div className="space-y-4">
+          {service.faqs.map((faq, i) => (
+            <div
+              key={i}
+              className="bg-white rounded-2xl p-6 border border-slate-200/80 shadow-sm"
+            >
+              <h3 className="text-base font-black text-[#0F3040] mb-2 flex items-center gap-2">
+                <span className="text-[#92003A] font-black">Q:</span> {faq.q}
+              </h3>
+              <p className="text-slate-600 text-sm leading-relaxed font-normal">
+                {faq.a}
+              </p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* CTA Box */}
+      <section className="my-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="bg-gradient-to-r from-[#0F3040] to-[#321E48] rounded-[36px] p-8 sm:p-12 text-white flex flex-col md:flex-row items-center justify-between gap-6 shadow-2xl">
+          <div className="text-left space-y-2 max-w-2xl">
+            <span className="text-[10px] font-black tracking-widest text-[#91008D] uppercase block">
               MAGIC DENTA · 08:00 - 20:00 (DUSH - SHAN)
             </span>
-            <h3 className="text-2xl font-black text-slate-900">
-              Sog'lom va go'zal tabassumingizni mutaxassislarga ishonib topshiring
+            <h3 className="text-2xl sm:text-3xl font-black">
+              Sog‘lom va go‘zal tabassum sari birinchi qadamni tashlang
             </h3>
-            <p className="text-sm text-slate-600">
-              Manzil: Bobur shoh koʻchasi, 1B (Mo'ljal: Semashka, Toshkent-strit)
+            <p className="text-slate-300 text-sm font-normal">
+              Shifokorlarimiz qabuliga o‘zingizga mos vaqtda onlayn yoziling yoki telefon orqali konsultatsiya oling.
             </p>
           </div>
-          <button
-            type="button"
-            onClick={() => navigate(`/dentists/${encodeURIComponent(service.specialityFilter)}`)}
-            className="w-full md:w-auto px-8 py-4 bg-slate-900 text-white font-bold rounded-2xl hover:bg-black transition shadow-md active:scale-95 whitespace-nowrap"
-          >
-            Onlayn qabulga yozilish
-          </button>
-        </section>
-      </article>
-    </>
+
+          <div className="flex flex-col sm:flex-row gap-3 shrink-0 w-full md:w-auto">
+            <button
+              type="button"
+              onClick={() => navigate(`/dentists/${encodeURIComponent(service.specialityFilter)}`)}
+              className="px-8 py-4 bg-gradient-to-r from-[#92003A] to-[#91008D] hover:shadow-glow-wine text-white font-black text-xs uppercase tracking-wider rounded-full shadow-lg active:scale-95 transition-all text-center cursor-pointer"
+            >
+              Shifokorga yozilish
+            </button>
+            <a
+              href="tel:+998912891514"
+              className="px-8 py-4 bg-white/10 hover:bg-white/20 border border-white/20 text-white font-black text-xs uppercase tracking-wider rounded-full active:scale-95 transition-all text-center"
+            >
+              +998 91 289 15 14
+            </a>
+          </div>
+        </div>
+      </section>
+    </div>
   );
 };
 

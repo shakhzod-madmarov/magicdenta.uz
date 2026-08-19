@@ -1,7 +1,11 @@
 import Header from "../components/Header";
 import Specialities from "../components/Specialities";
+import BeforeAfterGallery from "../components/BeforeAfterGallery";
+import SmileQuiz from "../components/SmileQuiz";
+import ClinicalTech from "../components/ClinicalTech";
 import TechFeatures from "../components/TechFeatures";
 import TopDentists from "../components/TopDentists";
+import ReviewsTrust from "../components/ReviewsTrust";
 import Banner from "../components/Banner";
 import Seo from "../components/Seo";
 
@@ -43,15 +47,19 @@ const Home = () => {
     <>
       <Seo
         title="Magic Denta | Zamonaviy stomatologiya klinikasi"
-        description="Magic Denta — tajribali stomatologlar, sifatli tish davolash, zamonaviy uskunalar va qulay onlayn xizmatlar. Manzil: Bobur shoh koʻchasi, 1B."
+        description="Magic Denta — tajribali stomatologlar, 5 ta asosiy mutaxassislik (Ortodontiya, Terapiya, Ortopediya, Estetika, Jarrohlik), sifatli tish davolash va zamonaviy uskunalar. Manzil: Bobur shoh koʻchasi, 1B."
         canonicalPath="/"
         jsonLd={jsonLd}
       />
       <Header />
       <main>
         <Specialities />
+        <BeforeAfterGallery />
+        <SmileQuiz />
+        <ClinicalTech />
         <TechFeatures />
         <TopDentists />
+        <ReviewsTrust />
         <Banner />
       </main>
     </>
