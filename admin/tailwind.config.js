@@ -4,16 +4,16 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: "#92003A",       // Rich Wine / Bordeaux Crimson
-        secondary: "#403D88",     // Royal Iris / Indigo
-        magenta: "#91008D",       // Electric Orchid / Magenta
-        navy: "#0F3040",          // Midnight Petrol / Prussian Navy
-        plum: "#321E48",          // Imperial Velvet Plum
+        primary: "#0F3040",       // Deep Midnight Navy (primary admin dark)
         brandDark: "#0F3040",
         brandPlum: "#321E48",
         brandIndigo: "#403D88",
         brandWine: "#92003A",
         brandMagenta: "#91008D",
+        secondary: "#403D88",     // Royal Iris / Indigo
+        thirdary: "#321E48",      // Imperial Plum
+        grayDark: "#0F172A",      // Deep Slate Charcoal (high contrast text)
+        grayLight: "#F8FAFC",     // Clean crisp slate background
         surface: "#F8F9FD",
         surfaceCard: "#FFFFFF",
       },
@@ -22,7 +22,8 @@ export default {
       },
       backgroundImage: {
         'gradient-hero': 'linear-gradient(135deg, #0F3040 0%, #221838 50%, #321E48 100%)',
-        'gradient-brand': 'linear-gradient(135deg, #92003A 0%, #91008D 100%)',
+        'gradient-brand': 'linear-gradient(135deg, #0F3040 0%, #321E48 100%)',
+        'gradient-wine': 'linear-gradient(135deg, #92003A 0%, #91008D 100%)',
         'gradient-indigo': 'linear-gradient(135deg, #403D88 0%, #321E48 100%)',
       },
       boxShadow: {

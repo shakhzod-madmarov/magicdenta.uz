@@ -195,7 +195,7 @@ const {
     <main className="w-full flex justify-center px-4 py-6">
       <section className="w-full max-w-[1600px] space-y-6">
         <div className="flex flex-wrap items-center gap-3">
-          <h1 className="text-2xl sm:text-3xl font-bold text-primary">
+          <h1 className="text-2xl sm:text-3xl font-black text-[#0F3040]">
             Uchrashuvlar (Admin)
           </h1>
           <button
@@ -286,7 +286,7 @@ const {
 
               <div className="overflow-x-auto rounded-2xl border border-slate-200">
                 <table className="w-full text-sm">
-            <thead className="bg-primary text-white">
+            <thead className="bg-[#0F3040] text-white">
               <tr>
                 <th className="p-3 text-left">Bemor</th>
                 <th className="p-3 text-left">Stomatolog</th>

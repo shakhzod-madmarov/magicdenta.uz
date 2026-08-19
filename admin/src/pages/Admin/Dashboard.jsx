@@ -493,25 +493,25 @@ const Dashboard = () => {
             <div className="flex flex-wrap gap-2">
               <a
                 href="/all-dentists"
-                className="inline-flex items-center gap-2 rounded-xl bg-primary text-white px-5 py-2.5 text-[15px] font-semibold shadow-sm hover:opacity-90 transition"
+                className="inline-flex items-center gap-2 rounded-xl bg-[#92003A] text-white px-5 py-2.5 text-[15px] font-bold shadow-sm hover:bg-[#780030] transition"
               >
                 Stomatologlar
               </a>
               <a
                 href="/admin-patients"
-                className="inline-flex items-center gap-2 rounded-xl bg-grayDark text-white px-5 py-2.5 text-[15px] font-semibold shadow-sm hover:opacity-90 transition"
+                className="inline-flex items-center gap-2 rounded-xl bg-[#0F3040] text-white px-5 py-2.5 text-[15px] font-bold shadow-sm hover:bg-[#081C26] transition"
               >
                 Bemorlar
               </a>
               <a
                 href="/treatments"
-                className="inline-flex items-center gap-2 rounded-xl bg-secondary text-white px-5 py-2.5 text-[15px] font-semibold shadow-sm hover:opacity-90 transition"
+                className="inline-flex items-center gap-2 rounded-xl bg-[#403D88] text-white px-5 py-2.5 text-[15px] font-bold shadow-sm hover:bg-[#321E48] transition"
               >
                 To‘lovlar
               </a>
               <a
                 href="/all-appointments"
-                className="inline-flex items-center gap-2 rounded-xl bg-thirdary text-white px-5 py-2.5 text-[15px] font-semibold shadow-sm hover:opacity-90 transition"
+                className="inline-flex items-center gap-2 rounded-xl bg-[#321E48] text-white px-5 py-2.5 text-[15px] font-bold shadow-sm hover:bg-[#1E122C] transition"
               >
                 Qabullar
               </a>
