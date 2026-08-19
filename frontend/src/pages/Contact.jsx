@@ -248,7 +248,7 @@ const Contact = () => {
           </div>
 
           {/* Right Column: Contact Message Form (7 cols) */}
-          <div className="lg:col-span-7 p-6 sm:p-8 lg:p-10 text-left bg-white flex flex-col justify-start">
+          <div className="lg:col-span-7 p-6 sm:p-8 lg:p-12 text-left bg-white flex flex-col justify-center">
             <div className="mb-5">
               <span className="text-[10px] font-black text-[#403D88] uppercase tracking-widest block mb-1">
                 ONLAYN MUROJAAT
@@ -412,9 +412,7 @@ const Contact = () => {
                 {loading ? "Yuborilmoqda..." : "Xabarni yuborish"}
               </button>
 
-              <p className="text-center text-[11px] text-slate-400 font-medium pt-1">
-                🔒 Ma’lumotlaringiz xavfsizligi 100% kafolatlanadi.
-              </p>
+
             </form>
           </div>
 
