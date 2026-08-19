@@ -40,34 +40,22 @@ const Footer = () => {
               <span>Magic Denta Klinikasi</span>
             </a>
             <a
-              href="tel:+998XXXXXXXXX"
+              href="tel:+998912891514"
               className="font-bold text-slate-900 hover:text-black transition"
             >
-              +998 (XX) XXX-XX-XX
+              +998 (91) 289-15-14
             </a>
             <a
-              href="tel:+998979815511"
+              href="tel:+998905429303"
               className="font-bold text-slate-900 hover:text-black transition"
             >
-              +998 (XX) XXX-XX-XX
+              +998 (90) 542-93-03
             </a>
             <a
-              href="tel:+998552018884"
-              className="font-bold text-slate-900 hover:text-black transition"
-            >
-              +998 (XX) XXX-XX-XX
-            </a>
-            <a
-              href="tel:+998770727060"
-              className="font-bold text-slate-900 hover:text-black transition"
-            >
-              +998 (XX) XXX-XX-XX
-            </a>
-            <a
-              href="mailto:info@magicdenta.uz"
+              href="mailto:magicdenta.uz@gmail.com"
               className="text-slate-800 hover:text-black font-semibold transition break-all"
             >
-              info@magicdenta.uz
+              magicdenta.uz@gmail.com
             </a>
           </div>
         </div>
@@ -160,7 +148,7 @@ const Footer = () => {
 
           {/* WhatsApp */}
           <a
-            href="https://api.whatsapp.com/send/?phone=998979908884&text=%D0%9E%D0%B1%D1%80%D0%B0%D1%89%D0%B5%D0%BD%D0%B8%D0%B5+%D0%B8%D0%B7+%D0%AF%D0%BD%D0%B4%D0%B5%D0%BA%D1%81+%D0%9A%D0%B0%D1%80%D1%82%0A%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21+%D0%9C%D0%B5%D0%BD%D1%8F+%D0%B7%D0%B0%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D0%BE%D0%B2%D0%B0%D0%BB%D0%BE+%D0%B2%D0%B0%D1%88%D0%B5+%D0%BF%D1%80%D0%B5%D0%B4%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5&type=phone_number&app_absent=0"
+            href="https://wa.me/998912891514&text=%D0%9E%D0%B1%D1%80%D0%B0%D1%89%D0%B5%D0%BD%D0%B8%D0%B5+%D0%B8%D0%B7+%D0%AF%D0%BD%D0%B4%D0%B5%D0%BA%D1%81+%D0%9A%D0%B0%D1%80%D1%82%0A%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21+%D0%9C%D0%B5%D0%BD%D1%8F+%D0%B7%D0%B0%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D0%BE%D0%B2%D0%B0%D0%BB%D0%BE+%D0%B2%D0%B0%D1%88%D0%B5+%D0%BF%D1%80%D0%B5%D0%B4%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5&type=phone_number&app_absent=0"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="WhatsApp"
@@ -185,7 +173,7 @@ const Footer = () => {
 
           {/* Instagram */}
           <a
-            href="https://instagram.com/magicdenta"
+            href="https://www.instagram.com/magic.denta/"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Instagram"
@@ -213,7 +201,7 @@ const Footer = () => {
 
           {/* Viber */}
           <a
-            href="https://viber.click/998979908884"
+            href="https://viber.click/998912891514"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Viber"

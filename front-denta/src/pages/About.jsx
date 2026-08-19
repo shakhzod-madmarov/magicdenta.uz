@@ -405,8 +405,8 @@ const About = () => {
           url: "https://magicdenta.uz/about",
           logo: "https://magicdenta.uz/logo.png",
           image: "https://magicdenta.uz/logo.png",
-          telephone: ["+998979908884", "+998979815511", "+998552018884", "+998770727060"],
-          email: "info@magicdenta.uz",
+          telephone: ["+998912891514", "+998905429303"],
+          email: "magicdenta.uz@gmail.com",
           priceRange: "10000 UZS - 1400000 UZS",
           openingHours: "Mo-Su 00:00-23:59",
           address: {
@@ -432,7 +432,7 @@ const About = () => {
           },
           sameAs: [
             "https://yandex.uz/maps/-/CTgrvSoY",
-            "https://instagram.com/magicdenta",
+            "https://www.instagram.com/magic.denta/",
             "https://www.instagram.com/nodirbek8884/",
             "https://t.me/magicdenta",
             "https://api.whatsapp.com/send/?phone=998979908884",

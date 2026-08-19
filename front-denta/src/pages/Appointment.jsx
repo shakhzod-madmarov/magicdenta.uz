@@ -198,12 +198,12 @@ const Appointment = () => {
         "medicalSpecialty": Array.isArray(selectedDentist.speciality)
           ? selectedDentist.speciality.join(", ")
           : selectedDentist.speciality,
-        "telephone": "+998XXXXXXXXX",
+        "telephone": ["+998912891514", "+998905429303"],
         "worksFor": {
           "@type": ["Dentist", "MedicalBusiness", "LocalBusiness"],
           "name": "Magic Denta \"МЧЖ\"",
           "url": "https://magicdenta.uz/",
-          "telephone": "+998XXXXXXXXX",
+          "telephone": ["+998912891514", "+998905429303"],
           "address": {
             "@type": "PostalAddress",
             "streetAddress": "Magic Denta Klinikasi",

@@ -76,11 +76,11 @@ const App = () => {
       <div className="fixed bottom-6 right-7 z-50 flex flex-col gap-3 items-center">
         {/* Telegram Glass Button */}
         <a
-          href="https://t.me/+998979908884"
+          href="https://t.me/+998912891514"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Telegram"
-          title="Telegram: +998 97 990 88 84"
+          title="Telegram: +998 91 289 15 14"
           className="w-12 h-12 rounded-full flex items-center justify-center bg-black/50 backdrop-blur-xl border border-white/20 text-white shadow-2xl hover:scale-110 active:scale-95 transition-all duration-300 group"
         >
           <svg className="w-5 h-5 transition-transform duration-300 group-hover:scale-110" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -90,11 +90,11 @@ const App = () => {
 
         {/* WhatsApp Glass Button */}
         <a
-          href="https://wa.me/998979908884?text=Assalomu%20alaykum!%20Mega%20Dental%20House%20stomatologiyasiga%20yozilmoqchi%20edim."
+          href="https://wa.me/998912891514?text=Assalomu%20alaykum!%20Magic%20Denta%20stomatologiyasiga%20yozilmoqchi%20edim."
           target="_blank"
           rel="noopener noreferrer"
           aria-label="WhatsApp"
-          title="WhatsApp: +998 97 990 88 84"
+          title="WhatsApp: +998 91 289 15 14"
           className="w-12 h-12 rounded-full flex items-center justify-center bg-black/50 backdrop-blur-xl border border-white/20 text-white shadow-2xl hover:scale-110 active:scale-95 transition-all duration-300 group"
         >
           <svg className="w-5 h-5 transition-transform duration-300 group-hover:scale-110" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">

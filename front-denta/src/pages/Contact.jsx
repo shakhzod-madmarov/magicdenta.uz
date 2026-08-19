@@ -111,8 +111,8 @@ const Contact = () => {
           url: "https://magicdenta.uz/contact",
           logo: "https://magicdenta.uz/logo.png",
           image: "https://magicdenta.uz/logo.png",
-          telephone: ["+998XXXXXXXXX"],
-          email: "info@magicdenta.uz",
+          telephone: ["+998912891514", "+998905429303"],
+          email: "magicdenta.uz@gmail.com",
           priceRange: "10000 UZS - 1400000 UZS",
           openingHours: "Mo-Su 00:00-23:59",
           address: {
@@ -138,11 +138,11 @@ const Contact = () => {
           },
           sameAs: [
             "https://yandex.uz/maps/-/CTgrvSoY",
-            "https://instagram.com/magicdenta",
+            "https://www.instagram.com/magic.denta/",
             "https://www.instagram.com/nodirbek8884/",
             "https://t.me/magicdenta",
-            "https://api.whatsapp.com/send/?phone=998979908884",
-            "https://viber.click/998979908884"
+            "https://wa.me/998912891514",
+            "https://viber.click/998912891514"
           ]
         }}
       />
@@ -183,7 +183,7 @@ const Contact = () => {
               </div>
             </div>
 
-            {/* Phone 1: Stomatolog */}
+            {/* Phone 1 */}
             <div className="flex items-start gap-3">
               <div className="w-10 h-10 rounded-full bg-[#F2F2F2] flex items-center justify-center shrink-0 border border-[#EAE4D5] text-black">
                 <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
@@ -191,14 +191,14 @@ const Contact = () => {
                 </svg>
               </div>
               <div className="flex flex-col">
-                <span className="text-[10px] text-neutral-400 font-bold uppercase tracking-wider">Stomatolog</span>
-                <a href="tel:+998XXXXXXXXX" className="hover:text-black font-semibold text-neutral-900">
-                  +998 (XX) XXX-XX-XX
+                <span className="text-[10px] text-neutral-400 font-bold uppercase tracking-wider">Telefon / Konsultatsiya</span>
+                <a href="tel:+998912891514" className="hover:text-black font-semibold text-neutral-900">
+                  +998 (91) 289-15-14
                 </a>
               </div>
             </div>
 
-            {/* Phone: Konsultatsiya */}
+            {/* Phone 2 */}
             <div className="flex items-start gap-3">
               <div className="w-10 h-10 rounded-full bg-[#F2F2F2] flex items-center justify-center shrink-0 border border-[#EAE4D5] text-black">
                 <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
@@ -206,39 +206,9 @@ const Contact = () => {
                 </svg>
               </div>
               <div className="flex flex-col">
-                <span className="text-[10px] text-neutral-400 font-bold uppercase tracking-wider">Konsultatsiya</span>
-                <a href="tel:+998979815511" className="hover:text-black font-semibold text-neutral-900">
-                  +998 (XX) XXX-XX-XX
-                </a>
-              </div>
-            </div>
-
-            {/* Phone 2: Offis */}
-            <div className="flex items-start gap-3">
-              <div className="w-10 h-10 rounded-full bg-[#F2F2F2] flex items-center justify-center shrink-0 border border-[#EAE4D5] text-black">
-                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.725l.548 2.2a1 1 0 01-.321.988l-1.305.98a10.582 10.582 0 004.872 4.872l.98-1.305a1 1 0 01.988-.321l2.2.548a1 1 0 01.725.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                </svg>
-              </div>
-              <div className="flex flex-col">
-                <span className="text-[10px] text-neutral-400 font-bold uppercase tracking-wider">Offis</span>
-                <a href="tel:+998552018884" className="hover:text-black font-semibold text-neutral-900">
-                  +998 (XX) XXX-XX-XX
-                </a>
-              </div>
-            </div>
-
-            {/* Phone 3: Shuxrat */}
-            <div className="flex items-start gap-3">
-              <div className="w-10 h-10 rounded-full bg-[#F2F2F2] flex items-center justify-center shrink-0 border border-[#EAE4D5] text-black">
-                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.725l.548 2.2a1 1 0 01-.321.988l-1.305.98a10.582 10.582 0 004.872 4.872l.98-1.305a1 1 0 01.988-.321l2.2.548a1 1 0 01.725.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                </svg>
-              </div>
-              <div className="flex flex-col">
-                <span className="text-[10px] text-neutral-400 font-bold uppercase tracking-wider">Shuxrat</span>
-                <a href="tel:+998770727060" className="hover:text-black font-semibold text-neutral-900">
-                  +998 (XX) XXX-XX-XX
+                <span className="text-[10px] text-neutral-400 font-bold uppercase tracking-wider">Qabulxona & Bog'lanish</span>
+                <a href="tel:+998905429303" className="hover:text-black font-semibold text-neutral-900">
+                  +998 (90) 542-93-03
                 </a>
               </div>
             </div>
@@ -252,8 +222,8 @@ const Contact = () => {
               </div>
               <div className="flex flex-col min-w-0">
                 <span className="text-[10px] text-neutral-400 font-bold uppercase tracking-wider">Email</span>
-                <a href="mailto:info@magicdenta.uz" className="hover:text-black font-semibold text-neutral-900 break-all sm:break-normal">
-                  info@magicdenta.uz
+                <a href="mailto:magicdenta.uz@gmail.com" className="hover:text-black font-semibold text-neutral-900 break-all sm:break-normal">
+                  magicdenta.uz@gmail.com
                 </a>
               </div>
             </div>
@@ -292,7 +262,7 @@ const Contact = () => {
 
               {/* WhatsApp */}
               <a
-                href="https://api.whatsapp.com/send/?phone=998979908884&text=%D0%9E%D0%B1%D1%80%D0%B0%D1%89%D0%B5%D0%BD%D0%B8%D0%B5+%D0%B8%D0%B7+%D0%AF%D0%BD%D0%B4%D0%B5%D0%BA%D1%81+%D0%9A%D0%B0%D1%80%D1%82%0A%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21+%D0%9C%D0%B5%D0%BD%D1%8F+%D0%B7%D0%B0%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D0%BE%D0%B2%D0%B0%D0%BB%D0%BE+%D0%B2%D0%B0%D1%88%D0%B5+%D0%BF%D1%80%D0%B5%D0%B4%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5&type=phone_number&app_absent=0"
+                href="https://wa.me/998912891514&text=%D0%9E%D0%B1%D1%80%D0%B0%D1%89%D0%B5%D0%BD%D0%B8%D0%B5+%D0%B8%D0%B7+%D0%AF%D0%BD%D0%B4%D0%B5%D0%BA%D1%81+%D0%9A%D0%B0%D1%80%D1%82%0A%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21+%D0%9C%D0%B5%D0%BD%D1%8F+%D0%B7%D0%B0%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D0%BE%D0%B2%D0%B0%D0%BB%D0%BE+%D0%B2%D0%B0%D1%88%D0%B5+%D0%BF%D1%80%D0%B5%D0%B4%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5&type=phone_number&app_absent=0"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-4 py-2.5 rounded-full bg-[#F2F2F2] hover:bg-[#EAE4D5] text-black transition border border-[#EAE4D5] text-xs font-bold"
@@ -306,7 +276,7 @@ const Contact = () => {
 
               {/* Instagram */}
               <a
-                href="https://instagram.com/magicdenta"
+                href="https://www.instagram.com/magic.denta/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-4 py-2.5 rounded-full bg-[#F2F2F2] hover:bg-[#EAE4D5] text-black transition border border-[#EAE4D5] text-xs font-bold"
@@ -322,7 +292,7 @@ const Contact = () => {
 
               {/* Viber */}
               <a
-                href="https://viber.click/998979908884"
+                href="https://viber.click/998912891514"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-4 py-2.5 rounded-full bg-[#F2F2F2] hover:bg-[#EAE4D5] text-black transition border border-[#EAE4D5] text-xs font-bold"
