@@ -25,8 +25,8 @@ const About = () => {
       stat2Lbl: "Mamnun va sog‘lom bemorlar",
       stat3Val: "100%",
       stat3Lbl: "Og‘riqsiz va xavfsiz muolaja",
-      stat4Val: "24/7",
-      stat4Lbl: "Onlayn yordam va konsultatsiya",
+      stat4Val: "08:00-20:00",
+      stat4Lbl: "Dush – Shanba (Yakshanba dam)",
 
       clinicAddress: "Bobur shoh koʻchasi, 1B",
 
@@ -408,7 +408,7 @@ const About = () => {
           telephone: ["+998912891514", "+998905429303"],
           email: "magicdenta.uz@gmail.com",
           priceRange: "10000 UZS - 1400000 UZS",
-          openingHours: "Mo-Su 00:00-23:59",
+          openingHours: "Mo-Sa 08:00-20:00",
           address: {
             "@type": "PostalAddress",
             streetAddress: "Bobur shoh koʻchasi, 1B",

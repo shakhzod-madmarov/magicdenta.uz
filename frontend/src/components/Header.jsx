@@ -16,8 +16,8 @@ const Header = () => {
       stat1Lab: "Og‘riqsiz muolaja",
       stat2Val: "3D",
       stat2Lab: "Raqamli tashxis",
-      stat3Val: "24/7",
-      stat3Lab: "Onlayn yozilish",
+      stat3Val: "08:00-20:00",
+      stat3Lab: "Dush – Shanba",
     },
     ru: {
       badge: "MAGIC DENTA • DENTAL ORTHOPEDICS",
@@ -29,8 +29,8 @@ const Header = () => {
       stat1Lab: "Без боли и страха",
       stat2Val: "3D",
       stat2Lab: "Цифровая точность",
-      stat3Val: "24/7",
-      stat3Lab: "Онлайн-запись",
+      stat3Val: "08:00-20:00",
+      stat3Lab: "Пн – Сб (Вс: вых)",
     },
     en: {
       badge: "MAGIC DENTA • DENTAL ORTHOPEDICS",
@@ -42,8 +42,8 @@ const Header = () => {
       stat1Lab: "Pain-Free Care",
       stat2Val: "3D",
       stat2Lab: "Digital Scanning",
-      stat3Val: "24/7",
-      stat3Lab: "Online Booking",
+      stat3Val: "08:00-20:00",
+      stat3Lab: "Mon – Sat",
     },
   }[lang] || {
     badge: "MAGIC DENTA • DENTAL ORTHOPEDICS",

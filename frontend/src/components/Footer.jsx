@@ -24,7 +24,7 @@ const Footer = () => {
           <div className="pt-2">
             <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-bold bg-white/[0.08] text-slate-200 border border-white/15 shadow-sm">
               <span className="w-2 h-2 rounded-full bg-[#91008D] animate-pulse" />
-              24 / 7 Qabul & Konsultatsiya
+              Dush – Shanba: 08:00 – 20:00 (Yakshanba: Dam olish)
             </span>
           </div>
         </div>

@@ -287,9 +287,9 @@ const Appointment = () => {
             </div>
 
             <ul className="text-sm text-neutral-600 space-y-1.5 pt-2 border-t border-slate-200/80">
-              <li>🕘 Onlayn qabul: 08:00 – 17:00</li>
+              <li>🕘 Ish vaqti: 08:00 – 20:00 (Dush – Shan)</li>
               <li>☕ Tushlik: 12:00 – 13:00</li>
-              <li>📅 Yakshanba: onlayn bron yopiq</li>
+              <li>📅 Yakshanba: Dam olish kuni (Yopiq)</li>
               <li className="mt-2 text-neutral-400 text-xs">
                 Agar sizga kerakli vaqtda onlayn bron mavjud bo‘lmasa, iltimos,
                 klinikamizga qo‘ng‘iroq qilib administrator bilan bog‘laning.

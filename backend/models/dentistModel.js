@@ -6,7 +6,7 @@ const dayScheduleSchema = new mongoose.Schema(
     day: { type: Number, required: true }, // 0 = Sunday, 1 = Monday, ..., 6 = Saturday
     isOpen: { type: Boolean, default: true },
     start: { type: String, default: "08:00" },
-    end: { type: String, default: "18:00" },
+    end: { type: String, default: "20:00" },
   },
   { _id: false }
 );

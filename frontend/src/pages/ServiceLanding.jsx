@@ -236,7 +236,7 @@ const ServiceLanding = () => {
         <section className="bg-white border border-[#EAE4D5] rounded-[32px] p-8 sm:p-10 shadow-sm flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="space-y-2 max-w-xl">
             <span className="text-xs font-extrabold text-slate-400 uppercase tracking-wider block">
-              MAGIC DENTA · 24/7 XIZMAT
+              MAGIC DENTA · 08:00 - 20:00 (DUSH - SHAN)
             </span>
             <h3 className="text-2xl font-black text-slate-900">
               Sog'lom va go'zal tabassumingizni mutaxassislarga ishonib topshiring

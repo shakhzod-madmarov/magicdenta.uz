@@ -54,7 +54,7 @@ export const getWeekdayIndex = (dateStr) => {
 };
 
 export const getDayConfig = (schedule, dayIndex) => {
-  return schedule.find((item) => item.day === dayIndex) || { day: dayIndex, isOpen: false, start: "08:00", end: "18:00" };
+  return schedule.find((item) => item.day === dayIndex) || { day: dayIndex, isOpen: false, start: "08:00", end: "20:00" };
 };
 
 export const getResolvedScheduleForDentist = async (dentistId) => {
@@ -76,13 +76,13 @@ export const getResolvedScheduleForDentist = async (dentistId) => {
   if (!schedule) {
     // Default fallback
     schedule = [
-      { day: 1, isOpen: true, start: "08:00", end: "18:00" }, // Monday
-      { day: 2, isOpen: true, start: "08:00", end: "18:00" },
-      { day: 3, isOpen: true, start: "08:00", end: "18:00" },
-      { day: 4, isOpen: true, start: "08:00", end: "18:00" },
-      { day: 5, isOpen: true, start: "08:00", end: "18:00" },
-      { day: 6, isOpen: true, start: "08:00", end: "18:00" }, // Saturday
-      { day: 0, isOpen: false, start: "08:00", end: "18:00" } // Sunday
+      { day: 1, isOpen: true, start: "08:00", end: "20:00" }, // Monday
+      { day: 2, isOpen: true, start: "08:00", end: "20:00" },
+      { day: 3, isOpen: true, start: "08:00", end: "20:00" },
+      { day: 4, isOpen: true, start: "08:00", end: "20:00" },
+      { day: 5, isOpen: true, start: "08:00", end: "20:00" },
+      { day: 6, isOpen: true, start: "08:00", end: "20:00" }, // Saturday
+      { day: 0, isOpen: false, start: "08:00", end: "20:00" } // Sunday
     ];
   }
 

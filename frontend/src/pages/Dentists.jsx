@@ -114,7 +114,7 @@ const Dentists = () => {
 
   const seoDescription = selectedSpeciality
     ? `Magic Denta klinikasida ${selectedSpeciality} bo'yicha tajribali stomatologlar. Shifokorlar bilan tanishing va onlayn qabulga yoziling.`
-    : "Magic Denta stomatologiya klinikasi oliy toifali mutaxassislari. 24/7 rejimda ishlaydigan tajribali stomatologlar qabuliga yoziling.";
+    : "Magic Denta stomatologiya klinikasi oliy toifali mutaxassislari. Dushanbadan shanbagacha 08:00-20:00 ishlaydigan tajribali stomatologlar qabuliga yoziling.";
 
   const jsonLd = {
     "@context": "https://schema.org",

@@ -17,7 +17,7 @@ const Home = () => {
     telephone: ["+998912891514", "+998905429303"],
     email: "magicdenta.uz@gmail.com",
     priceRange: "10000 UZS - 1400000 UZS",
-    openingHours: "Mo-Su 00:00-23:59",
+    openingHours: "Mo-Sa 08:00-20:00",
     address: {
       "@type": "PostalAddress",
       streetAddress: "Bobur shoh koʻchasi, 1B",

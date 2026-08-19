@@ -122,7 +122,7 @@ const Contact = () => {
         "latitude": 40.749296,
         "longitude": 72.360242
       },
-      "openingHours": "Mo-Su 00:00-23:59"
+      "openingHours": "Mo-Sa 08:00-20:00"
     }
   };
 
@@ -130,7 +130,7 @@ const Contact = () => {
     <div className="bg-[#F8F9FD] min-h-screen text-[#0F3040] py-8">
       <Seo
         title="Aloqa | Magic Denta Stomatologiya Klinikasi"
-        description="Magic Denta bilan bog'laning. Manzilimiz: Bobur shoh koʻchasi, 1B. 24/7 qabul, professional shifokorlar va tezkor maslahat."
+        description="Magic Denta bilan bog'laning. Manzilimiz: Bobur shoh koʻchasi, 1B. 08:00-20:00 qabul (Yakshanba dam olish), professional shifokorlar va tezkor maslahat."
         canonicalPath="/contact"
         jsonLd={jsonLd}
       />
@@ -227,7 +227,7 @@ const Contact = () => {
               </div>
               <div className="flex flex-col">
                 <span className="text-[10px] text-slate-400 font-extrabold uppercase tracking-wider">Ish vaqti</span>
-                <span className="font-bold text-[#0F3040] text-base">24 / 7 uzluksiz xizmat</span>
+                <span className="font-bold text-[#0F3040] text-sm sm:text-base">Dush – Shanba: 08:00 – 20:00<br/><span className="text-xs text-slate-500 font-semibold">Yakshanba: Dam olish kuni</span></span>
               </div>
             </div>
           </address>
