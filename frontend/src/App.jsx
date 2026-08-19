@@ -5,7 +5,6 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import MyAppointments from "./pages/MyAppointments";
-import Dentists from "./pages/Dentists";
 import Login from "./pages/Login";
 import MyProfile from "./pages/MyProfile";
 import Appointment from "./pages/Appointment";

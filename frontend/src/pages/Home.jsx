@@ -1,9 +1,7 @@
 import Header from "../components/Header";
 import Specialities from "../components/Specialities";
-import BeforeAfterGallery from "../components/BeforeAfterGallery";
 import SmileQuiz from "../components/SmileQuiz";
 import TechFeatures from "../components/TechFeatures";
-import ReviewsTrust from "../components/ReviewsTrust";
 import Banner from "../components/Banner";
 import Seo from "../components/Seo";
 
@@ -52,10 +50,8 @@ const Home = () => {
       <Header />
       <main>
         <Specialities />
-        {/* <BeforeAfterGallery /> */}
         <SmileQuiz />
         <TechFeatures />
-        {/* <ReviewsTrust /> */}
         <Banner />
       </main>
     </>
