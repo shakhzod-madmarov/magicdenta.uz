@@ -15,6 +15,12 @@ const Header = () => {
       tag1: "100% Og‘riqsiz",
       tag2: "Oliy Toifali Shifokor",
       tag3: "08:00 – 20:00 (Dush – Shan)",
+      card1Title: "100% Og‘riqsiz Anesteziya",
+      card1Desc: "Nozik kompyuterli uyushtirish",
+      card2Title: "Oliy Toifali Mutaxassislar",
+      card2Desc: "4.9 Reyting • 10,000+ Bemorlar",
+      card3Title: "Bobur shoh koʻchasi, 1B",
+      card3Desc: "08:00 – 20:00 (Dush – Shan)",
     },
     ru: {
       badge: "DENTAL ORTHOPEDICS • СТОМАТОЛОГИЯ",
@@ -25,6 +31,12 @@ const Header = () => {
       tag1: "100% Без боли",
       tag2: "Высшая категория",
       tag3: "08:00 – 20:00 (Пн – Сб)",
+      card1Title: "100% Безболезненное лечение",
+      card1Desc: "Бережная анестезия без стресса",
+      card2Title: "Врачи высшей категории",
+      card2Desc: "Рейтинг 4.9 • 10,000+ улыбок",
+      card3Title: "проспект Бабура, 1B",
+      card3Desc: "08:00 – 20:00 (Пн – Сб)",
     },
     en: {
       badge: "DENTAL ORTHOPEDICS • CLINIC",
@@ -35,6 +47,12 @@ const Header = () => {
       tag1: "Pain-Free Care",
       tag2: "Master Specialist",
       tag3: "08:00 – 20:00 (Mon – Sat)",
+      card1Title: "100% Pain-Free Treatment",
+      card1Desc: "Gentle computer-guided anesthesia",
+      card2Title: "Master Dental Specialists",
+      card2Desc: "4.9 Rating • 10,000+ Patients",
+      card3Title: "1B Babur Avenue, Andijan",
+      card3Desc: "08:00 – 20:00 (Mon – Sat)",
     },
   }[lang] || {
     badge: "DENTAL ORTHOPEDICS • STOMATOLOGIYA",
@@ -45,6 +63,12 @@ const Header = () => {
     tag1: "100% Og‘riqsiz",
     tag2: "Oliy Toifali Shifokor",
     tag3: "08:00 – 20:00 (Dush – Shan)",
+    card1Title: "100% Og‘riqsiz Anesteziya",
+    card1Desc: "Nozik kompyuterli uyushtirish",
+    card2Title: "Oliy Toifali Mutaxassislar",
+    card2Desc: "4.9 Reyting • 10,000+ Bemorlar",
+    card3Title: "Bobur shoh koʻchasi, 1B",
+    card3Desc: "08:00 – 20:00 (Dush – Shan)",
   };
 
   const headerPhoto = assets.header_doctor || assets.header_img;
@@ -52,9 +76,9 @@ const Header = () => {
   return (
     <>
       <style>{`
-        /* ═══════════════════════════════════
-           MAGIC DENTA SPACIOUS LUXURY HERO
-        ═══════════════════════════════════ */
+        /* ═════════════════════════════════════════════════
+           MAGIC DENTA FULL CINEMATIC BACKGROUND HERO
+        ═════════════════════════════════════════════════ */
 
         .mdh-hero {
           position: relative;
@@ -63,199 +87,233 @@ const Header = () => {
           margin-left: -50vw;
           margin-right: -50vw;
           width: 100vw;
-          min-height: 82vh;
+          min-height: 85vh;
           overflow: hidden;
           display: flex;
           align-items: center;
-          background: linear-gradient(135deg, #0F3040 0%, #1A1733 50%, #321E48 100%);
+          background-color: #0F3040;
         }
 
-        /* Ambient soft background glow */
+        /* Full-width background image */
+        .mdh-hero__bg {
+          position: absolute;
+          inset: 0;
+          width: 100%;
+          height: 100%;
+          z-index: 1;
+        }
+
+        .mdh-hero__bg img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          object-position: center 30%;
+          display: block;
+          filter: brightness(0.95) contrast(1.05);
+        }
+
+        /* Seamless cinematic gradient overlays */
+        .mdh-hero__bg::after {
+          content: '';
+          position: absolute;
+          inset: 0;
+          background:
+            linear-gradient(
+              to right,
+              rgba(15, 48, 64, 0.98) 0%,
+              rgba(15, 48, 64, 0.92) 35%,
+              rgba(26, 23, 51, 0.72) 65%,
+              rgba(50, 30, 72, 0.45) 100%
+            ),
+            linear-gradient(
+              to top,
+              rgba(15, 48, 64, 0.95) 0%,
+              rgba(15, 48, 64, 0.30) 25%,
+              transparent            50%
+            ),
+            linear-gradient(
+              to bottom,
+              rgba(15, 48, 64, 0.85) 0%,
+              rgba(15, 48, 64, 0.20) 25%,
+              transparent            50%
+            );
+        }
+
+        @media (max-width: 1023px) {
+          .mdh-hero__bg::after {
+            background: linear-gradient(
+              to bottom,
+              rgba(15, 48, 64, 0.95) 0%,
+              rgba(15, 48, 64, 0.90) 50%,
+              rgba(31, 23, 50, 0.92) 100%
+            );
+          }
+        }
+
+        /* Ambient Glow Orbs */
         .mdh-glow-orb-1 {
           position: absolute;
-          width: 650px;
-          height: 650px;
+          width: 600px;
+          height: 600px;
           border-radius: 50%;
-          background: radial-gradient(circle, rgba(64, 61, 136, 0.22) 0%, rgba(15, 48, 64, 0) 70%);
-          top: -180px;
-          left: -120px;
-          filter: blur(90px);
+          background: radial-gradient(circle, rgba(146, 0, 58, 0.25) 0%, rgba(145, 0, 141, 0.1) 40%, transparent 70%);
+          top: -120px;
+          right: 5%;
+          filter: blur(100px);
           pointer-events: none;
-          z-index: 1;
+          z-index: 2;
         }
 
         .mdh-glow-orb-2 {
           position: absolute;
-          width: 550px;
-          height: 550px;
+          width: 500px;
+          height: 500px;
           border-radius: 50%;
-          background: radial-gradient(circle, rgba(146, 0, 58, 0.18) 0%, rgba(145, 0, 141, 0.08) 40%, rgba(50, 30, 72, 0) 70%);
-          bottom: -120px;
-          left: 30%;
-          filter: blur(100px);
+          background: radial-gradient(circle, rgba(64, 61, 136, 0.3) 0%, transparent 70%);
+          bottom: -100px;
+          left: 5%;
+          filter: blur(90px);
           pointer-events: none;
-          z-index: 1;
-        }
-
-        /* Clinic photo with soft feathering */
-        .mdh-hero__photo {
-          display: none;
-        }
-
-        @media (min-width: 1024px) {
-          .mdh-hero__photo {
-            display: block;
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 56%;
-            height: 100%;
-            z-index: 2;
-          }
-
-          .mdh-hero__photo img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: center center;
-            display: block;
-            filter: brightness(0.92) contrast(1.04);
-          }
-
-          .mdh-hero__photo::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            pointer-events: none;
-            background:
-              linear-gradient(
-                to right,
-                rgb(15, 48, 64)        0%,
-                rgba(15, 48, 64, 0.95) 12%,
-                rgba(15, 48, 64, 0.80) 24%,
-                rgba(15, 48, 64, 0.55) 42%,
-                rgba(15, 48, 64, 0.20) 65%,
-                rgba(15, 48, 64, 0.00) 88%
-              ),
-              linear-gradient(
-                to top,
-                rgba(15, 48, 64, 0.90) 0%,
-                rgba(15, 48, 64, 0.30) 20%,
-                transparent            40%
-              ),
-              linear-gradient(
-                to bottom,
-                rgba(15, 48, 64, 0.50) 0%,
-                transparent            20%
-              );
-          }
+          z-index: 2;
         }
 
         .mdh-hero__inner {
           position: relative;
           z-index: 10;
           width: 100%;
-          max-width: 80rem;
+          max-w: 80rem;
           margin: 0 auto;
-          padding: 5rem 1.5rem 5rem;
-          display: flex;
-          align-items: center;
+          padding: 5.5rem 1.5rem 5rem;
         }
 
         @media (min-width: 640px) {
-          .mdh-hero__inner { padding: 5.5rem 2.5rem; }
+          .mdh-hero__inner { padding: 6rem 2.5rem; }
         }
         @media (min-width: 1024px) {
-          .mdh-hero__inner { padding: 6rem 3.5rem; }
+          .mdh-hero__inner { padding: 6.5rem 3.5rem; }
         }
       `}</style>
 
       <header className="mdh-hero" role="banner">
-        {/* Glow ambient meshes */}
-        <div className="mdh-glow-orb-1" aria-hidden="true" />
-        <div className="mdh-glow-orb-2" aria-hidden="true" />
-
-        {/* Clinic & Doctor Photo (Desktop right side) */}
-        <div className="mdh-hero__photo">
+        {/* Full-width Background Image */}
+        <div className="mdh-hero__bg">
           <img
             src={headerPhoto}
             alt="Magic Denta klinikasi"
             fetchPriority="high"
-            width="960"
-            height="800"
           />
         </div>
 
-        <div className="mdh-hero__inner">
-          <div className="w-full lg:max-w-[54%] flex flex-col gap-6 text-white text-left">
-            {/* Subtle luxury sub-badge */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.08] border border-white/15 backdrop-blur-md w-fit shadow-xs">
-              <span className="w-2 h-2 rounded-full bg-[#91008D] animate-pulse" />
-              <span className="text-[10px] sm:text-xs font-black tracking-widest text-slate-200 uppercase">
-                {t.badge}
-              </span>
-            </div>
+        {/* Ambient Glows */}
+        <div className="mdh-glow-orb-1" aria-hidden="true" />
+        <div className="mdh-glow-orb-2" aria-hidden="true" />
 
-            {/* Main Heading with breathing room */}
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[54px] font-black tracking-tight leading-[1.15] text-white">
-              {t.heading}
-            </h1>
-
-            {/* Description (clean & concise) */}
-            <p className="text-slate-300 text-sm sm:text-base md:text-lg leading-relaxed max-w-xl font-normal">
-              {t.desc}
-            </p>
-
-            {/* Mobile Image */}
-            <div className="block lg:hidden w-full h-[220px] rounded-3xl overflow-hidden relative border border-[#403D88]/40 shadow-xl my-2">
-              <img
-                src={headerPhoto}
-                alt="Magic Denta klinikasi"
-                className="w-full h-full object-cover"
-                fetchPriority="high"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0F3040]/90 via-transparent to-transparent" />
-            </div>
-
-            {/* CTA Action Buttons */}
-            <div className="flex flex-wrap items-center gap-3.5 pt-2">
-              <button
-                type="button"
-                onClick={() => navigate("/appointment")}
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-gradient-to-r from-[#92003A] to-[#91008D] hover:shadow-glow-wine text-white text-sm font-extrabold shadow-md hover:scale-[1.02] active:scale-95 transition-all duration-200 cursor-pointer"
-              >
-                <span>{t.book}</span>
-                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                </svg>
-              </button>
-
-              <button
-                type="button"
-                onClick={() => navigate("/services")}
-                className="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 backdrop-blur-md text-white text-sm font-bold active:scale-95 transition-all duration-200 cursor-pointer"
-              >
-                <span>{t.services}</span>
-              </button>
-            </div>
-
-            {/* Minimalist Airy Trust Row */}
-            <div className="flex flex-wrap items-center gap-y-2 gap-x-5 pt-6 text-xs font-semibold text-slate-300/90 border-t border-white/10">
-              <div className="flex items-center gap-1.5">
-                <span className="text-[#91008D]">✦</span>
-                <span>{t.tag1}</span>
+        <div className="mdh-hero__inner max-w-7xl">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+            
+            {/* Left Content Column (7 cols) */}
+            <div className="lg:col-span-7 flex flex-col gap-6 text-white text-left">
+              
+              {/* Subtle luxury sub-badge */}
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/[0.10] border border-white/20 backdrop-blur-md w-fit shadow-xs">
+                <span className="w-2 h-2 rounded-full bg-[#91008D] animate-pulse" />
+                <span className="text-[10px] sm:text-xs font-black tracking-widest text-slate-200 uppercase">
+                  {t.badge}
+                </span>
               </div>
-              <span className="text-white/20">•</span>
-              <div className="flex items-center gap-1.5">
-                <span className="text-[#403D88]">✦</span>
-                <span>{t.tag2}</span>
+
+              {/* Main Heading with breathability */}
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[54px] font-black tracking-tight leading-[1.14] text-white drop-shadow-sm">
+                {t.heading}
+              </h1>
+
+              {/* Description */}
+              <p className="text-slate-200 text-sm sm:text-base md:text-lg leading-relaxed max-w-xl font-normal">
+                {t.desc}
+              </p>
+
+              {/* CTA Action Buttons */}
+              <div className="flex flex-wrap items-center gap-3.5 pt-2">
+                <button
+                  type="button"
+                  onClick={() => navigate("/appointment")}
+                  className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-gradient-to-r from-[#92003A] to-[#91008D] hover:shadow-glow-wine text-white text-xs sm:text-sm font-black uppercase tracking-wider shadow-md hover:scale-[1.03] active:scale-95 transition-all duration-200 cursor-pointer"
+                >
+                  <span>{t.book}</span>
+                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                  </svg>
+                </button>
+
+                <button
+                  type="button"
+                  onClick={() => navigate("/services")}
+                  className="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-full bg-white/10 hover:bg-white/20 border border-white/25 backdrop-blur-md text-white text-xs sm:text-sm font-bold active:scale-95 transition-all duration-200 cursor-pointer"
+                >
+                  <span>{t.services}</span>
+                </button>
               </div>
-              <span className="text-white/20">•</span>
-              <div className="flex items-center gap-1.5">
-                <span className="text-emerald-400">✦</span>
-                <span>{t.tag3}</span>
+
+              {/* Minimalist Airy Trust Row */}
+              <div className="flex flex-wrap items-center gap-y-2 gap-x-5 pt-6 text-xs font-bold text-slate-200/90 border-t border-white/15">
+                <div className="flex items-center gap-1.5">
+                  <span className="text-[#91008D]">✦</span>
+                  <span>{t.tag1}</span>
+                </div>
+                <span className="text-white/20">•</span>
+                <div className="flex items-center gap-1.5">
+                  <span className="text-[#E8D5F5]">✦</span>
+                  <span>{t.tag2}</span>
+                </div>
+                <span className="text-white/20">•</span>
+                <div className="flex items-center gap-1.5">
+                  <span className="text-emerald-300">✦</span>
+                  <span>{t.tag3}</span>
+                </div>
               </div>
             </div>
+
+            {/* Right Floating Glassmorphism Cards Column (5 cols - Desktop only) */}
+            <div className="hidden lg:flex lg:col-span-5 flex-col gap-4 pl-4 text-left">
+              {/* Card 1: Pain Free */}
+              <div className="p-5 rounded-[26px] bg-white/[0.10] border border-white/20 backdrop-blur-xl shadow-2xl hover:bg-white/[0.15] hover:-translate-y-1 transition-all duration-300 flex items-center gap-4 group">
+                <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#92003A] to-[#91008D] text-white flex items-center justify-center shrink-0 shadow-md group-hover:scale-105 transition-transform">
+                  <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                  </svg>
+                </div>
+                <div>
+                  <h3 className="font-black text-sm text-white">{t.card1Title}</h3>
+                  <p className="text-xs text-slate-300 mt-0.5">{t.card1Desc}</p>
+                </div>
+              </div>
+
+              {/* Card 2: Rating & Doctor */}
+              <div className="p-5 rounded-[26px] bg-white/[0.10] border border-white/20 backdrop-blur-xl shadow-2xl hover:bg-white/[0.15] hover:-translate-y-1 transition-all duration-300 flex items-center gap-4 group">
+                <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#0F3040] to-[#403D88] text-white flex items-center justify-center shrink-0 shadow-md border border-white/20 group-hover:scale-105 transition-transform">
+                  <span className="text-amber-300 text-lg font-black">★</span>
+                </div>
+                <div>
+                  <h3 className="font-black text-sm text-white">{t.card2Title}</h3>
+                  <p className="text-xs text-slate-300 mt-0.5">{t.card2Desc}</p>
+                </div>
+              </div>
+
+              {/* Card 3: Location & Hours */}
+              <div className="p-5 rounded-[26px] bg-white/[0.10] border border-white/20 backdrop-blur-xl shadow-2xl hover:bg-white/[0.15] hover:-translate-y-1 transition-all duration-300 flex items-center gap-4 group">
+                <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-emerald-600 to-teal-800 text-white flex items-center justify-center shrink-0 shadow-md group-hover:scale-105 transition-transform">
+                  <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                  </svg>
+                </div>
+                <div>
+                  <h3 className="font-black text-sm text-white">{t.card3Title}</h3>
+                  <p className="text-xs text-slate-300 mt-0.5">{t.card3Desc}</p>
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
       </header>
