@@ -36,8 +36,8 @@ const questions = [
       },
       {
         id: "aesthetic",
-        label: "Gollivud tabassumi, vinirlar yoki tish oqartirish",
-        desc: "DSD tabassum dizayni, E-max vinirlar va lazerli oqartirish",
+        label: "Gollivud tabassumi va estetik vinirlar",
+        desc: "DSD tabassum dizayni va estetik vinirlar",
         icon: "✨",
         speciality: "Estetik stomatologiya",
         estTime: "2 - 3 seans",

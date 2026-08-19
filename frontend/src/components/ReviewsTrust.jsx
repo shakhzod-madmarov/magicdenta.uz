@@ -24,7 +24,7 @@ const reviews = [
     role: "Estetik stomatologiya",
     rating: 5,
     speciality: "Estetik stomatologiya",
-    comment: "Gollivud tabassumi uchun E-max vinirlar o'rnatdik. Hozir bemalol, keng va ishonch bilan kulaman. Magic Denta jamoasiga samimiy minnatdorchilik bildiraman!",
+    comment: "Gollivud tabassumi uchun estetik vinirlar o'rnatdik. Hozir bemalol, keng va ishonch bilan kulaman. Magic Denta jamoasiga samimiy minnatdorchilik bildiraman!",
     date: "5 Iyul, 2026",
     initials: "MQ",
   },

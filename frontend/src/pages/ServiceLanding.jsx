@@ -1,6 +1,5 @@
 import { useParams, useNavigate, Link } from "react-router-dom";
 import Seo from "../components/Seo";
-import { assets } from "../assets/assets";
 
 const SERVICES_DATA = {
   "ortodontiya": {
@@ -10,7 +9,7 @@ const SERVICES_DATA = {
     metaDesc: "Tishlar qatorini metall va keramik breketlar hamda ko'rinmas elaynerlar orqali tekislash. 100% individual rejalashtirish.",
     keywords: "ortodontiya, breket, elayner, tish tekislash, ortodont andijon, ортодонтия, брекеты",
     badge: "ORTODONTIYA & TISHLARNI TEKISLASH",
-    heading: "Mukammal va Tekis Tabassum: Eng So‘nggi Avlod Ortodontiyasi",
+    heading: "Mukammal va Tekis Tabassum: Zamonaviy Ortodontiya",
     description: "Magic Denta klinikasida tish qatoridagi barcha qiyshiqliklar, tishlash (prikus) nuqsonlari va jag' assimetriyalari individual ortodontik vositalar orqali tekislanadi.",
     duration: "6 oydan 14 oygacha",
     features: [
@@ -27,23 +26,23 @@ const SERVICES_DATA = {
   },
   "terapevtik-stomatologiya": {
     slug: "terapevtik-stomatologiya",
-    title: "Terapevtik Stomatologiya va Mikroskopik Davolash | Magic Denta",
+    title: "Terapevtik Stomatologiya va Tish Davolash | Magic Denta",
     metaTitle: "Terapevtik Stomatologiya: Karies & Ildiz Davolash | Magic Denta",
-    metaDesc: "Karies va asoratlarni Carl Zeiss mikroskopi ostida og'riqsiz davolash, tishlarni saqlab qolish va estetik plombalash.",
-    keywords: "terapevtik stomatologiya, karies davolash, tish davolash, mikroskop stomatologiya, plomba, терапевтическая стоматология",
+    metaDesc: "Karies va asoratlarni og'riqsiz davolash, tishlarni saqlab qolish va badiiy nanokompozit plombalash.",
+    keywords: "terapevtik stomatologiya, karies davolash, tish davolash, plomba, терапевтическая стоматология",
     badge: "TERAPEVTIK STOMATOLOGIYA",
-    heading: "Mikroskop Ostida Aniq va Mutlaqo Og‘riqsiz Tish Davolash",
-    description: "Tish to'qimalarini maksimal darajada asrab qolgan holda chuqur karies, pulpit va periodontitni nemis Carl Zeiss mikroskopi yordamida kafolatli davolaymiz. Muolaja muddati og‘iz bo‘shlig‘ining umumiy holatiga qarab 5 kundan 2-3 haftagacha davom etadi.",
+    heading: "Professional va Mutlaqo Og‘riqsiz Tish Davolash",
+    description: "Tish to'qimalarini maksimal darajada asrab qolgan holda chuqur karies, pulpit va periodontitni kafolatli davolaymiz. Badiiy nanokompozit restavratsiya yordamida tishning tabiiy shakli va chidamliligi tiklanadi. Muolaja muddati og‘iz bo‘shlig‘ining umumiy holatiga qarab 5 kundan 2-3 haftagacha davom etadi.",
     duration: "5 kundan 2-3 haftagacha (og‘iz bo‘shlig‘i holatiga qarab)",
     features: [
-      { title: "25x Mikroskopik Aniqlik", desc: "Eng mayda yoriqlar va yashirin kanallarni xatosiz ko'rish va tozalash." },
-      { title: "Kompyuterli Nozik Anesteziya", desc: "Ukol ignasi og'rig'isiz tezkor va to'liq uyushtirish kafolati." },
+      { title: "Aniq va Muloyim Davolash", desc: "Zararlangan qismlarni aniq tozalash va sog'lom to'qimani saqlab qolish." },
+      { title: "Nozik Zamonaviy Anesteziya", desc: "Og'riqsiz tezkor va to'liq uyushtirish kafolati bilan xotirjam muolaja." },
       { title: "Badiiy Nanokompozit Restavratsiya", desc: "Tishning tabiiy anatomik shakli va yaltiroqligini mukammal tiklash." },
       { title: "Tishni Saqlab Qolish Falsafasi", desc: "Eng murakkab zararlangan tishlarni ham olishga shoshilmasdan davolaymiz." }
     ],
     faqs: [
       { q: "Terapiya davolash muddati qancha davom etadi?", a: "Og‘iz bo‘shlig‘i va ildiz kanallarining holatiga qarab 5 kundan 2-3 haftagacha vaqt olishi mumkin." },
-      { q: "Plomba necha yil turadi?", a: "Yuqori sifatli nanokompozit materiallarimiz va to'g'ri gigiyena bilan 7-10 yildan ortiq mustahkam xizmat qiladi." },
+      { q: "Plomba necha yil turadi?", a: "Yuqori sifatli nanokompozit materiallarimiz va to'g'ri gigiyena bilan uzoq yillar mustahkam xizmat qiladi." },
       { q: "Ildiz kanallarini davolash og'riqlimi?", a: "Zamonaviy innovatsion anesteziya evaziga muolaja davomida bemor hech qanday og'riq sezmaydi." }
     ]
   },
@@ -51,11 +50,11 @@ const SERVICES_DATA = {
     slug: "ortopedik-stomatologiya",
     title: "Ortopedik Stomatologiya: Sirkoniy Qoplamalar va Protezlash | Magic Denta",
     metaTitle: "Ortopedik Stomatologiya & Sirkoniy Tishlar | Magic Denta",
-    metaDesc: "Sirkoniy qoplamalar (koronka), E-max vinirlar va zamonaviy protezlash. Umumiy salomatlik va milk holatini to'liq inobatga olgan holda.",
+    metaDesc: "Sirkoniy qoplamalar (koronka) va zamonaviy protezlash. Umumiy salomatlik va milk holatini to'liq inobatga olgan holda.",
     keywords: "ortopediya stomatologiya, sirkoniy tish, tish qoplama, koronka, protez, ортопедическая стоматология, коронки",
     badge: "DENTAL ORTHOPEDICS & PROTEZLASH",
     heading: "Sirkoniy Qoplamalar (Koronka) va Anatomik Protezlash",
-    description: "Magic Denta — Dental Orthopedics markazi sifatida tishlarni sirkoniy va presslangan keramika orqali to'liq tiklab beradi. Qoplama qo‘yish muddati kamida 1-2 haftadan bir necha oygacha davom etadi. Bunda milk va og‘iz bo‘shlig‘i holati bilan birga, bemorning umumiy salomatlik ko‘rsatkichlari (qandli diabet / saxar, gepatit, virusli kasalliklar, qon bosimi) qat'iy inobatga olinadi.",
+    description: "Magic Denta — Dental Orthopedics markazi sifatida tishlarni sirkoniy orqali to'liq tiklab beradi. Qoplama qo‘yish muddati kamida 1-2 haftadan bir necha oygacha davom etadi. Bunda milk va og‘iz bo‘shlig‘i holati bilan birga, bemorning umumiy salomatlik ko‘rsatkichlari (qandli diabet / saxar, gepatit, virusli kasalliklar, qon bosimi) qat'iy inobatga olinadi.",
     duration: "Kamida 1-2 haftadan bir necha oygacha",
     features: [
       { title: "Umumiy Salomatlik Tahlili", desc: "Qandli diabet (saxar), gepatit, virusli kasalliklar va arterial qon bosimi to‘liq tekshirilib, xavfsiz protokol qo‘llaniladi." },
@@ -71,23 +70,23 @@ const SERVICES_DATA = {
   },
   "estetik-stomatologiya": {
     slug: "estetik-stomatologiya",
-    title: "Estetik Stomatologiya: E-max Vinirlar va Oqartirish | Magic Denta",
-    metaTitle: "Estetik Stomatologiya & Gollivud Tabassumi | Magic Denta",
-    metaDesc: "Gollivud tabassumi Magic Denta'da. Ultra-yupqa keramik vinirlar, professional tish oqartirish va estetik restavratsiya.",
-    keywords: "estetik stomatologiya, vinir, vinirlar narxi, tish oqartirish, gollivud tabassumi, виниры, отбеливание",
-    badge: "ESTETIK STOMATOLOGIYA & SMILE DESIGN",
-    heading: "Gollivud Tabassumi: E-max Vinirlar va Lazerli Oqartirish",
-    description: "Tishlaringiz rangi, shakli yoki oraliq masofasini ideal holatga keltirib, o'zingizga bo'lgan ishonchni yangi cho'qqiga olib chiqing.",
+    title: "Estetik Stomatologiya: Vinirlar va Tabassum Dizayni | Magic Denta",
+    metaTitle: "Estetik Stomatologiya & Vinirlar | Magic Denta",
+    metaDesc: "Gollivud tabassumi Magic Denta'da. Estetik vinirlar o'rnatish va badiiy restavratsiya.",
+    keywords: "estetik stomatologiya, vinir, vinirlar narxi, tabassum dizayni, виниры",
+    badge: "ESTETIK STOMATOLOGIYA & VINIRLAR",
+    heading: "Gollivud Tabassumi: Estetik Vinirlar O‘rnatish",
+    description: "Tishlaringiz rangi, shakli yoki oraliq masofasini estetik vinirlar orqali ideal holatga keltirib, o'zingizga bo'lgan ishonchni yangi cho'qqiga olib chiqing.",
     duration: "2 - 3 seans",
     features: [
-      { title: "E-max Ultra-Yupqa Vinirlar", desc: "Tish to'qimasini minimal yo'nish orqali tabiiy va yaltiroq ko'rinish berish." },
-      { title: "Lazerli Xavfsiz Oqartirish", desc: "Bir seansda tishlarni 4-8 tongacha emalga zarar yetkazmasdan oqartirish." },
-      { title: "Digital Smile Design (DSD)", desc: "Yuz tuzilishingizga mos tabassumni avvaldan kompyuterda loyihalash." },
-      { title: "Emal Himoyasi & Remineralizatsiya", desc: "Muolajadan so'ng tish emalini maxsus mustahkamlovchi minerallar bilan to'yintirish." }
+      { title: "Estetik Vinirlar", desc: "Tish to'qimasini minimal yo'nish orqali tabiiy va yaltiroq ko'rinish berish." },
+      { title: "Tabassum Dizayni", desc: "Yuz tuzilishingizga va tish qatoringizga mos chiroyli tabassumni loyihalash." },
+      { title: "Badiiy Restavratsiya", desc: "Tishlarning tabiiy emal yorug'lik aksini va mukammal shaklini tiklash." },
+      { title: "Emalni Asrash & Mustahkamlash", desc: "Muolajadan so'ng tish emalini maxsus mustahkamlovchi minerallar bilan himoyalash." }
     ],
     faqs: [
-      { q: "Vinirlar necha yil xizmat qiladi?", a: "Sifatli E-max keramik vinirlar 15-20 yil va undan ko'proq benuqson xizmat qiladi." },
-      { q: "Tish oqartirish emalga zarar bermaydimi?", a: "Klinikamizda qo'llaniladigan professional oqartirish texnologiyasi emalga zarar bermasdan faqat chuqur pigmentlarni tozalaydi." }
+      { q: "Vinirlar qanday afzalliklarga ega?", a: "Vinirlar tishlarning rangi, shakli va oraliq tirqishlarini (diastema) tez va estetik jihatdan ideal darajada tuzatish imkonini beradi." },
+      { q: "Vinir qo'yish jarayoni og'riqlimi?", a: "Yo'q, zamonaviy anesteziya va muloyim texnologiyalar tufayli butun jarayon mutlaqo og'riqsiz va qulay o'tadi." }
     ]
   },
   "jarrohlik-stomatologiyasi": {

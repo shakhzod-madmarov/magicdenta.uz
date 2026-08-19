@@ -40,19 +40,19 @@ const Specialities = () => {
       en: "Precision tooth alignment with state-of-the-art bracket systems and clear aligners.",
     },
     "Terapevtik stomatologiya": {
-      uz: "Karies va asoratlarni mikroskop ostida mutlaqo og‘riqsiz davolash va estetik plombalash.",
-      ru: "Безболезненное микроскопическое лечение кариеса и прочная эстетическая реставрация.",
-      en: "Microscopic pain-free caries care and high-durability aesthetic tooth restoration.",
+      uz: "Karies va asoratlarni mutlaqo og‘riqsiz va nozik davolash va estetik plombalash.",
+      ru: "Безболезненное и надежное лечение кариеса и прочная эстетическая реставрация.",
+      en: "Painless and gentle caries care and high-durability aesthetic tooth restoration.",
     },
     "Ortopedik stomatologiya": {
-      uz: "Sirkoniy qoplamalar, E-max vinirlar va zamonaviy raqamli protezlash.",
-      ru: "Циркониевые коронки, ультратонкие виниры E-max и анатомическое протезирование.",
-      en: "Zirconia crowns, ultra-thin E-max veneers, and advanced digital prosthetics.",
+      uz: "Sirkoniy qoplamalar, vinirlar va zamonaviy protezlash.",
+      ru: "Циркониевые коронки, эстетические виниры и анатомическое протезирование.",
+      en: "Zirconia crowns, aesthetic veneers, and digital prosthetics.",
     },
     "Estetik stomatologiya": {
-      uz: "Mukammal gollivud tabassum dizayni va emalga zararsiz professional oqartirish.",
-      ru: "Комплексный дизайн идеальной улыбки и безопасное лазерное отбеливание.",
-      en: "Digital Hollywood smile design and enamel-safe clinical whitening systems.",
+      uz: "Mukammal tabassum dizayni va estetik vinirlar o‘rnatish.",
+      ru: "Дизайн идеальной улыбки и установка эстетических виниров.",
+      en: "Digital smile design and aesthetic veneers installation.",
     },
     "Stomatologiya Jarrohligi": {
       uz: "Aql tishlarini nozik va xavfsiz olish hamda zamonaviy jarrohlik muolajalari.",

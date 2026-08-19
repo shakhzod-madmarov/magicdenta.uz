@@ -13,7 +13,7 @@ const servicesDetails = [
       en: "Orthodontics & Aligners"
     },
     desc: {
-      uz: "Tishlar qatorini eng so‘nggi avlod metall, keramik breketlar hamda ko‘rinmas shaffof elaynerlar (kappalar) orqali tekislash. 100% individual 3D rejalashtirish.",
+      uz: "Tishlar qatorini eng so‘nggi avlod metall, keramik breketlar hamda ko‘rinmas shaffof elaynerlar (kappalar) orqali tekislash. 100% individual rejalashtirish.",
       ru: "Исправление прикуса металлическими, керамическими брекетами и прозрачными элайнерами.",
       en: "Precision bite and smile alignment with modern bracket systems and invisible aligners."
     },
@@ -31,11 +31,11 @@ const servicesDetails = [
       en: "Therapeutic Dentistry"
     },
     desc: {
-      uz: "Chuqur karies, pulpit va ildiz kanallarini Carl Zeiss mikroskopi ostida og‘riqsiz davolash. Og‘iz bo‘shlig‘i va to‘qimalarning holatiga qarab bosqichma-bosqich amalga oshiriladi.",
-      ru: "Лечение кариеса и каналов под микроскопом Carl Zeiss без боли с учетом состояния полости рта.",
-      en: "Microscopic painless root canal therapy, gentle caries treatment, and tooth restoration."
+      uz: "Chuqur karies, pulpit va ildiz kanallarini og‘riqsiz davolash. Tish to‘qimasini maksimal asrash va badiiy nanokompozit plombalash. Og‘iz bo‘shlig‘i holatiga qarab bosqichma-bosqich amalga oshiriladi.",
+      ru: "Лечение кариеса и каналов без боли с сохранением зуба и учетом состояния полости рта.",
+      en: "Gentle caries care, root canal treatment, and artistic nanocomposite restorations."
     },
-    highlights: ["25x Mikroskopik Aniqlik", "Og‘iz Bo‘shlig‘iga Mos Reja", "Badiiy Nanokompozit", "Kafolatli Tish Saqlash"],
+    highlights: ["Muloyim & Aniq Davolash", "Og‘iz Bo‘shlig‘iga Mos Reja", "Badiiy Nanokompozit", "Kafolatli Tish Saqlash"],
     duration: "5 kundan 2-3 haftagacha (holatga qarab)",
     doctorType: "Terapevt Stomatolog",
   },
@@ -60,18 +60,18 @@ const servicesDetails = [
   {
     slug: "estetik-stomatologiya",
     speciality: "Estetik stomatologiya",
-    badge: "ESTETIKA & SMILE DESIGN",
+    badge: "ESTETIKA & VINIRLAR",
     title: {
       uz: "Estetik Stomatologiya & Vinirlar",
-      ru: "Эстетическая стоматология",
-      en: "Aesthetic Smile Design"
+      ru: "Эстетическая стоматология и Виниры",
+      en: "Aesthetic Dentistry & Veneers"
     },
     desc: {
-      uz: "Digital Smile Design orqali yuzingizga mos Gollivud tabassumini yaratish. Ultra-yupqa E-max vinirlar va emalga zararsiz lazerli tish oqartirish.",
-      ru: "Голливудская улыбка: тончайшие виниры E-max, дизайн улыбки DSD и безопасное отбеливание.",
-      en: "Hollywood Smile transformations, ultra-thin E-max veneers, and laser whitening."
+      uz: "Tabassum dizayni orqali yuzingizga mos estetik vinirlar o‘rnatish va tishlar yaltiroqligini tiklash.",
+      ru: "Установка эстетических виниров и дизайн гармоничной улыбки.",
+      en: "Aesthetic veneers placement and bespoke smile transformations."
     },
-    highlights: ["E-max Yupqa Vinirlar", "DSD Tabassum Dizayni", "Lazerli Oqartirish", "Emal Remineralizatsiyasi"],
+    highlights: ["Estetik Vinirlar", "Tabassum Dizayni", "Badiiy Restavratsiya", "Emalni Asrash"],
     duration: "2 - 3 seans",
     doctorType: "Estet-Stomatolog",
   },
