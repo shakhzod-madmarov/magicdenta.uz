@@ -169,7 +169,7 @@ const SmileQuiz = () => {
                 <button
                   type="button"
                   onClick={() => {
-                    navigate(`/dentists/${encodeURIComponent(selectedOption.speciality)}`);
+                    const slugMap = {"Ortodontiya": "ortodontiya", "Terapevtik stomatologiya": "terapevtik-stomatologiya", "Ortopedik stomatologiya": "ortopedik-stomatologiya", "Estetik stomatologiya": "estetik-stomatologiya", "Stomatologiya Jarrohligi": "jarrohlik-stomatologiyasi"}; navigate(`/services/${slugMap[selectedOption.speciality] || "ortodontiya"}`);
                   }}
                   className="w-full md:w-auto px-8 py-4 bg-gradient-to-r from-[#92003A] to-[#91008D] hover:shadow-glow-wine text-white font-black text-xs uppercase tracking-wider rounded-full shadow-lg transition-all active:scale-95 cursor-pointer"
                 >

@@ -223,20 +223,7 @@ const Nav = () => {
               )}
             </li>
 
-            <li>
-              <NavLink
-                to="/dentists"
-                className={({ isActive }) =>
-                  `rounded-full px-5 py-2 text-xs xl:text-sm font-extrabold transition-all duration-200 block ${
-                    isActive
-                      ? "bg-gradient-to-r from-[#403D88] to-[#321E48] text-white shadow-sm"
-                      : "text-slate-600 hover:text-slate-900 hover:bg-white/80"
-                  }`
-                }
-              >
-                {t.dentists}
-              </NavLink>
-            </li>
+
 
             <li>
               <NavLink
@@ -429,15 +416,7 @@ const Nav = () => {
                       {t.home}
                     </NavLink>
                   </li>
-                  <li>
-                    <NavLink
-                      to="/dentists"
-                      onClick={() => setShowMenu(false)}
-                      className="block px-4 py-3 rounded-2xl text-sm font-bold text-slate-800 hover:bg-slate-100"
-                    >
-                      {t.dentists}
-                    </NavLink>
-                  </li>
+
                   <li>
                     <NavLink
                       to="/about"

@@ -61,8 +61,8 @@ const App = () => {
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/myappointments" element={<MyAppointments />} />
-          <Route path="/dentists" element={<Dentists />} />
-          <Route path="/dentists/:speciality" element={<Dentists />} />
+          <Route path="/dentists" element={<Navigate to="/services" replace />} />
+          <Route path="/dentists/:speciality" element={<Navigate to="/services" replace />} />
           <Route path="/services" element={<Services />} />
           <Route path="/xizmatlar" element={<Services />} />
           <Route path="/services/:serviceSlug" element={<ServiceLanding />} />

@@ -71,7 +71,7 @@ const Banner = () => {
           <div className="flex flex-wrap gap-4 pt-2">
             <button
               type="button"
-              onClick={() => navigate("/dentists")}
+              onClick={() => navigate("/contact")}
               aria-label={t.bookNow}
               className="px-8 py-4 bg-gradient-to-r from-[#92003A] to-[#91008D] text-white font-extrabold rounded-full shadow-glow-wine hover:shadow-xl hover:scale-[1.02] active:scale-95 transition-all text-sm sm:text-base cursor-pointer"
             >
