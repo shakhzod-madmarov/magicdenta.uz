@@ -107,26 +107,37 @@ const Nav = () => {
   };
 
   useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === "Escape") {
+        setShowMenu(false);
+        setServicesOpen(false);
+        setProfileOpen(false);
+      }
+    };
     if (showMenu) {
       document.body.style.overflow = "hidden";
+      window.addEventListener("keydown", handleKeyDown);
     } else {
       document.body.style.overflow = "";
     }
     return () => {
       document.body.style.overflow = "";
+      window.removeEventListener("keydown", handleKeyDown);
     };
   }, [showMenu]);
 
   return (
     <>
-      <nav className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200/80 shadow-xs">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex items-center justify-between py-3 sm:py-3.5">
+      <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200/80 shadow-xs">
+        <nav aria-label="Asosiy navigatsiya" className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex items-center justify-between py-3 sm:py-3.5">
           {/* Brand Logo */}
-          <NavLink to="/" className="flex items-center gap-2 group shrink-0">
+          <NavLink to="/" className="flex items-center gap-2 group shrink-0" aria-label="Magic Denta bosh sahifa">
             <img
               className="h-10 sm:h-12 md:h-14 w-auto cursor-pointer object-contain transition-transform group-hover:scale-[1.02]"
               src={assets.logo}
               alt="Magic Denta"
+              width="180"
+              height="56"
             />
           </NavLink>
 
@@ -156,6 +167,9 @@ const Nav = () => {
             >
               <button
                 type="button"
+                aria-expanded={servicesOpen}
+                aria-haspopup="true"
+                aria-label="Xizmatlar menyusi"
                 onClick={() => setServicesOpen((p) => !p)}
                 className={`rounded-full px-5 py-2 text-xs xl:text-sm font-extrabold transition-all duration-200 flex items-center gap-1.5 cursor-pointer ${
                   servicesOpen
@@ -171,6 +185,7 @@ const Nav = () => {
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
+                  aria-hidden="true"
                 >
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" />
                 </svg>
@@ -196,7 +211,7 @@ const Nav = () => {
                           className="flex items-center gap-3 p-2.5 rounded-2xl hover:bg-slate-50 transition group"
                         >
                           <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-[#0F3040] to-[#321E48] flex items-center justify-center shrink-0 overflow-hidden shadow-xs">
-                            <img src={item.image} alt="" className="w-full h-full object-cover" />
+                            <img src={item.image} alt="" width="36" height="36" className="w-full h-full object-cover" />
                           </div>
                           <div>
                             <span className="text-xs font-bold text-[#0F3040] group-hover:text-[#92003A] transition-colors block">
@@ -222,8 +237,6 @@ const Nav = () => {
                 </div>
               )}
             </li>
-
-
 
             <li>
               <NavLink
@@ -267,7 +280,7 @@ const Nav = () => {
                 localStorage.setItem("medinson:language", newLang);
                 window.location.reload();
               }}
-              className="bg-slate-100 text-slate-800 text-xs font-bold rounded-full px-3.5 py-2 outline-none border border-slate-200/80 cursor-pointer hover:bg-slate-200/70 transition"
+              className="bg-slate-100 text-slate-800 text-xs font-bold rounded-full px-3.5 py-2 outline-none border border-slate-200/80 cursor-pointer hover:bg-slate-200/70 transition min-h-[40px]"
               aria-label="Tilni tanlash"
             >
               <option value="uz">UZ</option>
@@ -285,7 +298,7 @@ const Nav = () => {
                 <button
                   type="button"
                   onClick={() => setProfileOpen((prev) => !prev)}
-                  className="flex items-center gap-2 pl-1.5 pr-3.5 py-1 rounded-full bg-white border border-slate-200 hover:border-slate-400 hover:shadow transition-all cursor-pointer select-none"
+                  className="flex items-center gap-2 pl-1.5 pr-3.5 py-1 rounded-full bg-white border border-slate-200 hover:border-slate-400 hover:shadow transition-all cursor-pointer select-none min-h-[40px]"
                   aria-haspopup="true"
                   aria-expanded={profileOpen}
                 >
@@ -299,6 +312,8 @@ const Nav = () => {
                     }
                     alt={userData?.name || "Profil"}
                     className="w-8 h-8 rounded-full object-cover border border-slate-200"
+                    width="32"
+                    height="32"
                     onError={(e) => {
                       e.currentTarget.onerror = null;
                       e.currentTarget.src = profilePic;
@@ -339,7 +354,7 @@ const Nav = () => {
                         setProfileOpen(false);
                         logout();
                       }}
-                      className="w-full text-left px-4 py-2.5 text-xs font-bold text-red-600 hover:bg-red-50"
+                      className="w-full text-left px-4 py-2.5 text-xs font-bold text-red-600 hover:bg-red-50 cursor-pointer"
                     >
                       {t.logout}
                     </button>
@@ -350,7 +365,7 @@ const Nav = () => {
               <button
                 type="button"
                 onClick={() => navigate("/login")}
-                className="inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-full bg-gradient-to-r from-[#92003A] to-[#91008D] hover:shadow-glow-wine text-white text-xs font-extrabold shadow-sm active:scale-95 transition-all cursor-pointer"
+                className="inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-full bg-gradient-to-r from-[#92003A] to-[#91008D] hover:shadow-glow-wine text-white text-xs font-extrabold shadow-sm active:scale-95 transition-all cursor-pointer min-h-[40px]"
               >
                 <span>{t.login}</span>
               </button>
@@ -368,7 +383,8 @@ const Nav = () => {
                 localStorage.setItem("medinson:language", newLang);
                 window.location.reload();
               }}
-              className="bg-slate-100 text-slate-800 text-xs font-bold rounded-full px-2.5 py-1.5 outline-none border border-slate-200"
+              className="bg-slate-100 text-slate-800 text-xs font-bold rounded-full px-3 py-2 outline-none border border-slate-200 min-h-[44px]"
+              aria-label="Tilni tanlash"
             >
               <option value="uz">UZ</option>
               <option value="ru">RU</option>
@@ -378,40 +394,50 @@ const Nav = () => {
             <button
               type="button"
               onClick={() => setShowMenu(true)}
-              className="p-2 rounded-xl bg-slate-100 text-slate-800"
-              aria-label="Menyu"
+              className="p-2.5 rounded-xl bg-slate-100 text-slate-800 min-h-[44px] min-w-[44px] flex items-center justify-center cursor-pointer active:scale-95 transition-transform"
+              aria-label="Navigatsiya menyusini ochish"
+              aria-expanded={showMenu}
             >
-              <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
               </svg>
             </button>
           </div>
-        </div>
-      </nav>
+        </nav>
+      </header>
 
-      {/* Mobile Drawer */}
+      {/* Mobile Drawer with Accessible Dialog semantics */}
       {showMenu &&
         createPortal(
-          <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex justify-end animate-fadeIn">
-            <div className="w-[85%] max-w-sm bg-white h-full p-6 flex flex-col justify-between overflow-y-auto">
+          <div
+            role="dialog"
+            aria-modal="true"
+            aria-label="Mobil navigatsiya menyusi"
+            className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex justify-end animate-fadeIn"
+            onClick={(e) => {
+              if (e.target === e.currentTarget) setShowMenu(false);
+            }}
+          >
+            <div className="w-[85%] max-w-sm bg-white h-full p-6 flex flex-col justify-between overflow-y-auto shadow-2xl">
               <div>
                 <div className="flex items-center justify-between pb-4 border-b border-slate-100">
-                  <img src={assets.logo} alt="Magic Denta" className="h-10 w-auto" />
+                  <img src={assets.logo} alt="Magic Denta" className="h-10 w-auto" width="140" height="40" />
                   <button
                     type="button"
                     onClick={() => setShowMenu(false)}
-                    className="p-2 rounded-full bg-slate-100 text-slate-700"
+                    className="p-2.5 rounded-full bg-slate-100 text-slate-700 hover:bg-slate-200 min-h-[44px] min-w-[44px] flex items-center justify-center cursor-pointer"
+                    aria-label="Menyuni yopish"
                   >
                     ✕
                   </button>
                 </div>
 
-                <ul className="space-y-3 mt-6 text-left">
+                <ul className="space-y-2 mt-6 text-left">
                   <li>
                     <NavLink
                       to="/"
                       onClick={() => setShowMenu(false)}
-                      className="block px-4 py-3 rounded-2xl text-sm font-bold text-slate-800 hover:bg-slate-100"
+                      className="block px-4 py-3 rounded-2xl text-sm font-bold text-slate-800 hover:bg-slate-100 min-h-[44px]"
                     >
                       {t.home}
                     </NavLink>
@@ -419,20 +445,41 @@ const Nav = () => {
 
                   <li>
                     <NavLink
+                      to="/services"
+                      onClick={() => setShowMenu(false)}
+                      className="block px-4 py-3 rounded-2xl text-sm font-bold text-slate-800 hover:bg-slate-100 min-h-[44px]"
+                    >
+                      {t.services}
+                    </NavLink>
+                  </li>
+
+                  <li>
+                    <NavLink
                       to="/about"
                       onClick={() => setShowMenu(false)}
-                      className="block px-4 py-3 rounded-2xl text-sm font-bold text-slate-800 hover:bg-slate-100"
+                      className="block px-4 py-3 rounded-2xl text-sm font-bold text-slate-800 hover:bg-slate-100 min-h-[44px]"
                     >
                       {t.about}
                     </NavLink>
                   </li>
+
                   <li>
                     <NavLink
                       to="/contact"
                       onClick={() => setShowMenu(false)}
-                      className="block px-4 py-3 rounded-2xl text-sm font-bold text-slate-800 hover:bg-slate-100"
+                      className="block px-4 py-3 rounded-2xl text-sm font-bold text-slate-800 hover:bg-slate-100 min-h-[44px]"
                     >
                       {t.contact}
+                    </NavLink>
+                  </li>
+
+                  <li>
+                    <NavLink
+                      to="/appointment"
+                      onClick={() => setShowMenu(false)}
+                      className="block px-4 py-3 rounded-2xl text-sm font-bold text-emerald-700 bg-emerald-50 hover:bg-emerald-100 min-h-[44px]"
+                    >
+                      📅 Qabulga onlayn yozilish
                     </NavLink>
                   </li>
                 </ul>
@@ -441,13 +488,13 @@ const Nav = () => {
                   <span className="text-[10px] font-black text-[#403D88] uppercase tracking-wider block mb-2">
                     5 TA ASOSIY MUTAXASSISLIK
                   </span>
-                  <div className="space-y-1.5">
+                  <div className="space-y-1">
                     {specialityData.map((item, idx) => (
                       <Link
                         key={idx}
                         to={`/services/${item.slug || "ortodontiya"}`}
                         onClick={() => setShowMenu(false)}
-                        className="block px-3 py-2 rounded-xl text-xs font-bold text-slate-700 hover:bg-slate-50"
+                        className="block px-3 py-2.5 rounded-xl text-xs font-bold text-slate-700 hover:bg-slate-50 min-h-[40px] flex items-center"
                       >
                         • {item.displayName?.[lang] || item.speciality}
                       </Link>
@@ -456,18 +503,27 @@ const Nav = () => {
                 </div>
               </div>
 
-              <div className="pt-6 border-t border-slate-100">
+              <div className="pt-6 border-t border-slate-100 space-y-2">
                 {token ? (
-                  <button
-                    type="button"
-                    onClick={() => {
-                      setShowMenu(false);
-                      logout();
-                    }}
-                    className="w-full py-3 bg-red-50 text-red-600 font-bold text-xs rounded-xl"
-                  >
-                    {t.logout}
-                  </button>
+                  <>
+                    <Link
+                      to="/myprofile"
+                      onClick={() => setShowMenu(false)}
+                      className="w-full py-3 block text-center bg-slate-100 text-slate-800 font-bold text-xs rounded-xl min-h-[44px]"
+                    >
+                      {t.myProfile}
+                    </Link>
+                    <button
+                      type="button"
+                      onClick={() => {
+                        setShowMenu(false);
+                        logout();
+                      }}
+                      className="w-full py-3 bg-red-50 text-red-600 font-bold text-xs rounded-xl min-h-[44px] cursor-pointer"
+                    >
+                      {t.logout}
+                    </button>
+                  </>
                 ) : (
                   <button
                     type="button"
@@ -475,7 +531,7 @@ const Nav = () => {
                       setShowMenu(false);
                       navigate("/login");
                     }}
-                    className="w-full py-3.5 bg-gradient-to-r from-[#92003A] to-[#91008D] text-white font-black text-xs uppercase tracking-wider rounded-xl shadow-md"
+                    className="w-full py-3.5 bg-gradient-to-r from-[#92003A] to-[#91008D] text-white font-black text-xs uppercase tracking-wider rounded-xl shadow-md min-h-[44px] cursor-pointer active:scale-95 transition-transform"
                   >
                     {t.login}
                   </button>

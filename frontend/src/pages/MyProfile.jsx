@@ -13,6 +13,7 @@ import {
   revokePreviewUrl,
 } from "../utils/imageUpload";
 import { formatUzPhone, isUzPhoneComplete, handleUzPhonePaste, PHONE_PLACEHOLDER } from "../utils/phone";
+import Seo from "../components/Seo";
 
 const MyProfile = () => {
   const [telegramStatus, setTelegramStatus] = useState(null);
@@ -325,7 +326,8 @@ const MyProfile = () => {
 
   return (
     userData && (
-      <main className="max-w-5xl mx-auto py-8 sm:py-12 px-4 sm:px-6">
+      <div className="max-w-5xl mx-auto py-6 sm:py-12 px-4 sm:px-6">
+        <Seo title="Mening Profilim | Magic Denta" noindex={true} />
         {/* Page Header */}
         <div className="text-center max-w-2xl mx-auto mb-6 sm:mb-8">
           <span className="text-[11px] sm:text-xs font-extrabold text-slate-400 uppercase tracking-widest block mb-1 sm:mb-2">
@@ -791,7 +793,7 @@ const MyProfile = () => {
             </div>
           </div>
         </div>
-      </main>
+      </div>
     )
   );
 };

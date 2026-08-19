@@ -50,204 +50,109 @@ const Header = () => {
   const headerPhoto = assets.header_doctor || assets.header_img;
 
   return (
-    <>
-      <style>{`
-        /* ═════════════════════════════════════════════════
-           MAGIC DENTA FULL CINEMATIC BACKGROUND HERO
-        ═════════════════════════════════════════════════ */
+    <section className="relative w-full min-h-[75vh] sm:min-h-[82vh] lg:min-h-[86vh] flex items-center bg-[#0F3040] overflow-hidden">
+      {/* Full-width Background Image */}
+      <div className="absolute inset-0 w-full h-full z-0">
+        <img
+          src={headerPhoto}
+          alt="Magic Denta zamonaviy stomatologiya klinikasi"
+          fetchPriority="high"
+          loading="eager"
+          decoding="async"
+          width="1920"
+          height="1080"
+          className="w-full h-full object-cover object-[center_30%] filter brightness-95 contrast-105"
+        />
 
-        .mdh-hero {
-          position: relative;
-          left: 50%;
-          right: 50%;
-          margin-left: -50vw;
-          margin-right: -50vw;
-          width: 100vw;
-          min-height: 85vh;
-          overflow: hidden;
-          display: flex;
-          align-items: center;
-          background-color: #0F3040;
-        }
+        {/* Seamless Cinematic Gradient Overlays */}
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            background: `
+              linear-gradient(to right, rgba(15, 48, 64, 0.98) 0%, rgba(15, 48, 64, 0.92) 40%, rgba(26, 23, 51, 0.65) 75%, rgba(50, 30, 72, 0.35) 100%),
+              linear-gradient(to top, rgba(15, 48, 64, 0.95) 0%, rgba(15, 48, 64, 0.20) 30%, transparent 60%),
+              linear-gradient(to bottom, rgba(15, 48, 64, 0.85) 0%, transparent 40%)
+            `
+          }}
+        />
+      </div>
 
-        /* Full-width background image */
-        .mdh-hero__bg {
-          position: absolute;
-          inset: 0;
-          width: 100%;
-          height: 100%;
-          z-index: 1;
-        }
+      {/* Ambient Glow Orbs */}
+      <div
+        className="absolute w-[350px] sm:w-[600px] h-[350px] sm:h-[600px] rounded-full top-[-100px] right-[5%] blur-[90px] sm:blur-[120px] pointer-events-none z-10"
+        style={{ background: "radial-gradient(circle, rgba(146, 0, 58, 0.28) 0%, rgba(145, 0, 141, 0.10) 45%, transparent 70%)" }}
+        aria-hidden="true"
+      />
+      <div
+        className="absolute w-[300px] sm:w-[500px] h-[300px] sm:h-[500px] rounded-full bottom-[-80px] left-[5%] blur-[80px] sm:blur-[100px] pointer-events-none z-10"
+        style={{ background: "radial-gradient(circle, rgba(64, 61, 136, 0.32) 0%, transparent 70%)" }}
+        aria-hidden="true"
+      />
 
-        .mdh-hero__bg img {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-          object-position: center 30%;
-          display: block;
-          filter: brightness(0.95) contrast(1.05);
-        }
+      {/* Content Container */}
+      <div className="relative z-20 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24">
+        <div className="max-w-3xl flex flex-col gap-5 sm:gap-6 text-white text-left">
+          
+          {/* Luxury Sub-Badge */}
+          <div className="inline-flex items-center gap-2 px-3.5 sm:px-4 py-1.5 rounded-full bg-white/[0.12] border border-white/20 backdrop-blur-md w-fit shadow-xs">
+            <span className="w-2 h-2 rounded-full bg-[#91008D] animate-pulse" aria-hidden="true" />
+            <span className="text-[10px] sm:text-xs font-black tracking-widest text-slate-200 uppercase">
+              {t.badge}
+            </span>
+          </div>
 
-        /* Seamless cinematic gradient overlays */
-        .mdh-hero__bg::after {
-          content: '';
-          position: absolute;
-          inset: 0;
-          background:
-            linear-gradient(
-              to right,
-              rgba(15, 48, 64, 0.98) 0%,
-              rgba(15, 48, 64, 0.90) 40%,
-              rgba(26, 23, 51, 0.60) 70%,
-              rgba(50, 30, 72, 0.25) 100%
-            ),
-            linear-gradient(
-              to top,
-              rgba(15, 48, 64, 0.95) 0%,
-              rgba(15, 48, 64, 0.25) 25%,
-              transparent            50%
-            ),
-            linear-gradient(
-              to bottom,
-              rgba(15, 48, 64, 0.85) 0%,
-              rgba(15, 48, 64, 0.15) 25%,
-              transparent            50%
-            );
-        }
+          {/* Main Heading */}
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[54px] font-black tracking-tight leading-[1.12] text-white drop-shadow-sm">
+            {t.heading}
+          </h1>
 
-        @media (max-width: 1023px) {
-          .mdh-hero__bg::after {
-            background: linear-gradient(
-              to bottom,
-              rgba(15, 48, 64, 0.95) 0%,
-              rgba(15, 48, 64, 0.85) 50%,
-              rgba(31, 23, 50, 0.90) 100%
-            );
-          }
-        }
+          {/* Description */}
+          <p className="text-slate-200 text-sm sm:text-base md:text-lg leading-relaxed max-w-xl font-normal">
+            {t.desc}
+          </p>
 
-        /* Ambient Glow Orbs */
-        .mdh-glow-orb-1 {
-          position: absolute;
-          width: 600px;
-          height: 600px;
-          border-radius: 50%;
-          background: radial-gradient(circle, rgba(146, 0, 58, 0.22) 0%, rgba(145, 0, 141, 0.08) 40%, transparent 70%);
-          top: -120px;
-          right: 5%;
-          filter: blur(100px);
-          pointer-events: none;
-          z-index: 2;
-        }
+          {/* CTA Buttons */}
+          <div className="flex flex-wrap items-center gap-3.5 pt-2">
+            <button
+              type="button"
+              onClick={() => navigate("/appointment")}
+              className="inline-flex items-center justify-center gap-2 px-7 sm:px-8 py-3.5 sm:py-4 rounded-full bg-gradient-to-r from-[#92003A] to-[#91008D] hover:shadow-glow-wine text-white text-xs sm:text-sm font-black uppercase tracking-wider shadow-md hover:scale-[1.03] active:scale-95 transition-all duration-200 cursor-pointer min-h-[44px]"
+            >
+              <span>{t.book}</span>
+              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+            </button>
 
-        .mdh-glow-orb-2 {
-          position: absolute;
-          width: 500px;
-          height: 500px;
-          border-radius: 50%;
-          background: radial-gradient(circle, rgba(64, 61, 136, 0.28) 0%, transparent 70%);
-          bottom: -100px;
-          left: 5%;
-          filter: blur(90px);
-          pointer-events: none;
-          z-index: 2;
-        }
+            <button
+              type="button"
+              onClick={() => navigate("/services")}
+              className="inline-flex items-center justify-center gap-2 px-6 sm:px-7 py-3.5 sm:py-4 rounded-full bg-white/10 hover:bg-white/20 border border-white/25 backdrop-blur-md text-white text-xs sm:text-sm font-bold active:scale-95 transition-all duration-200 cursor-pointer min-h-[44px]"
+            >
+              <span>{t.services}</span>
+            </button>
+          </div>
 
-        .mdh-hero__inner {
-          position: relative;
-          z-index: 10;
-          width: 100%;
-          max-w: 80rem;
-          margin: 0 auto;
-          padding: 6rem 1.5rem 6rem;
-        }
-
-        @media (min-width: 640px) {
-          .mdh-hero__inner { padding: 6.5rem 2.5rem; }
-        }
-        @media (min-width: 1024px) {
-          .mdh-hero__inner { padding: 7rem 3.5rem; }
-        }
-      `}</style>
-
-      <header className="mdh-hero" role="banner">
-        {/* Full-width Background Image */}
-        <div className="mdh-hero__bg">
-          <img
-            src={headerPhoto}
-            alt="Magic Denta klinikasi"
-            fetchPriority="high"
-          />
-        </div>
-
-        {/* Ambient Glows */}
-        <div className="mdh-glow-orb-1" aria-hidden="true" />
-        <div className="mdh-glow-orb-2" aria-hidden="true" />
-
-        <div className="mdh-hero__inner max-w-7xl">
-          <div className="max-w-3xl flex flex-col gap-6 text-white text-left">
-            
-            {/* Subtle luxury sub-badge */}
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/[0.10] border border-white/20 backdrop-blur-md w-fit shadow-xs">
-              <span className="w-2 h-2 rounded-full bg-[#91008D] animate-pulse" />
-              <span className="text-[10px] sm:text-xs font-black tracking-widest text-slate-200 uppercase">
-                {t.badge}
-              </span>
+          {/* Trust Row */}
+          <div className="flex flex-wrap items-center gap-y-2 gap-x-4 sm:gap-x-5 pt-5 sm:pt-6 text-xs font-bold text-slate-200/90 border-t border-white/15">
+            <div className="flex items-center gap-1.5">
+              <span className="text-[#91008D]" aria-hidden="true">✦</span>
+              <span>{t.tag1}</span>
             </div>
-
-            {/* Main Heading with breathability */}
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[56px] font-black tracking-tight leading-[1.12] text-white drop-shadow-sm">
-              {t.heading}
-            </h1>
-
-            {/* Description */}
-            <p className="text-slate-200 text-sm sm:text-base md:text-lg leading-relaxed max-w-xl font-normal">
-              {t.desc}
-            </p>
-
-            {/* CTA Action Buttons */}
-            <div className="flex flex-wrap items-center gap-3.5 pt-2">
-              <button
-                type="button"
-                onClick={() => navigate("/appointment")}
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-gradient-to-r from-[#92003A] to-[#91008D] hover:shadow-glow-wine text-white text-xs sm:text-sm font-black uppercase tracking-wider shadow-md hover:scale-[1.03] active:scale-95 transition-all duration-200 cursor-pointer"
-              >
-                <span>{t.book}</span>
-                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                </svg>
-              </button>
-
-              <button
-                type="button"
-                onClick={() => navigate("/services")}
-                className="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-full bg-white/10 hover:bg-white/20 border border-white/25 backdrop-blur-md text-white text-xs sm:text-sm font-bold active:scale-95 transition-all duration-200 cursor-pointer"
-              >
-                <span>{t.services}</span>
-              </button>
+            <span className="text-white/25" aria-hidden="true">•</span>
+            <div className="flex items-center gap-1.5">
+              <span className="text-[#E8D5F5]" aria-hidden="true">✦</span>
+              <span>{t.tag2}</span>
             </div>
-
-            {/* Minimalist Airy Trust Row */}
-            <div className="flex flex-wrap items-center gap-y-2 gap-x-5 pt-6 text-xs font-bold text-slate-200/90 border-t border-white/15">
-              <div className="flex items-center gap-1.5">
-                <span className="text-[#91008D]">✦</span>
-                <span>{t.tag1}</span>
-              </div>
-              <span className="text-white/20">•</span>
-              <div className="flex items-center gap-1.5">
-                <span className="text-[#E8D5F5]">✦</span>
-                <span>{t.tag2}</span>
-              </div>
-              <span className="text-white/20">•</span>
-              <div className="flex items-center gap-1.5">
-                <span className="text-emerald-300">✦</span>
-                <span>{t.tag3}</span>
-              </div>
+            <span className="text-white/25" aria-hidden="true">•</span>
+            <div className="flex items-center gap-1.5">
+              <span className="text-emerald-300" aria-hidden="true">✦</span>
+              <span>{t.tag3}</span>
             </div>
           </div>
         </div>
-      </header>
-    </>
+      </div>
+    </section>
   );
 };
 

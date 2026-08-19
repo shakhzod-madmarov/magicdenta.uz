@@ -119,81 +119,100 @@ const ServiceLanding = () => {
 
   const service = SERVICES_DATA[serviceSlug] || SERVICES_DATA["ortodontiya"];
 
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "MedicalProcedure",
-    "name": service.title,
-    "description": service.metaDesc,
-    "provider": {
-      "@type": "Dentist",
-      "name": "Magic Denta",
-      "telephone": ["+998912891514", "+998905429303"],
-      "email": "magicdenta.uz@gmail.com",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Bobur shoh koʻchasi, 1B",
-        "addressLocality": "Andijon",
-        "addressCountry": "UZ"
+  const jsonLd = [
+    {
+      "@context": "https://schema.org",
+      "@type": "MedicalProcedure",
+      "name": service.title,
+      "description": service.metaDesc,
+      "provider": {
+        "@type": "Dentist",
+        "name": "Magic Denta",
+        "telephone": ["+998912891514", "+998905429303"],
+        "email": "magicdenta.uz@gmail.com",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Bobur shoh koʻchasi, 1B",
+          "addressLocality": "Andijon",
+          "addressCountry": "UZ"
+        }
       }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": service.faqs.map(faq => ({
+        "@type": "Question",
+        "name": faq.q,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": faq.a
+        }
+      }))
     }
-  };
+  ];
 
   return (
-    <div className="bg-[#F8F9FD] min-h-screen text-[#0F3040] py-8">
+    <div className="bg-[#F8F9FD] min-h-screen text-[#0F3040] py-6 sm:py-8">
       <Seo
         title={service.title}
         description={service.metaDesc}
         canonicalPath={`/services/${service.slug}`}
         jsonLd={jsonLd}
+        breadcrumbs={[
+          { name: "Bosh sahifa", path: "/" },
+          { name: "Xizmatlar", path: "/services" },
+          { name: service.badge, path: `/services/${service.slug}` }
+        ]}
       />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8 sm:space-y-12">
         {/* Navigation Breadcrumb */}
-        <div className="flex items-center gap-2 text-xs font-bold text-slate-500">
-          <Link to="/" className="hover:text-[#403D88]">Bosh sahifa</Link>
-          <span>/</span>
-          <Link to="/services" className="hover:text-[#403D88]">Xizmatlar</Link>
-          <span>/</span>
-          <span className="text-[#92003A]">{service.badge}</span>
-        </div>
+        <nav aria-label="Non ushoqlari" className="flex items-center gap-2 text-xs font-bold text-slate-500">
+          <Link to="/" className="hover:text-[#403D88] transition-colors">Bosh sahifa</Link>
+          <span aria-hidden="true">/</span>
+          <Link to="/services" className="hover:text-[#403D88] transition-colors">Xizmatlar</Link>
+          <span aria-hidden="true">/</span>
+          <span className="text-[#92003A] font-black">{service.badge}</span>
+        </nav>
 
         {/* Hero Section */}
-        <section className="relative bg-gradient-to-br from-[#0F3040] via-[#1A1733] to-[#321E48] text-white rounded-[36px] p-8 sm:p-14 lg:p-16 overflow-hidden border border-[#403D88]/40 shadow-2xl">
-          <div className="absolute top-0 right-0 w-96 h-96 rounded-full bg-[#92003A]/20 blur-3xl pointer-events-none" />
-          <div className="absolute bottom-0 left-0 w-96 h-96 rounded-full bg-[#403D88]/25 blur-3xl pointer-events-none" />
+        <section aria-labelledby="service-hero-heading" className="relative bg-gradient-to-br from-[#0F3040] via-[#1A1733] to-[#321E48] text-white rounded-[32px] sm:rounded-[36px] p-6 sm:p-12 lg:p-16 overflow-hidden border border-[#403D88]/40 shadow-2xl">
+          <div className="absolute top-0 right-0 w-96 h-96 rounded-full bg-[#92003A]/20 blur-3xl pointer-events-none" aria-hidden="true" />
+          <div className="absolute bottom-0 left-0 w-96 h-96 rounded-full bg-[#403D88]/25 blur-3xl pointer-events-none" aria-hidden="true" />
 
-          <div className="relative z-10 max-w-3xl text-left space-y-6">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/[0.08] border border-white/15 backdrop-blur-md text-slate-200 text-xs font-black tracking-widest uppercase">
-              <span className="w-2 h-2 rounded-full bg-[#91008D] animate-pulse" />
+          <div className="relative z-10 max-w-3xl text-left space-y-4 sm:space-y-6">
+            <div className="inline-flex items-center gap-2 px-3.5 sm:px-4 py-1.5 rounded-full bg-white/[0.08] border border-white/15 backdrop-blur-md text-slate-200 text-[10px] sm:text-xs font-black tracking-widest uppercase">
+              <span className="w-2 h-2 rounded-full bg-[#91008D] animate-pulse" aria-hidden="true" />
               {service.badge}
             </div>
 
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-black leading-tight tracking-tight text-white">
+            <h1 id="service-hero-heading" className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black leading-tight tracking-tight text-white">
               {service.heading}
             </h1>
 
-            <p className="text-slate-300 text-sm sm:text-base md:text-lg leading-relaxed font-normal">
+            <p className="text-slate-300 text-xs sm:text-sm md:text-base lg:text-lg leading-relaxed font-normal">
               {service.description}
             </p>
 
-            <div className="flex flex-wrap items-center gap-3 pt-2">
-              <span className="px-4 py-2 rounded-xl bg-white/10 border border-white/15 text-xs font-bold text-emerald-300">
+            <div className="flex flex-wrap items-center gap-3 pt-1">
+              <span className="px-3.5 sm:px-4 py-1.5 sm:py-2 rounded-xl bg-white/10 border border-white/15 text-xs font-bold text-emerald-300">
                 ⏱ Taxminiy muddat: <strong>{service.duration}</strong>
               </span>
             </div>
 
-            <div className="flex flex-wrap items-center gap-4 pt-4">
+            <div className="flex flex-col sm:flex-row items-center gap-3 pt-3 sm:pt-4">
               <button
                 type="button"
                 onClick={() => navigate("/appointment")}
-                className="px-8 py-4 rounded-full bg-gradient-to-r from-[#92003A] to-[#91008D] hover:shadow-glow-wine text-white text-xs sm:text-sm font-black uppercase tracking-wider transition-all shadow-md active:scale-95 cursor-pointer"
+                className="w-full sm:w-auto px-8 py-3.5 sm:py-4 rounded-full bg-gradient-to-r from-[#92003A] to-[#91008D] hover:shadow-glow-wine text-white text-xs sm:text-sm font-black uppercase tracking-wider transition-all shadow-md active:scale-95 cursor-pointer min-h-[44px]"
               >
                 Qabulga yozilish →
               </button>
               <button
                 type="button"
                 onClick={() => navigate("/services")}
-                className="px-8 py-4 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 text-white text-xs sm:text-sm font-bold transition-all cursor-pointer"
+                className="w-full sm:w-auto px-8 py-3.5 sm:py-4 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 text-white text-xs sm:text-sm font-bold transition-all cursor-pointer min-h-[44px]"
               >
                 Barcha xizmatlar
               </button>
@@ -202,65 +221,65 @@ const ServiceLanding = () => {
         </section>
 
         {/* Clinical Features / Highlights Grid */}
-        <section className="space-y-6">
-          <h2 className="text-2xl sm:text-3xl font-black text-[#0F3040] text-left">
+        <section aria-labelledby="features-heading" className="space-y-5 sm:space-y-6">
+          <h2 id="features-heading" className="text-xl sm:text-2xl lg:text-3xl font-black text-[#0F3040] text-left">
             Muolajaning muhim jihatlari va klinik standartlar
           </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6">
             {service.features.map((feat, idx) => (
-              <div
+              <article
                 key={idx}
-                className="bg-white rounded-[28px] p-6 sm:p-7 border border-slate-200/90 shadow-card-clean hover:shadow-xl hover:-translate-y-1.5 hover:border-[#403D88]/40 transition-all duration-300 text-left space-y-3 flex flex-col justify-between group"
+                className="bg-white rounded-[28px] p-6 sm:p-7 border border-slate-200/90 shadow-card-clean hover:shadow-xl hover:-translate-y-1 hover:border-[#403D88]/40 transition-all duration-300 text-left space-y-3 flex flex-col justify-between group"
               >
                 <div>
-                  <div className="w-10 h-10 rounded-2xl bg-gradient-to-br from-[#0F3040] to-[#403D88] text-white flex items-center justify-center font-black text-xs shadow-xs mb-3 group-hover:scale-105 transition-transform">
+                  <div className="w-10 h-10 rounded-2xl bg-gradient-to-br from-[#0F3040] to-[#403D88] text-white flex items-center justify-center font-black text-xs shadow-xs mb-3 group-hover:scale-105 transition-transform" aria-hidden="true">
                     0{idx + 1}
                   </div>
-                  <h3 className="font-black text-base text-[#0F3040] group-hover:text-[#92003A] transition-colors leading-snug">
+                  <h3 className="font-black text-sm sm:text-base text-[#0F3040] group-hover:text-[#92003A] transition-colors leading-snug">
                     {feat.title}
                   </h3>
                   <p className="text-slate-600 text-xs sm:text-sm leading-relaxed font-normal mt-2">
                     {feat.desc}
                   </p>
                 </div>
-              </div>
+              </article>
             ))}
           </div>
         </section>
 
         {/* FAQs */}
-        <section className="bg-white rounded-[36px] p-8 sm:p-12 border border-slate-200/90 shadow-card-clean text-left space-y-8">
+        <section aria-labelledby="faq-heading" className="bg-white rounded-[32px] sm:rounded-[36px] p-6 sm:p-10 lg:p-12 border border-slate-200/90 shadow-card-clean text-left space-y-6 sm:space-y-8">
           <div>
             <span className="text-xs font-black text-[#403D88] uppercase tracking-widest block mb-2">
               MA’LUMOT VA JAVOBLAR
             </span>
-            <h2 className="text-2xl sm:text-3xl font-black text-[#0F3040]">
+            <h2 id="faq-heading" className="text-xl sm:text-2xl lg:text-3xl font-black text-[#0F3040]">
               Ko‘p beriladigan savollar
             </h2>
           </div>
 
           <div className="grid grid-cols-1 gap-4">
             {service.faqs.map((faq, idx) => (
-              <div
+              <article
                 key={idx}
-                className="p-6 rounded-[26px] bg-slate-50 border border-slate-200/80 hover:bg-white hover:border-[#403D88]/40 hover:shadow-card-clean transition-all duration-300 space-y-3"
+                className="p-5 sm:p-6 rounded-[24px] sm:rounded-[26px] bg-slate-50 border border-slate-200/80 hover:bg-white hover:border-[#403D88]/40 hover:shadow-card-clean transition-all duration-300 space-y-2.5"
               >
-                <div className="flex items-start gap-3.5">
-                  <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-[#0F3040] to-[#403D88] text-white flex items-center justify-center text-xs font-black shrink-0 shadow-xs mt-0.5">
+                <div className="flex items-start gap-3 sm:gap-3.5">
+                  <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-xl bg-gradient-to-br from-[#0F3040] to-[#403D88] text-white flex items-center justify-center text-xs font-black shrink-0 shadow-xs mt-0.5" aria-hidden="true">
                     ?
                   </div>
-                  <h3 className="font-black text-base sm:text-lg text-[#0F3040] leading-snug">
+                  <h3 className="font-black text-sm sm:text-base md:text-lg text-[#0F3040] leading-snug">
                     {faq.q}
                   </h3>
                 </div>
 
-                <div className="flex items-start gap-3 pl-11">
-                  <div className="w-2 h-2 rounded-full bg-[#92003A] shrink-0 mt-2" />
+                <div className="flex items-start gap-2.5 sm:gap-3 pl-10 sm:pl-11">
+                  <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-[#92003A] shrink-0 mt-2" aria-hidden="true" />
                   <p className="text-slate-600 text-xs sm:text-sm leading-relaxed font-normal">
                     {faq.a}
                   </p>
                 </div>
-              </div>
+              </article>
             ))}
           </div>
         </section>

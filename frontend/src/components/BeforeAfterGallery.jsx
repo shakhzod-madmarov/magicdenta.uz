@@ -97,7 +97,9 @@ const BeforeAfterGallery = () => {
   }, []);
 
   const handleTouchMove = (e) => {
-    handleMove(e.touches[0].clientX);
+    if (e.touches && e.touches[0]) {
+      handleMove(e.touches[0].clientX);
+    }
   };
 
   const handleMouseMove = (e) => {
@@ -106,34 +108,46 @@ const BeforeAfterGallery = () => {
     }
   };
 
+  const handleSliderKeyDown = (e) => {
+    if (e.key === "ArrowLeft") {
+      e.preventDefault();
+      setSliderPos((prev) => Math.max(5, prev - 5));
+    } else if (e.key === "ArrowRight") {
+      e.preventDefault();
+      setSliderPos((prev) => Math.min(95, prev + 5));
+    }
+  };
+
   const currentCase = casesData[activeTab];
 
   return (
-    <section className="my-28 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+    <section aria-labelledby="gallery-heading" className="my-20 sm:my-28 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
       {/* Header */}
-      <div className="text-center max-w-3xl mx-auto mb-14">
+      <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-14">
         <span className="text-xs font-black tracking-widest text-[#403D88] uppercase block mb-3">
           KLINIK NATIJALAR & NAFOSAT
         </span>
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-[#0F3040] leading-tight tracking-tight">
+        <h2 id="gallery-heading" className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-[#0F3040] leading-tight tracking-tight">
           Bemorlarimiz tabassumidagi haqiqiy o‘zgarishlar
         </h2>
-        <p className="text-slate-600 mt-4 text-sm sm:text-base leading-relaxed">
+        <p className="text-slate-600 mt-3 sm:mt-4 text-xs sm:text-sm md:text-base leading-relaxed">
           Slayderni suring va Magic Denta shifokorlarining 5 ta asosiy mutaxassislik bo‘yicha amalga oshirgan mukammal davolash natijalarini ko‘ring.
         </p>
       </div>
 
       {/* Tabs Switcher for 5 Specialties */}
-      <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-10">
+      <div role="tablist" aria-label="Mutaxassisliklar natijalari" className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-8 sm:mb-10">
         {casesData.map((item, idx) => (
           <button
             key={item.id}
+            role="tab"
+            aria-selected={activeTab === idx}
             type="button"
             onClick={() => {
               setActiveTab(idx);
               setSliderPos(50);
             }}
-            className={`px-5 py-2.5 rounded-full text-xs sm:text-sm font-black transition-all cursor-pointer shadow-xs ${
+            className={`px-4 sm:px-5 py-2.5 rounded-full text-xs sm:text-sm font-black transition-all cursor-pointer shadow-xs min-h-[40px] ${
               activeTab === idx
                 ? "bg-gradient-to-r from-[#0F3040] to-[#321E48] text-white shadow-md scale-105"
                 : "bg-white text-slate-700 border border-slate-200/80 hover:border-[#403D88]/40 hover:bg-slate-50"
@@ -145,7 +159,7 @@ const BeforeAfterGallery = () => {
       </div>
 
       {/* Main Interactive Showcase Card */}
-      <div className="bg-white rounded-[36px] border border-slate-200/90 shadow-2xl p-6 sm:p-10 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+      <div className="bg-white rounded-[32px] sm:rounded-[36px] border border-slate-200/90 shadow-2xl p-5 sm:p-8 lg:p-10 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
         
         {/* Left Side: Before/After Interactive Comparison Visual */}
         <div className="lg:col-span-7">
@@ -154,15 +168,17 @@ const BeforeAfterGallery = () => {
             onMouseMove={handleMouseMove}
             onTouchMove={handleTouchMove}
             onClick={(e) => handleMove(e.clientX)}
-            className="relative w-full aspect-[4/3] sm:aspect-[16/10] rounded-[28px] overflow-hidden select-none cursor-ew-resize border border-slate-200 shadow-inner group bg-slate-900"
+            className="relative w-full aspect-[4/3] sm:aspect-[16/10] rounded-[24px] sm:rounded-[28px] overflow-hidden select-none cursor-ew-resize border border-slate-200 shadow-inner group bg-slate-900"
           >
             {/* After Image (Background) */}
             <img
               src={currentCase.afterImg}
               alt="Natija (Keyin)"
+              loading="lazy"
+              decoding="async"
               className="absolute inset-0 w-full h-full object-cover pointer-events-none"
             />
-            <span className="absolute top-4 right-4 z-10 px-3.5 py-1.5 rounded-full text-[11px] font-black tracking-wider uppercase bg-[#0F3040]/85 backdrop-blur-md text-white border border-white/20 shadow-md">
+            <span className="absolute top-4 right-4 z-10 px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-full text-[10px] sm:text-[11px] font-black tracking-wider uppercase bg-[#0F3040]/85 backdrop-blur-md text-white border border-white/20 shadow-md">
               {currentCase.afterLabel} ✨
             </span>
 
@@ -174,6 +190,8 @@ const BeforeAfterGallery = () => {
               <img
                 src={currentCase.beforeImg}
                 alt="Davolanishdan oldin"
+                loading="lazy"
+                decoding="async"
                 className="absolute inset-0 w-full h-full object-cover max-w-none"
                 style={{
                   width: containerRef.current
@@ -181,7 +199,7 @@ const BeforeAfterGallery = () => {
                     : "100%",
                 }}
               />
-              <span className="absolute top-4 left-4 z-10 px-3.5 py-1.5 rounded-full text-[11px] font-black tracking-wider uppercase bg-black/75 backdrop-blur-md text-white border border-white/20 shadow-md">
+              <span className="absolute top-4 left-4 z-10 px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-full text-[10px] sm:text-[11px] font-black tracking-wider uppercase bg-black/75 backdrop-blur-md text-white border border-white/20 shadow-md">
                 {currentCase.beforeLabel}
               </span>
             </div>
@@ -192,43 +210,52 @@ const BeforeAfterGallery = () => {
               style={{ left: `${sliderPos}%`, transform: "translateX(-50%)" }}
             >
               <div className="w-1 bg-white h-full shadow-2xl relative">
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-gradient-to-r from-[#92003A] to-[#91008D] text-white flex items-center justify-center shadow-glow-wine border-2 border-white pointer-events-auto cursor-ew-resize">
-                  <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <div
+                  role="slider"
+                  tabIndex={0}
+                  aria-valuenow={Math.round(sliderPos)}
+                  aria-valuemin={0}
+                  aria-valuemax={100}
+                  aria-label="Oldin va keyin taqqoslash slayderi"
+                  onKeyDown={handleSliderKeyDown}
+                  className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-gradient-to-r from-[#92003A] to-[#91008D] text-white flex items-center justify-center shadow-glow-wine border-2 border-white pointer-events-auto cursor-ew-resize outline-none focus:ring-2 focus:ring-white"
+                >
+                  <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M8 9l-3 3m0 0l3 3m-3-3h16m-3-3l3 3m0 0l-3 3" />
                   </svg>
                 </div>
               </div>
             </div>
           </div>
-          <p className="text-center text-xs text-slate-600 mt-3 font-semibold">
-            👆 Farqni solishtirish uchun markazdagi tugmachani suring
+          <p className="text-center text-xs text-slate-500 mt-3 font-semibold">
+            👆 Farqni solishtirish uchun markazdagi tugmachani suring yoki klaviatura strelkalari bilan boshqaring
           </p>
         </div>
 
         {/* Right Side: Case Details & Fast Booking */}
-        <div className="lg:col-span-5 text-left flex flex-col justify-between space-y-6">
+        <div className="lg:col-span-5 text-left flex flex-col justify-between space-y-5 sm:space-y-6">
           <div>
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#403D88]/10 text-[#403D88] text-[11px] font-black tracking-wider uppercase mb-3">
-              <span className="w-2 h-2 rounded-full bg-[#91008D] animate-pulse" />
+              <span className="w-2 h-2 rounded-full bg-[#91008D] animate-pulse" aria-hidden="true" />
               {currentCase.badge} NATIJASI
             </div>
 
-            <h3 className="text-2xl sm:text-3xl font-black text-[#0F3040] leading-tight mb-3">
+            <h3 className="text-xl sm:text-2xl lg:text-3xl font-black text-[#0F3040] leading-tight mb-3">
               {currentCase.title}
             </h3>
 
-            <p className="text-slate-600 text-sm sm:text-base leading-relaxed mb-6 font-normal">
+            <p className="text-slate-600 text-xs sm:text-sm md:text-base leading-relaxed mb-6 font-normal">
               {currentCase.desc}
             </p>
 
-            <div className="grid grid-cols-2 gap-4 bg-slate-50 p-4 rounded-2xl border border-slate-200/80 mb-6">
+            <div className="grid grid-cols-2 gap-3 sm:gap-4 bg-slate-50 p-4 rounded-2xl border border-slate-200/80 mb-6">
               <div>
-                <span className="text-[10px] font-bold text-slate-600 uppercase tracking-wider block">Muolaja muddati</span>
-                <span className="text-sm font-black text-[#0F3040] mt-0.5 block">{currentCase.duration}</span>
+                <span className="text-[10px] font-bold text-slate-500 uppercase tracking-wider block">Muolaja muddati</span>
+                <span className="text-xs sm:text-sm font-black text-[#0F3040] mt-0.5 block">{currentCase.duration}</span>
               </div>
               <div>
-                <span className="text-[10px] font-bold text-slate-600 uppercase tracking-wider block">Yo‘nalish</span>
-                <span className="text-sm font-black text-[#92003A] mt-0.5 block">{currentCase.doctor}</span>
+                <span className="text-[10px] font-bold text-slate-500 uppercase tracking-wider block">Yo‘nalish</span>
+                <span className="text-xs sm:text-sm font-black text-[#92003A] mt-0.5 block">{currentCase.doctor}</span>
               </div>
             </div>
           </div>
@@ -237,14 +264,14 @@ const BeforeAfterGallery = () => {
             <button
               type="button"
               onClick={() => navigate("/appointment")}
-              className="flex-1 py-4 px-6 rounded-2xl bg-gradient-to-r from-[#92003A] to-[#91008D] hover:shadow-glow-wine text-white font-black text-xs uppercase tracking-wider text-center transition-all shadow-md active:scale-95 cursor-pointer"
+              className="flex-1 py-3.5 sm:py-4 px-6 rounded-2xl bg-gradient-to-r from-[#92003A] to-[#91008D] hover:shadow-glow-wine text-white font-black text-xs uppercase tracking-wider text-center transition-all shadow-md active:scale-95 cursor-pointer min-h-[44px]"
             >
               Shifokorga yozilish
             </button>
             <button
               type="button"
               onClick={() => navigate("/contact")}
-              className="py-4 px-6 rounded-2xl bg-slate-100 hover:bg-slate-200 text-[#0F3040] font-black text-xs uppercase tracking-wider text-center transition-all cursor-pointer"
+              className="py-3.5 sm:py-4 px-6 rounded-2xl bg-slate-100 hover:bg-slate-200 text-[#0F3040] font-black text-xs uppercase tracking-wider text-center transition-all cursor-pointer min-h-[44px]"
             >
               Konsultatsiya
             </button>

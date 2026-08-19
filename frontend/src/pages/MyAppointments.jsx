@@ -5,6 +5,7 @@ import { NavLink } from "react-router-dom";
 import { toast } from "react-toastify";
 import profilePic from "../assets/profile_pic.png";
 import { formatDMY } from "../../../shared/date.js";
+import Seo from "../components/Seo";
 
 const MyAppointments = () => {
   const { backendUrl, token } = useContext(AppContext);
@@ -32,16 +33,6 @@ const MyAppointments = () => {
 
   useEffect(() => {
     fetchAppointments();
-  }, []);
-
-  useEffect(() => {
-    document.title = "Mening uchrashuvlarim | Magic Denta";
-    const metaRobots = document.querySelector('meta[name="robots"]') || document.createElement("meta");
-    metaRobots.name = "robots";
-    metaRobots.content = "noindex, nofollow";
-    if (!document.head.contains(metaRobots)) {
-      document.head.appendChild(metaRobots);
-    }
   }, []);
 
   const handleCancel = async (id) => {
@@ -105,7 +96,8 @@ const MyAppointments = () => {
   };
 
   return (
-    <main className="max-w-5xl mx-auto py-6 sm:py-12 px-4 sm:px-6">
+    <div className="max-w-5xl mx-auto py-6 sm:py-12 px-4 sm:px-6">
+      <Seo title="Mening Qabullarim | Magic Denta" noindex={true} />
       {/* Page Header */}
       <div className="text-center max-w-2xl mx-auto mb-6 sm:mb-8">
         <span className="text-[11px] sm:text-xs font-extrabold text-slate-400 uppercase tracking-widest block mb-1 sm:mb-2">
@@ -289,7 +281,7 @@ const MyAppointments = () => {
           })}
         </div>
       )}
-    </main>
+    </div>
   );
 };
 

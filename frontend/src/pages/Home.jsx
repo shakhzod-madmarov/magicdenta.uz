@@ -1,7 +1,9 @@
 import Header from "../components/Header";
 import Specialities from "../components/Specialities";
 import SmileQuiz from "../components/SmileQuiz";
+import BeforeAfterGallery from "../components/BeforeAfterGallery";
 import TechFeatures from "../components/TechFeatures";
+import ReviewsTrust from "../components/ReviewsTrust";
 import Banner from "../components/Banner";
 import Seo from "../components/Seo";
 
@@ -18,6 +20,20 @@ const Home = () => {
     email: "magicdenta.uz@gmail.com",
     priceRange: "10000 UZS - 1400000 UZS",
     openingHours: "Mo-Sa 08:00-20:00",
+    medicalSpecialty: [
+      "Orthodontics",
+      "Prosthodontics",
+      "CosmeticDentistry",
+      "OralSurgery",
+      "RestorativeDentistry"
+    ],
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: "4.9",
+      reviewCount: "520",
+      bestRating: "5",
+      worstRating: "1"
+    },
     address: {
       "@type": "PostalAddress",
       streetAddress: "Bobur shoh koʻchasi, 1B",
@@ -48,12 +64,14 @@ const Home = () => {
         jsonLd={jsonLd}
       />
       <Header />
-      <main>
+      <div className="w-full">
         <Specialities />
         <SmileQuiz />
+        <BeforeAfterGallery />
         <TechFeatures />
+        <ReviewsTrust />
         <Banner />
-      </main>
+      </div>
     </>
   );
 };

@@ -51,10 +51,19 @@ const App = () => {
   }
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen bg-[#F8F9FD] text-[#0F3040] antialiased">
+      {/* Skip to Main Content Link for A11y */}
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-[#92003A] focus:text-white focus:font-bold focus:rounded-xl focus:shadow-2xl focus:outline-none"
+      >
+        Asosiy tarkibga o‘tish
+      </a>
+
       <ToastContainer />
       <Nav />
-      <div className="flex-grow mx-4 sm:mx-[10%]">
+
+      <main id="main-content" className="flex-grow w-full">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
@@ -72,20 +81,21 @@ const App = () => {
           <Route path="/appointment/:dentistId" element={<Appointment />} />
           <Route path="/my-treatments" element={<MyTreatments />} />
         </Routes>
-      </div>
+      </main>
+
       <Footer />
 
       {/* Floating Telegram Quick Contact Glass Button */}
-      <div className="fixed bottom-6 right-7 z-50 flex flex-col gap-3 items-center">
+      <div className="fixed bottom-6 right-6 sm:right-7 z-50 flex flex-col gap-3 items-center">
         <a
           href="https://t.me/+998912891514"
           target="_blank"
           rel="noopener noreferrer"
-          aria-label="Telegram"
+          aria-label="Telegram orqali tezkor bog‘lanish (+998 91 289 15 14)"
           title="Telegram: +998 91 289 15 14"
-          className="w-12 h-12 rounded-full flex items-center justify-center bg-black/60 backdrop-blur-xl border border-white/20 text-white shadow-2xl hover:scale-110 active:scale-95 transition-all duration-300 group hover:bg-[#24A1DE]"
+          className="w-12 h-12 sm:w-14 sm:h-14 rounded-full flex items-center justify-center bg-[#0F3040]/80 backdrop-blur-xl border border-white/25 text-white shadow-2xl hover:scale-110 active:scale-95 transition-all duration-300 group hover:bg-[#24A1DE] hover:shadow-glow-orchid"
         >
-          <svg className="w-5 h-5 transition-transform duration-300 group-hover:scale-110" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <svg className="w-5 h-5 sm:w-6 sm:h-6 transition-transform duration-300 group-hover:scale-110" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
             <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-1-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 0 0-.05-.18c-.06-.05-.14-.03-.2-.02-.08.02-1.3 0.83-3.68 2.44-.35.24-.67.36-.96.35-.32-.01-.94-.18-1.4-.33-.56-.18-1.01-.28-0.97-.6.02-.17.26-.34.7-.52 2.76-1.2 4.6-2 5.53-2.4 2.64-1.1 3.19-1.28 3.55-1.28.08 0 .25.02.36.1.1.08.13.18.14.28 0 .06-.01.12-.02.18z"/>
           </svg>
         </a>

@@ -97,30 +97,41 @@ const SmileQuiz = () => {
   const [selectedOption, setSelectedOption] = useState(null);
   const navigate = useNavigate();
 
+  const handleKeyDown = (e, opt) => {
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      setSelectedOption(opt);
+    }
+  };
+
   return (
-    <section className="my-28 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-      <div className="bg-gradient-to-br from-[#0F3040] via-[#1E1733] to-[#321E48] rounded-[40px] p-8 sm:p-12 lg:p-16 text-white relative overflow-hidden border border-[#403D88]/40 shadow-2xl">
+    <section aria-labelledby="quiz-heading" className="my-20 sm:my-28 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      <div className="bg-gradient-to-br from-[#0F3040] via-[#1E1733] to-[#321E48] rounded-[36px] sm:rounded-[40px] p-6 sm:p-12 lg:p-16 text-white relative overflow-hidden border border-[#403D88]/40 shadow-2xl">
         
         {/* Ambient Glow Orbs */}
-        <div className="absolute -top-24 -right-24 w-96 h-96 rounded-full bg-[#92003A]/25 blur-3xl pointer-events-none" />
-        <div className="absolute -bottom-24 -left-24 w-96 h-96 rounded-full bg-[#403D88]/30 blur-3xl pointer-events-none" />
+        <div className="absolute -top-24 -right-24 w-80 sm:w-96 h-80 sm:h-96 rounded-full bg-[#92003A]/25 blur-3xl pointer-events-none" aria-hidden="true" />
+        <div className="absolute -bottom-24 -left-24 w-80 sm:w-96 h-80 sm:h-96 rounded-full bg-[#403D88]/30 blur-3xl pointer-events-none" aria-hidden="true" />
 
         <div className="relative z-10 max-w-5xl mx-auto text-center">
           {/* Badge */}
-          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/[0.08] text-slate-200 border border-white/15 text-xs font-black tracking-widest uppercase mb-4 shadow-sm">
-            <span className="w-2 h-2 rounded-full bg-[#91008D] animate-pulse" />
+          <span className="inline-flex items-center gap-2 px-3.5 sm:px-4 py-1.5 rounded-full bg-white/[0.08] text-slate-200 border border-white/15 text-[11px] sm:text-xs font-black tracking-widest uppercase mb-4 shadow-sm">
+            <span className="w-2 h-2 rounded-full bg-[#91008D] animate-pulse" aria-hidden="true" />
             ONLAYN KLINIK TASHXIS TESTI
           </span>
 
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white leading-tight tracking-tight mb-4">
+          <h2 id="quiz-heading" className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-white leading-tight tracking-tight mb-3 sm:mb-4">
             Qaysi muolaja sizga to‘g‘ri keladi?
           </h2>
-          <p className="text-slate-300 text-sm sm:text-base leading-relaxed mb-10 max-w-2xl mx-auto font-normal">
+          <p className="text-slate-300 text-xs sm:text-sm md:text-base leading-relaxed mb-8 sm:mb-10 max-w-2xl mx-auto font-normal">
             Quyidagi variantlardan o‘zingizga mos holatni tanlang va mutaxassis tavsiyasi hamda davolanish vaqtini bir zumda bilib oling.
           </p>
 
-          {/* 5 Specialty Options Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 text-left mb-10">
+          {/* 5 Specialty Options Grid with Accessible Radiogroup */}
+          <div
+            role="radiogroup"
+            aria-label="Klinik tashxis variantlari"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 text-left mb-8 sm:mb-10"
+          >
             {options.map((opt) => {
               const isSelected = selectedOption?.id === opt.id;
               const { Icon } = opt;
@@ -128,17 +139,21 @@ const SmileQuiz = () => {
               return (
                 <div
                   key={opt.id}
+                  role="radio"
+                  aria-checked={isSelected}
+                  tabIndex={0}
                   onClick={() => setSelectedOption(opt)}
-                  className={`p-6 sm:p-7 rounded-[28px] border transition-all duration-300 cursor-pointer flex flex-col justify-between group ${
+                  onKeyDown={(e) => handleKeyDown(e, opt)}
+                  className={`p-5 sm:p-7 rounded-[28px] border transition-all duration-300 cursor-pointer flex flex-col justify-between group outline-none focus-visible:ring-2 focus-visible:ring-[#91008D] ${
                     isSelected
-                      ? "bg-white text-[#0F3040] border-white shadow-2xl scale-[1.03]"
+                      ? "bg-white text-[#0F3040] border-white shadow-2xl scale-[1.02] sm:scale-[1.03]"
                       : "bg-white/[0.06] hover:bg-white/[0.10] text-white border-white/10 hover:border-[#403D88]/60 hover:-translate-y-1"
                   }`}
                 >
                   <div>
                     {/* Top Row: Professional SVG Badge + Specialty Pill */}
                     <div className="flex items-center justify-between mb-4">
-                      <div className={`w-12 h-12 rounded-2xl bg-gradient-to-br ${opt.iconBg} p-2.5 flex items-center justify-center shadow-md border border-white/20`}>
+                      <div className={`w-11 h-11 sm:w-12 sm:h-12 rounded-2xl bg-gradient-to-br ${opt.iconBg} p-2.5 flex items-center justify-center shadow-md border border-white/20`}>
                         <Icon />
                       </div>
                       <span
@@ -154,7 +169,7 @@ const SmileQuiz = () => {
 
                     {/* Label & Description */}
                     <h3
-                      className={`text-base font-black leading-snug mb-2 ${
+                      className={`text-sm sm:text-base font-black leading-snug mb-2 ${
                         isSelected ? "text-[#0F3040]" : "text-white"
                       }`}
                     >
@@ -186,6 +201,7 @@ const SmileQuiz = () => {
                           ? "bg-gradient-to-r from-[#92003A] to-[#91008D] text-white shadow-sm scale-110"
                           : "border border-white/25 text-transparent group-hover:border-white/50"
                       }`}
+                      aria-hidden="true"
                     >
                       ✓
                     </div>
@@ -197,31 +213,31 @@ const SmileQuiz = () => {
 
           {/* Selected Option Result Action Banner */}
           {selectedOption && (
-            <div className="bg-white/10 backdrop-blur-xl border border-white/20 rounded-[32px] p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-6 text-left shadow-2xl animate-fadeIn">
-              <div className="space-y-1">
+            <div className="bg-white/10 backdrop-blur-xl border border-white/20 rounded-[28px] sm:rounded-[32px] p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-6 text-left shadow-2xl animate-fadeIn">
+              <div className="space-y-1 text-left w-full md:w-auto">
                 <span className="text-[10px] font-black uppercase tracking-wider text-[#E8D5F5] block">
                   TAVSIYA ETILGAN MUTAXASSISLIK
                 </span>
-                <h4 className="text-xl sm:text-2xl font-black text-white">
+                <h3 className="text-xl sm:text-2xl font-black text-white">
                   {selectedOption.speciality}
-                </h4>
+                </h3>
                 <p className="text-xs sm:text-sm text-slate-300 font-normal">
                   Taxminiy muddat: <strong className="text-white">{selectedOption.estTime}</strong>. Bosh shifokor qabuliga onlayn yoziling.
                 </p>
               </div>
 
-              <div className="flex flex-wrap items-center gap-3 shrink-0 w-full md:w-auto">
+              <div className="flex flex-col sm:flex-row items-center gap-3 shrink-0 w-full md:w-auto">
                 <button
                   type="button"
                   onClick={() => navigate(`/services/${selectedOption.slug}`)}
-                  className="w-full md:w-auto px-6 py-4 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 text-white font-bold text-xs uppercase tracking-wider transition-all cursor-pointer text-center"
+                  className="w-full sm:w-auto px-6 py-3.5 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 text-white font-bold text-xs uppercase tracking-wider transition-all cursor-pointer text-center min-h-[44px]"
                 >
                   Xizmat haqida batafsil
                 </button>
                 <button
                   type="button"
                   onClick={() => navigate("/appointment")}
-                  className="w-full md:w-auto px-8 py-4 bg-gradient-to-r from-[#92003A] to-[#91008D] hover:shadow-glow-wine text-white font-black text-xs uppercase tracking-wider rounded-full shadow-lg transition-all active:scale-95 cursor-pointer text-center"
+                  className="w-full sm:w-auto px-8 py-3.5 bg-gradient-to-r from-[#92003A] to-[#91008D] hover:shadow-glow-wine text-white font-black text-xs uppercase tracking-wider rounded-full shadow-lg transition-all active:scale-95 cursor-pointer text-center min-h-[44px]"
                 >
                   Qabulga yozilish →
                 </button>

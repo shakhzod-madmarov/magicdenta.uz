@@ -216,8 +216,8 @@ const Appointment = () => {
           "address": {
             "@type": "PostalAddress",
             "streetAddress": "Bobur shoh koʻchasi, 1B",
-            "addressLocality": "Toshkent",
-            "addressRegion": "Toshkent",
+            "addressLocality": "Andijon",
+            "addressRegion": "Andijon",
             "postalCode": "170126",
             "addressCountry": "UZ"
           },
@@ -235,10 +235,14 @@ const Appointment = () => {
       <Seo
         title={seoTitle}
         description={seoDescription}
-        canonicalPath={`/appointment/${dentistId}`}
+        canonicalPath={dentistId ? `/appointment/${dentistId}` : "/appointment"}
+        breadcrumbs={[
+          { name: "Bosh sahifa", path: "/" },
+          { name: "Qabulga yozilish", path: "/appointment" }
+        ]}
         jsonLd={jsonLd}
       />
-      <main className="max-w-6xl mx-auto px-4 sm:px-6 py-8 sm:py-10">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 py-6 sm:py-10">
       <article className="bg-white rounded-[32px] shadow-sm border border-slate-200/80 overflow-hidden">
         <div className="grid grid-cols-1 lg:grid-cols-2 items-stretch">
           <figure className="bg-slate-50 flex items-center justify-center p-6 w-full h-full border-r border-slate-200/80">
@@ -249,6 +253,10 @@ const Appointment = () => {
                   : "/doctor-placeholder.svg"
               }
               alt={selectedDentist?.name || "Stomatolog"}
+              loading="eager"
+              decoding="async"
+              width="400"
+              height="520"
               className="w-full h-auto max-h-[520px] object-cover object-center rounded-[24px] bg-slate-100"
               onError={(e) => {
                 e.currentTarget.onerror = null;
@@ -389,7 +397,7 @@ const Appointment = () => {
             </>
           )}
         </section>
-    </main>
+      </div>
     </>
   );
 };

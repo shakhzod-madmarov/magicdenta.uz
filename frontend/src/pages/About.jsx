@@ -402,6 +402,10 @@ const About = () => {
         title={t.seoTitle}
         description={t.seoDesc}
         canonicalPath="/about"
+        breadcrumbs={[
+          { name: "Bosh sahifa", path: "/" },
+          { name: "Biz haqimizda", path: "/about" }
+        ]}
         jsonLd={{
           "@context": "https://schema.org",
           "@type": ["Dentist", "MedicalBusiness", "LocalBusiness"],
@@ -435,7 +439,7 @@ const About = () => {
         }}
       />
 
-      <main className="text-left">
+      <div className="text-left">
         {/* ═══════════════════════════════════════════
             SECTION 1: HERO HEADER & CLINIC PORTRAIT
         ═══════════════════════════════════════════ */}
@@ -768,7 +772,7 @@ const About = () => {
             </div>
           </div>
         </section>
-      </main>
+      </div>
     </div>
   );
 };

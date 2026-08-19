@@ -1,0 +1,45 @@
+{
+  "name": "Magic Denta — Zamonaviy Stomatologiya Klinikasi",
+  "short_name": "Magic Denta",
+  "description": "Magic Denta — Zamonaviy stomatologiya klinikasi. Specializing in Dental Orthopedics. Ortodontiya, terapiya, ortopediya, estetik stomatologiya va jarrohlik.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0F3040",
+  "theme_color": "#321E48",
+  "lang": "uz",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "type": "image/svg+xml",
+      "sizes": "any"
+    },
+    {
+      "src": "/favicon-32x32.png",
+      "type": "image/png",
+      "sizes": "32x32"
+    },
+    {
+      "src": "/favicon-16x16.png",
+      "type": "image/png",
+      "sizes": "16x16"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "type": "image/png",
+      "sizes": "180x180"
+    },
+    {
+      "src": "/logo192.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/logo512.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "any maskable"
+    }
+  ]
+}

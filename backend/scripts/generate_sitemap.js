@@ -37,13 +37,15 @@ async function generate() {
 
   const staticUrls = [
     { loc: "https://magicdenta.uz/", changefreq: "daily", priority: "1.0", hasImage: true },
-    { loc: "https://magicdenta.uz/dentists", changefreq: "weekly", priority: "0.9" },
+    { loc: "https://magicdenta.uz/services", changefreq: "weekly", priority: "0.95" },
+    { loc: "https://magicdenta.uz/services/ortodontiya", changefreq: "weekly", priority: "0.9" },
+    { loc: "https://magicdenta.uz/services/terapevtik-stomatologiya", changefreq: "weekly", priority: "0.9" },
+    { loc: "https://magicdenta.uz/services/ortopedik-stomatologiya", changefreq: "weekly", priority: "0.9" },
+    { loc: "https://magicdenta.uz/services/estetik-stomatologiya", changefreq: "weekly", priority: "0.9" },
+    { loc: "https://magicdenta.uz/services/jarrohlik-stomatologiyasi", changefreq: "weekly", priority: "0.9" },
+    { loc: "https://magicdenta.uz/appointment", changefreq: "daily", priority: "0.85" },
     { loc: "https://magicdenta.uz/about", changefreq: "monthly", priority: "0.8" },
     { loc: "https://magicdenta.uz/contact", changefreq: "monthly", priority: "0.8" },
-    { loc: "https://magicdenta.uz/services/breket-davolash", changefreq: "weekly", priority: "0.9" },
-    { loc: "https://magicdenta.uz/services/tish-implantatsiyasi", changefreq: "weekly", priority: "0.9" },
-    { loc: "https://magicdenta.uz/services/bolalar-stomatologiyasi", changefreq: "weekly", priority: "0.9" },
-    { loc: "https://magicdenta.uz/services/estetik-stomatologiya", changefreq: "weekly", priority: "0.9" },
   ];
 
   let xml = '<?xml version="1.0" encoding="UTF-8"?>\n';

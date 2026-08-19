@@ -650,9 +650,13 @@ const Login = () => {
         title={`${t.pageTitle} | Magic Denta`}
         description="Magic Denta shaxsiy bemor kabinetiga kirish yoki yangi hisob yaratish."
         canonicalPath="/login"
+        breadcrumbs={[
+          { name: "Bosh sahifa", path: "/" },
+          { name: "Shaxsiy kabinet", path: "/login" }
+        ]}
       />
 
-      <main className="min-h-[85vh] py-10 sm:py-14 px-4 flex items-center justify-center">
+      <div className="min-h-[85vh] py-8 sm:py-14 px-4 flex items-center justify-center">
         <div className="w-full max-w-xl mx-auto">
           
           {/* Card Container */}
@@ -1247,7 +1251,7 @@ const Login = () => {
           </div>
 
         </div>
-      </main>
+      </div>
     </>
   );
 };

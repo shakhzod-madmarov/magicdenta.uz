@@ -130,29 +130,29 @@ const TechFeatures = () => {
   ];
 
   return (
-    <section className="my-28 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+    <section aria-labelledby="tech-features-heading" className="my-20 sm:my-28 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
       {/* Section Header */}
-      <div className="text-center max-w-3xl mx-auto mb-16">
+      <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
         <span className="text-xs font-black tracking-widest text-[#403D88] uppercase block mb-3">
           {t.tag}
         </span>
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-[#0F3040] leading-tight tracking-tight">
+        <h2 id="tech-features-heading" className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-[#0F3040] leading-tight tracking-tight">
           {t.heading}
         </h2>
-        <div className="w-24 h-1 bg-gradient-to-r from-[#92003A] to-[#403D88] mx-auto mt-4 rounded-full" />
-        <p className="text-slate-600 text-sm sm:text-base md:text-lg leading-relaxed mt-4 font-normal">
+        <div className="w-24 h-1 bg-gradient-to-r from-[#92003A] to-[#403D88] mx-auto mt-4 rounded-full" aria-hidden="true" />
+        <p className="text-slate-600 text-xs sm:text-sm md:text-base leading-relaxed mt-4 font-normal">
           {t.desc}
         </p>
       </div>
 
       {/* Feature Cards Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 relative z-10">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6 relative z-10">
         {features.map((f, idx) => (
-          <div
+          <article
             key={idx}
             onMouseEnter={() => setHoveredIdx(idx)}
             onMouseLeave={() => setHoveredIdx(null)}
-            className="group relative bg-white rounded-[32px] p-8 border border-slate-200/80 shadow-card-clean hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 flex flex-col justify-between overflow-hidden text-left"
+            className="group relative bg-white rounded-[32px] p-6 sm:p-8 border border-slate-200/80 shadow-card-clean hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 flex flex-col justify-between overflow-hidden text-left"
             style={{
               boxShadow: hoveredIdx === idx ? `0 20px 40px -15px ${f.glowColor}` : undefined
             }}
@@ -160,12 +160,13 @@ const TechFeatures = () => {
             <div
               className="absolute top-0 right-0 w-32 h-32 rounded-bl-[100px] opacity-10 transition-transform duration-500 group-hover:scale-110 pointer-events-none"
               style={{ backgroundColor: f.accent }}
+              aria-hidden="true"
             />
 
             <div>
               <div className="flex items-center justify-between mb-6">
                 <div
-                  className="w-16 h-16 rounded-2xl flex items-center justify-center transition-transform duration-300 group-hover:scale-110 shadow-xs"
+                  className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl flex items-center justify-center transition-transform duration-300 group-hover:scale-110 shadow-xs"
                   style={{ backgroundColor: `${f.accent}15` }}
                 >
                   {f.icon}
@@ -182,29 +183,30 @@ const TechFeatures = () => {
                 </span>
               </div>
 
-              <h3 className="text-xl font-black text-[#0F3040] mb-3 leading-snug group-hover:text-[#403D88] transition-colors">
+              <h3 className="text-lg sm:text-xl font-black text-[#0F3040] mb-2 sm:mb-3 leading-snug group-hover:text-[#403D88] transition-colors">
                 {f.title}
               </h3>
 
-              <p className="text-slate-600 text-sm leading-relaxed font-normal">
+              <p className="text-slate-600 text-xs sm:text-sm leading-relaxed font-normal">
                 {f.desc}
               </p>
             </div>
 
-            <div className="mt-8 pt-4 border-t border-slate-100 flex items-center justify-between">
-              <span className="text-xs font-bold text-slate-400 group-hover:text-slate-600 transition-colors uppercase tracking-wider">
+            <div className="mt-6 sm:mt-8 pt-4 border-t border-slate-100 flex items-center justify-between">
+              <span className="text-[11px] sm:text-xs font-bold text-slate-400 group-hover:text-slate-600 transition-colors uppercase tracking-wider">
                 {t.standard}
               </span>
               <div
                 className="w-6 h-6 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300"
                 style={{ backgroundColor: `${f.accent}20`, color: f.accent }}
+                aria-hidden="true"
               >
                 <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
                 </svg>
               </div>
             </div>
-          </div>
+          </article>
         ))}
       </div>
     </section>

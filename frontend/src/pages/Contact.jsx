@@ -134,26 +134,30 @@ const Contact = () => {
         title="Aloqa | Magic Denta Stomatologiya Klinikasi"
         description="Magic Denta bilan bog'laning. Manzilimiz: Bobur shoh koʻchasi, 1B. 08:00-20:00 qabul (Yakshanba dam olish), professional shifokorlar va tezkor maslahat."
         canonicalPath="/contact"
+        breadcrumbs={[
+          { name: "Bosh sahifa", path: "/" },
+          { name: "Aloqa", path: "/contact" }
+        ]}
         jsonLd={jsonLd}
       />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8 sm:space-y-10">
         
         {/* Unified Master Contact Card */}
-        <section className="bg-white rounded-[36px] shadow-2xl border border-slate-200/90 overflow-hidden grid grid-cols-1 lg:grid-cols-12">
+        <section aria-labelledby="contact-heading" className="bg-white rounded-[32px] sm:rounded-[36px] shadow-2xl border border-slate-200/90 overflow-hidden grid grid-cols-1 lg:grid-cols-12">
           
           {/* Left Column: Brand Dark Panel (5 cols) */}
           <div className="lg:col-span-5 bg-gradient-to-br from-[#0F3040] via-[#1E1733] to-[#321E48] p-6 sm:p-8 lg:p-10 text-white flex flex-col justify-between text-left relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-80 h-80 rounded-full bg-[#92003A]/20 blur-3xl pointer-events-none" />
-            <div className="absolute bottom-0 left-0 w-80 h-80 rounded-full bg-[#403D88]/30 blur-3xl pointer-events-none" />
+            <div className="absolute top-0 right-0 w-80 h-80 rounded-full bg-[#92003A]/20 blur-3xl pointer-events-none" aria-hidden="true" />
+            <div className="absolute bottom-0 left-0 w-80 h-80 rounded-full bg-[#403D88]/30 blur-3xl pointer-events-none" aria-hidden="true" />
 
             <div className="relative z-10 space-y-5">
               <div>
                 <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.10] border border-white/20 text-slate-200 text-[10px] font-black tracking-widest uppercase mb-2.5 shadow-xs">
-                  <span className="w-2 h-2 rounded-full bg-[#91008D] animate-pulse" />
+                  <span className="w-2 h-2 rounded-full bg-[#91008D] animate-pulse" aria-hidden="true" />
                   MAGIC DENTA ALOQA
                 </span>
-                <h1 className="text-2xl sm:text-3xl font-black text-white leading-tight">
+                <h1 id="contact-heading" className="text-2xl sm:text-3xl font-black text-white leading-tight">
                   Biz bilan bog‘laning
                 </h1>
                 <p className="text-xs sm:text-sm text-slate-300 font-normal mt-1.5 leading-relaxed">
@@ -162,10 +166,10 @@ const Contact = () => {
               </div>
 
               {/* Direct Info List */}
-              <div className="space-y-3 pt-1">
+              <address className="not-italic space-y-3 pt-1">
                 {/* Address */}
                 <div className="p-3.5 rounded-2xl bg-white/[0.07] border border-white/15 flex items-center gap-3.5">
-                  <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-[#92003A] to-[#91008D] text-white flex items-center justify-center shrink-0 shadow-xs">
+                  <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-[#92003A] to-[#91008D] text-white flex items-center justify-center shrink-0 shadow-xs" aria-hidden="true">
                     <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                       <path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
@@ -179,7 +183,7 @@ const Contact = () => {
 
                 {/* Phones */}
                 <div className="p-3.5 rounded-2xl bg-white/[0.07] border border-white/15 flex items-center gap-3.5">
-                  <div className="w-9 h-9 rounded-xl bg-[#403D88] text-white flex items-center justify-center shrink-0 shadow-xs">
+                  <div className="w-9 h-9 rounded-xl bg-[#403D88] text-white flex items-center justify-center shrink-0 shadow-xs" aria-hidden="true">
                     <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.725l.548 2.2a1 1 0 01-.321.988l-1.305.98a10.582 10.582 0 004.872 4.872l.98-1.305a1 1 0 01.988-.321l2.2.548a1 1 0 01.725.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                     </svg>
@@ -196,7 +200,7 @@ const Contact = () => {
 
                 {/* Hours */}
                 <div className="p-3.5 rounded-2xl bg-white/[0.07] border border-white/15 flex items-center gap-3.5">
-                  <div className="w-9 h-9 rounded-xl bg-emerald-600 text-white flex items-center justify-center shrink-0 shadow-xs">
+                  <div className="w-9 h-9 rounded-xl bg-emerald-600 text-white flex items-center justify-center shrink-0 shadow-xs" aria-hidden="true">
                     <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
@@ -206,7 +210,7 @@ const Contact = () => {
                     <span className="font-bold text-white text-sm">Dush – Shanba: 08:00 – 20:00</span>
                   </div>
                 </div>
-              </div>
+              </address>
             </div>
 
             {/* Bottom Actions inside Left Panel */}
@@ -216,9 +220,10 @@ const Contact = () => {
                   href="https://t.me/+998912891514"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex-1 inline-flex items-center justify-center gap-2 py-2.5 px-3 rounded-xl bg-[#24A1DE] text-white hover:opacity-90 transition text-xs font-black shadow-xs cursor-pointer"
+                  aria-label="Magic Denta Telegram"
+                  className="flex-1 inline-flex items-center justify-center gap-2 py-2.5 px-3 rounded-xl bg-[#24A1DE] text-white hover:opacity-90 transition text-xs font-black shadow-xs cursor-pointer min-h-[44px]"
                 >
-                  <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}>
+                  <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} aria-hidden="true">
                     <path d="M21 4L3 11.5l4 1.5 1.5 4L21 4z" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                   Telegram
@@ -227,9 +232,10 @@ const Contact = () => {
                   href="https://www.instagram.com/magic.denta/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex-1 inline-flex items-center justify-center gap-2 py-2.5 px-3 rounded-xl bg-gradient-to-r from-[#92003A] to-[#91008D] text-white hover:opacity-90 transition text-xs font-black shadow-xs cursor-pointer"
+                  aria-label="Magic Denta Instagram"
+                  className="flex-1 inline-flex items-center justify-center gap-2 py-2.5 px-3 rounded-xl bg-gradient-to-r from-[#92003A] to-[#91008D] text-white hover:opacity-90 transition text-xs font-black shadow-xs cursor-pointer min-h-[44px]"
                 >
-                  <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}>
+                  <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} aria-hidden="true">
                     <rect x="3" y="3" width="18" height="18" rx="5" />
                     <circle cx="12" cy="12" r="3" />
                     <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" />
@@ -240,7 +246,7 @@ const Contact = () => {
 
               <Link
                 to="/appointment"
-                className="w-full inline-flex items-center justify-center gap-2 py-3 px-5 rounded-xl bg-white text-[#0F3040] hover:bg-slate-100 font-black text-xs uppercase tracking-wider transition shadow-sm active:scale-95 cursor-pointer"
+                className="w-full inline-flex items-center justify-center gap-2 py-3 px-5 rounded-xl bg-white text-[#0F3040] hover:bg-slate-100 font-black text-xs uppercase tracking-wider transition shadow-sm active:scale-95 cursor-pointer min-h-[44px]"
               >
                 Qabulga onlayn yozilish →
               </Link>
@@ -253,7 +259,7 @@ const Contact = () => {
               <span className="text-[10px] font-black text-[#403D88] uppercase tracking-widest block mb-1">
                 ONLAYN MUROJAAT
               </span>
-              <h2 className="text-2xl sm:text-3xl font-black text-[#0F3040]">
+              <h2 className="text-xl sm:text-2xl lg:text-3xl font-black text-[#0F3040]">
                 Shifokorga xabar qoldiring
               </h2>
               <p className="text-xs sm:text-sm text-slate-500 font-normal mt-1">
@@ -274,6 +280,10 @@ const Contact = () => {
                     id="name"
                     name="name"
                     type="text"
+                    autoComplete="name"
+                    required
+                    aria-required="true"
+                    aria-invalid={!!errors.name}
                     value={formData.name}
                     onChange={handleChange}
                     className={`w-full rounded-xl px-4 py-3 border ${
@@ -282,7 +292,7 @@ const Contact = () => {
                     placeholder="Ism sharifingiz"
                   />
                   {errors.name && (
-                    <p className="text-xs text-red-600 mt-1 font-semibold">
+                    <p className="text-xs text-red-600 mt-1 font-semibold" role="alert">
                       {errors.name}
                     </p>
                   )}
@@ -300,6 +310,10 @@ const Contact = () => {
                     name="phone"
                     type="tel"
                     inputMode="tel"
+                    autoComplete="tel"
+                    required
+                    aria-required="true"
+                    aria-invalid={!!errors.phone}
                     value={formData.phone}
                     onChange={handleChange}
                     onPaste={handlePhonePaste}
@@ -310,7 +324,7 @@ const Contact = () => {
                     } focus:outline-none focus:ring-2 focus:ring-[#403D88] bg-slate-50 text-sm font-medium`}
                   />
                   {errors.phone && (
-                    <p className="text-xs text-red-600 mt-1 font-semibold">
+                    <p className="text-xs text-red-600 mt-1 font-semibold" role="alert">
                       {errors.phone}
                     </p>
                   )}
@@ -352,6 +366,8 @@ const Contact = () => {
                     id="email"
                     name="email"
                     type="email"
+                    autoComplete="email"
+                    aria-invalid={!!errors.email}
                     value={formData.email}
                     onChange={handleChange}
                     className={`w-full rounded-xl px-4 py-3 border ${
@@ -360,7 +376,7 @@ const Contact = () => {
                     placeholder="misol@gmail.com"
                   />
                   {errors.email && (
-                    <p className="text-xs text-red-600 mt-1 font-semibold">
+                    <p className="text-xs text-red-600 mt-1 font-semibold" role="alert">
                       {errors.email}
                     </p>
                   )}
@@ -378,6 +394,9 @@ const Contact = () => {
                   id="message"
                   name="message"
                   rows="3"
+                  required
+                  aria-required="true"
+                  aria-invalid={!!errors.message}
                   value={formData.message}
                   onChange={handleChange}
                   className={`w-full rounded-xl px-4 py-2.5 border ${
@@ -386,7 +405,7 @@ const Contact = () => {
                   placeholder="Sizni qanday stomatologik masala bezovta qilmoqda?..."
                 />
                 {errors.message && (
-                  <p className="text-xs text-red-600 mt-1 font-semibold">
+                  <p className="text-xs text-red-600 mt-1 font-semibold" role="alert">
                     {errors.message}
                   </p>
                 )}
@@ -394,6 +413,8 @@ const Contact = () => {
 
               {status.message && (
                 <div
+                  role="status"
+                  aria-live="polite"
                   className={`p-3.5 rounded-xl text-xs font-bold ${
                     status.type === "success"
                       ? "bg-emerald-50 text-emerald-800 border border-emerald-200"
@@ -407,44 +428,43 @@ const Contact = () => {
               <button
                 type="submit"
                 disabled={loading}
-                className="w-full py-3.5 bg-gradient-to-r from-[#92003A] to-[#91008D] hover:shadow-glow-wine text-white font-black text-xs uppercase tracking-wider rounded-xl shadow-md active:scale-95 transition-all disabled:opacity-50 cursor-pointer"
+                className="w-full py-3.5 bg-gradient-to-r from-[#92003A] to-[#91008D] hover:shadow-glow-wine text-white font-black text-xs uppercase tracking-wider rounded-xl shadow-md active:scale-95 transition-all disabled:opacity-50 cursor-pointer min-h-[44px]"
               >
                 {loading ? "Yuborilmoqda..." : "Xabarni yuborish"}
               </button>
-
-
             </form>
           </div>
 
         </section>
 
         {/* Full-Width Framed Interactive Yandex Map */}
-        <div className="rounded-[36px] overflow-hidden bg-white border border-slate-200/90 shadow-2xl p-4 sm:p-6 text-left">
+        <div className="rounded-[32px] sm:rounded-[36px] overflow-hidden bg-white border border-slate-200/90 shadow-2xl p-4 sm:p-6 text-left">
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-4 px-2">
             <div>
               <span className="text-[10px] font-black uppercase tracking-wider text-[#403D88] block">Klinika Lokatsiyasi</span>
-              <h3 className="text-lg font-black text-[#0F3040]">Bobur shoh koʻchasi, 1B • Andijon</h3>
+              <h3 className="text-base sm:text-lg font-black text-[#0F3040]">Bobur shoh koʻchasi, 1B • Andijon</h3>
             </div>
             <a
               href="https://yandex.uz/maps/-/CTsybHos"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-slate-100 hover:bg-[#0F3040] hover:text-white text-[#0F3040] transition text-xs font-bold shadow-xs self-start sm:self-auto cursor-pointer"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-slate-100 hover:bg-[#0F3040] hover:text-white text-[#0F3040] transition text-xs font-bold shadow-xs self-start sm:self-auto cursor-pointer min-h-[40px]"
             >
               <span>Yandeks Xaritada ochish</span>
-              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
               </svg>
             </a>
           </div>
 
-          <div className="rounded-[28px] overflow-hidden border border-slate-200 relative h-[360px] sm:h-[400px] w-full">
+          <div className="rounded-[24px] sm:rounded-[28px] overflow-hidden border border-slate-200 relative h-[320px] sm:h-[400px] w-full">
             <iframe
               src="https://yandex.uz/map-widget/v1/?display-text=Stomatologiya%20klinikasi&ll=72.360238%2C40.749405&mode=search&oid=216461525511&ol=biz&z=17"
               width="100%"
               height="100%"
               frameBorder="0"
               allowFullScreen={true}
+              loading="lazy"
               title="Magic Denta Yandex Xarita"
               className="w-full h-full"
             />
