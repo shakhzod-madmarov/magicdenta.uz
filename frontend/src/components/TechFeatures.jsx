@@ -1,158 +1,200 @@
+import { useState } from "react";
+
 const TechFeatures = () => {
   const lang = localStorage.getItem("language") || "uz";
+  const [hoveredIdx, setHoveredIdx] = useState(null);
 
   const t = {
     uz: {
-      tag: "INNOVATSIYA VA XAVFSIZLIK",
+      tag: "XALQARO STANDARTLAR & INNOVATSIYA",
       heading: "Nega aynan Magic Denta?",
-      desc: "Biz har bir bemorga oliy toifali mutaxassislar e'tibori, raqamli aniqlik va xalqaro klinik xavfsizlik standartlarini kafolatlaymiz.",
-      f1Title: "3D Raqamli Tashxis",
-      f1Desc: "Eng so'nggi avlod 3D tomografiya va raqamli skanerlash orqali 100% aniq va xatosiz tashxis qo'yish.",
-      f2Title: "Mutlaqo Og‘riqsiz Muolaja",
-      f2Desc: "Zamonaviy kompyuterli anesteziya va muloyim muolaja usullari orqali xotirjam va qulay davolanish tajribasi.",
-      f3Title: "Xalqaro Sterillik Standarti",
-      f3Desc: "Ko'p bosqichli avtoklav sterilizatsiyasi va qat'iy nazorat ostidagi 100% xavfsiz va toza gigiyenik muhit.",
-      f4Title: "Smart Telegram Servis",
-      f4Desc: "Uchrashuvlarni qulay bron qilish, Telegram orqali avtomatik eslatmalar va shaxsiy bemor kabineti.",
+      desc: "Biz har bir bemorga oliy toifali shifokorlar tajribasi, raqamli aniqlik va mutlaq xavfsizlikni kafolatlaymiz.",
+      f1Title: "Mikroskopik Aniq Tashxis",
+      f1Desc: "Carl Zeiss nemis optik mikroskopi yordamida tish to‘qimalari 25 karra kattalashtirilib, eng mayda karies va yoriqlar aniq davolanadi.",
+      f2Title: "100% Og‘riqsiz Muolaja",
+      f2Desc: "Zamonaviy kompyuterli nozik anesteziya va muloyim muolaja usullari orqali butunlay qo‘rquvsiz va xotirjam davolanish tajribasi.",
+      f3Title: "Nemis Melag Sterilligi",
+      f3Desc: "Germaniya Melag avtoklavlari yordamida ko‘p bosqichli sterilizatsiya va 100% xavfsiz gigiyenik muhit kafolatlanadi.",
+      f4Title: "Sirkoniy & Gollivud Estetikasi",
+      f4Desc: "Nemis sirkoniysi va E-max ultra-yupqa keramik vinirlari yordamida tabiiy emal yaltiroqligi va mustahkam tabassum yaratiladi.",
     },
     ru: {
-      tag: "ИННОВАЦИИ И БЕЗОПАСНОСТЬ",
+      tag: "МЕЖДУНАРОДНЫЕ СТАНДАРТЫ И ИННОВАЦИИ",
       heading: "Почему выбирают Magic Denta?",
-      desc: "Мы гарантируем индивидуальный подход, цифровую точность и международные стандарты безопасности для каждого пациента.",
-      f1Title: "3D Цифровая диагностика",
-      f1Desc: "3D томография нового поколения и цифровое сканирование для безошибочного планирования лечения.",
-      f2Title: "Лечение без боли и страха",
-      f2Desc: "Инновационная анестезия и бережные методики для максимального комфорта и спокойствия во время приема.",
-      f3Title: "Международный стандарт стерильности",
-      f3Desc: "Многоступенчатая автоклавная стерилизация и строжайший контроль инфекционной безопасности.",
-      f4Title: "Smart Telegram сервис",
-      f4Desc: "Быстрая онлайн-запись, мгновенные напоминания в Telegram и удобный личный кабинет пациента.",
+      desc: "Мы гарантируем индивидуальный подход, безупречную точность и абсолютную безопасность для каждого пациента.",
+      f1Title: "Микроскопическая точность",
+      f1Desc: "Оптический микроскоп Carl Zeiss с 25-кратным увеличением для ювелирного лечения каналов и сохранения зубов.",
+      f2Title: "100% Лечение без боли",
+      f2Desc: "Бережная компьютерная анестезия и современные методики для полного комфорта и спокойствия во время приема.",
+      f3Title: "Немецкий стандарт стерильности",
+      f3Desc: "Многоступенчатая автоклавная стерилизация Melag (Германия) и строжайший контроль инфекционной безопасности.",
+      f4Title: "Цирконий и эстетика E-max",
+      f4Desc: "Высокопрочные циркониевые коронки и тончайшие виниры E-max для безупречной эстетики натуральной улыбки.",
     },
     en: {
-      tag: "CLINICAL EXCELLENCE & SAFETY",
+      tag: "GLOBAL CLINICAL STANDARDS & INNOVATION",
       heading: "Why Choose Magic Denta?",
-      desc: "We ensure personalized patient care, digital precision, and international clinical safety standards.",
-      f1Title: "3D Digital Diagnostics",
-      f1Desc: "Next-generation 3D tomography and precision digital scanning for flawless treatment planning.",
+      desc: "We deliver master clinician expertise, uncompromising precision, and international patient safety protocols.",
+      f1Title: "Microscopic Precision",
+      f1Desc: "German Carl Zeiss surgical microscope with 25x magnification for flawless endodontic care and tooth preservation.",
       f2Title: "100% Pain-Free Care",
-      f2Desc: "Innovative anesthesia and gentle treatment techniques ensuring a serene, stress-free experience.",
-      f3Title: "Strict Sterility Standards",
-      f3Desc: "Multi-stage autoclave sterilization and uncompromising hygienic protocols for your peace of mind.",
-      f4Title: "Smart Telegram Sync",
-      f4Desc: "Instant appointment booking, automated Telegram visit reminders, and personalized patient portal.",
+      f2Desc: "Advanced computer-guided anesthesia and gentle techniques ensuring a serene, stress-free clinical visit.",
+      f3Title: "German Melag Sterility",
+      f3Desc: "Hospital-grade Melag autoclave sterilization and stringent infection control protocols for total peace of mind.",
+      f4Title: "Zirconia & E-max Aesthetics",
+      f4Desc: "High-durability German Zirconia and ultra-thin E-max ceramic veneers for breathtaking natural smiles.",
     },
   }[lang] || {
-    tag: "INNOVATSIYA VA XAVFSIZLIK",
+    tag: "XALQARO STANDARTLAR & INNOVATSIYA",
     heading: "Nega aynan Magic Denta?",
-    desc: "Biz har bir bemorga individual yondashuv, raqamli aniqlik va xalqaro sifat standartlarini kafolatlaymiz.",
-    f1Title: "3D Raqamli Tashxis",
-    f1Desc: "Eng so'nggi avlod 3D tomografiya va raqamli skanerlash orqali 100% aniq tashxis.",
-    f2Title: "Mutlaqo Og‘riqsiz Muolaja",
-    f2Desc: "Zamonaviy innovatsion anesteziya orqali xotirjam va qulay davolanish tajribasi.",
-    f3Title: "Xalqaro Sterillik Standarti",
-    f3Desc: "Ko'p bosqichli avtoklav sterilizatsiyasi va 100% xavfsiz muhit.",
-    f4Title: "Smart Telegram Servis",
-    f4Desc: "Uchrashuvlarni qulay bron qilish va Telegram orqali avtomatik eslatmalar.",
+    desc: "Biz har bir bemorga oliy toifali shifokorlar tajribasi, raqamli aniqlik va mutlaq xavfsizlikni kafolatlaymiz.",
+    f1Title: "Mikroskopik Aniq Tashxis",
+    f1Desc: "Carl Zeiss nemis optik mikroskopi yordamida tish to‘qimalari 25 karra kattalashtirilib, eng mayda karies va yoriqlar aniq davolanadi.",
+    f2Title: "100% Og‘riqsiz Muolaja",
+    f2Desc: "Zamonaviy kompyuterli nozik anesteziya va muloyim muolaja usullari orqali butunlay qo‘rquvsiz va xotirjam davolanish tajribasi.",
+    f3Title: "Nemis Melag Sterilligi",
+    f3Desc: "Germaniya Melag avtoklavlari yordamida ko‘p bosqichli sterilizatsiya va 100% xavfsiz gigiyenik muhit kafolatlanadi.",
+    f4Title: "Sirkoniy & Gollivud Estetikasi",
+    f4Desc: "Nemis sirkoniysi va E-max ultra-yupqa keramik vinirlari yordamida tabiiy emal yaltiroqligi va mustahkam tabassum yaratiladi.",
   };
 
   const features = [
     {
       icon: (
-        <svg className="w-7 h-7 text-[#91008D]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
+        <svg className="w-8 h-8 text-[#403D88]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
         </svg>
       ),
       title: t.f1Title,
       desc: t.f1Desc,
-      badge: "3D DIAGNOSTICS",
-      borderGlow: "group-hover:border-[#91008D]/60",
+      badge: "ZEISS MICROSCOPY",
+      accent: "#403D88",
+      glowColor: "rgba(64, 61, 136, 0.15)",
     },
     {
       icon: (
-        <svg className="w-7 h-7 text-[#92003A]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <svg className="w-8 h-8 text-[#92003A]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
         </svg>
       ),
       title: t.f2Title,
       desc: t.f2Desc,
-      badge: "PAIN-FREE TECH",
-      borderGlow: "group-hover:border-[#92003A]/60",
+      badge: "100% PAIN-FREE",
+      accent: "#92003A",
+      glowColor: "rgba(146, 0, 58, 0.15)",
     },
     {
       icon: (
-        <svg className="w-7 h-7 text-[#403D88]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <svg className="w-8 h-8 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
         </svg>
       ),
       title: t.f3Title,
       desc: t.f3Desc,
-      badge: "STERILITY 100%",
-      borderGlow: "group-hover:border-[#403D88]/60",
+      badge: "MELAG STERILITY",
+      accent: "#059669",
+      glowColor: "rgba(5, 150, 105, 0.15)",
     },
     {
       icon: (
-        <svg className="w-7 h-7 text-indigo-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+        <svg className="w-8 h-8 text-[#91008D]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
         </svg>
       ),
       title: t.f4Title,
       desc: t.f4Desc,
-      badge: "SMART SYNC",
-      borderGlow: "group-hover:border-indigo-400/60",
+      badge: "PREMIUM SMILE",
+      accent: "#91008D",
+      glowColor: "rgba(145, 0, 141, 0.15)",
     },
   ];
 
   return (
-    <section className="my-24 py-20 px-4 sm:px-8 lg:px-12 bg-gradient-to-br from-[#0F3040] via-[#1F1932] to-[#321E48] text-white relative overflow-hidden border-y border-[#403D88]/30">
-      {/* Background ambient orbs */}
-      <div className="absolute -top-24 -left-24 w-96 h-96 rounded-full bg-[#403D88]/20 blur-3xl pointer-events-none" />
-      <div className="absolute -bottom-24 -right-24 w-96 h-96 rounded-full bg-[#92003A]/20 blur-3xl pointer-events-none" />
+    <section className="my-28 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      {/* Section Header */}
+      <div className="text-center max-w-3xl mx-auto mb-16">
+        <span className="text-xs font-black tracking-widest text-[#403D88] uppercase block mb-3">
+          {t.tag}
+        </span>
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-[#0F3040] leading-tight tracking-tight">
+          {t.heading}
+        </h2>
+        <p className="text-slate-600 mt-4 text-sm sm:text-base leading-relaxed font-normal">
+          {t.desc}
+        </p>
+      </div>
 
-      <div className="max-w-7xl mx-auto relative z-10">
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="text-xs font-black text-[#91008D] tracking-widest uppercase block mb-3">
-            {t.tag}
-          </span>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-white leading-tight tracking-tight">
-            {t.heading}
-          </h2>
-          <p className="text-slate-300 mt-4 text-sm sm:text-base leading-relaxed">
-            {t.desc}
-          </p>
-        </div>
+      {/* 3D Interactive Feature Grid */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+        {features.map((item, idx) => {
+          const isHovered = hoveredIdx === idx;
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {features.map((f, i) => (
-            <article
-              key={i}
-              className={`bg-white/[0.04] backdrop-blur-md rounded-[30px] p-7 border border-white/10 hover:bg-white/[0.08] flex flex-col justify-between group transition-all duration-300 ${f.borderGlow} hover:-translate-y-1.5 shadow-xl`}
+          return (
+            <div
+              key={idx}
+              onMouseEnter={() => setHoveredIdx(idx)}
+              onMouseLeave={() => setHoveredIdx(null)}
+              style={{
+                transform: isHovered
+                  ? "translateY(-8px) scale(1.02)"
+                  : "translateY(0) scale(1)",
+                boxShadow: isHovered
+                  ? `0 20px 35px -10px ${item.glowColor}, 0 1px 3px rgba(0,0,0,0.05)`
+                  : "0 4px 20px -2px rgba(0,0,0,0.05)",
+                borderColor: isHovered ? item.accent : "rgba(226, 232, 240, 0.8)",
+              }}
+              className="bg-white rounded-[32px] p-7 border transition-all duration-300 flex flex-col justify-between text-left group relative overflow-hidden cursor-default"
             >
+              {/* Top ambient color accent line */}
+              <div
+                className="absolute top-0 left-0 right-0 h-1.5 transition-opacity duration-300"
+                style={{
+                  backgroundColor: item.accent,
+                  opacity: isHovered ? 1 : 0,
+                }}
+              />
+
               <div>
                 <div className="flex items-center justify-between mb-6">
-                  <div className="w-14 h-14 rounded-2xl bg-white/[0.06] border border-white/[0.12] flex items-center justify-center transition-transform group-hover:scale-110 shadow-sm">
-                    {f.icon}
+                  <div
+                    className="w-14 h-14 rounded-2xl flex items-center justify-center transition-transform duration-300 group-hover:scale-110 shadow-xs"
+                    style={{
+                      backgroundColor: `${item.accent}12`,
+                    }}
+                  >
+                    {item.icon}
                   </div>
-                  <span className="text-[10px] font-black tracking-widest text-slate-300 uppercase px-3 py-1 rounded-full bg-white/[0.06] border border-white/[0.1]">
-                    {f.badge}
+                  <span
+                    className="text-[10px] font-black tracking-wider uppercase px-3 py-1 rounded-full border"
+                    style={{
+                      color: item.accent,
+                      borderColor: `${item.accent}30`,
+                      backgroundColor: `${item.accent}08`,
+                    }}
+                  >
+                    {item.badge}
                   </span>
                 </div>
-                <h3 className="text-lg font-black text-white mb-3 tracking-tight group-hover:text-slate-100 transition-colors">
-                  {f.title}
+
+                <h3 className="font-black text-lg text-[#0F3040] leading-snug mb-3 group-hover:text-[#92003A] transition-colors">
+                  {item.title}
                 </h3>
-                <p className="text-slate-300 text-sm leading-relaxed font-normal">
-                  {f.desc}
+                <p className="text-slate-600 text-xs sm:text-sm leading-relaxed font-normal">
+                  {item.desc}
                 </p>
               </div>
 
-              <div className="pt-6 mt-6 border-t border-white/[0.08] flex items-center justify-between">
-                <span className="text-xs font-bold text-slate-400 group-hover:text-slate-200 transition-colors">
-                  Magic Denta Standard
+              <div className="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-slate-400 group-hover:text-[#0F3040] transition-colors">
+                <span className="text-[11px] font-extrabold uppercase tracking-wider">
+                  Magic Denta Standarti
                 </span>
-                <div className="w-2 h-2 rounded-full bg-[#91008D] animate-pulse" aria-hidden="true" />
+                <span className="transform group-hover:translate-x-1 transition-transform text-[#92003A]">
+                  ✓
+                </span>
               </div>
-            </article>
-          ))}
-        </div>
+            </div>
+          );
+        })}
       </div>
     </section>
   );

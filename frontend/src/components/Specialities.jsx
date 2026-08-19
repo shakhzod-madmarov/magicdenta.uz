@@ -1,34 +1,36 @@
 import { specialityData } from "../assets/assets";
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 
 const Specialities = () => {
   const navigate = useNavigate();
   const lang = localStorage.getItem("language") || "uz";
+  const [hoveredIdx, setHoveredIdx] = useState(null);
 
   const t = {
     uz: {
-      tag: "ASOSIY MUTAXASSISLIKLAR",
+      tag: "5 TA ASOSIY IXTISOSLASHUV",
       heading: "Bizning davolash yo‘nalishlarimiz",
-      desc: "Zamonaviy raqamli stomatologiya va ortopediya. Yuqori aniqlikdagi uskunalar va tajribali mutaxassislar xizmatida.",
-      view: "Shifokorga yozilish",
+      desc: "Magic Denta 5 ta asosiy stomatologik yo‘nalishga chuqur ixtisoslashgan. Har bir xizmat bo‘yicha batafsil ma’lumot oling.",
+      view: "Xizmat haqida batafsil",
     },
     ru: {
-      tag: "КЛЮЧЕВЫЕ НАПРАВЛЕНИЯ",
+      tag: "5 КЛЮЧЕВЫХ СПЕЦИАЛИЗАЦИЙ",
       heading: "Направления лечения",
-      desc: "Передовая цифровая стоматология и ортопедия. Высокоточное оборудование и опытные сертифицированные врачи.",
-      view: "Записаться на прием",
+      desc: "Клиника Magic Denta глубоко сфокусирована на 5 основных стоматологических направлениях.",
+      view: "Подробнее об услуге",
     },
     en: {
-      tag: "CORE CLINICAL SPECIALTIES",
-      heading: "Our Areas of Specialty",
-      desc: "Advanced digital dentistry and dental orthopedics with precision clinical technology and master specialists.",
-      view: "Book Consultation",
+      tag: "5 CORE CLINICAL SPECIALTIES",
+      heading: "Our Specialized Disciplines",
+      desc: "Magic Denta is deeply dedicated to 5 elite clinical specialties powered by master clinicians.",
+      view: "Explore Specialty",
     },
   }[lang] || {
-    tag: "ASOSIY MUTAXASSISLIKLAR",
+    tag: "5 TA ASOSIY IXTISOSLASHUV",
     heading: "Bizning davolash yo‘nalishlarimiz",
-    desc: "Zamonaviy raqamli stomatologiya va ortopediya. Yuqori aniqlikdagi uskunalar va tajribali mutaxassislar xizmatida.",
-    view: "Shifokorga yozilish",
+    desc: "Magic Denta 5 ta asosiy stomatologik yo‘nalishga chuqur ixtisoslashgan. Har bir xizmat bo‘yicha batafsil ma’lumot oling.",
+    view: "Xizmat haqida batafsil",
   };
 
   const descriptions = {
@@ -64,41 +66,63 @@ const Specialities = () => {
     },
   };
 
+  const slugMap = {
+    "Ortodontiya": "ortodontiya",
+    "Terapevtik stomatologiya": "terapevtik-stomatologiya",
+    "Ortopedik stomatologiya": "ortopedik-stomatologiya",
+    "Estetik stomatologiya": "estetik-stomatologiya",
+    "Stomatologiya Jarrohligi": "jarrohlik-stomatologiyasi",
+    "Jarrohlik stomatologiyasi": "jarrohlik-stomatologiyasi"
+  };
+
   const handleClick = (speciality) => {
+    const slug = slugMap[speciality] || "ortodontiya";
+    navigate(`/services/${slug}`);
     window.scrollTo({ top: 0, behavior: "smooth" });
-    navigate(`/dentists/${encodeURIComponent(speciality)}`);
   };
 
   return (
-    <section
-      id="specialities"
-      className="my-24 px-4 sm:px-6 lg:px-10 max-w-7xl mx-auto"
-    >
-      <div className="text-center max-w-3xl mx-auto mb-14">
+    <section id="specialities" className="my-28 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      {/* Section Header */}
+      <div className="text-center max-w-3xl mx-auto mb-16">
         <span className="text-xs font-black tracking-widest text-[#403D88] uppercase block mb-3">
           {t.tag}
         </span>
-        <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-[#0F3040] leading-tight tracking-tight">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-[#0F3040] leading-tight tracking-tight">
           {t.heading}
         </h2>
-        <p className="text-slate-600 mt-4 text-sm sm:text-base leading-relaxed">
+        <p className="text-slate-600 mt-4 text-sm sm:text-base leading-relaxed font-normal">
           {t.desc}
         </p>
       </div>
 
-      <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 max-w-7xl mx-auto">
+      {/* 5 Core Specialties 3D Interactive Tiles */}
+      <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5 sm:gap-6">
         {specialityData.map((item, index) => {
           const displayTitle = item.displayName?.[lang] || item.speciality;
-          const badgeText = item.badge?.[lang] || "MUTAXASSISLIK";
           const descText =
             descriptions[item.speciality]?.[lang] ||
-            "Professional stomatologiya xizmati.";
+            descriptions[item.speciality]?.uz ||
+            "";
+          const badgeText = item.badge?.[lang] || item.badge?.uz || "MUTAXASSISLIK";
+          const isHovered = hoveredIdx === index;
 
           return (
             <li
               key={index}
+              onMouseEnter={() => setHoveredIdx(index)}
+              onMouseLeave={() => setHoveredIdx(null)}
               onClick={() => handleClick(item.speciality)}
-              className="bg-white rounded-[32px] p-6 border border-slate-200/80 shadow-card-clean hover:shadow-card-hover hover:border-[#403D88]/40 hover:-translate-y-2 transition-all duration-300 flex flex-col justify-between group cursor-pointer relative overflow-hidden"
+              style={{
+                transform: isHovered
+                  ? "translateY(-10px) scale(1.025)"
+                  : "translateY(0) scale(1)",
+                boxShadow: isHovered
+                  ? "0 22px 40px -12px rgba(64, 61, 136, 0.22), 0 1px 3px rgba(0,0,0,0.05)"
+                  : "0 4px 20px -2px rgba(0,0,0,0.05)",
+                borderColor: isHovered ? "rgba(64, 61, 136, 0.45)" : "rgba(226, 232, 240, 0.85)",
+              }}
+              className="bg-white rounded-[32px] p-6 border transition-all duration-300 flex flex-col justify-between group cursor-pointer relative overflow-hidden"
             >
               {/* Top ambient color stripe */}
               <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-[#0F3040] via-[#403D88] to-[#92003A] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -127,7 +151,7 @@ const Specialities = () => {
                 </div>
 
                 {/* 3D Visual Box */}
-                <div className="w-28 h-28 mx-auto my-3 rounded-[26px] overflow-hidden bg-gradient-to-br from-[#0F3040] to-[#321E48] flex items-center justify-center shadow-lg group-hover:scale-105 transition-transform duration-300 border border-[#403D88]/30">
+                <div className="w-28 h-28 mx-auto my-3 rounded-[26px] overflow-hidden bg-gradient-to-br from-[#0F3040] to-[#321E48] flex items-center justify-center shadow-lg group-hover:scale-108 transition-transform duration-300 border border-[#403D88]/30">
                   <img
                     src={item.image}
                     alt={displayTitle}
@@ -139,12 +163,12 @@ const Specialities = () => {
                 </div>
 
                 {/* Title */}
-                <h3 className="font-black text-base sm:text-lg text-[#0F3040] text-center leading-snug mb-2 group-hover:text-[#92003A] transition-colors">
+                <h3 className="font-black text-base text-[#0F3040] text-center leading-snug mb-2 group-hover:text-[#92003A] transition-colors">
                   {displayTitle}
                 </h3>
 
                 {/* Description */}
-                <p className="text-slate-600 text-xs text-center leading-relaxed mb-4 px-1 min-h-[44px] flex items-center justify-center">
+                <p className="text-slate-600 text-xs text-center leading-relaxed mb-4 px-1 min-h-[44px] flex items-center justify-center font-normal">
                   {descText}
                 </p>
               </div>
