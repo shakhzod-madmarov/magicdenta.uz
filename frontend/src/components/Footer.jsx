@@ -153,19 +153,7 @@ const Footer = () => {
             </svg>
           </a>
 
-          {/* WhatsApp */}
-          <a
-            href="https://wa.me/998912891514"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="WhatsApp"
-            className="inline-flex items-center p-3 rounded-full bg-white/[0.06] text-white hover:bg-[#25D366] hover:text-white border border-white/10 transition shadow-sm"
-            title="WhatsApp"
-          >
-            <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-              <path d="M21 12A9 9 0 1 0 11.1 21L8 22l1.1-3.2A9 9 0 0 0 21 12z" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-          </a>
+
 
           {/* Instagram */}
           <a
