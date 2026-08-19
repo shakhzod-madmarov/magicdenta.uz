@@ -210,36 +210,56 @@ const ServiceLanding = () => {
             {service.features.map((feat, idx) => (
               <div
                 key={idx}
-                className="bg-white rounded-[28px] p-6 border border-slate-200/90 shadow-card-clean text-left space-y-2.5"
+                className="bg-white rounded-[28px] p-6 sm:p-7 border border-slate-200/90 shadow-card-clean hover:shadow-xl hover:-translate-y-1.5 hover:border-[#403D88]/40 transition-all duration-300 text-left space-y-3 flex flex-col justify-between group"
               >
-                <div className="w-8 h-8 rounded-xl bg-[#403D88]/10 text-[#403D88] flex items-center justify-center font-black text-sm">
-                  0{idx + 1}
+                <div>
+                  <div className="w-10 h-10 rounded-2xl bg-gradient-to-br from-[#0F3040] to-[#403D88] text-white flex items-center justify-center font-black text-xs shadow-xs mb-3 group-hover:scale-105 transition-transform">
+                    0{idx + 1}
+                  </div>
+                  <h3 className="font-black text-base text-[#0F3040] group-hover:text-[#92003A] transition-colors leading-snug">
+                    {feat.title}
+                  </h3>
+                  <p className="text-slate-600 text-xs sm:text-sm leading-relaxed font-normal mt-2">
+                    {feat.desc}
+                  </p>
                 </div>
-                <h3 className="font-black text-base text-[#0F3040]">
-                  {feat.title}
-                </h3>
-                <p className="text-slate-600 text-xs sm:text-sm leading-relaxed font-normal">
-                  {feat.desc}
-                </p>
               </div>
             ))}
           </div>
         </section>
 
         {/* FAQs */}
-        <section className="bg-white rounded-[36px] p-8 sm:p-12 border border-slate-200/90 shadow-card-clean text-left space-y-6">
-          <h2 className="text-2xl sm:text-3xl font-black text-[#0F3040]">
-            Ko‘p beriladigan savollar
-          </h2>
-          <div className="space-y-4">
+        <section className="bg-white rounded-[36px] p-8 sm:p-12 border border-slate-200/90 shadow-card-clean text-left space-y-8">
+          <div>
+            <span className="text-xs font-black text-[#403D88] uppercase tracking-widest block mb-2">
+              MA’LUMOT VA JAVOBLAR
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-black text-[#0F3040]">
+              Ko‘p beriladigan savollar
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 gap-4">
             {service.faqs.map((faq, idx) => (
-              <div key={idx} className="p-5 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-2">
-                <h3 className="font-black text-sm sm:text-base text-[#0F3040]">
-                  ❓ {faq.q}
-                </h3>
-                <p className="text-slate-600 text-xs sm:text-sm leading-relaxed font-normal">
-                  💡 {faq.a}
-                </p>
+              <div
+                key={idx}
+                className="p-6 rounded-[26px] bg-slate-50 border border-slate-200/80 hover:bg-white hover:border-[#403D88]/40 hover:shadow-card-clean transition-all duration-300 space-y-3"
+              >
+                <div className="flex items-start gap-3.5">
+                  <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-[#0F3040] to-[#403D88] text-white flex items-center justify-center text-xs font-black shrink-0 shadow-xs mt-0.5">
+                    ?
+                  </div>
+                  <h3 className="font-black text-base sm:text-lg text-[#0F3040] leading-snug">
+                    {faq.q}
+                  </h3>
+                </div>
+
+                <div className="flex items-start gap-3 pl-11">
+                  <div className="w-2 h-2 rounded-full bg-[#92003A] shrink-0 mt-2" />
+                  <p className="text-slate-600 text-xs sm:text-sm leading-relaxed font-normal">
+                    {faq.a}
+                  </p>
+                </div>
               </div>
             ))}
           </div>
