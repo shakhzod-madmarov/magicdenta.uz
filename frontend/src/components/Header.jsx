@@ -9,7 +9,7 @@ const Header = () => {
     uz: {
       badge: "DENTAL ORTHOPEDICS • STOMATOLOGIYA",
       heading: "Mukammal tabassum san’ati va professional g‘amxo‘rlik",
-      desc: "Magic Denta — zamonaviy ortodontiya, mikroskopik tish davolash, sirkoniy qoplamalar va og‘riqsiz muolajalar markazi.",
+      desc: "Magic Denta — zamonaviy ortodontiya, estetik vinirlar, sirkoniy qoplamalar va og‘riqsiz muolajalar markazi.",
       book: "Qabulga yozilish",
       services: "Xizmatlarimiz",
       tag1: "100% Og‘riqsiz",
@@ -19,7 +19,7 @@ const Header = () => {
     ru: {
       badge: "DENTAL ORTHOPEDICS • СТОМАТОЛОГИЯ",
       heading: "Искусство идеальной улыбки и забота о здоровье",
-      desc: "Современная ортодонтия, микроскопическое лечение, циркониевые коронки и безболезненный комфорт в Magic Denta.",
+      desc: "Современная ортодонтия, эстетические виниры, циркониевые коронки и безболезненный комфорт в Magic Denta.",
       book: "Записаться на прием",
       services: "Наши услуги",
       tag1: "100% Без боли",
@@ -29,7 +29,7 @@ const Header = () => {
     en: {
       badge: "DENTAL ORTHOPEDICS • CLINIC",
       heading: "The Art of a Perfect Smile & Elite Dental Care",
-      desc: "Specialized orthodontics, microscopic tooth therapy, precision Zirconia crowns, and gentle pain-free comfort.",
+      desc: "Specialized orthodontics, aesthetic veneers, precision Zirconia crowns, and gentle pain-free comfort.",
       book: "Book Appointment",
       services: "Our Specialties",
       tag1: "Pain-Free Care",
@@ -39,7 +39,7 @@ const Header = () => {
   }[lang] || {
     badge: "DENTAL ORTHOPEDICS • STOMATOLOGIYA",
     heading: "Mukammal tabassum san’ati va professional g‘amxo‘rlik",
-    desc: "Magic Denta — zamonaviy ortodontiya, mikroskopik tish davolash, sirkoniy qoplamalar va og‘riqsiz muolajalar markazi.",
+    desc: "Magic Denta — zamonaviy ortodontiya, estetik vinirlar, sirkoniy qoplamalar va og‘riqsiz muolajalar markazi.",
     book: "Qabulga yozilish",
     services: "Xizmatlarimiz",
     tag1: "100% Og‘riqsiz",

@@ -52,7 +52,7 @@ const Home = () => {
       <Header />
       <main>
         <Specialities />
-        <BeforeAfterGallery />
+        {/* <BeforeAfterGallery /> */}
         <SmileQuiz />
         <TechFeatures />
         <ReviewsTrust />
