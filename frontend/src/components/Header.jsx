@@ -7,28 +7,56 @@ const Header = () => {
 
   const t = {
     uz: {
-      heading: "Har bir tabassumda go‘zallik va yuksak ishonch",
-      desc: "Magic Denta — Specializing in Dental Orthopedics. Siz va yaqinlaringiz uchun qulay, og‘riqsiz va professional tish parvarishi, ortodontiya va mukammal tabassum xizmatlari.",
+      badge: "MAGIC DENTA • DENTAL ORTHOPEDICS",
+      heading: "Har bir tabassumda yuksak go‘zallik va mukammal ishonch",
+      desc: "Zamonaviy raqamli ortodontiya, professional tish davolash va individual yondashuv. Biz sizga xalqaro standartlar asosida xavfsiz va og‘riqsiz stomatologik xizmatlarni taqdim etamiz.",
       book: "Qabulga yozilish",
       doctors: "Shifokorlarimiz",
+      stat1Val: "100%",
+      stat1Lab: "Og‘riqsiz muolaja",
+      stat2Val: "3D",
+      stat2Lab: "Raqamli tashxis",
+      stat3Val: "24/7",
+      stat3Lab: "Onlayn yozilish",
     },
     ru: {
-      heading: "Красота и уверенность в каждой улыбке",
-      desc: "Magic Denta — Specializing in Dental Orthopedics. Комфортная, надежная и безболезненная забота о здоровье ваших зубов, исправление прикуса и создание безупречной улыбки.",
+      badge: "MAGIC DENTA • DENTAL ORTHOPEDICS",
+      heading: "Красота, точность и безупречная уверенность в каждой улыбке",
+      desc: "Передовая цифровая ортодонтия, надежное лечение зубов и индивидуальный подход. Высокие международные стандарты безболезненной стоматологии.",
       book: "Записаться на прием",
       doctors: "Наши врачи",
+      stat1Val: "100%",
+      stat1Lab: "Без боли и страха",
+      stat2Val: "3D",
+      stat2Lab: "Цифровая точность",
+      stat3Val: "24/7",
+      stat3Lab: "Онлайн-запись",
     },
     en: {
-      heading: "Beauty & Confidence in Every Smile",
-      desc: "Magic Denta — Specializing in Dental Orthopedics. Gentle, pain-free dental treatments, advanced orthodontics, and personalized care for the entire family.",
+      badge: "MAGIC DENTA • DENTAL ORTHOPEDICS",
+      heading: "Elegance, Precision & Absolute Confidence in Every Smile",
+      desc: "Next-generation digital orthodontics, gentle dental care, and bespoke smile restorations delivered with uncompromising clinical excellence.",
       book: "Book Appointment",
       doctors: "Our Specialists",
+      stat1Val: "100%",
+      stat1Lab: "Pain-Free Care",
+      stat2Val: "3D",
+      stat2Lab: "Digital Scanning",
+      stat3Val: "24/7",
+      stat3Lab: "Online Booking",
     },
   }[lang] || {
-    heading: "Har bir tabassumda go‘zallik va yuksak ishonch",
-    desc: "Magic Denta — Specializing in Dental Orthopedics. Siz va yaqinlaringiz uchun qulay, og‘riqsiz va professional tish parvarishi, ortodontiya va mukammal tabassum xizmatlari.",
+    badge: "MAGIC DENTA • DENTAL ORTHOPEDICS",
+    heading: "Har bir tabassumda yuksak go‘zallik va mukammal ishonch",
+    desc: "Zamonaviy raqamli ortodontiya, professional tish davolash va individual yondashuv. Biz sizga xalqaro standartlar asosida xavfsiz va og‘riqsiz stomatologik xizmatlarni taqdim etamiz.",
     book: "Qabulga yozilish",
     doctors: "Shifokorlarimiz",
+    stat1Val: "100%",
+    stat1Lab: "Og‘riqsiz muolaja",
+    stat2Val: "3D",
+    stat2Lab: "Raqamli tashxis",
+    stat3Val: "24/7",
+    stat3Lab: "Onlayn yozilish",
   };
 
   const headerPhoto = assets.header_doctor || assets.header_img;
@@ -37,8 +65,8 @@ const Header = () => {
     <>
       <style>{`
         /* ═══════════════════════════════════
-           MAGIC DENTA HERO  —  100dvh
-           Cinematic Blend
+           MAGIC DENTA LUXURY HERO
+           Cinematic High-Tech Blend
         ═══════════════════════════════════ */
 
         .mdh-hero {
@@ -48,14 +76,41 @@ const Header = () => {
           margin-left: -50vw;
           margin-right: -50vw;
           width: 100vw;
-          min-height: 100dvh;
+          min-height: calc(100dvh - 65px);
           overflow: hidden;
           display: flex;
           align-items: center;
-          background: linear-gradient(135deg, #0F3040 0%, #1A132B 50%, #321E48 100%);
+          background: linear-gradient(135deg, #0F3040 0%, #1B1833 45%, #321E48 100%);
         }
 
-        /* ── Doctor Photo — Desktop: absolute right half ── */
+        /* Ambient glowing background orbs */
+        .mdh-glow-orb-1 {
+          position: absolute;
+          width: 600px;
+          height: 600px;
+          border-radius: 50%;
+          background: radial-gradient(circle, rgba(64, 61, 136, 0.28) 0%, rgba(15, 48, 64, 0) 70%);
+          top: -150px;
+          left: -100px;
+          filter: blur(80px);
+          pointer-events: none;
+          z-index: 1;
+        }
+
+        .mdh-glow-orb-2 {
+          position: absolute;
+          width: 500px;
+          height: 500px;
+          border-radius: 50%;
+          background: radial-gradient(circle, rgba(146, 0, 58, 0.22) 0%, rgba(145, 0, 141, 0.1) 40%, rgba(50, 30, 72, 0) 70%);
+          bottom: -100px;
+          left: 25%;
+          filter: blur(90px);
+          pointer-events: none;
+          z-index: 1;
+        }
+
+        /* Doctor photo desktop overlay */
         .mdh-hero__photo {
           display: none;
         }
@@ -66,24 +121,20 @@ const Header = () => {
             position: absolute;
             top: 0;
             right: 0;
-            width: 55%;
+            width: 54%;
             height: 100%;
-            z-index: 0;
+            z-index: 2;
           }
 
           .mdh-hero__photo img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            object-position: center 14%;
+            object-position: center 15%;
             display: block;
-            filter: brightness(0.92) saturate(0.9);
+            filter: brightness(0.95) contrast(1.05);
           }
 
-          /*
-            Multi-layer gradient overlay
-            Base tone: #0f1011 = rgb(15, 48, 64)
-          */
           .mdh-hero__photo::after {
             content: '';
             position: absolute;
@@ -93,232 +144,130 @@ const Header = () => {
               linear-gradient(
                 to right,
                 rgb(15, 48, 64)        0%,
-                rgba(15,48,64, 0.98)   5%,
-                rgba(15,48,64, 0.92)  10%,
-                rgba(15,48,64, 0.84)  16%,
-                rgba(15,48,64, 0.72)  23%,
-                rgba(15,48,64, 0.58)  31%,
-                rgba(15,48,64, 0.42)  40%,
-                rgba(15,48,64, 0.28)  50%,
-                rgba(15,48,64, 0.16)  60%,
-                rgba(15,48,64, 0.06)  72%,
-                rgba(15,48,64, 0.00)  85%
+                rgba(15, 48, 64, 0.98) 6%,
+                rgba(15, 48, 64, 0.90) 14%,
+                rgba(15, 48, 64, 0.75) 24%,
+                rgba(15, 48, 64, 0.50) 38%,
+                rgba(15, 48, 64, 0.25) 54%,
+                rgba(15, 48, 64, 0.05) 75%,
+                rgba(15, 48, 64, 0.00) 90%
               ),
               linear-gradient(
                 to top,
-                rgba(10, 10, 10, 0.92)  0%,
-                rgba(10, 10, 10, 0.60) 14%,
-                rgba(10, 10, 10, 0.20) 28%,
-                transparent            44%
+                rgba(15, 48, 64, 0.95) 0%,
+                rgba(15, 48, 64, 0.40) 18%,
+                transparent            35%
               ),
               linear-gradient(
                 to bottom,
-                rgba(10, 10, 10, 0.50)  0%,
-                rgba(10, 10, 10, 0.15) 12%,
-                transparent            24%
+                rgba(15, 48, 64, 0.60) 0%,
+                transparent            22%
               );
           }
         }
 
-        /* ── Content Wrapper ── */
         .mdh-hero__inner {
           position: relative;
           z-index: 10;
           width: 100%;
           max-width: 80rem;
           margin: 0 auto;
-          padding: 5.5rem 1.5rem 4rem;
+          padding: 4.5rem 1.5rem 4rem;
           display: flex;
           align-items: center;
-          min-height: 100dvh;
+          min-height: calc(100dvh - 65px);
         }
 
         @media (min-width: 640px) {
-          .mdh-hero__inner { padding: 5.5rem 2rem 4rem; }
+          .mdh-hero__inner { padding: 4.5rem 2rem 4rem; }
         }
         @media (min-width: 1024px) {
-          .mdh-hero__inner { padding: 4.5rem 3rem; }
-        }
-
-        /* ── Left Content ── */
-        .mdh-hero__content {
-          color: #fff;
-          display: flex;
-          flex-direction: column;
-          gap: 1.6rem;
-        }
-
-        @media (min-width: 1024px) {
-          .mdh-hero__content { max-width: 50%; }
-        }
-
-        /* Heading */
-        .mdh-heading {
-          font-size: clamp(2.3rem, 4.6vw, 3.8rem);
-          font-weight: 900;
-          line-height: 1.14;
-          letter-spacing: -0.025em;
-          color: #FFFFFF;
-          text-shadow: 0 2px 24px rgba(0,0,0,0.4);
-        }
-
-        /* Description */
-        .mdh-desc {
-          font-size: clamp(0.92rem, 1.25vw, 1.05rem);
-          line-height: 1.75;
-          color: rgba(242, 242, 242, 0.85);
-          max-width: 35rem;
-        }
-
-        /* Buttons */
-        .mdh-btn-row {
-          display: flex;
-          flex-wrap: wrap;
-          gap: 0.9rem;
-          align-items: center;
-        }
-
-        .mdh-btn-primary {
-          display: inline-flex;
-          align-items: center;
-          gap: 0.5rem;
-          padding: 0.9rem 2.2rem;
-          background: linear-gradient(135deg, #92003A 0%, #91008D 100%);
-          color: #FFFFFF;
-          font-weight: 800;
-          font-size: 0.95rem;
-          border-radius: 9999px;
-          box-shadow: 0 8px 24px rgba(146, 0, 58, 0.25);
-          border: none;
-          text-decoration: none;
-          cursor: pointer;
-          transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
-        }
-        .mdh-btn-primary:hover {
-          background: #FFFFFF;
-          transform: translateY(-2px);
-          box-shadow: 0 12px 30px rgba(146, 0, 58, 0.4);
-        }
-        .mdh-btn-primary:active { transform: scale(0.97); }
-
-        .mdh-btn-secondary {
-          display: inline-flex;
-          align-items: center;
-          gap: 0.5rem;
-          padding: 0.9rem 2.2rem;
-          background: rgba(255,255,255,0.06);
-          color: #F2F2F2;
-          font-weight: 700;
-          font-size: 0.95rem;
-          border-radius: 9999px;
-          border: 1.5px solid rgba(64, 61, 136, 0.4);
-          backdrop-filter: blur(8px);
-          cursor: pointer;
-          transition: background 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
-        }
-        .mdh-btn-secondary:hover {
-          background: rgba(255,255,255,0.14);
-          border-color: #EAE4D5;
-          transform: translateY(-2px);
-        }
-        .mdh-btn-secondary:active { transform: scale(0.97); }
-
-        /* Mobile image */
-        .mdh-mobile-img {
-          display: block;
-          width: 100%;
-          height: 240px;
-          border-radius: 1.5rem;
-          overflow: hidden;
-          position: relative;
-          border: 1.5px solid rgba(64, 61, 136, 0.2);
-          box-shadow: 0 20px 50px rgba(0,0,0,0.5);
-        }
-        .mdh-mobile-img img {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-          object-position: center 15%;
-        }
-        .mdh-mobile-img::after {
-          content: '';
-          position: absolute;
-          inset: 0;
-          background: linear-gradient(to top, rgba(15,48,64,0.88) 0%, transparent 60%);
-        }
-        @media (min-width: 1024px) {
-          .mdh-mobile-img { display: none; }
-        }
-
-        /* Ambient luxury warm orbs */
-        .mdh-orb {
-          position: absolute;
-          border-radius: 50%;
-          filter: blur(100px);
-          pointer-events: none;
-          z-index: 1;
-        }
-        .mdh-orb-a {
-          width: 420px; height: 420px;
-          background: radial-gradient(circle, rgba(64, 61, 136, 0.12) 0%, transparent 70%);
-          top: -100px; left: -100px;
-        }
-        .mdh-orb-b {
-          width: 320px; height: 320px;
-          background: radial-gradient(circle, rgba(146, 0, 58, 0.08) 0%, transparent 70%);
-          bottom: 40px; left: 30%;
+          .mdh-hero__inner { padding: 3.5rem 3rem; }
         }
       `}</style>
 
       <header className="mdh-hero" role="banner">
-        {/* Ambient glow orbs */}
-        <div className="mdh-orb mdh-orb-a" aria-hidden="true" />
-        <div className="mdh-orb mdh-orb-b" aria-hidden="true" />
+        {/* Glow ambient meshes */}
+        <div className="mdh-glow-orb-1" aria-hidden="true" />
+        <div className="mdh-glow-orb-2" aria-hidden="true" />
 
-        {/* Right half: full-height doctor photo — desktop only */}
+        {/* Doctor Photo (Desktop right side) */}
         <div className="mdh-hero__photo">
           <img
             src={headerPhoto}
-            alt="Magic Denta stomatologiya shifokori"
+            alt="Magic Denta mutaxassisi"
             fetchPriority="high"
             width="960"
             height="800"
           />
         </div>
 
-        {/* Content */}
         <div className="mdh-hero__inner">
-          <div className="mdh-hero__content">
-            {/* Heading */}
-            <h1 className="mdh-heading">{t.heading}</h1>
-
-            {/* Description */}
-            <p className="mdh-desc">{t.desc}</p>
-
-            {/* Mobile doctor image */}
-            <div className="mdh-mobile-img">
-              <img
-                src={headerPhoto}
-                alt="Magic Denta stomatologiya shifokori"
-                fetchPriority="high"
-                width="480"
-                height="320"
-              />
+          <div className="w-full lg:max-w-[55%] flex flex-col gap-6 text-white text-left">
+            {/* High-tech sub-badge */}
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#403D88]/30 border border-[#403D88]/60 backdrop-blur-md w-fit shadow-xs">
+              <span className="w-2 h-2 rounded-full bg-[#91008D] animate-pulse" />
+              <span className="text-[11px] sm:text-xs font-black tracking-widest text-slate-200 uppercase">
+                {t.badge}
+              </span>
             </div>
 
-            {/* CTA Buttons */}
-            <div className="mdh-btn-row">
-              <a href="#specialities" className="mdh-btn-primary" aria-label={t.book}>
-                {t.book}
+            {/* Main Heading */}
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black tracking-tight leading-[1.12] text-white">
+              {t.heading}
+            </h1>
+
+            {/* Description */}
+            <p className="text-slate-300 text-sm sm:text-base md:text-lg leading-relaxed max-w-2xl font-normal">
+              {t.desc}
+            </p>
+
+            {/* Mobile Doctor Image Showcase */}
+            <div className="block lg:hidden w-full h-[250px] rounded-3xl overflow-hidden relative border border-[#403D88]/40 shadow-2xl my-2">
+              <img
+                src={headerPhoto}
+                alt="Magic Denta mutaxassisi"
+                className="w-full h-full object-cover object-top"
+                fetchPriority="high"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0F3040]/90 via-transparent to-transparent" />
+            </div>
+
+            {/* CTA Action Buttons */}
+            <div className="flex flex-wrap items-center gap-4 pt-2">
+              <a
+                href="#specialities"
+                className="inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-full bg-gradient-to-r from-[#92003A] via-[#91008D] to-[#403D88] text-white text-sm sm:text-base font-extrabold shadow-glow-wine hover:shadow-xl hover:scale-[1.02] active:scale-95 transition-all duration-200"
+              >
+                <span>{t.book}</span>
+                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
               </a>
+
               <button
                 type="button"
                 onClick={() => navigate("/dentists")}
-                className="mdh-btn-secondary"
-                aria-label={t.doctors}
+                className="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 backdrop-blur-md text-white text-sm sm:text-base font-bold active:scale-95 transition-all duration-200"
               >
-                {t.doctors}
+                <span>{t.doctors}</span>
               </button>
+            </div>
+
+            {/* Clinical Trust Stat Chips */}
+            <div className="grid grid-cols-3 gap-3 pt-6 border-t border-white/10 max-w-lg">
+              <div className="p-3 rounded-2xl bg-white/[0.04] border border-white/[0.08] backdrop-blur-xs">
+                <div className="text-xl sm:text-2xl font-black text-white">{t.stat1Val}</div>
+                <div className="text-[11px] sm:text-xs text-slate-400 font-semibold mt-0.5">{t.stat1Lab}</div>
+              </div>
+              <div className="p-3 rounded-2xl bg-white/[0.04] border border-white/[0.08] backdrop-blur-xs">
+                <div className="text-xl sm:text-2xl font-black text-white">{t.stat2Val}</div>
+                <div className="text-[11px] sm:text-xs text-slate-400 font-semibold mt-0.5">{t.stat2Lab}</div>
+              </div>
+              <div className="p-3 rounded-2xl bg-white/[0.04] border border-white/[0.08] backdrop-blur-xs">
+                <div className="text-xl sm:text-2xl font-black text-white">{t.stat3Val}</div>
+                <div className="text-[11px] sm:text-xs text-slate-400 font-semibold mt-0.5">{t.stat3Lab}</div>
+              </div>
             </div>
           </div>
         </div>

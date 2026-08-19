@@ -230,9 +230,9 @@ const Appointment = () => {
         jsonLd={jsonLd}
       />
       <main className="max-w-6xl mx-auto px-4 sm:px-6 py-8 sm:py-10">
-      <article className="bg-white rounded-[32px] shadow-sm border border-[#EAE4D5] overflow-hidden">
+      <article className="bg-white rounded-[32px] shadow-sm border border-slate-200/80 overflow-hidden">
         <div className="grid grid-cols-1 lg:grid-cols-2 items-stretch">
-          <figure className="bg-[#FAF9F6] flex items-center justify-center p-6 w-full h-full border-r border-[#EAE4D5]">
+          <figure className="bg-slate-50 flex items-center justify-center p-6 w-full h-full border-r border-slate-200/80">
             <img
               src={
                 selectedDentist?.image
@@ -250,10 +250,10 @@ const Appointment = () => {
 
           <section className="p-6 sm:p-8 flex flex-col gap-5 text-left">
             <header>
-              <span className="text-[10px] font-extrabold text-[#B6B09F] uppercase tracking-wider block mb-1">
+              <span className="text-[10px] font-extrabold text-[#403D88] uppercase tracking-wider block mb-1">
                 Magic Denta Mutaxassisi
               </span>
-              <h1 className="text-2xl sm:text-3xl font-black text-black">
+              <h1 className="text-2xl sm:text-3xl font-black text-[#0F3040]">
                 {selectedDentist?.name}
               </h1>
               <p className="text-neutral-500 mt-1 text-sm sm:text-base font-semibold">
@@ -263,7 +263,7 @@ const Appointment = () => {
               </p>
             </header>
 
-            <div className="grid grid-cols-2 gap-4 text-sm bg-[#FAF9F6] p-4 rounded-2xl border border-[#EAE4D5]">
+            <div className="grid grid-cols-2 gap-4 text-sm bg-slate-50 p-4 rounded-2xl border border-slate-200/80">
               <div>
                 <p className="text-neutral-400 text-xs font-semibold uppercase">Maʼlumoti</p>
                 <p className="font-bold text-neutral-800 mt-0.5">
@@ -286,7 +286,7 @@ const Appointment = () => {
               </p>
             </div>
 
-            <ul className="text-sm text-neutral-600 space-y-1.5 pt-2 border-t border-[#EAE4D5]">
+            <ul className="text-sm text-neutral-600 space-y-1.5 pt-2 border-t border-slate-200/80">
               <li>🕘 Onlayn qabul: 08:00 – 17:00</li>
               <li>☕ Tushlik: 12:00 – 13:00</li>
               <li>📅 Yakshanba: onlayn bron yopiq</li>
@@ -299,8 +299,8 @@ const Appointment = () => {
         </div>
       </article>
 
-      <section className="mt-10 sm:mt-12 bg-white rounded-[32px] shadow-sm p-6 sm:p-8 border border-[#EAE4D5]">
-          <h2 className="text-xl sm:text-2xl font-black text-black text-center mb-6">
+      <section className="mt-10 sm:mt-12 bg-white rounded-[32px] shadow-sm p-6 sm:p-8 border border-slate-200/80">
+          <h2 className="text-xl sm:text-2xl font-black text-[#0F3040] text-center mb-6">
             Uchrashuv vaqtini tanlang
           </h2>
 
@@ -326,8 +326,8 @@ const Appointment = () => {
                       }}
                       className={`shrink-0 snap-start px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold border transition-all ${
                         isActive
-                          ? "bg-black text-white border-black shadow-sm"
-                          : "bg-[#FAF9F6] border-[#EAE4D5] text-neutral-700 hover:bg-[#EAE4D5]"
+                          ? "bg-gradient-to-r from-[#403D88] to-[#321E48] text-white border-transparent shadow-sm"
+                          : "bg-slate-50 border-slate-200/80 text-neutral-700 hover:bg-[#EAE4D5]"
                       } ${isDisabled ? "opacity-60" : ""}`}
                       title={isDisabled ? "Bu kunda bo‘sh vaqt yo‘q" : ""}
                     >
@@ -350,8 +350,8 @@ const Appointment = () => {
                       onClick={() => setSelectedTime(time)}
                       className={`py-3.5 rounded-2xl border text-sm font-bold transition-all ${
                         selectedTime === time
-                          ? "bg-black text-white border-black scale-[1.02] shadow-md"
-                          : "bg-white border-[#EAE4D5] hover:bg-[#FAF9F6] text-neutral-800"
+                          ? "bg-gradient-to-r from-[#403D88] to-[#321E48] text-white border-transparent scale-[1.02] shadow-md"
+                          : "bg-white border-slate-200/80 hover:bg-slate-50 text-neutral-800"
                       }`}
                     >
                       {time}
@@ -361,17 +361,17 @@ const Appointment = () => {
               )}
 
               {selectedTime && (
-                <div className="mt-10 text-center border-t border-[#EAE4D5] pt-8">
+                <div className="mt-10 text-center border-t border-slate-200/80 pt-8">
                   <p className="text-neutral-700 mb-4 text-sm sm:text-base">
                     Tanlangan vaqt:
                     <br />
-                    <strong className="text-black text-lg sm:text-xl font-black">
+                    <strong className="text-[#0F3040] text-lg sm:text-xl font-black">
                       {formatDMY(selectedDay.slotDate)} — {selectedTime}
                     </strong>
                   </p>
                   <button
                     onClick={bookNow}
-                    className="w-full sm:w-auto px-12 py-4 rounded-full bg-black text-white font-extrabold hover:bg-neutral-800 transition shadow-md active:scale-95"
+                    className="w-full sm:w-auto px-12 py-4 rounded-full bg-gradient-to-r from-[#92003A] to-[#91008D] hover:shadow-glow-wine text-white font-black transition shadow-md active:scale-95"
                   >
                     Uchrashuvni tasdiqlash
                   </button>

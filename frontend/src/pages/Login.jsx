@@ -639,7 +639,7 @@ const Login = () => {
     `w-full bg-slate-50/70 hover:bg-slate-50 focus:bg-white rounded-2xl border px-4 py-3.5 text-sm text-slate-900 outline-none transition-all duration-200 placeholder:text-slate-400 ${
       hasError
         ? "border-red-400 ring-2 ring-red-400/20"
-        : "border-slate-200 focus:border-slate-900 focus:ring-4 focus:ring-slate-900/5"
+        : "border-slate-200 focus:border-[#403D88] focus:ring-4 focus:ring-[#403D88]/10"
     }`;
 
   const labelClass = "block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2 text-left";
@@ -669,7 +669,7 @@ const Login = () => {
                   }}
                   className={`flex-1 py-2.5 rounded-full text-xs sm:text-sm font-bold transition-all duration-200 ${
                     activeTab === "login"
-                      ? "bg-white text-slate-900 shadow-sm"
+                      ? "bg-gradient-to-r from-[#403D88] to-[#321E48] text-white shadow-sm"
                       : "text-slate-500 hover:text-slate-900"
                   }`}
                 >
@@ -683,7 +683,7 @@ const Login = () => {
                   }}
                   className={`flex-1 py-2.5 rounded-full text-xs sm:text-sm font-bold transition-all duration-200 ${
                     activeTab === "signup"
-                      ? "bg-white text-slate-900 shadow-sm"
+                      ? "bg-gradient-to-r from-[#403D88] to-[#321E48] text-white shadow-sm"
                       : "text-slate-500 hover:text-slate-900"
                   }`}
                 >
@@ -819,7 +819,7 @@ const Login = () => {
                   <button
                     type="submit"
                     disabled={submitting}
-                    className="w-full py-4 bg-slate-900 hover:bg-black text-white font-bold text-sm rounded-full transition-all duration-200 shadow-lg shadow-slate-900/10 active:scale-98 disabled:opacity-70"
+                    className="w-full py-4 bg-gradient-to-r from-[#92003A] to-[#91008D] hover:shadow-glow-wine text-white font-black text-xs uppercase tracking-wider rounded-2xl transition-all duration-200 shadow-md active:scale-98 disabled:opacity-70 cursor-pointer"
                   >
                     {submitting ? "..." : t.loginBtn}
                   </button>
@@ -1041,7 +1041,7 @@ const Login = () => {
                   <button
                     type="submit"
                     disabled={submitting}
-                    className="w-full py-4 bg-slate-900 hover:bg-black text-white font-bold text-sm rounded-full transition-all duration-200 shadow-lg shadow-slate-900/10 active:scale-98 disabled:opacity-70"
+                    className="w-full py-4 bg-gradient-to-r from-[#92003A] to-[#91008D] hover:shadow-glow-wine text-white font-black text-xs uppercase tracking-wider rounded-2xl transition-all duration-200 shadow-md active:scale-98 disabled:opacity-70 cursor-pointer"
                   >
                     {submitting ? "..." : t.signupBtn}
                   </button>
@@ -1138,7 +1138,7 @@ const Login = () => {
                   <button
                     type="submit"
                     disabled={submitting}
-                    className="w-full py-4 bg-slate-900 hover:bg-black text-white font-bold text-sm rounded-full transition-all duration-200 shadow-lg shadow-slate-900/10 active:scale-98 disabled:opacity-70"
+                    className="w-full py-4 bg-gradient-to-r from-[#92003A] to-[#91008D] hover:shadow-glow-wine text-white font-black text-xs uppercase tracking-wider rounded-2xl transition-all duration-200 shadow-md active:scale-98 disabled:opacity-70 cursor-pointer"
                   >
                     {submitting ? "..." : t.savePasswordBtn}
                   </button>
@@ -1236,7 +1236,7 @@ const Login = () => {
                   <button
                     type="submit"
                     disabled={submitting}
-                    className="w-full py-4 bg-slate-900 hover:bg-black text-white font-bold text-sm rounded-full transition-all duration-200 shadow-lg shadow-slate-900/10 active:scale-98 disabled:opacity-70"
+                    className="w-full py-4 bg-gradient-to-r from-[#92003A] to-[#91008D] hover:shadow-glow-wine text-white font-black text-xs uppercase tracking-wider rounded-2xl transition-all duration-200 shadow-md active:scale-98 disabled:opacity-70 cursor-pointer"
                   >
                     {submitting ? "..." : t.activateBtn}
                   </button>

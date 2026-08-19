@@ -11,36 +11,36 @@ const TopDentists = () => {
 
   const t = {
     uz: {
-      tag: "Mutaxassislar",
+      tag: "MUTAXASSISLAR",
       heading: "Eng yaxshi stomatologlar",
-      desc: "Tajribali stomatologlarimiz bilan tanishing va mos mutaxassisni tanlab to‘g‘ridan-to‘g‘ri qabulga yoziling.",
+      desc: "Tajribali shifokorlarimiz bilan tanishing va mos mutaxassisni tanlab to‘g‘ridan-to‘g‘ri qabulga yoziling.",
       viewAll: "Barchasini ko‘rish",
       book: "Qabulga yozilish",
-      cardTag: "Magic Denta mutaxassisi",
+      cardTag: "Magic Denta Mutaxassisi",
     },
     ru: {
-      tag: "Специалисты",
+      tag: "СПЕЦИАЛИСТЫ",
       heading: "Лучшие стоматологи",
-      desc: "Познакомьтесь с нашими опытными стоматологами и запишитесь на прием напрямую к подходящему специалисту.",
+      desc: "Познакомьтесь с нашими опытными врачами и запишитесь на прием напрямую к подходящему специалисту.",
       viewAll: "Посмотреть всех",
       book: "Записаться на прием",
       cardTag: "Специалист Magic Denta",
     },
     en: {
-      tag: "Specialists",
+      tag: "OUR SPECIALISTS",
       heading: "Top Dentists",
       desc: "Meet our experienced dentists and select the right specialist to book your appointment directly.",
-      viewAll: "View all",
-      book: "Book appointment",
+      viewAll: "View All Specialists",
+      book: "Book Appointment",
       cardTag: "Magic Denta Specialist",
     },
   }[lang] || {
-    tag: "Mutaxassislar",
+    tag: "MUTAXASSISLAR",
     heading: "Eng yaxshi stomatologlar",
-    desc: "Tajribali stomatologlarimiz bilan tanishing va mos mutaxassisni tanlab to‘g‘ridan-to‘g‘ri qabulga yoziling.",
+    desc: "Tajribali shifokorlarimiz bilan tanishing va mos mutaxassisni tanlab to‘g‘ridan-to‘g‘ri qabulga yoziling.",
     viewAll: "Barchasini ko‘rish",
     book: "Qabulga yozilish",
-    cardTag: "Magic Denta mutaxassisi",
+    cardTag: "Magic Denta Mutaxassisi",
   };
 
   const allDentists = useMemo(
@@ -108,35 +108,33 @@ const TopDentists = () => {
   return (
     <section
       id="top-dentists"
-      className="my-16 px-4 sm:px-8 lg:px-12 bg-slate-50/50 py-16 overflow-hidden border-y border-slate-100"
+      className="my-24 px-4 sm:px-8 lg:px-12 bg-white py-20 overflow-hidden border-y border-slate-200/80 shadow-xs"
     >
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
         <div className="text-left max-w-2xl space-y-2">
-          <span className="text-xs sm:text-sm font-bold text-slate-400 uppercase tracking-widest block">
+          <span className="text-xs font-black tracking-widest text-[#403D88] uppercase block">
             {t.tag}
           </span>
-          <h2 className="text-3xl md:text-4xl font-black text-slate-900 leading-tight tracking-tight">
+          <h2 className="text-3xl md:text-4xl font-black text-[#0F3040] leading-tight tracking-tight">
             {t.heading}
           </h2>
-          <p className="text-slate-500 text-sm sm:text-base leading-relaxed">
+          <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
             {t.desc}
           </p>
         </div>
-        {/* View all button (Desktop) */}
         <div className="hidden md:block">
           <button
             onClick={() => navigate("/dentists")}
-            className="px-6 py-2.5 bg-white border border-slate-200 text-slate-700 font-bold rounded-full hover:bg-slate-50 hover:border-slate-300 transition text-sm shadow-sm"
+            className="px-7 py-3 bg-slate-100 hover:bg-[#0F3040] hover:text-white text-[#0F3040] font-black rounded-full transition-all text-xs uppercase tracking-wider shadow-xs cursor-pointer"
           >
             {t.viewAll}
           </button>
         </div>
       </div>
 
-      {/* Doctor Cards Rail Slider */}
       <div className="relative max-w-7xl mx-auto w-full overflow-hidden">
-        <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-12 bg-gradient-to-r from-slate-50 to-transparent" />
-        <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-12 bg-gradient-to-l from-slate-50 to-transparent" />
+        <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-12 bg-gradient-to-r from-white to-transparent" />
+        <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-12 bg-gradient-to-l from-white to-transparent" />
 
         <ul
           ref={railRef}
@@ -146,10 +144,9 @@ const TopDentists = () => {
           {railItems.map((dentist, index) => (
             <li
               key={`${dentist._id}-${index}`}
-              className="flex-shrink-0 w-[280px] bg-white border border-slate-100 rounded-[32px] p-4 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group"
+              className="flex-shrink-0 w-[290px] bg-[#F8F9FD] border border-slate-200/90 rounded-[32px] p-5 shadow-card-clean hover:shadow-card-hover hover:border-[#403D88]/40 transition-all duration-300 flex flex-col justify-between group"
             >
-              {/* Image Box */}
-              <div className="aspect-[4/3] w-full rounded-[22px] overflow-hidden bg-gradient-to-tr from-[#EAF3F8] to-[#F0F6FA] border border-slate-100 relative flex items-center justify-center">
+              <div className="aspect-[4/3] w-full rounded-[24px] overflow-hidden bg-gradient-to-tr from-[#0F3040]/10 to-[#321E48]/10 border border-slate-200/80 relative flex items-center justify-center">
                 <img
                   src={
                     dentist?.image
@@ -158,9 +155,9 @@ const TopDentists = () => {
                   }
                   alt={dentist?.name || "Stomatolog"}
                   loading="lazy"
-                  width="280"
-                  height="210"
-                  className="w-full h-full object-cover mix-blend-multiply transition-transform duration-500 group-hover:scale-105"
+                  width="290"
+                  height="217"
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                   onError={(e) => {
                     e.currentTarget.onerror = null;
                     e.currentTarget.src = "/doctor-placeholder.svg";
@@ -168,26 +165,24 @@ const TopDentists = () => {
                 />
               </div>
 
-              {/* Doctor Details */}
               <div className="pt-4 text-left flex flex-col justify-between flex-grow">
                 <div>
-                  <span className="text-[10px] font-extrabold text-slate-500 uppercase tracking-wider block mb-1">
+                  <span className="text-[10px] font-black text-[#403D88] uppercase tracking-wider block mb-1">
                     {t.cardTag}
                   </span>
-                  <h3 className="text-lg font-bold text-slate-900 line-clamp-1 mb-4">
+                  <h3 className="text-lg font-black text-[#0F3040] line-clamp-1 mb-4">
                     {dentist.name}
                   </h3>
                 </div>
 
-                {/* Call-to-action */}
                 <button
                   type="button"
                   onClick={() => navigate(`/appointment/${dentist._id}`)}
                   aria-label={`${t.book} - ${dentist.name}`}
-                  className="w-full py-3 bg-slate-50 hover:bg-slate-900 text-slate-700 hover:text-white font-bold text-xs rounded-2xl flex items-center justify-between px-4 transition-all group/btn"
+                  className="w-full py-3.5 bg-white hover:bg-gradient-to-r hover:from-[#92003A] hover:to-[#91008D] hover:text-white text-[#0F3040] border border-slate-200/80 hover:border-transparent font-black text-xs rounded-2xl flex items-center justify-between px-4 transition-all group/btn shadow-xs hover:shadow-glow-wine cursor-pointer"
                 >
                   <span>{t.book}</span>
-                  <svg className="w-4 h-4 transform group-hover/btn:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg className="w-4 h-4 transform group-hover/btn:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
                   </svg>
                 </button>
@@ -196,11 +191,10 @@ const TopDentists = () => {
           ))}
         </ul>
 
-        {/* View all (Mobile button) */}
         <div className="flex md:hidden items-center justify-center mt-4">
           <button
             onClick={() => navigate("/dentists")}
-            className="px-6 py-2.5 bg-white border border-slate-200 text-slate-700 font-bold rounded-full hover:bg-slate-50 transition text-sm shadow-sm"
+            className="px-6 py-3 bg-[#0F3040] text-white font-black rounded-full transition text-xs uppercase tracking-wider shadow-sm"
           >
             {t.viewAll}
           </button>

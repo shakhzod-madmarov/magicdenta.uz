@@ -109,16 +109,16 @@ const Nav = () => {
           </NavLink>
 
           {/* Desktop Nav Pills */}
-          <ul className="hidden lg:flex items-center bg-slate-100/90 rounded-full px-2 py-1 gap-1 font-medium border border-slate-200/60">
+          <ul className="hidden lg:flex items-center bg-slate-100/90 rounded-full p-1 gap-1 font-medium border border-slate-200/80 shadow-xs">
             {navItems.map((item) => (
               <li key={item.path}>
                 <NavLink
                   to={item.path}
                   className={({ isActive }) =>
-                    `rounded-full px-4 xl:px-5 py-2 text-xs xl:text-sm font-bold transition-all ${
+                    `rounded-full px-5 py-2 text-xs xl:text-sm font-extrabold transition-all duration-200 ${
                       isActive
-                        ? "bg-primary text-white shadow-sm"
-                        : "text-slate-600 hover:text-slate-900 hover:bg-white"
+                        ? "bg-gradient-to-r from-[#403D88] to-[#321E48] text-white shadow-sm"
+                        : "text-slate-600 hover:text-slate-900 hover:bg-white/80"
                     }`
                   }
                 >
@@ -233,7 +233,7 @@ const Nav = () => {
               </div>
             ) : (
               <NavLink to="/login">
-                <button className="bg-primary text-white text-xs font-bold px-5 py-2.5 rounded-full hover:bg-brandPlum active:scale-95 transition-all shadow-sm cursor-pointer">
+                <button className="bg-gradient-to-r from-[#92003A] to-[#91008D] text-white text-xs font-black px-6 py-2.5 rounded-full hover:shadow-glow-wine active:scale-95 transition-all shadow-md cursor-pointer tracking-wide">
                   {t.login}
                 </button>
               </NavLink>
@@ -340,10 +340,10 @@ const Nav = () => {
                       to={item.path}
                       onClick={() => setShowMenu(false)}
                       className={({ isActive }) =>
-                        `flex items-center justify-between px-4 py-3 rounded-2xl text-sm font-bold transition-all ${
+                        `flex items-center justify-between px-4 py-3.5 rounded-2xl text-sm font-extrabold transition-all ${
                           isActive
-                            ? "bg-primary text-white shadow-sm"
-                            : "text-slate-800 bg-slate-50 hover:bg-slate-100 border border-slate-100"
+                            ? "bg-gradient-to-r from-[#403D88] to-[#321E48] text-white shadow-md"
+                            : "text-slate-800 bg-slate-50 hover:bg-slate-100 border border-slate-200/60"
                         }`
                       }
                     >

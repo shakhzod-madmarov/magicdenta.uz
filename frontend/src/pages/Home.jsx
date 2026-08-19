@@ -1,5 +1,6 @@
 import Header from "../components/Header";
 import Specialities from "../components/Specialities";
+import TechFeatures from "../components/TechFeatures";
 import TopDentists from "../components/TopDentists";
 import Banner from "../components/Banner";
 import Seo from "../components/Seo";
@@ -20,8 +21,8 @@ const Home = () => {
     address: {
       "@type": "PostalAddress",
       streetAddress: "Bobur shoh koʻchasi, 1B",
-      addressLocality: "Toshkent",
-      addressRegion: "Toshkent",
+      addressLocality: "Andijon",
+      addressRegion: "Andijon",
       postalCode: "170126",
       addressCountry: "UZ"
     },
@@ -30,30 +31,11 @@ const Home = () => {
       latitude: 40.749296,
       longitude: 72.360242
     },
-    hasMap: "https://yandex.uz/maps/-/CTgrvSoY",
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: "4.9",
-      reviewCount: "43",
-      bestRating: "5",
-      worstRating: "1"
-    },
+    hasMap: "https://yandex.uz/maps/-/CTsybHos",
     sameAs: [
-      "https://yandex.uz/maps/-/CTgrvSoY",
+      "https://yandex.uz/maps/-/CTsybHos",
       "https://www.instagram.com/magic.denta/",
-      "https://www.instagram.com/nodirbek8884/",
-      "https://t.me/magicdenta",
-      "https://api.whatsapp.com/send/?phone=998979908884",
-      "https://viber.click/998979908884"
-    ],
-    contactPoint: [
-      {
-        "@type": "ContactPoint",
-        telephone: "+998979908884",
-        contactType: "customer service",
-        areaServed: "UZ",
-        availableLanguage: ["uz", "ru", "en"]
-      }
+      "https://t.me/+998912891514"
     ]
   };
 
@@ -68,6 +50,7 @@ const Home = () => {
       <Header />
       <main>
         <Specialities />
+        <TechFeatures />
         <TopDentists />
         <Banner />
       </main>

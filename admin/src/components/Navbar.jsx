@@ -61,7 +61,7 @@ const Navbar = () => {
                 className={({ isActive }) =>
                   `block px-4 py-2 rounded-md text-sm font-medium transition ${
                     isActive
-                      ? "bg-primary/10 text-primary font-semibold"
+                      ? "bg-gradient-to-r from-[#403D88] to-[#321E48] text-white shadow-xs font-bold"
                       : "text-gray-600 hover:text-primary hover:bg-gray-50"
                   }`
                 }
@@ -92,7 +92,7 @@ const Navbar = () => {
           </p>
           <button
             onClick={logout}
-            className="hidden md:inline-block bg-primary text-white font-semibold text-xs sm:text-sm px-4 py-1.5 rounded-md shadow hover:bg-primary/95 transition"
+            className="hidden md:inline-block bg-gradient-to-r from-[#92003A] to-[#91008D] hover:shadow-glow-wine text-white font-bold text-xs sm:text-sm px-5 py-2 rounded-full shadow transition"
           >
             Chiqish
           </button>
