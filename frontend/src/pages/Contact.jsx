@@ -1,5 +1,6 @@
 import { useState, useContext } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 import Seo from "../components/Seo";
 import { AppContext } from "../context/AppContext";
 import { formatUzPhone, isUzPhoneComplete, handleUzPhonePaste, PHONE_PLACEHOLDER } from "../utils/phone";
@@ -23,8 +24,7 @@ const Contact = () => {
     if (!formData.phone.trim()) newErrors.phone = "Telefon raqam majburiy.";
     else {
       if (!isUzPhoneComplete(formData.phone))
-        newErrors.phone =
-          "Telefon formati noto‘g‘ri. Masalan: +998 (XX) XXX-XX-XX";
+        newErrors.phone = "Telefon formati noto‘g‘ri. Masalan: +998 (91) 289-15-14";
     }
     if (formData.email && !/^\S+@\S+\.\S+$/.test(formData.email))
       newErrors.email = "Elektron pochta noto‘g‘ri.";
@@ -69,7 +69,7 @@ const Contact = () => {
       if (data.success) {
         setStatus({
           type: "success",
-          message: data.message,
+          message: data.message || "Xabaringiz muvaffaqiyatli yuborildi! Tez orada siz bilan bog'lanamiz.",
         });
 
         setFormData({
@@ -81,7 +81,7 @@ const Contact = () => {
       } else {
         setStatus({
           type: "error",
-          message: data.message,
+          message: data.message || "Xatolik yuz berdi.",
         });
       }
     } catch (error) {
@@ -127,7 +127,7 @@ const Contact = () => {
   };
 
   return (
-    <div className="bg-[#F8F9FD] min-h-screen text-[#0F3040] py-8">
+    <div className="bg-[#F8F9FD] min-h-screen text-[#0F3040] py-6 sm:py-8">
       <Seo
         title="Aloqa | Magic Denta Stomatologiya Klinikasi"
         description="Magic Denta bilan bog'laning. Manzilimiz: Bobur shoh koʻchasi, 1B. 08:00-20:00 qabul (Yakshanba dam olish), professional shifokorlar va tezkor maslahat."
@@ -135,284 +135,312 @@ const Contact = () => {
         jsonLd={jsonLd}
       />
 
-      <header className="text-center pt-8 pb-10">
-        <div className="max-w-5xl mx-auto px-4">
-          <span className="text-xs font-black tracking-widest text-[#403D88] uppercase block mb-2">
+      {/* Header Banner */}
+      <section className="relative bg-gradient-to-br from-[#0F3040] via-[#1E1733] to-[#321E48] text-white py-14 sm:py-16 px-4 sm:px-6 lg:px-8 rounded-[36px] overflow-hidden my-4 max-w-7xl mx-auto border border-[#403D88]/40 shadow-2xl">
+        <div className="absolute top-0 right-0 w-96 h-96 rounded-full bg-[#92003A]/20 blur-3xl pointer-events-none" />
+        <div className="absolute bottom-0 left-0 w-96 h-96 rounded-full bg-[#403D88]/25 blur-3xl pointer-events-none" />
+
+        <div className="relative z-10 max-w-3xl mx-auto text-center space-y-3">
+          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/[0.08] text-slate-200 border border-white/15 text-xs font-black tracking-widest uppercase shadow-sm">
+            <span className="w-2 h-2 rounded-full bg-[#91008D] animate-pulse" />
             MAGIC DENTA ALOQA MARKAZI
           </span>
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-black mb-3 text-[#0F3040]">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-white leading-tight tracking-tight">
             Biz bilan bog‘laning
           </h1>
-          <p className="text-slate-600 max-w-2xl mx-auto text-sm sm:text-base leading-relaxed font-normal">
-            Savollaringiz bormi yoki uchrashuv belgilamoqchimisiz? Quyidagi
-            shakl orqali bizga yozing yoki to‘g‘ridan-to‘g‘ri klinikamizga tashrif buyuring.
+          <p className="text-slate-300 text-sm sm:text-base leading-relaxed max-w-xl mx-auto font-normal">
+            Savollaringiz bormi yoki qabulga yozilmoqchimisiz? Quyidagi shakl orqali yozing yoki to‘g‘ridan-to‘g‘ri qo‘ng‘iroq qiling.
           </p>
         </div>
-      </header>
+      </section>
 
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 grid grid-cols-1 lg:grid-cols-2 gap-10">
-        {/* Contact Info Card */}
-        <section className="bg-white rounded-[32px] shadow-card-clean p-6 sm:p-8 border border-slate-200/80 text-left">
-          <h2 className="text-2xl font-black text-[#0F3040] mb-6">
-            Aloqa ma’lumotlari
-          </h2>
-          <address className="not-italic text-slate-700 space-y-4 mb-8">
-            {/* Address */}
-            <div className="flex items-start gap-3.5">
-              <div className="w-11 h-11 rounded-2xl bg-gradient-to-br from-[#0F3040] to-[#321E48] text-white flex items-center justify-center shrink-0 shadow-xs">
-                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                </svg>
-              </div>
-              <div className="flex flex-col">
-                <span className="text-[10px] text-slate-400 font-extrabold uppercase tracking-wider">Klinika manzili</span>
-                <span className="font-bold text-[#0F3040] text-base">
-                  Bobur shoh koʻchasi, 1B
-                </span>
+      {/* Main Balanced 2-Column Grid */}
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+          
+          {/* Left Column: Direct Contact Info & Channels */}
+          <div className="lg:col-span-5 flex flex-col justify-between bg-white rounded-[32px] shadow-card-clean p-6 sm:p-8 border border-slate-200/90 text-left space-y-6">
+            <div>
+              <h2 className="text-2xl font-black text-[#0F3040] mb-2">
+                Klinika ma’lumotlari
+              </h2>
+              <p className="text-xs sm:text-sm text-slate-500 font-normal mb-6">
+                Qabulga yozilish va barcha stomatologik savollar bo‘yicha to‘g‘ridan-to‘g‘ri murojaat qiling.
+              </p>
+
+              <div className="space-y-4">
+                {/* Address */}
+                <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200/80 flex items-start gap-3.5 hover:border-[#403D88]/40 transition-colors">
+                  <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#0F3040] to-[#321E48] text-white flex items-center justify-center shrink-0 shadow-xs">
+                    <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <span className="text-[10px] text-slate-400 font-black uppercase tracking-wider block">Manzil</span>
+                    <span className="font-bold text-[#0F3040] text-sm sm:text-base">Bobur shoh koʻchasi, 1B</span>
+                  </div>
+                </div>
+
+                {/* Phone 1 */}
+                <a
+                  href="tel:+998912891514"
+                  className="p-4 rounded-2xl bg-slate-50 border border-slate-200/80 flex items-start gap-3.5 hover:border-[#92003A]/40 transition-colors group block"
+                >
+                  <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#92003A] to-[#91008D] text-white flex items-center justify-center shrink-0 shadow-xs group-hover:scale-105 transition-transform">
+                    <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.725l.548 2.2a1 1 0 01-.321.988l-1.305.98a10.582 10.582 0 004.872 4.872l.98-1.305a1 1 0 01.988-.321l2.2.548a1 1 0 01.725.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <span className="text-[10px] text-slate-400 font-black uppercase tracking-wider block">Konsultatsiya & Bosh Shifokor</span>
+                    <span className="font-black text-[#0F3040] group-hover:text-[#92003A] text-sm sm:text-base transition-colors">+998 (91) 289-15-14</span>
+                  </div>
+                </a>
+
+                {/* Phone 2 */}
+                <a
+                  href="tel:+998905429303"
+                  className="p-4 rounded-2xl bg-slate-50 border border-slate-200/80 flex items-start gap-3.5 hover:border-[#403D88]/40 transition-colors group block"
+                >
+                  <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#0F3040] to-[#403D88] text-white flex items-center justify-center shrink-0 shadow-xs group-hover:scale-105 transition-transform">
+                    <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.725l.548 2.2a1 1 0 01-.321.988l-1.305.98a10.582 10.582 0 004.872 4.872l.98-1.305a1 1 0 01.988-.321l2.2.548a1 1 0 01.725.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <span className="text-[10px] text-slate-400 font-black uppercase tracking-wider block">Qabulxona & Navbat</span>
+                    <span className="font-black text-[#0F3040] group-hover:text-[#403D88] text-sm sm:text-base transition-colors">+998 (90) 542-93-03</span>
+                  </div>
+                </a>
+
+                {/* Hours */}
+                <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200/80 flex items-start gap-3.5">
+                  <div className="w-10 h-10 rounded-xl bg-emerald-600 text-white flex items-center justify-center shrink-0 shadow-xs">
+                    <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <span className="text-[10px] text-slate-400 font-black uppercase tracking-wider block">Ish jadvali</span>
+                    <span className="font-bold text-[#0F3040] text-sm">Dush – Shanba: 08:00 – 20:00</span>
+                    <span className="text-xs text-slate-500 font-semibold block mt-0.5">Yakshanba: Dam olish kuni</span>
+                  </div>
+                </div>
               </div>
             </div>
 
-            {/* Phone 1 */}
-            <div className="flex items-start gap-3.5">
-              <div className="w-11 h-11 rounded-2xl bg-gradient-to-br from-[#0F3040] to-[#321E48] text-white flex items-center justify-center shrink-0 shadow-xs">
-                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.725l.548 2.2a1 1 0 01-.321.988l-1.305.98a10.582 10.582 0 004.872 4.872l.98-1.305a1 1 0 01.988-.321l2.2.548a1 1 0 01.725.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                </svg>
-              </div>
-              <div className="flex flex-col">
-                <span className="text-[10px] text-slate-400 font-extrabold uppercase tracking-wider">Asosiy aloqa / Konsultatsiya</span>
-                <a href="tel:+998912891514" className="hover:text-[#92003A] font-bold text-[#0F3040] text-base transition">
-                  +998 (91) 289-15-14
+            {/* Social Channels & Online Booking CTA */}
+            <div className="pt-4 border-t border-slate-100 space-y-3">
+              <div className="flex items-center gap-2.5">
+                <a
+                  href="https://t.me/+998912891514"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-1 inline-flex items-center justify-center gap-2 py-3 px-4 rounded-2xl bg-[#24A1DE] text-white hover:opacity-90 transition text-xs font-black shadow-xs cursor-pointer"
+                >
+                  <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}>
+                    <path d="M21 4L3 11.5l4 1.5 1.5 4L21 4z" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                  Telegram
+                </a>
+                <a
+                  href="https://www.instagram.com/magic.denta/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-1 inline-flex items-center justify-center gap-2 py-3 px-4 rounded-2xl bg-gradient-to-r from-[#92003A] to-[#91008D] text-white hover:opacity-90 transition text-xs font-black shadow-xs cursor-pointer"
+                >
+                  <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}>
+                    <rect x="3" y="3" width="18" height="18" rx="5" />
+                    <circle cx="12" cy="12" r="3" />
+                    <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" />
+                  </svg>
+                  Instagram
                 </a>
               </div>
-            </div>
 
-            {/* Phone 2 */}
-            <div className="flex items-start gap-3.5">
-              <div className="w-11 h-11 rounded-2xl bg-gradient-to-br from-[#0F3040] to-[#321E48] text-white flex items-center justify-center shrink-0 shadow-xs">
-                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.725l.548 2.2a1 1 0 01-.321.988l-1.305.98a10.582 10.582 0 004.872 4.872l.98-1.305a1 1 0 01.988-.321l2.2.548a1 1 0 01.725.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                </svg>
-              </div>
-              <div className="flex flex-col">
-                <span className="text-[10px] text-slate-400 font-extrabold uppercase tracking-wider">Qabulxona & Navbat</span>
-                <a href="tel:+998905429303" className="hover:text-[#92003A] font-bold text-[#0F3040] text-base transition">
-                  +998 (90) 542-93-03
-                </a>
-              </div>
-            </div>
-
-            {/* Email */}
-            <div className="flex items-start gap-3.5 min-w-0">
-              <div className="w-11 h-11 rounded-2xl bg-gradient-to-br from-[#0F3040] to-[#321E48] text-white flex items-center justify-center shrink-0 shadow-xs">
-                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                </svg>
-              </div>
-              <div className="flex flex-col min-w-0">
-                <span className="text-[10px] text-slate-400 font-extrabold uppercase tracking-wider">Elektron pochta</span>
-                <a href="mailto:magicdenta.uz@gmail.com" className="hover:text-[#92003A] font-bold text-[#0F3040] text-base break-all transition">
-                  magicdenta.uz@gmail.com
-                </a>
-              </div>
-            </div>
-
-            {/* Hours */}
-            <div className="flex items-start gap-3.5">
-              <div className="w-11 h-11 rounded-2xl bg-gradient-to-br from-[#0F3040] to-[#321E48] text-white flex items-center justify-center shrink-0 shadow-xs">
-                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-              </div>
-              <div className="flex flex-col">
-                <span className="text-[10px] text-slate-400 font-extrabold uppercase tracking-wider">Ish vaqti</span>
-                <span className="font-bold text-[#0F3040] text-sm sm:text-base">Dush – Shanba: 08:00 – 20:00<br/><span className="text-xs text-slate-500 font-semibold">Yakshanba: Dam olish kuni</span></span>
-              </div>
-            </div>
-          </address>
-
-          {/* Social Channels */}
-          <div className="mb-6">
-            <h3 className="text-sm font-black text-[#0F3040] uppercase tracking-wider mb-3">Ijtimoiy tarmoqlar</h3>
-            <div className="flex flex-wrap gap-2.5">
-              <a
-                href="https://t.me/+998912891514"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-full bg-slate-100 hover:bg-[#24A1DE] hover:text-white text-[#0F3040] transition text-xs font-black shadow-xs"
+              <Link
+                to="/appointment"
+                className="w-full inline-flex items-center justify-center gap-2 py-3.5 px-6 rounded-2xl bg-[#0F3040] hover:bg-[#321E48] text-white font-black text-xs uppercase tracking-wider transition shadow-sm active:scale-95 cursor-pointer"
               >
-                <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M21 4L3 11.5l4 1.5 1.5 4L21 4z" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-                Telegram
-              </a>
-
-
-
-              <a
-                href="https://www.instagram.com/magic.denta/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-full bg-slate-100 hover:bg-gradient-to-r hover:from-[#92003A] hover:to-[#91008D] hover:text-white text-[#0F3040] transition text-xs font-black shadow-xs"
-              >
-                <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <rect x="3" y="3" width="18" height="18" rx="5" />
-                  <circle cx="12" cy="12" r="3" />
-                  <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" />
-                </svg>
-                Instagram
-              </a>
+                Qabul vaqtini onlayn tanlash →
+              </Link>
             </div>
           </div>
 
-          {/* Embedded Yandex Map */}
-          <div className="mt-6 rounded-2xl overflow-hidden border border-slate-200 shadow-sm relative h-[300px]">
-            <div style={{ position: "relative", overflow: "hidden" }} className="w-full h-full">
-              <a href="https://yandex.uz/maps/org/stomatologiya/216461525511/?utm_medium=mapframe&utm_source=maps" style={{ color: "#eee", fontSize: "12px", position: "absolute", top: "0px" }}>Magic Denta Stomatologiya</a>
-              <iframe
-                src="https://yandex.uz/map-widget/v1/?display-text=Stomatologiya%20klinikasi&ll=72.360238%2C40.749405&mode=search&oid=216461525511&ol=biz&z=17"
-                width="100%"
-                height="100%"
-                frameBorder="0"
-                allowFullScreen={true}
-                style={{ position: "relative" }}
-                title="Magic Denta Yandex Xarita"
-              ></iframe>
+          {/* Right Column: Contact Message Form */}
+          <div className="lg:col-span-7 bg-white rounded-[32px] shadow-card-clean p-6 sm:p-10 border border-slate-200/90 text-left flex flex-col justify-between">
+            <div>
+              <h2 className="text-2xl font-black text-[#0F3040] mb-2">
+                Onlayn xabar qoldirish
+              </h2>
+              <p className="text-xs sm:text-sm text-slate-500 font-normal mb-6">
+                Shifokorga savolingiz bo‘lsa quyidagi shaklni to‘ldiring. Tez orada siz bilan bog‘lanamiz.
+              </p>
+
+              <form onSubmit={handleSubmit} noValidate className="space-y-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label
+                      htmlFor="name"
+                      className="block text-xs font-black uppercase tracking-wider text-slate-700 mb-1.5"
+                    >
+                      Ismingiz <span className="text-red-500">*</span>
+                    </label>
+                    <input
+                      id="name"
+                      name="name"
+                      type="text"
+                      value={formData.name}
+                      onChange={handleChange}
+                      className={`w-full rounded-2xl px-4 py-3.5 border ${
+                        errors.name ? "border-red-500" : "border-slate-200"
+                      } focus:outline-none focus:ring-2 focus:ring-[#403D88] bg-slate-50 text-sm font-medium`}
+                      placeholder="Ism sharifingizni kiriting"
+                    />
+                    {errors.name && (
+                      <p className="text-xs text-red-600 mt-1 font-semibold">
+                        {errors.name}
+                      </p>
+                    )}
+                  </div>
+
+                  <div>
+                    <label
+                      htmlFor="phone"
+                      className="block text-xs font-black uppercase tracking-wider text-slate-700 mb-1.5"
+                    >
+                      Telefon raqam <span className="text-red-500">*</span>
+                    </label>
+                    <input
+                      id="phone"
+                      name="phone"
+                      type="tel"
+                      inputMode="tel"
+                      value={formData.phone}
+                      onChange={handleChange}
+                      onPaste={handlePhonePaste}
+                      maxLength={PHONE_PLACEHOLDER.length}
+                      placeholder={PHONE_PLACEHOLDER}
+                      className={`w-full rounded-2xl px-4 py-3.5 border ${
+                        errors.phone ? "border-red-500" : "border-slate-200"
+                      } focus:outline-none focus:ring-2 focus:ring-[#403D88] bg-slate-50 text-sm font-medium`}
+                    />
+                    {errors.phone && (
+                      <p className="text-xs text-red-600 mt-1 font-semibold">
+                        {errors.phone}
+                      </p>
+                    )}
+                  </div>
+                </div>
+
+                <div>
+                  <label
+                    htmlFor="email"
+                    className="block text-xs font-black uppercase tracking-wider text-slate-700 mb-1.5"
+                  >
+                    Elektron pochta (ixtiyoriy)
+                  </label>
+                  <input
+                    id="email"
+                    name="email"
+                    type="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    className={`w-full rounded-2xl px-4 py-3.5 border ${
+                      errors.email ? "border-red-500" : "border-slate-200"
+                    } focus:outline-none focus:ring-2 focus:ring-[#403D88] bg-slate-50 text-sm font-medium`}
+                    placeholder="misol@gmail.com"
+                  />
+                  {errors.email && (
+                    <p className="text-xs text-red-600 mt-1 font-semibold">
+                      {errors.email}
+                    </p>
+                  )}
+                </div>
+
+                <div>
+                  <label
+                    htmlFor="message"
+                    className="block text-xs font-black uppercase tracking-wider text-slate-700 mb-1.5"
+                  >
+                    Xabaringiz yoki savolingiz <span className="text-red-500">*</span>
+                  </label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    rows="4"
+                    value={formData.message}
+                    onChange={handleChange}
+                    className={`w-full rounded-2xl px-4 py-3.5 border ${
+                      errors.message ? "border-red-500" : "border-slate-200"
+                    } focus:outline-none focus:ring-2 focus:ring-[#403D88] bg-slate-50 text-sm font-medium`}
+                    placeholder="Sizni qanday stomatologik masala bezovta qilmoqda?..."
+                  />
+                  {errors.message && (
+                    <p className="text-xs text-red-600 mt-1 font-semibold">
+                      {errors.message}
+                    </p>
+                  )}
+                </div>
+
+                {status.message && (
+                  <div
+                    className={`p-4 rounded-2xl text-xs font-bold ${
+                      status.type === "success"
+                        ? "bg-emerald-50 text-emerald-800 border border-emerald-200"
+                        : "bg-red-50 text-red-800 border border-red-200"
+                    }`}
+                  >
+                    {status.message}
+                  </div>
+                )}
+
+                <button
+                  type="submit"
+                  disabled={loading}
+                  className="w-full py-4 bg-gradient-to-r from-[#92003A] to-[#91008D] hover:shadow-glow-wine text-white font-black text-xs uppercase tracking-wider rounded-2xl shadow-md active:scale-95 transition-all disabled:opacity-50 cursor-pointer mt-2"
+                >
+                  {loading ? "Yuborilmoqda..." : "Xabarni yuborish"}
+                </button>
+              </form>
             </div>
           </div>
-        </section>
+        </div>
 
-        {/* Message Form Card */}
-        <section className="bg-white rounded-[32px] shadow-card-clean p-6 sm:p-8 border border-slate-200/80 text-left">
-          <h2 className="text-2xl font-black text-[#0F3040] mb-6">
-            Xabar yuborish
-          </h2>
-          <form onSubmit={handleSubmit} noValidate className="space-y-4">
+        {/* Full-Width Framed Interactive Yandex Map */}
+        <div className="mt-10 rounded-[36px] overflow-hidden bg-white border border-slate-200/90 shadow-card-clean p-4 sm:p-6 text-left">
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-4 px-2">
             <div>
-              <label
-                htmlFor="name"
-                className="block text-xs font-black uppercase tracking-wider text-slate-700 mb-1.5"
-              >
-                Ismingiz <span className="text-red-500">*</span>
-              </label>
-              <input
-                id="name"
-                name="name"
-                type="text"
-                value={formData.name}
-                onChange={handleChange}
-                className={`w-full rounded-2xl px-4 py-3.5 border ${
-                  errors.name ? "border-red-500" : "border-slate-200"
-                } focus:outline-none focus:ring-2 focus:ring-[#403D88] bg-slate-50 text-sm font-medium`}
-                placeholder="Ism sharifingizni kiriting"
-              />
-              {errors.name && (
-                <p className="text-xs text-red-600 mt-1 font-semibold">
-                  {errors.name}
-                </p>
-              )}
+              <span className="text-[10px] font-black uppercase tracking-wider text-[#403D88] block">Klinika Lokatsiyasi</span>
+              <h3 className="text-lg font-black text-[#0F3040]">Bobur shoh koʻchasi, 1B • Andijon</h3>
             </div>
-
-            <div>
-              <label
-                htmlFor="phone"
-                className="block text-xs font-black uppercase tracking-wider text-slate-700 mb-1.5"
-              >
-                Telefon raqam <span className="text-red-500">*</span>
-              </label>
-              <input
-                id="phone"
-                name="phone"
-                type="tel"
-                inputMode="tel"
-                value={formData.phone}
-                onChange={handleChange}
-                onPaste={handlePhonePaste}
-                maxLength={PHONE_PLACEHOLDER.length}
-                placeholder={PHONE_PLACEHOLDER}
-                className={`w-full rounded-2xl px-4 py-3.5 border ${
-                  errors.phone ? "border-red-500" : "border-slate-200"
-                } focus:outline-none focus:ring-2 focus:ring-[#403D88] bg-slate-50 text-sm font-medium`}
-              />
-              {errors.phone && (
-                <p className="text-xs text-red-600 mt-1 font-semibold">
-                  {errors.phone}
-                </p>
-              )}
-            </div>
-
-            <div>
-              <label
-                htmlFor="email"
-                className="block text-xs font-black uppercase tracking-wider text-slate-700 mb-1.5"
-              >
-                Elektron pochta (ixtiyoriy)
-              </label>
-              <input
-                id="email"
-                name="email"
-                type="email"
-                value={formData.email}
-                onChange={handleChange}
-                className={`w-full rounded-2xl px-4 py-3.5 border ${
-                  errors.email ? "border-red-500" : "border-slate-200"
-                } focus:outline-none focus:ring-2 focus:ring-[#403D88] bg-slate-50 text-sm font-medium`}
-                placeholder="misol@gmail.com"
-              />
-              {errors.email && (
-                <p className="text-xs text-red-600 mt-1 font-semibold">
-                  {errors.email}
-                </p>
-              )}
-            </div>
-
-            <div>
-              <label
-                htmlFor="message"
-                className="block text-xs font-black uppercase tracking-wider text-slate-700 mb-1.5"
-              >
-                Xabaringiz <span className="text-red-500">*</span>
-              </label>
-              <textarea
-                id="message"
-                name="message"
-                rows="4"
-                value={formData.message}
-                onChange={handleChange}
-                className={`w-full rounded-2xl px-4 py-3.5 border ${
-                  errors.message ? "border-red-500" : "border-slate-200"
-                } focus:outline-none focus:ring-2 focus:ring-[#403D88] bg-slate-50 text-sm font-medium`}
-                placeholder="Savolingiz yoki murojaatingizni yozing..."
-              />
-              {errors.message && (
-                <p className="text-xs text-red-600 mt-1 font-semibold">
-                  {errors.message}
-                </p>
-              )}
-            </div>
-
-            {status.message && (
-              <div
-                className={`p-4 rounded-2xl text-xs font-bold ${
-                  status.type === "success"
-                    ? "bg-emerald-50 text-emerald-800 border border-emerald-200"
-                    : "bg-red-50 text-red-800 border border-red-200"
-                }`}
-              >
-                {status.message}
-              </div>
-            )}
-
-            <button
-              type="submit"
-              disabled={loading}
-              className="w-full py-4 bg-gradient-to-r from-[#92003A] to-[#91008D] hover:shadow-glow-wine text-white font-black text-xs uppercase tracking-wider rounded-2xl shadow-md active:scale-95 transition-all disabled:opacity-50 cursor-pointer"
+            <a
+              href="https://yandex.uz/maps/-/CTsybHos"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-slate-100 hover:bg-[#0F3040] hover:text-white text-[#0F3040] transition text-xs font-bold shadow-xs self-start sm:self-auto"
             >
-              {loading ? "Yuborilmoqda..." : "Xabarni yuborish"}
-            </button>
-          </form>
-        </section>
+              <span>Yandeks Xaritada ochish</span>
+              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+              </svg>
+            </a>
+          </div>
+
+          <div className="rounded-[28px] overflow-hidden border border-slate-200 relative h-[360px] sm:h-[420px] w-full">
+            <iframe
+              src="https://yandex.uz/map-widget/v1/?display-text=Stomatologiya%20klinikasi&ll=72.360238%2C40.749405&mode=search&oid=216461525511&ol=biz&z=17"
+              width="100%"
+              height="100%"
+              frameBorder="0"
+              allowFullScreen={true}
+              title="Magic Denta Yandex Xarita"
+              className="w-full h-full"
+            />
+          </div>
+        </div>
       </main>
     </div>
   );
