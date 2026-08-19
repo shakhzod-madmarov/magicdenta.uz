@@ -14,6 +14,7 @@ import Nav from "./components/Nav";
 import MyTreatments from "./pages/MyTreatments";
 import QueueDisplay from "./pages/QueueDisplay";
 import ServiceLanding from "./pages/ServiceLanding";
+import Services from "./pages/Services";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -62,6 +63,8 @@ const App = () => {
           <Route path="/myappointments" element={<MyAppointments />} />
           <Route path="/dentists" element={<Dentists />} />
           <Route path="/dentists/:speciality" element={<Dentists />} />
+          <Route path="/services" element={<Services />} />
+          <Route path="/xizmatlar" element={<Services />} />
           <Route path="/services/:serviceSlug" element={<ServiceLanding />} />
           <Route path="/xizmatlar/:serviceSlug" element={<ServiceLanding />} />
           <Route path="/login" element={<Login />} />

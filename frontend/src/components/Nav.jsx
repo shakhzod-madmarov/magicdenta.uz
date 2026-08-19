@@ -191,7 +191,7 @@ const Nav = () => {
                       {specialityData.map((item, index) => (
                         <Link
                           key={index}
-                          to={`/dentists/${encodeURIComponent(item.speciality)}`}
+                          to={`/services/${item.slug || "ortodontiya"}`}
                           onClick={() => setServicesOpen(false)}
                           className="flex items-center gap-3 p-2.5 rounded-2xl hover:bg-slate-50 transition group"
                         >
@@ -208,6 +208,15 @@ const Nav = () => {
                           </div>
                         </Link>
                       ))}
+                    </div>
+                    <div className="mt-2 pt-2 border-t border-slate-100">
+                      <Link
+                        to="/services"
+                        onClick={() => setServicesOpen(false)}
+                        className="block w-full py-2 text-center text-xs font-extrabold text-[#403D88] hover:text-[#92003A] bg-slate-50 hover:bg-slate-100 rounded-xl transition"
+                      >
+                        Barcha 5 ta xizmat sahifasi →
+                      </Link>
                     </div>
                   </div>
                 </div>
@@ -457,7 +466,7 @@ const Nav = () => {
                     {specialityData.map((item, idx) => (
                       <Link
                         key={idx}
-                        to={`/dentists/${encodeURIComponent(item.speciality)}`}
+                        to={`/services/${item.slug || "ortodontiya"}`}
                         onClick={() => setShowMenu(false)}
                         className="block px-3 py-2 rounded-xl text-xs font-bold text-slate-700 hover:bg-slate-50"
                       >

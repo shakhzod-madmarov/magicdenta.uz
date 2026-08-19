@@ -29,30 +29,35 @@ export const assets = {
 export const specialityData = [
   {
     speciality: "Ortodontiya",
+    slug: "ortodontiya",
     image: Orthodontist_dentistry,
     displayName: { uz: "Ortodontiya", ru: "Ортодонтия", en: "Orthodontics" },
     badge: { uz: "TISH QATORI", ru: "ЗУБНОЙ РЯД", en: "DENTAL ROW" }
   },
   {
     speciality: "Terapevtik stomatologiya",
+    slug: "terapevtik-stomatologiya",
     image: Therapeutic_dentistry,
     displayName: { uz: "Terapevtik stomatologiya", ru: "Терапевтическая стоматология", en: "Therapeutic Dentistry" },
-    badge: { uz: "ASOSIY DAVOLASH", ru: "ОСНОВНОЕ ЛEЧЕНИЕ", en: "PRIMARY TREATMENT" }
+    badge: { uz: "ASOSIY DAVOLASH", ru: "ОСНОВНОЕ ЛЕЧЕНИЕ", en: "PRIMARY TREATMENT" }
   },
   {
     speciality: "Ortopedik stomatologiya",
+    slug: "ortopedik-stomatologiya",
     image: Orthopedic_dentistry,
     displayName: { uz: "Ortopedik stomatologiya", ru: "Ортопедическая стоматология", en: "Orthopedic Dentistry" },
     badge: { uz: "TIKLASH & PROTEZLASH", ru: "ВОССТАНОВЛЕНИЕ", en: "RESTORATION" }
   },
   {
     speciality: "Estetik stomatologiya",
+    slug: "estetik-stomatologiya",
     image: Aesthetic_dentistry,
     displayName: { uz: "Estetik stomatologiya", ru: "Эстетическая стоматология", en: "Aesthetic Dentistry" },
     badge: { uz: "TABASSUM DIZAYNI", ru: "ДИЗАЙН УЛЫБКИ", en: "SMILE DESIGN" }
   },
   {
     speciality: "Stomatologiya Jarrohligi",
+    slug: "jarrohlik-stomatologiyasi",
     image: Surgery_denistry,
     displayName: { uz: "Jarrohlik stomatologiyasi", ru: "Хирургическая стоматология", en: "Surgical Dentistry" },
     badge: { uz: "XAVFSIZ JARROHLIK", ru: "ХИРУРГИЯ", en: "SURGICAL CARE" }
