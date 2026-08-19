@@ -3,44 +3,118 @@ import { assets } from "../assets/assets";
 
 const Footer = () => {
   return (
-    <footer className="w-full bg-[#0F3040] text-white pt-16 pb-10 px-4 sm:px-6 md:px-16 lg:px-24 border-t border-[#403D88]/40 shadow-2xl mt-20 overflow-hidden relative">
+    <footer className="w-full bg-[#0F3040] text-white pt-14 pb-8 px-4 sm:px-6 lg:px-8 border-t border-[#403D88]/40 shadow-2xl mt-16 overflow-hidden relative">
       {/* Ambient background glow */}
       <div className="absolute top-0 right-1/4 w-96 h-96 rounded-full bg-[#403D88]/15 blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 left-10 w-96 h-96 rounded-full bg-[#92003A]/15 blur-3xl pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 relative z-10">
-        {/* Col 1: Brand Info */}
-        <div className="space-y-4 text-left">
-          <div className="flex items-center gap-2">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-10 relative z-10 text-left">
+        
+        {/* Col 1: Brand & Positioning (4 cols) */}
+        <div className="lg:col-span-4 space-y-4">
+          <Link to="/" className="inline-block">
             <img
               src={assets.logo_white || assets.logo}
               alt="Magic Denta"
-              className="h-12 sm:h-16 w-auto object-contain"
+              className="h-12 sm:h-14 w-auto object-contain"
             />
-          </div>
-          <p className="text-sm text-slate-300 leading-relaxed font-normal">
-            Magic Denta — Zamonaviy stomatologiya klinikasi. Specializing in Dental Orthopedics. Yuqori sifatli tish davolash, ortodontiya, sirkoniy qoplamalar va estetik xizmatlar.
+          </Link>
+          <p className="text-xs sm:text-sm text-slate-300 leading-relaxed font-normal max-w-sm">
+            Magic Denta — Dental Orthopedics markazi. Zamonaviy ortodontiya, estetik vinirlar, sirkoniy qoplamalar va og‘riqsiz xavfsiz davolash.
           </p>
-          <div className="pt-2">
-            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-bold bg-white/[0.08] text-slate-200 border border-white/15 shadow-sm">
+          <div className="pt-1">
+            <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold bg-white/[0.08] text-slate-200 border border-white/15 shadow-xs">
               <span className="w-2 h-2 rounded-full bg-[#91008D] animate-pulse" />
-              Dush – Shanba: 08:00 – 20:00 (Yakshanba: Dam olish)
+              Dush – Shanba: 08:00 – 20:00
             </span>
           </div>
         </div>
 
-        {/* Col 2: Contact */}
-        <div className="text-left">
-          <h3 className="text-xs font-black text-slate-400 uppercase tracking-widest mb-4">
-            Biz bilan bog‘lanish
+        {/* Col 2: Services / Mutaxassisliklar (3 cols) */}
+        <div className="lg:col-span-3 space-y-3">
+          <h3 className="text-xs font-black text-slate-400 uppercase tracking-widest">
+            Klinik xizmatlar
           </h3>
-          <div className="flex flex-col gap-3 text-slate-300 text-sm">
+          <ul className="space-y-2 text-xs sm:text-sm text-slate-300 font-medium">
+            <li>
+              <Link to="/services/ortodontiya" className="hover:text-white hover:underline transition">
+                Ortodontiya & Breketlar
+              </Link>
+            </li>
+            <li>
+              <Link to="/services/terapevtik-stomatologiya" className="hover:text-white hover:underline transition">
+                Terapevtik stomatologiya
+              </Link>
+            </li>
+            <li>
+              <Link to="/services/ortopedik-stomatologiya" className="hover:text-white hover:underline transition">
+                Ortopediya & Sirkoniy
+              </Link>
+            </li>
+            <li>
+              <Link to="/services/estetik-stomatologiya" className="hover:text-white hover:underline transition">
+                Estetik vinirlar
+              </Link>
+            </li>
+            <li>
+              <Link to="/services/jarrohlik-stomatologiyasi" className="hover:text-white hover:underline transition">
+                Stomatologiya jarrohligi
+              </Link>
+            </li>
+          </ul>
+        </div>
+
+        {/* Col 3: Navigation / Tezkor havolalar (2 cols) */}
+        <div className="lg:col-span-2 space-y-3">
+          <h3 className="text-xs font-black text-slate-400 uppercase tracking-widest">
+            Tezkor sahifalar
+          </h3>
+          <ul className="space-y-2 text-xs sm:text-sm text-slate-300 font-medium">
+            <li>
+              <Link to="/" className="hover:text-white hover:underline transition">
+                Bosh sahifa
+              </Link>
+            </li>
+            <li>
+              <Link to="/services" className="hover:text-white hover:underline transition">
+                Xizmatlar
+              </Link>
+            </li>
+            <li>
+              <Link to="/about" className="hover:text-white hover:underline transition">
+                Biz haqimizda
+              </Link>
+            </li>
+            <li>
+              <Link to="/appointment" className="hover:text-white hover:underline transition text-emerald-300 font-bold">
+                Qabulga yozilish
+              </Link>
+            </li>
+            <li>
+              <Link to="/contact" className="hover:text-white hover:underline transition">
+                Aloqa & Manzil
+              </Link>
+            </li>
+            <li>
+              <Link to="/login" className="hover:text-white hover:underline transition">
+                Shaxsiy kabinet
+              </Link>
+            </li>
+          </ul>
+        </div>
+
+        {/* Col 4: Direct Contacts & Socials (3 cols) */}
+        <div className="lg:col-span-3 space-y-3">
+          <h3 className="text-xs font-black text-slate-400 uppercase tracking-widest">
+            Aloqa & Manzil
+          </h3>
+          <div className="space-y-2.5 text-xs sm:text-sm text-slate-300">
             <a
               href="https://yandex.uz/maps/-/CTsybHos"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-xs text-slate-300 hover:text-white transition leading-relaxed flex items-center gap-2"
-              title="Yandex Xaritada ko‘rish (40.749296, 72.360242)"
+              className="flex items-center gap-2 hover:text-white transition"
+              title="Yandex Xaritada ko‘rish"
             >
               <svg className="w-4 h-4 text-[#91008D] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
@@ -48,128 +122,83 @@ const Footer = () => {
               </svg>
               <span>Bobur shoh koʻchasi, 1B</span>
             </a>
+
             <a
               href="tel:+998912891514"
-              className="font-bold text-white hover:text-[#91008D] transition flex items-center gap-2"
+              className="flex items-center gap-2 font-bold text-white hover:text-[#91008D] transition"
             >
               <svg className="w-4 h-4 text-[#91008D] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.725l.548 2.2a1 1 0 01-.321.988l-1.305.98a10.582 10.582 0 004.872 4.872l.98-1.305a1 1 0 01.988-.321l2.2.548a1 1 0 01.725.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
               </svg>
-              +998 (91) 289-15-14
+              <span>+998 (91) 289-15-14</span>
             </a>
+
             <a
               href="tel:+998905429303"
-              className="font-bold text-white hover:text-[#91008D] transition flex items-center gap-2"
+              className="flex items-center gap-2 font-bold text-white hover:text-[#91008D] transition"
             >
               <svg className="w-4 h-4 text-[#91008D] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.725l.548 2.2a1 1 0 01-.321.988l-1.305.98a10.582 10.582 0 004.872 4.872l.98-1.305a1 1 0 01.988-.321l2.2.548a1 1 0 01.725.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
               </svg>
-              +998 (90) 542-93-03
+              <span>+998 (90) 542-93-03</span>
             </a>
+
             <a
               href="mailto:magicdenta.uz@gmail.com"
-              className="text-slate-300 hover:text-white font-medium transition break-all flex items-center gap-2"
+              className="flex items-center gap-2 text-slate-300 hover:text-white transition break-all"
             >
               <svg className="w-4 h-4 text-[#91008D] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
               </svg>
-              magicdenta.uz@gmail.com
+              <span>magicdenta.uz@gmail.com</span>
+            </a>
+          </div>
+
+          {/* Social icons row */}
+          <div className="flex items-center gap-2 pt-2">
+            <a
+              href="https://t.me/+998912891514"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Telegram"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/[0.08] text-white hover:bg-[#24A1DE] transition text-xs font-bold border border-white/10"
+              title="Telegram"
+            >
+              <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path d="M21 4L3 11.5l4 1.5 1.5 4L21 4z" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+              <span>Telegram</span>
+            </a>
+
+            <a
+              href="https://www.instagram.com/magic.denta/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/[0.08] text-white hover:bg-gradient-to-tr hover:from-[#92003A] hover:to-[#91008D] transition text-xs font-bold border border-white/10"
+              title="Instagram"
+            >
+              <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <rect x="3" y="3" width="18" height="18" rx="5" strokeWidth="2" />
+                <circle cx="12" cy="12" r="3" strokeWidth="2" />
+                <circle cx="17.5" cy="6.5" r="0.75" fill="currentColor" />
+              </svg>
+              <span>Instagram</span>
             </a>
           </div>
         </div>
 
-        {/* Col 3: Navigation */}
-        <div className="text-left">
-          <h3 className="text-xs font-black text-slate-400 uppercase tracking-widest mb-4">
-            Tezkor havolalar
-          </h3>
-          <ul className="space-y-2.5 text-slate-300 text-sm font-medium">
-            <li>
-              <Link to="/" className="hover:text-white transition">
-                Bosh sahifa
-              </Link>
-            </li>
-            <li>
-              <Link to="/about" className="hover:text-white transition">
-                Biz haqimizda
-              </Link>
-            </li>
-            <li>
-              <Link to="/dentists" className="hover:text-white transition">
-                Stomatologlar
-              </Link>
-            </li>
-            <li>
-              <Link to="/contact" className="hover:text-white transition">
-                Aloqa & Xarita
-              </Link>
-            </li>
-            <li>
-              <Link to="/login" className="hover:text-white transition">
-                Kirish / Ro‘yxatdan o‘tish
-              </Link>
-            </li>
-          </ul>
-        </div>
-
-        {/* Col 4: Map */}
-        <div className="text-left">
-          <h3 className="text-xs font-black text-slate-400 uppercase tracking-widest mb-4">
-            Bizning manzil
-          </h3>
-          <div className="w-full h-36 rounded-2xl overflow-hidden shadow-md border border-white/15 relative">
-            <div style={{ position: "relative", overflow: "hidden" }} className="w-full h-full">
-              <a href="https://yandex.uz/maps/org/stomatologiya/216461525511/?utm_medium=mapframe&utm_source=maps" style={{ color: "#eee", fontSize: "12px", position: "absolute", top: "0px" }}>Magic Denta Stomatologiya</a>
-              <iframe
-                src="https://yandex.uz/map-widget/v1/?display-text=Stomatologiya%20klinikasi&ll=72.360238%2C40.749405&mode=search&oid=216461525511&ol=biz&z=17"
-                width="100%"
-                height="100%"
-                frameBorder="0"
-                allowFullScreen={true}
-                style={{ position: "relative" }}
-                title="Magic Denta Xarita"
-              ></iframe>
-            </div>
-          </div>
-        </div>
       </div>
 
-      <div className="max-w-7xl mx-auto mt-14 pt-8 border-t border-white/10 flex flex-col-reverse md:flex-row items-center justify-between gap-4 relative z-10">
-        <div className="text-slate-400 text-xs sm:text-sm text-center md:text-left">
+      {/* Bottom Copyright Bar */}
+      <div className="max-w-7xl mx-auto mt-10 pt-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-3 relative z-10 text-xs text-slate-400">
+        <div>
           © {new Date().getFullYear()} Magic Denta. Barcha huquqlar himoyalangan.
         </div>
-        <div className="flex flex-wrap items-center justify-center md:justify-end gap-3">
-          {/* Telegram */}
-          <a
-            href="https://t.me/+998912891514"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Telegram"
-            className="inline-flex items-center p-3 rounded-full bg-white/[0.06] text-white hover:bg-[#24A1DE] hover:text-white border border-white/10 transition shadow-sm"
-            title="Telegram"
-          >
-            <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-              <path d="M21 4L3 11.5l4 1.5 1.5 4L21 4z" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-          </a>
-
-
-
-          {/* Instagram */}
-          <a
-            href="https://www.instagram.com/magic.denta/"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Instagram"
-            className="inline-flex items-center p-3 rounded-full bg-white/[0.06] text-white hover:bg-gradient-to-tr hover:from-[#92003A] hover:to-[#91008D] hover:text-white border border-white/10 transition shadow-sm"
-            title="Instagram"
-          >
-            <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-              <rect x="3" y="3" width="18" height="18" rx="5" strokeWidth="2" />
-              <circle cx="12" cy="12" r="3" strokeWidth="2" />
-              <circle cx="17.5" cy="6.5" r="0.75" fill="currentColor" />
-            </svg>
-          </a>
+        <div className="flex items-center gap-6">
+          <Link to="/services" className="hover:text-slate-200 transition">Xizmatlar</Link>
+          <Link to="/about" className="hover:text-slate-200 transition">Biz haqimizda</Link>
+          <Link to="/contact" className="hover:text-slate-200 transition">Aloqa</Link>
         </div>
       </div>
     </footer>
