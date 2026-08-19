@@ -1,7 +1,6 @@
 import { Link, useNavigate } from "react-router-dom";
 import Seo from "../components/Seo";
 import { specialityData } from "../assets/assets";
-import { assets } from "../assets/assets";
 
 const servicesDetails = [
   {
@@ -18,9 +17,9 @@ const servicesDetails = [
       ru: "Исправление прикуса металлическими, керамическими брекетами и прозрачными элайнерами.",
       en: "Precision bite and smile alignment with modern bracket systems and invisible aligners."
     },
-    highlights: ["Metall & Keramik Breketlar", "Shaffof Elaynerlar (Kappalar)", "3D Skanerlash & Reja", "Bosqichma-bosqich to‘lov"],
+    highlights: ["Metall & Keramik Breketlar", "Shaffof Elaynerlar (Kappalar)", "Individual Reja", "Bosqichma-bosqich to‘lov"],
     duration: "6 - 14 oy",
-    doctorType: "Ortodont Shifokor",
+    doctorType: "Ortodont Mutaxassis",
   },
   {
     slug: "terapevtik-stomatologiya",
@@ -32,12 +31,12 @@ const servicesDetails = [
       en: "Therapeutic Dentistry"
     },
     desc: {
-      uz: "Chuqur karies, pulpit va periodontitni Carl Zeiss nemis mikroskopi ostida mutlaqo og‘riqsiz davolash. Tishni maksimal darajada asrab qolish va badiiy plombalash.",
-      ru: "Лечение кариеса и каналов под микроскопом Carl Zeiss без боли со 100% сохранением зуба.",
-      en: "Microscopic painless root canal therapy, gentle caries treatment, and artistic restorations."
+      uz: "Chuqur karies, pulpit va ildiz kanallarini Carl Zeiss mikroskopi ostida og‘riqsiz davolash. Og‘iz bo‘shlig‘i va to‘qimalarning holatiga qarab bosqichma-bosqich amalga oshiriladi.",
+      ru: "Лечение кариеса и каналов под микроскопом Carl Zeiss без боли с учетом состояния полости рта.",
+      en: "Microscopic painless root canal therapy, gentle caries treatment, and tooth restoration."
     },
-    highlights: ["25x Mikroskopik Aniqlik", "Nozik Kompyuterli Anesteziya", "Badiiy Nanokompozit", "Kafolatli Tish Saqlash"],
-    duration: "1 seans (45 daqiqa)",
+    highlights: ["25x Mikroskopik Aniqlik", "Og‘iz Bo‘shlig‘iga Mos Reja", "Badiiy Nanokompozit", "Kafolatli Tish Saqlash"],
+    duration: "5 kundan 2-3 haftagacha (holatga qarab)",
     doctorType: "Terapevt Stomatolog",
   },
   {
@@ -45,17 +44,17 @@ const servicesDetails = [
     speciality: "Ortopedik stomatologiya",
     badge: "DENTAL ORTHOPEDICS",
     title: {
-      uz: "Ortopedik Stomatologiya & Sirkoniy",
-      ru: "Ортопедия и Цирконий",
+      uz: "Ortopedik Stomatologiya & Sirkoniy Qoplamalar",
+      ru: "Ортопедия и Циркониевые Коронки",
       en: "Dental Orthopedics & Crowns"
     },
     desc: {
-      uz: "Yuqori mustahkam sirkoniy qoplamalar, E-max keramik vinirlar va anatomik protezlar. Magic Denta — Dental Orthopedics ixtisoslashgan klinikasi.",
-      ru: "Высокопрочные циркониевые коронки, керамика E-max и современное протезирование.",
-      en: "High-durability Zirconia crowns, E-max veneers, and precision digital prosthetics."
+      uz: "Qoplama (koronka) qo‘yish va protezlash. Milk va og‘iz bo‘shlig‘i holati, shuningdek umumiy salomatlik ko‘rsatkichlari (qandli diabet, gepatit, virusli kasalliklar, qon bosimi) to‘liq inobatga olingan holda individual reja asosida bajariladi.",
+      ru: "Установка коронок и протезирование. Сроки от 1-2 недель до нескольких месяцев с учетом состояния десен и общего здоровья (сахарный диабет, гепатит, давление).",
+      en: "Crown placement & prosthetics customized to gum health, diabetes, hepatitis, and blood pressure conditions."
     },
-    highlights: ["Nemis Sirkoniysi", "CAD/CAM Raqamli Frezerlash", "Tabiiy Emal Shaffofligi", "Uzoq Muddatli Kafolat"],
-    duration: "5 - 7 kun",
+    highlights: ["Nemis Sirkoniysi", "Umumiy Salomatlik Tahlili", "Milk & To‘qima Nazorati", "Uzoq Muddatli Kafolat"],
+    duration: "Kamida 1-2 haftadan bir necha oygacha",
     doctorType: "Ortoped Mutaxassis",
   },
   {
@@ -68,7 +67,7 @@ const servicesDetails = [
       en: "Aesthetic Smile Design"
     },
     desc: {
-      uz: "Digital Smile Design (DSD) orqali yuzingizga mos Gollivud tabassumini yaratish. Ultra-yupqa E-max vinirlar va emalga zararsiz lazerli tish oqartirish.",
+      uz: "Digital Smile Design orqali yuzingizga mos Gollivud tabassumini yaratish. Ultra-yupqa E-max vinirlar va emalga zararsiz lazerli tish oqartirish.",
       ru: "Голливудская улыбка: тончайшие виниры E-max, дизайн улыбки DSD и безопасное отбеливание.",
       en: "Hollywood Smile transformations, ultra-thin E-max veneers, and laser whitening."
     },
@@ -86,12 +85,12 @@ const servicesDetails = [
       en: "Surgical Dentistry"
     },
     desc: {
-      uz: "Aql tishlarini (8-tish) nozik, atravmatik va mutlaqo og‘riqsiz olish. Piezo-ultratovush apparati orqali shishlarsiz va tezkor tiklanish.",
-      ru: "Атравматичное удаление зубов мудрости без боли и отеков с помощью пьезохирургии.",
-      en: "Atraumatic wisdom tooth extractions, piezo-ultrasound surgery, and gentle oral procedures."
+      uz: "Aql tishlarini (8-tish) va murakkab ildizlarni nozik, atravmatik va og‘riqsiz olish. Muolaja tishning joylashuvi, turi va holatiga qarab amalga oshiriladi.",
+      ru: "Атравматичное удаление зубов мудрости без боли. Длительность от 10 минут до 30+ минут в зависимости от сложности и типа зуба.",
+      en: "Atraumatic wisdom tooth extractions taking from 10 mins to 30+ mins based on tooth complexity."
     },
-    highlights: ["Piezo-Ultrasonic Jarrohlik", "100% Og‘riqsiz Anesteziya", "Tezkor Shishsiz Bitish", "100% Melag Sterillik"],
-    duration: "20 - 30 daqiqa",
+    highlights: ["Atravmatik Jarrohlik", "100% Og‘riqsiz Anesteziya", "Tezkor Shishsiz Bitish", "100% Melag Sterillik"],
+    duration: "10 daqiqadan 30+ daqiqagacha (tish turiga qarab)",
     doctorType: "Jarroh Stomatolog",
   }
 ];
@@ -104,30 +103,30 @@ const Services = () => {
     uz: {
       tag: "KLINIK XIZMATLARIMIZ",
       heading: "Magic Denta 5 ta Asosiy Ixtisoslashgan Yo‘nalishi",
-      desc: "Klinikamiz tor doiradagi 5 ta mutaxassislikka ixtisoslashgan bo‘lib, har bir yo‘nalishda oliy toifali shifokorlar va ilg‘or xalqaro texnologiyalar xizmat ko‘rsatadi.",
+      desc: "Klinikamiz tor doiradagi 5 ta mutaxassislikka ixtisoslashgan bo‘lib, har bir yo‘nalishda bemorning umumiy salomatligi va og‘iz bo‘shlig‘i holati to‘liq inobatga olinadi.",
       learnMore: "Xizmat haqida batafsil →",
-      bookDoc: "Shifokorga yozilish",
+      bookDoc: "Qabulga yozilish",
     },
     ru: {
       tag: "НАШИ УСЛУГИ",
       heading: "5 ключевых направлений клиники Magic Denta",
-      desc: "Наша клиника сфокусирована на 5 специализированных направлениях высшей квалификации.",
+      desc: "Наша клиника сфокусирована на 5 специализированных направлениях высшей квалификации с учетом всех факторов здоровья.",
       learnMore: "Подробнее об услуге →",
-      bookDoc: "Записаться к врачу",
+      bookDoc: "Записаться на прием",
     },
     en: {
       tag: "OUR CLINICAL SERVICES",
       heading: "Magic Denta's 5 Core Specialized Disciplines",
-      desc: "Our clinic is deeply dedicated to 5 elite clinical specialties powered by master clinicians.",
+      desc: "Our clinic is deeply dedicated to 5 elite clinical specialties tailored to individual oral health and medical factors.",
       learnMore: "Detailed Service Info →",
-      bookDoc: "Book Specialist",
+      bookDoc: "Book Consultation",
     }
   }[lang] || {
     tag: "KLINIK XIZMATLARIMIZ",
     heading: "Magic Denta 5 ta Asosiy Ixtisoslashgan Yo‘nalishi",
-    desc: "Klinikamiz tor doiradagi 5 ta mutaxassislikka ixtisoslashgan bo‘lib, har bir yo‘nalishda oliy toifali shifokorlar va ilg‘or xalqaro texnologiyalar xizmat ko‘rsatadi.",
+    desc: "Klinikamiz tor doiradagi 5 ta mutaxassislikka ixtisoslashgan bo‘lib, har bir yo‘nalishda bemorning umumiy salomatligi va og‘iz bo‘shlig‘i holati to‘liq inobatga olinadi.",
     learnMore: "Xizmat haqida batafsil →",
-    bookDoc: "Shifokorga yozilish",
+    bookDoc: "Qabulga yozilish",
   };
 
   return (
@@ -182,8 +181,8 @@ const Services = () => {
                 <span className="text-[11px] font-black px-3.5 py-1.5 rounded-full bg-[#403D88]/10 text-[#403D88] uppercase tracking-wider mb-2">
                   {s.badge}
                 </span>
-                <span className="text-xs font-bold text-slate-500">
-                  ⏱ Davomiylik: <strong className="text-[#0F3040]">{s.duration}</strong>
+                <span className="text-xs font-bold text-slate-600">
+                  ⏱ Muddat: <strong className="text-[#0F3040]">{s.duration}</strong>
                 </span>
               </div>
 
@@ -218,7 +217,7 @@ const Services = () => {
                     {t.learnMore}
                   </Link>
                   <Link
-                    to={`/dentists/${encodeURIComponent(s.speciality)}`}
+                    to="/contact"
                     className="px-6 py-3.5 rounded-2xl bg-gradient-to-r from-[#92003A] to-[#91008D] hover:shadow-glow-wine text-white text-xs font-black uppercase tracking-wider transition-all shadow-md active:scale-95 cursor-pointer"
                   >
                     {t.bookDoc}
