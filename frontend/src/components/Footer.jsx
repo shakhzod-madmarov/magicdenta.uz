@@ -20,7 +20,7 @@ const Footer = () => {
             />
           </Link>
           <p className="text-xs sm:text-sm text-slate-300 leading-relaxed font-normal max-w-sm">
-            Magic Denta — Dental Orthopedics markazi. Zamonaviy ortodontiya, estetik vinirlar, sirkoniy qoplamalar va og‘riqsiz xavfsiz davolash.
+            Magic Denta — zamonaviy stomatologiya va ortopediya markazi. Zamonaviy ortodontiya, estetik vinirlar, sirkoniy qoplamalar va og‘riqsiz xavfsiz davolash.
           </p>
           <div className="pt-1">
             <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold bg-white/[0.08] text-slate-200 border border-white/15 shadow-xs">

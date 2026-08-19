@@ -6,17 +6,22 @@ const TechFeatures = () => {
 
   const t = {
     uz: {
-      tag: "XALQARO STANDARTLAR & INNOVATSIYA",
+      tag: "XALQARO STANDARTLAR VA INNOVATSIYA",
       heading: "Nega aynan Magic Denta?",
       desc: "Biz har bir bemorga oliy toifali shifokorlar tajribasi, raqamli aniqlik va mutlaq xavfsizlikni kafolatlaymiz.",
       f1Title: "Aniq va Muloyim Davolash",
       f1Desc: "Tish to‘qimalarini maksimal asrab qolgan holda chuqur karies va ildiz kanallarini og‘riqsiz va kafolatli davolash.",
+      f1Badge: "ANIQ DAVOLASH",
       f2Title: "100% Og‘riqsiz Muolaja",
       f2Desc: "Zamonaviy kompyuterli nozik anesteziya va muloyim muolaja usullari orqali butunlay qo‘rquvsiz va xotirjam davolanish tajribasi.",
+      f2Badge: "100% OG‘RIQSIZ",
       f3Title: "100% Sterillik va Xavfsizlik",
       f3Desc: "Barcha tibbiy asboblar maxsus avtoklavda to‘liq sterilizatsiya qilinadi va har bir bemor uchun 100% xavfsiz gigiyenik muhit ta’minlanadi.",
-      f4Title: "Sirkoniy & Gollivud Estetikasi",
+      f3Badge: "100% STERIL",
+      f4Title: "Sirkoniy va Tabassum Estetikasi",
       f4Desc: "Nemis sirkoniysi va estetik vinirlar yordamida tabiiy emal yaltiroqligi va mustahkam tabassum yaratiladi.",
+      f4Badge: "ESTETIK TABASSUM",
+      standard: "MAGIC DENTA STANDARTI",
     },
     ru: {
       tag: "МЕЖДУНАРОДНЫЕ СТАНДАРТЫ И ИННОВАЦИИ",
@@ -24,12 +29,17 @@ const TechFeatures = () => {
       desc: "Мы гарантируем индивидуальный подход, безупречную точность и абсолютную безопасность для каждого пациента.",
       f1Title: "Точное и бережное лечение",
       f1Desc: "Бережное лечение кариеса и каналов с максимальным сохранением здоровых тканей зуба.",
+      f1Badge: "ТОЧНАЯ ТЕРАПИЯ",
       f2Title: "100% Лечение без боли",
       f2Desc: "Бережная компьютерная анестезия и современные методики для полного комфорта и спокойствия во время приема.",
+      f2Badge: "100% БЕЗ БОЛИ",
       f3Title: "100% Стерильность и безопасность",
       f3Desc: "Многоступенчатая автоклавная стерилизация всех инструментов и абсолютная инфекционная безопасность каждого пациента.",
+      f3Badge: "100% СТЕРИЛЬНО",
       f4Title: "Цирконий и эстетика",
       f4Desc: "Высокопрочные циркониевые коронки и эстетические виниры для безупречной натуральной улыбки.",
+      f4Badge: "ПРЕМИУМ ЭСТЕТИКА",
+      standard: "СТАНДАРТ MAGIC DENTA",
     },
     en: {
       tag: "GLOBAL CLINICAL STANDARDS & INNOVATION",
@@ -37,25 +47,35 @@ const TechFeatures = () => {
       desc: "We deliver master clinician expertise, uncompromising precision, and international patient safety protocols.",
       f1Title: "Gentle Precision Care",
       f1Desc: "Gentle root canal therapy and caries treatment prioritizing natural tooth preservation.",
+      f1Badge: "PRECISE THERAPY",
       f2Title: "100% Pain-Free Care",
       f2Desc: "Advanced computer-guided anesthesia and gentle techniques ensuring a serene, stress-free clinical visit.",
+      f2Badge: "100% PAIN-FREE",
       f3Title: "100% Sterile & Safe",
       f3Desc: "Rigorous autoclave sterilization of all medical instruments ensuring 100% hygiene and patient safety.",
+      f3Badge: "100% STERILE",
       f4Title: "Zirconia & Aesthetics",
       f4Desc: "High-durability German Zirconia and aesthetic veneers for breathtaking natural smiles.",
+      f4Badge: "PREMIUM SMILE",
+      standard: "MAGIC DENTA STANDARD",
     },
   }[lang] || {
-    tag: "XALQARO STANDARTLAR & INNOVATSIYA",
+    tag: "XALQARO STANDARTLAR VA INNOVATSIYA",
     heading: "Nega aynan Magic Denta?",
     desc: "Biz har bir bemorga oliy toifali shifokorlar tajribasi, raqamli aniqlik va mutlaq xavfsizlikni kafolatlaymiz.",
     f1Title: "Aniq va Muloyim Davolash",
     f1Desc: "Tish to‘qimalarini maksimal asrab qolgan holda chuqur karies va ildiz kanallarini og‘riqsiz va kafolatli davolash.",
+    f1Badge: "ANIQ DAVOLASH",
     f2Title: "100% Og‘riqsiz Muolaja",
     f2Desc: "Zamonaviy kompyuterli nozik anesteziya va muloyim muolaja usullari orqali butunlay qo‘rquvsiz va xotirjam davolanish tajribasi.",
+    f2Badge: "100% OG‘RIQSIZ",
     f3Title: "100% Sterillik va Xavfsizlik",
     f3Desc: "Barcha tibbiy asboblar maxsus avtoklavda to‘liq sterilizatsiya qilinadi va har bir bemor uchun 100% xavfsiz gigiyenik muhit ta’minlanadi.",
-    f4Title: "Sirkoniy & Gollivud Estetikasi",
+    f3Badge: "100% STERIL",
+    f4Title: "Sirkoniy va Tabassum Estetikasi",
     f4Desc: "Nemis sirkoniysi va estetik vinirlar yordamida tabiiy emal yaltiroqligi va mustahkam tabassum yaratiladi.",
+    f4Badge: "ESTETIK TABASSUM",
+    standard: "MAGIC DENTA STANDARTI",
   };
 
   const features = [
@@ -67,7 +87,7 @@ const TechFeatures = () => {
       ),
       title: t.f1Title,
       desc: t.f1Desc,
-      badge: "PRECISE THERAPY",
+      badge: t.f1Badge,
       accent: "#403D88",
       glowColor: "rgba(64, 61, 136, 0.15)",
     },
@@ -79,7 +99,7 @@ const TechFeatures = () => {
       ),
       title: t.f2Title,
       desc: t.f2Desc,
-      badge: "100% PAIN-FREE",
+      badge: t.f2Badge,
       accent: "#92003A",
       glowColor: "rgba(146, 0, 58, 0.15)",
     },
@@ -91,7 +111,7 @@ const TechFeatures = () => {
       ),
       title: t.f3Title,
       desc: t.f3Desc,
-      badge: "100% STERIL",
+      badge: t.f3Badge,
       accent: "#059669",
       glowColor: "rgba(5, 150, 105, 0.15)",
     },
@@ -103,7 +123,7 @@ const TechFeatures = () => {
       ),
       title: t.f4Title,
       desc: t.f4Desc,
-      badge: "PREMIUM SMILE",
+      badge: t.f4Badge,
       accent: "#91008D",
       glowColor: "rgba(145, 0, 141, 0.15)",
     },
@@ -119,82 +139,73 @@ const TechFeatures = () => {
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-[#0F3040] leading-tight tracking-tight">
           {t.heading}
         </h2>
-        <p className="text-slate-600 mt-4 text-sm sm:text-base leading-relaxed font-normal">
+        <div className="w-24 h-1 bg-gradient-to-r from-[#92003A] to-[#403D88] mx-auto mt-4 rounded-full" />
+        <p className="text-slate-600 text-sm sm:text-base md:text-lg leading-relaxed mt-4 font-normal">
           {t.desc}
         </p>
       </div>
 
-      {/* 3D Interactive Feature Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
-        {features.map((item, idx) => {
-          const isHovered = hoveredIdx === idx;
-
-          return (
+      {/* Feature Cards Grid */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 relative z-10">
+        {features.map((f, idx) => (
+          <div
+            key={idx}
+            onMouseEnter={() => setHoveredIdx(idx)}
+            onMouseLeave={() => setHoveredIdx(null)}
+            className="group relative bg-white rounded-[32px] p-8 border border-slate-200/80 shadow-card-clean hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 flex flex-col justify-between overflow-hidden text-left"
+            style={{
+              boxShadow: hoveredIdx === idx ? `0 20px 40px -15px ${f.glowColor}` : undefined
+            }}
+          >
             <div
-              key={idx}
-              onMouseEnter={() => setHoveredIdx(idx)}
-              onMouseLeave={() => setHoveredIdx(null)}
-              style={{
-                transform: isHovered
-                  ? "translateY(-8px) scale(1.02)"
-                  : "translateY(0) scale(1)",
-                boxShadow: isHovered
-                  ? `0 20px 35px -10px ${item.glowColor}, 0 1px 3px rgba(0,0,0,0.05)`
-                  : "0 4px 20px -2px rgba(0,0,0,0.05)",
-                borderColor: isHovered ? item.accent : "rgba(226, 232, 240, 0.8)",
-              }}
-              className="bg-white rounded-[32px] p-7 border transition-all duration-300 flex flex-col justify-between text-left group relative overflow-hidden cursor-default"
-            >
-              {/* Top ambient color accent line */}
-              <div
-                className="absolute top-0 left-0 right-0 h-1.5 transition-opacity duration-300"
-                style={{
-                  backgroundColor: item.accent,
-                  opacity: isHovered ? 1 : 0,
-                }}
-              />
+              className="absolute top-0 right-0 w-32 h-32 rounded-bl-[100px] opacity-10 transition-transform duration-500 group-hover:scale-110 pointer-events-none"
+              style={{ backgroundColor: f.accent }}
+            />
 
-              <div>
-                <div className="flex items-center justify-between mb-6">
-                  <div
-                    className="w-14 h-14 rounded-2xl flex items-center justify-center transition-transform duration-300 group-hover:scale-110 shadow-xs"
-                    style={{
-                      backgroundColor: `${item.accent}12`,
-                    }}
-                  >
-                    {item.icon}
-                  </div>
-                  <span
-                    className="text-[10px] font-black tracking-wider uppercase px-3 py-1 rounded-full border"
-                    style={{
-                      color: item.accent,
-                      borderColor: `${item.accent}30`,
-                      backgroundColor: `${item.accent}08`,
-                    }}
-                  >
-                    {item.badge}
-                  </span>
+            <div>
+              <div className="flex items-center justify-between mb-6">
+                <div
+                  className="w-16 h-16 rounded-2xl flex items-center justify-center transition-transform duration-300 group-hover:scale-110 shadow-xs"
+                  style={{ backgroundColor: `${f.accent}15` }}
+                >
+                  {f.icon}
                 </div>
-
-                <h3 className="font-black text-lg text-[#0F3040] leading-snug mb-3 group-hover:text-[#92003A] transition-colors">
-                  {item.title}
-                </h3>
-                <p className="text-slate-600 text-xs sm:text-sm leading-relaxed font-normal">
-                  {item.desc}
-                </p>
+                <span
+                  className="text-[10px] font-black tracking-wider uppercase px-3 py-1.5 rounded-full border shadow-2xs"
+                  style={{
+                    color: f.accent,
+                    backgroundColor: `${f.accent}08`,
+                    borderColor: `${f.accent}20`
+                  }}
+                >
+                  {f.badge}
+                </span>
               </div>
 
-              <div className="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-slate-400 group-hover:text-[#0F3040] transition-colors">
-                <span className="text-[11px] font-extrabold uppercase tracking-wider">
-                  Magic Denta Standarti
-                </span>
-                <span className="transform group-hover:translate-x-1 transition-transform text-[#92003A]">
-                  ✓
-                </span>
+              <h3 className="text-xl font-black text-[#0F3040] mb-3 leading-snug group-hover:text-[#403D88] transition-colors">
+                {f.title}
+              </h3>
+
+              <p className="text-slate-600 text-sm leading-relaxed font-normal">
+                {f.desc}
+              </p>
+            </div>
+
+            <div className="mt-8 pt-4 border-t border-slate-100 flex items-center justify-between">
+              <span className="text-xs font-bold text-slate-400 group-hover:text-slate-600 transition-colors uppercase tracking-wider">
+                {t.standard}
+              </span>
+              <div
+                className="w-6 h-6 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300"
+                style={{ backgroundColor: `${f.accent}20`, color: f.accent }}
+              >
+                <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                </svg>
               </div>
             </div>
-          );
-        })}
+          </div>
+        ))}
       </div>
     </section>
   );

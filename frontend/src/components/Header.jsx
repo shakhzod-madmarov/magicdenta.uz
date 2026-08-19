@@ -7,7 +7,7 @@ const Header = () => {
 
   const t = {
     uz: {
-      badge: "DENTAL ORTHOPEDICS • STOMATOLOGIYA",
+      badge: "ORTOPEDIK STOMATOLOGIYA VA ESTETIKA",
       heading: "Mukammal tabassum san’ati va professional g‘amxo‘rlik",
       desc: "Magic Denta — zamonaviy ortodontiya, estetik vinirlar, sirkoniy qoplamalar va og‘riqsiz muolajalar markazi.",
       book: "Qabulga yozilish",
@@ -17,7 +17,7 @@ const Header = () => {
       tag3: "08:00 – 20:00 (Dush – Shan)",
     },
     ru: {
-      badge: "DENTAL ORTHOPEDICS • СТОМАТОЛОГИЯ",
+      badge: "ОРТОПЕДИЧЕСКАЯ СТОМАТОЛОГИЯ И ЭСТЕТИКА",
       heading: "Искусство идеальной улыбки и забота о здоровье",
       desc: "Современная ортодонтия, эстетические виниры, циркониевые коронки и безболезненный комфорт в Magic Denta.",
       book: "Записаться на прием",
@@ -37,7 +37,7 @@ const Header = () => {
       tag3: "08:00 – 20:00 (Mon – Sat)",
     },
   }[lang] || {
-    badge: "DENTAL ORTHOPEDICS • STOMATOLOGIYA",
+    badge: "ORTOPEDIK STOMATOLOGIYA VA ESTETIKA",
     heading: "Mukammal tabassum san’ati va professional g‘amxo‘rlik",
     desc: "Magic Denta — zamonaviy ortodontiya, estetik vinirlar, sirkoniy qoplamalar va og‘riqsiz muolajalar markazi.",
     book: "Qabulga yozilish",
