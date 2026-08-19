@@ -114,24 +114,6 @@ const Nav = () => {
 
   return (
     <>
-      {/* Top Notification / Operating Schedule Bar */}
-      <div className="bg-[#0F3040] text-slate-200 text-xs py-1.5 px-4 text-center border-b border-[#403D88]/30 flex items-center justify-between max-w-7xl mx-auto hidden sm:flex">
-        <div className="flex items-center gap-2">
-          <span className={`w-2 h-2 rounded-full ${isSunday ? "bg-amber-400" : "bg-emerald-400 animate-pulse"}`} />
-          <span className="font-bold tracking-wide">
-            {isSunday ? t.closedNow : t.openNow}
-          </span>
-        </div>
-        <div className="flex items-center gap-4 text-slate-300">
-          <a href="tel:+998912891514" className="hover:text-white font-bold transition">
-            📞 +998 (91) 289-15-14
-          </a>
-          <span className="text-slate-500">|</span>
-          <a href="https://yandex.uz/maps/-/CTsybHos" target="_blank" rel="noopener noreferrer" className="hover:text-white transition">
-            📍 Bobur shoh koʻchasi, 1B
-          </a>
-        </div>
-      </div>
 
       <nav className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200/80 shadow-xs">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex items-center justify-between py-3 sm:py-3.5">
