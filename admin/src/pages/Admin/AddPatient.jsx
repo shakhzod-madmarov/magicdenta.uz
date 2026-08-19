@@ -11,6 +11,7 @@ import {
 } from "../../utils/imageUpload";
 import TelegramPatientConnectModal from "../../components/TelegramPatientConnectModal.jsx";
 import AddHistoricalTreatmentModal from "../../components/AddHistoricalTreatmentModal.jsx";
+import { formatUzPhoneInput, handleUzPhonePaste, PHONE_PLACEHOLDER } from "../../utils/phone";
 
 const AddPatient = () => {
   const { backendUrl, aToken } = useContext(AdminContext);
