@@ -50,7 +50,7 @@ const Navbar = () => {
           <img
             src={assets.logo}
             alt="Magic Denta"
-            className="h-10 w-auto object-contain"
+            className="h-11 sm:h-13 md:h-14 w-auto object-contain"
           />
         </div>
         <ul className="hidden md:flex items-center gap-3">

@@ -138,7 +138,7 @@ const Nav = () => {
           {/* Brand Logo */}
           <NavLink to="/" className="flex items-center gap-2 group shrink-0">
             <img
-              className="h-8 sm:h-10 w-auto cursor-pointer object-contain transition-transform group-hover:scale-[1.02]"
+              className="h-10 sm:h-12 md:h-14 w-auto cursor-pointer object-contain transition-transform group-hover:scale-[1.02]"
               src={assets.logo}
               alt="Magic Denta"
             />
@@ -400,7 +400,7 @@ const Nav = () => {
             <div className="w-[85%] max-w-sm bg-white h-full p-6 flex flex-col justify-between overflow-y-auto">
               <div>
                 <div className="flex items-center justify-between pb-4 border-b border-slate-100">
-                  <img src={assets.logo} alt="Magic Denta" className="h-8 w-auto" />
+                  <img src={assets.logo} alt="Magic Denta" className="h-11 sm:h-12 w-auto" />
                   <button
                     type="button"
                     onClick={() => setShowMenu(false)}

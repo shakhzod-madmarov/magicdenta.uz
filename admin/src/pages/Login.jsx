@@ -84,7 +84,7 @@ const AdminDentistLogin = () => {
             <img
               src={assets.logo}
               alt="Magic Denta"
-              className="h-11 sm:h-12 w-auto max-w-[240px] object-contain"
+              className="h-14 sm:h-16 md:h-20 w-auto max-w-[300px] object-contain"
             />
           </div>
 

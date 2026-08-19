@@ -15,7 +15,7 @@ const Footer = () => {
             <img
               src={assets.logo_white || assets.logo}
               alt="Magic Denta"
-              className="h-10 sm:h-12 w-auto object-contain"
+              className="h-12 sm:h-16 w-auto object-contain"
             />
           </div>
           <p className="text-sm text-slate-300 leading-relaxed font-normal">
