@@ -9,7 +9,7 @@ cd "$ROOT"
 
 echo "[deploy] repo=$ROOT branch=$BRANCH"
 
-git checkout -- front-denta/public/sitemap.xml || true
+git checkout -- frontend/public/sitemap.xml || true
 
 if [[ -n "$(git status --porcelain)" ]]; then
   echo "[deploy] ERROR: working tree is dirty; commit/stash changes first" >&2
@@ -36,11 +36,11 @@ build_vite_app() {
 }
 
 echo "[deploy] install backend"
-pushd backend-denta >/dev/null
+pushd backend >/dev/null
 npm ci
 popd >/dev/null
 
-build_vite_app front-denta
+build_vite_app frontend
 build_vite_app admin
 
 echo "[deploy] restart backend"

@@ -18,7 +18,7 @@ const mongoUri = MONGODB_URI.includes("/" + MONGODB_DB)
   : `${MONGODB_URI.replace(/\/$/, "")}/${MONGODB_DB}`;
 
 // Adjust path to sitemap.xml in the patient frontend public directory
-const SITEMAP_PATH = path.resolve(__dirname, "../../front-denta/public/sitemap.xml");
+const SITEMAP_PATH = path.resolve(__dirname, "../../frontend/public/sitemap.xml");
 
 async function generate() {
   let dentists = [];

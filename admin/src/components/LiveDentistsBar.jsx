@@ -4,7 +4,7 @@ import WalkInModal from "./WalkInModal";
 import AdminManualBookingModal from "./AdminManualBookingModal";
 import { formatHM, isoToday } from "../../../shared/date.js";
 
-const STORAGE_KEY = "denta.admin.liveDentists.order.v1";
+const STORAGE_KEY = "magicdenta.admin.liveDentists.order.v1";
 
 const Badge = ({ work }) => {
   const next = work?.next;

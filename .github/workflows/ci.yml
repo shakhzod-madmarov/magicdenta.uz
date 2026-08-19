@@ -16,7 +16,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        app: [admin, front-denta, backend-denta]
+        app: [admin, frontend, backend]
     defaults:
       run:
         working-directory: ${{ matrix.app }}
@@ -44,6 +44,6 @@ jobs:
         run: npm run build --if-present
 
       - name: Backend Syntax Check
-        if: matrix.app == 'backend-denta'
+        if: matrix.app == 'backend'
         run: node --check server.js
 

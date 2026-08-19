@@ -8,7 +8,7 @@ Modern, full-stack clinic management and patient booking platform for **Magic De
 
 The system consists of three independent sub-projects:
 
-1. **`front-denta/`** (Patient Portal & Public Website)
+1. **`frontend/`** (Patient Portal & Public Website)
    - Domain: `https://magicdenta.uz`
    - Technology: React 19, Vite, Tailwind CSS
    - Features: Online doctor appointment booking, patient cabinet, treatment history, multilingual support (UZ, RU, EN), real-time queue screen (`/queue-display`), modern luxury design with `#92003A`, `#403D88`, `#0F3040`, `#321E48`, `#91008D`, `#FAF8FB` palette.
@@ -18,7 +18,7 @@ The system consists of three independent sub-projects:
    - Technology: React 19, Vite, Tailwind CSS
    - Features: Real-time appointments, doctor schedules & working hours, payroll & commission calculations, treatment invoicing & receipt generation, expense & warehouse inventory tracking, patient records with dual password security, Telegram bot connect QR codes.
 
-3. **`backend-denta/`** (REST API & Automated Jobs)
+3. **`backend/`** (REST API & Automated Jobs)
    - Domain: `https://api.magicdenta.uz`
    - Technology: Node.js, Express, MongoDB (Mongoose), JWT, Multer/Sharp, Nodemailer, Telegram Bot API
    - Features: Secure appointment locking, background reminder crons (1 day before, 3 hours before), orthodontist queue service with live distance calculation, automated walk-in expiration, automated activity audit logging, XML sitemap generator.
@@ -45,14 +45,14 @@ The system consists of three independent sub-projects:
 
 ### 1. Backend API
 ```bash
-cd backend-denta
+cd backend
 npm install
 npm run server  # Starts Express server on http://localhost:5000
 ```
 
 ### 2. Patient Frontend
 ```bash
-cd front-denta
+cd frontend
 npm install
 npm run dev     # Starts Vite dev server on http://localhost:5173
 ```

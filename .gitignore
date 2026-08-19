@@ -2,17 +2,17 @@
 **/node_modules
 
 # build output
-front-denta/dist
+frontend/dist
 admin/dist
 
 # environment files
-backend-denta/.env
-front-denta/.env
+backend/.env
+frontend/.env
 admin/.env
 
 # uploads / generated files
-backend-denta/uploads
-backend-denta/backups
+backend/uploads
+backend/backups
 backups/
 
 # logs
