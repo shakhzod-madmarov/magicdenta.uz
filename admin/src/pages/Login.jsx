@@ -1,17 +1,19 @@
 import { useContext, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import eyesClosed from "../assets/login/eyes-closed.png";
 import eyesOpened from "../assets/login/eyes-opened.png";
 import { AdminContext } from "../context/AdminContext.jsx";
+import { DentistContext } from "../context/DentistContext.jsx";
+import { assets } from "../assets/assets";
 import axios from "axios";
 import { toast } from "react-toastify";
-import {DentistContext} from "../context/DentistContext.jsx"
 
 const AdminDentistLogin = () => {
-  const [role, setRole] = useState("Admin"); 
+  const [role, setRole] = useState("Admin"); // "Admin" | "Stomatolog"
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
 
   const { backendUrl, setAToken } = useContext(AdminContext);
   const { setDToken } = useContext(DentistContext);
@@ -19,37 +21,42 @@ const AdminDentistLogin = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+    if (!email.trim() || !password.trim()) {
+      toast.error("Iltimos, barcha maydonlarni to‘ldiring");
+      return;
+    }
 
+    setSubmitting(true);
     try {
       if (role === "Admin") {
         const { data } = await axios.post(`${backendUrl}/api/admin/login`, {
-          email,
+          email: email.trim(),
           password,
         });
 
         if (data.success) {
           localStorage.setItem("aToken", data.token);
           setAToken(data.token);
-          toast.success("Admin tizimiga muvaffaqiyatli kirdingiz");
+          toast.success("Admin boshqaruv tizimiga xush kelibsiz!");
           navigate("/admin-dashboard");
         } else {
-          toast.error(data.message);
+          toast.error(data.message || "Kirishda xatolik yuz berdi");
         }
       }
 
       if (role === "Stomatolog") {
         const { data } = await axios.post(`${backendUrl}/api/dentist/login`, {
-          email,
+          email: email.trim(),
           password,
         });
 
         if (data.success) {
-         localStorage.setItem("dToken", data.token);
-         setDToken(data.token);
-         toast.success("Stomatolog tizimiga muvaffaqiyatli kirdingiz");
-         navigate("/dentist-dashboard");
+          localStorage.setItem("dToken", data.token);
+          setDToken(data.token);
+          toast.success("Shifokor kabinetiga xush kelibsiz!");
+          navigate("/dentist-dashboard");
         } else {
-          toast.error(data.message);
+          toast.error(data.message || "Kirishda xatolik yuz berdi");
         }
       }
     } catch (error) {
@@ -57,27 +64,78 @@ const AdminDentistLogin = () => {
         error?.response?.data?.message ||
           "Server bilan bog‘lanishda xatolik yuz berdi",
       );
+    } finally {
+      setSubmitting(false);
     }
   };
 
   return (
-    <main className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-grayLight flex flex-col">
-      <section className="w-full py-10 bg-gradient-to-r from-primary to-secondary text-white shadow-sm">
-        <div className="max-w-xl mx-auto px-4 text-center">
-          <h1 className="text-3xl font-bold mb-1">{role} tizimiga kirish</h1>
-          <p className="text-sm opacity-90">
-            Iltimos, tizimga kirish uchun ma’lumotlaringizni kiriting
-          </p>
-        </div>
-      </section>
+    <main className="min-h-screen bg-gradient-to-br from-[#0F3040] via-[#1F1732] to-[#321E48] flex items-center justify-center p-4 sm:p-6 relative overflow-hidden">
+      {/* Background ambient glow orbs */}
+      <div className="absolute -top-32 -left-32 w-96 h-96 rounded-full bg-[#403D88]/30 blur-3xl pointer-events-none" />
+      <div className="absolute -bottom-32 -right-32 w-96 h-96 rounded-full bg-[#92003A]/25 blur-3xl pointer-events-none" />
 
-      <section className="flex-1 flex items-center justify-center px-4 py-8">
-        <div className="w-full max-w-md bg-white rounded-2xl shadow-lg border border-gray-100 p-8">
-          <form onSubmit={handleSubmit} noValidate className="space-y-5">
+      <div className="w-full max-w-md relative z-10">
+        {/* Main Card */}
+        <div className="bg-white rounded-[36px] shadow-2xl border border-white/20 p-8 sm:p-10 text-center">
+          
+          {/* Clinic Logo */}
+          <div className="flex justify-center mb-6">
+            <img
+              src={assets.logo}
+              alt="Magic Denta"
+              className="h-11 sm:h-12 w-auto object-contain"
+            />
+          </div>
+
+          {/* Heading */}
+          <h1 className="text-2xl font-black text-[#0F3040] tracking-tight mb-1">
+            Boshqaruv Tizimi
+          </h1>
+          <p className="text-xs text-slate-500 mb-6 font-medium">
+            Magic Denta klinikasi xodimlari uchun maxsus portal
+          </p>
+
+          {/* Role Switcher Pill Bar */}
+          <div className="flex bg-slate-100 p-1.5 rounded-full mb-6 border border-slate-200/80 shadow-xs">
+            <button
+              type="button"
+              onClick={() => {
+                setRole("Admin");
+                setEmail("");
+                setPassword("");
+              }}
+              className={`flex-1 py-2.5 rounded-full text-xs font-black transition-all duration-200 cursor-pointer ${
+                role === "Admin"
+                  ? "bg-gradient-to-r from-[#403D88] to-[#321E48] text-white shadow-sm"
+                  : "text-slate-600 hover:text-slate-900"
+              }`}
+            >
+              Klinika Admini
+            </button>
+            <button
+              type="button"
+              onClick={() => {
+                setRole("Stomatolog");
+                setEmail("");
+                setPassword("");
+              }}
+              className={`flex-1 py-2.5 rounded-full text-xs font-black transition-all duration-200 cursor-pointer ${
+                role === "Stomatolog"
+                  ? "bg-gradient-to-r from-[#403D88] to-[#321E48] text-white shadow-sm"
+                  : "text-slate-600 hover:text-slate-900"
+              }`}
+            >
+              Stomatolog
+            </button>
+          </div>
+
+          {/* Form */}
+          <form onSubmit={handleSubmit} noValidate className="space-y-4 text-left">
             <div>
               <label
                 htmlFor="email"
-                className="block text-sm font-medium text-gray-700 mb-1"
+                className="block text-xs font-black uppercase tracking-wider text-slate-700 mb-1.5"
               >
                 Elektron pochta
               </label>
@@ -85,92 +143,68 @@ const AdminDentistLogin = () => {
                 id="email"
                 name="email"
                 type="email"
-                placeholder={`${role.toLowerCase()}@example.com`}
+                placeholder={role === "Admin" ? "admin@magicdenta.uz" : "shifokor@magicdenta.uz"}
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
-                className="w-full border border-gray-300 rounded-md px-4 py-3 focus:ring-2 focus:ring-primary focus:border-primary outline-none transition text-sm"
+                className="w-full bg-slate-50 border border-slate-200 rounded-2xl px-4 py-3.5 text-sm font-medium text-slate-900 outline-none focus:bg-white focus:border-[#403D88] focus:ring-4 focus:ring-[#403D88]/10 transition-all placeholder:text-slate-400"
               />
             </div>
-            <div className="relative">
+
+            <div>
               <label
                 htmlFor="password"
-                className="block text-sm font-medium text-gray-700 mb-1"
+                className="block text-xs font-black uppercase tracking-wider text-slate-700 mb-1.5"
               >
                 Parol
               </label>
-              <input
-                id="password"
-                name="password"
-                type={showPassword ? "text" : "password"}
-                placeholder="Parolingiz"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                required
-                className="w-full border border-gray-300 rounded-md px-4 py-3 pr-10 focus:ring-2 focus:ring-primary focus:border-primary outline-none transition text-sm"
-              />
-              <button
-                type="button"
-                onClick={() => setShowPassword((prev) => !prev)}
-                className="absolute right-3 top-[34px] hover:scale-110 transition-transform"
-                aria-label={
-                  showPassword ? "Parolni yashirish" : "Parolni ko‘rsatish"
-                }
-              >
-                <img
-                  src={showPassword ? eyesOpened : eyesClosed}
-                  alt={
-                    showPassword ? "Ko‘rinayotgan parol" : "Yashirilgan parol"
-                  }
-                  className="w-6 h-6 object-contain"
+              <div className="relative">
+                <input
+                  id="password"
+                  name="password"
+                  type={showPassword ? "text" : "password"}
+                  placeholder="••••••••"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  required
+                  className="w-full bg-slate-50 border border-slate-200 rounded-2xl px-4 py-3.5 pr-12 text-sm font-medium text-slate-900 outline-none focus:bg-white focus:border-[#403D88] focus:ring-4 focus:ring-[#403D88]/10 transition-all placeholder:text-slate-400"
                 />
-              </button>
+                <button
+                  type="button"
+                  onClick={() => setShowPassword((prev) => !prev)}
+                  className="absolute right-3.5 top-1/2 -translate-y-1/2 p-1 text-slate-400 hover:text-slate-700 transition"
+                  aria-label={showPassword ? "Parolni yashirish" : "Parolni ko‘rsatish"}
+                >
+                  <img
+                    src={showPassword ? eyesOpened : eyesClosed}
+                    alt=""
+                    className="w-5 h-5 object-contain opacity-70 hover:opacity-100 transition-opacity"
+                  />
+                </button>
+              </div>
             </div>
+
             <button
               type="submit"
-              className="w-full bg-gradient-to-r from-primary to-secondary text-white font-semibold py-3 rounded-md shadow hover:opacity-95 transition text-sm"
+              disabled={submitting}
+              className="w-full py-4 bg-gradient-to-r from-[#92003A] to-[#91008D] hover:shadow-glow-wine text-white font-black text-xs uppercase tracking-wider rounded-2xl transition-all shadow-md active:scale-95 disabled:opacity-60 cursor-pointer mt-2"
             >
-              Tizimga kirish
+              {submitting ? "Tekshirilmoqda..." : `${role} sifatida kirish`}
             </button>
           </form>
-          <div className="text-center text-sm text-gray-700 mt-6">
-            {role === "Admin" ? (
-              <>
-                <p>Stomatologlar uchun tizim:</p>
-                <button
-                  type="button"
-                  onClick={() => {
-                    localStorage.removeItem("aToken");
-                    localStorage.removeItem("dToken");
-                    setRole("Stomatolog");
-                    setEmail("");
-                    setPassword("");
 
-                  }}
-                  className="text-primary font-semibold hover:underline mt-1"
-                >
-                  Stomatolog tizimiga o‘tish
-                </button>
-              </>
-            ) : (
-              <>
-                <p>Admin tizimiga qaytish:</p>
-                <button
-                  type="button"
-                  onClick={() => {
-                    setRole("Admin");
-                    setEmail("");
-                    setPassword("");
-                  }}
-                  className="text-primary font-semibold hover:underline mt-1"
-                >
-                  Admin tizimiga o‘tish
-                </button>
-              </>
-            )}
+          {/* Footer Back Link */}
+          <div className="mt-6 pt-5 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500 font-semibold">
+            <span>© {new Date().getFullYear()} Magic Denta</span>
+            <a
+              href="https://magicdenta.uz"
+              className="text-[#403D88] hover:text-[#92003A] transition"
+            >
+              Asosiy saytga o‘tish →
+            </a>
           </div>
         </div>
-      </section>
+      </div>
     </main>
   );
 };
